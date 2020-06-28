@@ -1,7 +1,6 @@
 package calc
 
 import (
-	"fmt"
 	"gioui.org/layout"
 	"gioui.org/widget/material"
 )
@@ -34,8 +33,6 @@ func (w *WingCal) strana() func(gtx C) D {
 
 		switch w.UI.Device {
 		case "p":
-			fmt.Println("pppp")
-
 			switch w.Strana {
 			case "materijal":
 				s = w.UI.BezMargine.Layout(gtx, w.MaterijalStrana())
@@ -45,8 +42,6 @@ func (w *WingCal) strana() func(gtx C) D {
 				s = w.UI.BezMargine.Layout(gtx, w.SumaStrana())
 			}
 		case "h":
-			fmt.Println("hhhh")
-
 			s = layout.Flex{
 				Axis: layout.Horizontal,
 			}.Layout(w.UI.Context,

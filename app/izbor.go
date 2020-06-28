@@ -26,7 +26,7 @@ func (w *WingCal) IzbornikRadovaStrana() func(gtx C) D {
 
 func (w *WingCal) IzborVrsteRadova() func(gtx C) D {
 	return func(gtx C) D {
-		return w.UI.BezMargine.Layout(gtx, func(gtx C) D {
+		return w.UI.SaMarginom.Layout(gtx, func(gtx C) D {
 			return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
 				layout.Rigid(w.Nazad()),
 				layout.Flexed(1, func(gtx C) D {

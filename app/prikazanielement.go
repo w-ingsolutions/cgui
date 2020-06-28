@@ -6,6 +6,7 @@ import (
 	"gioui.org/widget"
 	"gioui.org/widget/material"
 	"github.com/w-ingsolutions/c/model"
+	"github.com/w-ingsolutions/c/pkg/gelook"
 
 	"github.com/w-ingsolutions/c/pkg/latcyr"
 )
@@ -17,8 +18,7 @@ func (w *WingCal) PrikazaniElementIzgled() func(gtx C) D {
 		}.Layout(gtx,
 			layout.Rigid(func(gtx C) D {
 				btnZatvoriElement := material.Button(w.UI.Tema.T, zatvoriElementDugme, latcyr.C("zatvori", w.Cyr))
-				//btnZatvoriElement.Background = gelook.HexARGB(w.Tema.Colors["Secondary"])
-				//btnZatvoriElement.Background = gelook.HexARGB(w.Tema.Colors["Secondary"])
+				btnZatvoriElement.Background = gelook.HexARGB(w.UI.Tema.Colors["Secondary"])
 				for zatvoriElementDugme.Clicked() {
 					w.Element = false
 				}
