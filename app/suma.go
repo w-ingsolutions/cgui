@@ -40,23 +40,23 @@ func (w *WingCal) SumaIzgled() func(gtx C) D {
 										layout.Flexed(1, func(gtx C) D {
 											return material.Caption(w.UI.Tema.T, "Naziv").Layout(gtx)
 										}),
-										layout.Rigid(w.cell(gtx, 0, "Pojedinačna cena")),
-										layout.Rigid(w.cell(gtx, 1, "Količina")),
-										layout.Rigid(w.cell(gtx, 2, "Cena")),
-										layout.Rigid(w.cell(gtx, 3, "briši")))
+										layout.Rigid(w.cell(0, "Pojedinačna cena")),
+										layout.Rigid(w.cell(1, "Količina")),
+										layout.Rigid(w.cell(2, "Cena")),
+										layout.Rigid(w.cell(3, "briši")))
 								})
 							}),
 							layout.Rigid(func(gtx C) D {
-								return sumList.Layout(gtx, len(w.Suma.Elementi), func(gtx C, i int) D {
+								return sumList.Layout(gtx, len(w.Suma.ElementiPrikaz), func(gtx C, i int) D {
 									element := w.Suma.Elementi[i]
 									return layout.UniformInset(unit.Dp(4)).Layout(gtx, func(gtx C) D {
 										return layout.Flex{Axis: layout.Horizontal, Spacing: layout.SpaceBetween}.Layout(gtx,
 											layout.Flexed(1, func(gtx C) D {
 												return material.Body1(w.UI.Tema.T, element.Element.Naziv).Layout(gtx)
 											}),
-											layout.Rigid(w.cell(gtx, 0, fmt.Sprint(element.Element.Cena))),
-											layout.Rigid(w.cell(gtx, 1, fmt.Sprint(element.Kolicina))),
-											layout.Rigid(w.cell(gtx, 2, fmt.Sprintf("%.2f", element.SumaCena))),
+											layout.Rigid(w.cell(0, fmt.Sprint(element.Element.Cena))),
+											layout.Rigid(w.cell(1, fmt.Sprint(element.Kolicina))),
+											layout.Rigid(w.cell(2, fmt.Sprintf("%.2f", element.SumaCena))),
 											layout.Rigid(func(gtx C) D {
 												btn := material.Button(w.UI.Tema.T, element.DugmeBrisanje, latcyr.C("BRIŠI", w.Cyr)+fmt.Sprint(i))
 												btn.Inset = layout.Inset{unit.Dp(5), unit.Dp(3), unit.Dp(5), unit.Dp(5)}
@@ -64,11 +64,7 @@ func (w *WingCal) SumaIzgled() func(gtx C) D {
 												btn.Color = gelook.HexARGB(w.UI.Tema.Colors["Gray"])
 												btn.Background = gelook.HexARGB(w.UI.Tema.Colors["yellow"])
 												for element.DugmeBrisanje.Clicked() {
-													fmt.Println("iii", i)
-
-													//fmt.Println("w.Suma.ElementiPREEEE", w.Suma.Elementi)
 													w.Suma.Elementi = append(w.Suma.Elementi[:i], w.Suma.Elementi[i+1:]...)
-													//w.Suma.Elementi[fmt.Sprint(i)] =  model.WingIzabraniElement{}
 													tabelaSuma = map[int]int{}
 													w.NeopodanMaterijal()
 													w.SumaRacunica()
@@ -158,7 +154,7 @@ func (w *WingCal) tabela(d D, colona, width int) {
 	d.Size.X = tabelaSuma[colona]
 }
 
-func (w *WingCal) cell(gtx layout.Context, colona int, tekst string) func(gtx C) D {
+func (w *WingCal) cell(colona int, tekst string) func(gtx C) D {
 	return func(gtx C) D {
 		var d D
 		w.tabela(d, colona, d.Size.X)
@@ -174,6 +170,7 @@ func (w *WingCal) cell(gtx layout.Context, colona int, tekst string) func(gtx C)
 }
 
 func (w *WingCal) SumaRacunica() {
+	w.SumaElementiPrikaz()
 	s := 0.0
 	for _, e := range w.Suma.Elementi {
 		s = s + e.SumaCena

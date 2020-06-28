@@ -6,6 +6,7 @@ import (
 	"gioui.org/layout"
 	"gioui.org/widget"
 	"gioui.org/widget/material"
+	"github.com/w-ingsolutions/c/pkg/gelook"
 	"github.com/w-ingsolutions/cgui/app"
 	"log"
 	"os"
@@ -37,13 +38,18 @@ func loop(w *calc.WingCal) error {
 			case system.FrameEvent:
 				w.UI.Context = layout.NewContext(&w.UI.Ops, e)
 
-				//gelook.DuoUIfill(&w.Context, w.Tema.Colors["Light"])
+				gelook.WingUIfill(&w.UI.Context, w.UI.Tema.Colors["Light"])
+				ekran := w.GlavniEkran()
+				if !w.API.OK {
+					ekran = w.GreskaEkran()
+				}
+
 				layout.Flex{
 					Axis: layout.Vertical,
 				}.Layout(w.UI.Context,
 					layout.Rigid(
 						material.H3(w.UI.Tema.T, "W-ing Solutions ").Layout),
-					layout.Flexed(1, w.GlavniEkran()),
+					layout.Flexed(1, ekran),
 				)
 				e.Frame(w.UI.Context.Ops)
 			}

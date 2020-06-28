@@ -78,6 +78,7 @@ type WingCal struct {
 	Cyr                      bool
 	Element                  bool
 	UI                       WingUI
+	API                      WingAPI
 }
 
 type WingUI struct {
@@ -89,4 +90,9 @@ type WingUI struct {
 	Ops        op.Ops
 	BezMargine layout.Inset
 	SaMarginom layout.Inset
+}
+
+type WingAPI struct {
+	OK     bool
+	Adresa string
 }

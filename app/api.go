@@ -27,51 +27,69 @@ func (w *WingCal) GenerisanjeDugmicaBrisanje(radovi map[int]string) {
 
 func (w *WingCal) APIpozivIzbornik(komanda string) {
 	radovi := map[int]model.ElementMenu{}
-	jsonErr := json.Unmarshal(APIpoziv(komanda), &radovi)
-	if jsonErr != nil {
-		log.Fatal(jsonErr)
+	api, err := w.APIpoziv(w.API.Adresa, komanda)
+	if err != nil {
+		w.API.OK = false
+	} else {
+		jsonErr := json.Unmarshal(api, &radovi)
+		if jsonErr != nil {
+			log.Fatal(jsonErr)
+		}
+		w.IzbornikRadova = radovi
 	}
-	w.IzbornikRadova = radovi
 }
 func (w *WingCal) APIpozivElementi(komanda string) {
 	radovi := map[int]model.ElementMenu{}
-	jsonErr := json.Unmarshal(APIpoziv(komanda), &radovi)
-	if jsonErr != nil {
-		log.Fatal(jsonErr)
+	api, err := w.APIpoziv(w.API.Adresa, komanda)
+	if err != nil {
+		w.API.OK = false
+	} else {
+		jsonErr := json.Unmarshal(api, &radovi)
+		if jsonErr != nil {
+			log.Fatal(jsonErr)
+		}
+		w.IzbornikRadova = radovi
 	}
-	w.IzbornikRadova = radovi
 }
 
 func (w *WingCal) APIpozivElement(komanda string) {
 	rad := &model.WingVrstaRadova{}
-	jsonErr := json.Unmarshal(APIpoziv(komanda), &rad)
-	if jsonErr != nil {
-		log.Fatal(jsonErr)
+	api, err := w.APIpoziv(w.API.Adresa, komanda)
+	if err != nil {
+		w.API.OK = false
+	} else {
+		jsonErr := json.Unmarshal(api, &rad)
+		if jsonErr != nil {
+			log.Fatal(jsonErr)
+		}
+		w.PrikazaniElement = rad
 	}
-	w.PrikazaniElement = rad
 }
 
-func APIpoziv(komanda string) []byte {
-	url := "http://212.62.35.158:9909/" + komanda
+func (w *WingCal) APIpoziv(adresa, komanda string) ([]byte, error) {
+	var body []byte
+	url := adresa + komanda
 	fmt.Println("url", url)
 	spaceClient := http.Client{
 		Timeout: time.Second * 2, // Maximum of 2 secs
 	}
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
 	req.Header.Set("User-Agent", "wing")
-	res, getErr := spaceClient.Do(req)
-	if getErr != nil {
-		log.Fatal(getErr)
+	res, err := spaceClient.Do(req)
+	if err != nil {
+		return nil, err
+	} else {
+		body, err = ioutil.ReadAll(res.Body)
 	}
-	body, readErr := ioutil.ReadAll(res.Body)
-	if readErr != nil {
-		log.Fatal(readErr)
+	if err != nil {
+		return nil, err
+		//log.Fatal(readErr)
 	}
 	if body != nil {
 		//defer body.Close()
 	}
-	return body
+	return body, err
 }
