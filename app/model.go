@@ -82,9 +82,11 @@ type WingCal struct {
 }
 
 type WingUI struct {
+	Device     string
 	Window     *app.Window
 	Tema       *gelook.WingUItheme
 	Context    layout.Context
+	Ekran      func(gtx layout.Context) layout.Dimensions
 	D          layout.Dimensions
 	C          layout.Context
 	Ops        op.Ops

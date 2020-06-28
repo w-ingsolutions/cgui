@@ -12,7 +12,7 @@ func NewWingCal() *WingCal {
 	w := &WingCal{
 		Naziv: "W-ing Solutions - Kalkulator",
 
-		Strana:           "kalkulator",
+		Strana:           "izbornik",
 		PrikazaniElement: &model.WingVrstaRadova{},
 		Suma: &model.WingIzabraniElementi{
 			Elementi:                 []*model.WingIzabraniElement{},
@@ -30,8 +30,9 @@ func NewWingCal() *WingCal {
 	}
 
 	w.UI = WingUI{
+		Device: "p",
 		Window: app.NewWindow(
-			app.Size(unit.Dp(1280), unit.Dp(1024)),
+			app.Size(unit.Dp(999), unit.Dp(1024)),
 			app.Title("W-ing Solutions - Kalkulator"),
 		),
 		Tema:       gelook.NewWingUItheme(),

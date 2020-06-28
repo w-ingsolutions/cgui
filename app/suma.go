@@ -15,7 +15,7 @@ var (
 	tabelaSuma = map[int]int{}
 )
 
-func (w *WingCal) SumaIzgled() func(gtx C) D {
+func (w *WingCal) SumaStrana() func(gtx C) D {
 	return func(gtx C) D {
 		//w.Tema.DuoUIcontainer(0, w.Tema.Colors["LightGrayI"]).Layout(w.Context, layout.NW, func() {
 		width := gtx.Constraints.Max.X
@@ -25,7 +25,7 @@ func (w *WingCal) SumaIzgled() func(gtx C) D {
 					layout.Rigid(func(gtx C) D {
 						ukupan := w.UI.Tema.WingUIcontainer(16, w.UI.Tema.Colors["Primary"])
 						ukupan.FullWidth = true
-						return ukupan.Layout(&gtx, layout.W, func(gtx C) D {
+						return ukupan.Layout(gtx, layout.W, func(gtx C) D {
 							suma := material.H6(w.UI.Tema.T, latcyr.C("Ukupna cena radova", w.Cyr))
 							suma.Alignment = text.End
 							return suma.Layout(gtx)
@@ -78,7 +78,7 @@ func (w *WingCal) SumaIzgled() func(gtx C) D {
 					}),
 					layout.Rigid(func(gtx C) D {
 						gtx.Constraints.Min.X = width
-						return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["LightGrayII"]).Layout(&gtx, layout.SE, func(gtx C) D {
+						return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.SE, func(gtx C) D {
 							suma := material.H5(w.UI.Tema.T, latcyr.C("Suma: ", w.Cyr)+fmt.Sprintf("%.2f", w.Suma.SumaCena))
 							suma.Alignment = text.End
 							return suma.Layout(gtx)
@@ -92,7 +92,7 @@ func (w *WingCal) SumaIzgled() func(gtx C) D {
 					layout.Rigid(func(gtx C) D {
 						ukupan := w.UI.Tema.WingUIcontainer(16, w.UI.Tema.Colors["Primary"])
 						ukupan.FullWidth = true
-						return ukupan.Layout(&gtx, layout.W, func(gtx C) D {
+						return ukupan.Layout(gtx, layout.W, func(gtx C) D {
 							suma := material.H6(w.UI.Tema.T, latcyr.C("Ukupan neophodni materijal", w.Cyr))
 							suma.Alignment = text.End
 							return suma.Layout(gtx)
@@ -104,7 +104,7 @@ func (w *WingCal) SumaIzgled() func(gtx C) D {
 
 					layout.Rigid(func(gtx C) D {
 						gtx.Constraints.Min.X = width
-						return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["LightGrayII"]).Layout(&gtx, layout.SE, func(gtx C) D {
+						return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.SE, func(gtx C) D {
 							suma := material.Body2(w.UI.Tema.T, latcyr.C("Suma materijal: ", w.Cyr)+fmt.Sprintf("%.2f", w.Suma.SumaCenaMaterijal))
 							suma.Alignment = text.End
 							return suma.Layout(gtx)

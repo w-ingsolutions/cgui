@@ -89,6 +89,7 @@ func (w *WingCal) PrikazaniElementDugmeDodaj(sumaCena float64) func(gtx C) D {
 			}
 			w.NeopodanMaterijal()
 			w.SumaRacunica()
+			w.Strana = "suma"
 		}
 		return btn.Layout(gtx)
 	}
@@ -125,7 +126,7 @@ func (w *WingCal) PrikazaniElementOpis() func(gtx C) D {
 
 func (w *WingCal) PrikazaniElementSuma() func(gtx C) D {
 	return func(gtx C) D {
-		return w.UI.Tema.WingUIcontainer(0, w.UI.Tema.Colors["Gray"]).Layout(&gtx, layout.NW, func(gtx C) D {
+		return w.UI.Tema.WingUIcontainer(0, w.UI.Tema.Colors["Gray"]).Layout(gtx, layout.NW, func(gtx C) D {
 			sumaCena := float64(kolicina.Value) * w.PrikazaniElement.Cena
 			return layout.Flex{
 				Axis:    layout.Horizontal,
@@ -136,13 +137,13 @@ func (w *WingCal) PrikazaniElementSuma() func(gtx C) D {
 						Axis: layout.Vertical,
 					}.Layout(gtx,
 						layout.Rigid(func(gtx C) D {
-							return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Primary"]).Layout(&gtx, layout.NW, func(gtx C) D {
+							return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Primary"]).Layout(gtx, layout.NW, func(gtx C) D {
 								return material.H6(w.UI.Tema.T, latcyr.C("Cena:", w.Cyr)+fmt.Sprint(w.PrikazaniElement.Cena)).Layout(gtx)
 							})
 						}),
 						layout.Rigid(w.UI.Tema.WingUIline(&gtx, 0, 0, 0, w.UI.Tema.Colors["Gray"])),
 						layout.Rigid(func(gtx C) D {
-							return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Primary"]).Layout(&gtx, layout.NW, func(gtx C) D {
+							return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Primary"]).Layout(gtx, layout.NW, func(gtx C) D {
 								return material.H6(w.UI.Tema.T, latcyr.C("Suma:", w.Cyr)+fmt.Sprintf("%.2f", w.Suma.SumaCena)).Layout(gtx)
 
 							})

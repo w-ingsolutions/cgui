@@ -5,11 +5,9 @@ import (
 	"gioui.org/widget/material"
 )
 
-func (w *WingCal) GreskaEkran() func(gtx C) D {
-	return func(gtx C) D {
-		return layout.Flex{
-			Axis: layout.Vertical,
-		}.Layout(gtx,
-			layout.Rigid(material.H3(w.UI.Tema.T, "Greška u povezivanju sa bazom ").Layout))
-	}
+func (w *WingCal) GreskaEkran() layout.Dimensions {
+	return layout.Flex{
+		Axis: layout.Vertical,
+	}.Layout(w.UI.Context,
+		layout.Rigid(material.H3(w.UI.Tema.T, "Greška u povezivanju sa bazom ").Layout))
 }

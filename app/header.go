@@ -10,11 +10,10 @@ import (
 )
 
 var (
-	latcyrDugme     = new(widget.Clickable)
-	kalkulatorDugme = new(widget.Clickable)
-	materijalDugme  = new(widget.Clickable)
-	projekatDugme   = new(widget.Clickable)
-	editorDugme     = new(widget.Clickable)
+	latcyrDugme    = new(widget.Clickable)
+	izbornikDugme  = new(widget.Clickable)
+	materijalDugme = new(widget.Clickable)
+	sumaDugme      = new(widget.Clickable)
 
 	putanjaRadoviDugme   = new(widget.Clickable)
 	putanjaPodvrstaDugme = new(widget.Clickable)
@@ -83,26 +82,27 @@ func header(w *WingCal) func(gtx C) D {
 
 				headerMenu := []func(gtx C) D{
 					func(gtx C) D {
-						btnKalkulator := material.Button(w.UI.Tema.T, kalkulatorDugme, latcyr.C("KALKULATOR", w.Cyr))
+						btnKalkulator := material.Button(w.UI.Tema.T, izbornikDugme, latcyr.C("IZBORNIK", w.Cyr))
 						btnKalkulator.Background = gelook.HexARGB(w.UI.Tema.Colors["Secondary"])
-						for kalkulatorDugme.Clicked() {
-							w.Strana = "kalkulator"
+						for izbornikDugme.Clicked() {
+							w.Strana = "izbornik"
 						}
 						return btnKalkulator.Layout(gtx)
+					},
+
+					func(gtx C) D {
+						btnMaterijal := material.Button(w.UI.Tema.T, sumaDugme, latcyr.C("SUMA", w.Cyr))
+						btnMaterijal.Background = gelook.HexARGB(w.UI.Tema.Colors["Secondary"])
+						for sumaDugme.Clicked() {
+							w.Strana = "suma"
+						}
+						return btnMaterijal.Layout(gtx)
 					},
 					func(gtx C) D {
 						btnMaterijal := material.Button(w.UI.Tema.T, materijalDugme, latcyr.C("MATERIJAL", w.Cyr))
 						btnMaterijal.Background = gelook.HexARGB(w.UI.Tema.Colors["Secondary"])
 						for materijalDugme.Clicked() {
 							w.Strana = "materijal"
-						}
-						return btnMaterijal.Layout(gtx)
-					},
-					func(gtx C) D {
-						btnMaterijal := material.Button(w.UI.Tema.T, projekatDugme, latcyr.C("PROJEKAT", w.Cyr))
-						btnMaterijal.Background = gelook.HexARGB(w.UI.Tema.Colors["Secondary"])
-						for projekatDugme.Clicked() {
-							w.Strana = "projekat"
 						}
 						return btnMaterijal.Layout(gtx)
 					},
