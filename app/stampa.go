@@ -125,7 +125,7 @@ func (w *WingCal) Stampa() func(gtx C) D {
 							} else {
 								pdf.SetFont("Arial", "", 10)
 							}
-							fmt.Println("Col::", i)
+							//fmt.Println("Col::", i)
 
 							pdf.MultiCell(width, lineHt+marginCell, tr(txt), "", "", false)
 							x += width

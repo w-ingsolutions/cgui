@@ -24,6 +24,7 @@ func (w *WingCal) PrikazaniElementIzgled() func(gtx C) D {
 				}
 				return btnZatvoriElement.Layout(gtx)
 			}),
+			layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 24, w.UI.Tema.Colors["Gray"]) }),
 			layout.Rigid(func(gtx C) D {
 				//w.Tema.DuoUIcontainer(8, w.Tema.Colors["LightGray"]).Layout(w.Context, layout.W, func() {
 				return material.H5(w.UI.Tema.T, fmt.Sprint(w.Podvrsta)+"."+fmt.Sprint(w.Roditelj)+"."+fmt.Sprint(w.PrikazaniElement.Id)+" "+latcyr.C(w.PrikazaniElement.Naziv, w.Cyr)).Layout(gtx)
@@ -65,7 +66,7 @@ func (w *WingCal) PrikazaniElementDugmeDodaj(sumaCena float64) func(gtx C) D {
 		btn := material.Button(w.UI.Tema.T, dodajDugme, latcyr.C("DODAJ", w.Cyr))
 		//btn.FullWidth = true
 		//btn.FullHeight = true
-		//btn.Background = gelook.HexARGB(w.Tema.Colors["Secondary"])
+		btn.Background = gelook.HexARGB(w.UI.Tema.Colors["Secondary"])
 		var varijacijaRada int
 
 		for dodajDugme.Clicked() {
@@ -111,10 +112,12 @@ func (w *WingCal) PrikazaniElementOpis() func(gtx C) D {
 			layout.Rigid(func(gtx C) D {
 				return material.Body1(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Opis, w.Cyr)).Layout(gtx)
 			}),
+			layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 16, w.UI.Tema.Colors["Gray"]) }),
 			layout.Rigid(func(gtx C) D {
 				return material.Caption(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Obracun, w.Cyr)).Layout(gtx)
 			}),
-			layout.Rigid(w.UI.Tema.WingUIline(&gtx, 0, 0, 32, w.UI.Tema.Colors["Gray"])),
+			layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 8, w.UI.Tema.Colors["Gray"]) }),
+			layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 32, w.UI.Tema.Colors["Gray"]) }),
 			layout.Rigid(func(gtx C) D {
 				return material.H6(w.UI.Tema.T, latcyr.C("Neophodan materijal za izvrsenje radova", w.Cyr)).Layout(gtx)
 			}),
@@ -141,7 +144,7 @@ func (w *WingCal) PrikazaniElementSuma() func(gtx C) D {
 								return material.H6(w.UI.Tema.T, latcyr.C("Cena:", w.Cyr)+fmt.Sprint(w.PrikazaniElement.Cena)).Layout(gtx)
 							})
 						}),
-						layout.Rigid(w.UI.Tema.WingUIline(&gtx, 0, 0, 0, w.UI.Tema.Colors["Gray"])),
+						layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 0, w.UI.Tema.Colors["Gray"]) }),
 						layout.Rigid(func(gtx C) D {
 							return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Primary"]).Layout(gtx, layout.NW, func(gtx C) D {
 								return material.H6(w.UI.Tema.T, latcyr.C("Suma:", w.Cyr)+fmt.Sprintf("%.2f", w.Suma.SumaCena)).Layout(gtx)

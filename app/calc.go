@@ -35,11 +35,11 @@ func (w *WingCal) strana() func(gtx C) D {
 		case "p":
 			switch w.Strana {
 			case "materijal":
-				s = w.UI.BezMargine.Layout(gtx, w.MaterijalStrana())
+				s = w.UI.SaMarginom.Layout(gtx, w.MaterijalStrana())
 			case "izbornik":
-				s = w.UI.BezMargine.Layout(gtx, w.IzbornikRadovaStrana())
+				s = w.UI.SaMarginom.Layout(gtx, w.IzbornikRadovaStrana())
 			case "suma":
-				s = w.UI.BezMargine.Layout(gtx, w.SumaStrana())
+				s = w.UI.SaMarginom.Layout(gtx, w.SumaStrana())
 			}
 		case "h":
 			s = layout.Flex{

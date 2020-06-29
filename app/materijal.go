@@ -18,22 +18,19 @@ func (w *WingCal) MaterijalStrana() func(gtx C) D {
 						return layout.Flex{
 							Axis: layout.Horizontal,
 						}.Layout(gtx,
-							layout.Flexed(0.02, func(gtx C) D {
-								return material.Caption(w.UI.Tema.T, fmt.Sprint(m.Id)).Layout(gtx)
+							layout.Flexed(0.1, func(gtx C) D {
+								return material.H5(w.UI.Tema.T, fmt.Sprint(m.Id)).Layout(gtx)
 							}),
-							layout.Flexed(0.3, func(gtx C) D {
+							layout.Flexed(0.4, func(gtx C) D {
 								return material.H6(w.UI.Tema.T, m.Naziv).Layout(gtx)
-							}),
-							layout.Flexed(0.3, func(gtx C) D {
-								return material.Body1(w.UI.Tema.T, m.Opis).Layout(gtx)
 							}),
 							layout.Flexed(0.2, func(gtx C) D {
 								return material.Caption(w.UI.Tema.T, m.Obracun).Layout(gtx)
 							}),
-							layout.Flexed(0.04, func(gtx C) D {
+							layout.Flexed(0.1, func(gtx C) D {
 								return material.Body2(w.UI.Tema.T, fmt.Sprint(m.Pakovanje)).Layout(gtx)
 							}),
-							layout.Flexed(0.04, func(gtx C) D {
+							layout.Flexed(0.1, func(gtx C) D {
 								return material.Body1(w.UI.Tema.T, m.Jedinica).Layout(gtx)
 							}),
 							layout.Flexed(0.1, func(gtx C) D {
@@ -50,9 +47,9 @@ func (w *WingCal) MaterijalStrana() func(gtx C) D {
 							//	return material.Body1(w.UI.Tema.T, m.NacinRada).Layout(gtx)
 							//}),
 
-							layout.Flexed(0.2, func(gtx C) D {
-								return material.Caption(w.UI.Tema.T, m.OsobineNamena).Layout(gtx)
-							}),
+							//layout.Flexed(0.2, func(gtx C) D {
+							//	return material.Caption(w.UI.Tema.T, m.OsobineNamena).Layout(gtx)
+							//}),
 
 							//layout.Flexed(0.1, func(gtx C) D {
 							//	return material.H6(w.UI.Tema.T, fmt.Sprint(m.Potrosnja)).Layout(gtx)
@@ -65,7 +62,7 @@ func (w *WingCal) MaterijalStrana() func(gtx C) D {
 							//}),
 						)
 					}),
-					layout.Rigid(w.UI.Tema.WingUIline(&gtx, 1, 1, 1, w.UI.Tema.Colors["Dark"])),
+					layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 1, 1, 1, w.UI.Tema.Colors["Dark"]) }),
 				)
 			})
 		})

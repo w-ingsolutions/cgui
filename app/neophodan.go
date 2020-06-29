@@ -50,7 +50,8 @@ func (w *WingCal) RadNeophodanMaterijal(l *layout.List) func(gtx C) D {
 						}),
 					)
 				}),
-				layout.Rigid(w.UI.Tema.WingUIline(&gtx, 0, 0, 1, w.UI.Tema.Colors["Gray"])),
+
+				layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 1, 1, 1, w.UI.Tema.Colors["Gray"]) }),
 			)
 		})
 	}
@@ -93,7 +94,7 @@ func (w *WingCal) UkupanNeophodanMaterijal(l *layout.List) func(gtx C) D {
 						}),
 					)
 				}),
-				layout.Rigid(w.UI.Tema.WingUIline(&gtx, 0, 0, 1, w.UI.Tema.Colors["Gray"])),
+				layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 1, w.UI.Tema.Colors["Gray"]) }),
 			)
 		})
 	}

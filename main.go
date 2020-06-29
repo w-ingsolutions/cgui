@@ -36,7 +36,7 @@ func loop(w *calc.WingCal) error {
 				return e.Err
 			case system.FrameEvent:
 				w.UI.Context = layout.NewContext(&w.UI.Ops, e)
-				gelook.WingUIfill(&w.UI.Context, w.UI.Tema.Colors["Light"])
+				gelook.WingUIfill(w.UI.Context, w.UI.Tema.Colors["Light"])
 				ekran := w.GlavniEkran()
 				if !w.API.OK {
 					ekran = w.GreskaEkran()

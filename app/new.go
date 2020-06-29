@@ -41,7 +41,7 @@ func NewWingCal() *WingCal {
 	}
 	w.API = WingAPI{
 		OK:     true,
-		Adresa: "http://212.62.35.158:9909/",
+		Adresa: "https://wing.marcetin.com/",
 	}
 
 	w.Putanja = append(w.Putanja, w.Radovi.Naziv)
