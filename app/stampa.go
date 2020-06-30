@@ -301,10 +301,10 @@ func (w *WingCal) Stampa() func(gtx C) D {
 				// Output:
 				// Successfully generated pdf/Fpdf_CellFormat_codepage.pdf
 
-				err := pdf.OutputFileAndClose("nalog.pdf")
+				err := pdf.OutputFileAndClose("./nalog.pdf")
 				if err != nil {
 				}
-				open.Run("nalog.pdf")
+				open.Run("./nalog.pdf")
 
 			}
 		}
