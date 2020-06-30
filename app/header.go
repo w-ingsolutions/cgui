@@ -30,6 +30,12 @@ func header(w *WingCal) func(gtx C) D {
 			Axis:    layout.Horizontal,
 			Spacing: layout.SpaceBetween,
 		}.Layout(gtx,
+
+			layout.Rigid(func(gtx C) D {
+				return layout.Center.Layout(gtx, func(gtx C) D {
+					return w.UI.Tema.Icons["logo"].Layout(gtx, unit.Dp(48))
+				})
+			}),
 			layout.Flexed(0.5, func(gtx C) D {
 				return putanjaList.Layout(gtx, len(w.Putanja), func(gtx C, i int) D {
 					var d D
