@@ -24,9 +24,9 @@ func (w *WingCal) GlavniEkran() layout.Dimensions {
 func (w *WingCal) strana() func(gtx C) D {
 	return func(gtx C) D {
 		switch d := gtx.Constraints.Max.X; {
-		case d > 1000:
+		case d > 1100:
 			w.UI.Device = "h"
-		case d < 1000:
+		case d < 1100:
 			w.UI.Device = "p"
 		}
 		var s D
