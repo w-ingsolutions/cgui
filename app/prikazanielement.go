@@ -14,9 +14,8 @@ import (
 
 func (w *WingCal) PrikazaniElementIzgled() func(gtx C) D {
 	return func(gtx C) D {
-
 		return w.UI.Tema.WingUIcontainer(1, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.Center, func(gtx C) D {
-			return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["White"]).Layout(gtx, layout.Center, func(gtx C) D {
+			return w.UI.Tema.WingUIcontainer(0, w.UI.Tema.Colors["White"]).Layout(gtx, layout.Center, func(gtx C) D {
 				return layout.Flex{
 					Axis: layout.Vertical,
 				}.Layout(gtx,
@@ -28,12 +27,11 @@ func (w *WingCal) PrikazaniElementIzgled() func(gtx C) D {
 						}
 						return btnZatvoriElement.Layout(gtx)
 					}),
-					layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 24, w.UI.Tema.Colors["Gray"]) }),
+					layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 24, w.UI.Tema.Colors["Primary"]) }),
 					layout.Rigid(func(gtx C) D {
-						//w.Tema.DuoUIcontainer(8, w.Tema.Colors["LightGray"]).Layout(w.Context, layout.W, func() {
-						return material.H5(w.UI.Tema.T, fmt.Sprint(w.Podvrsta)+"."+fmt.Sprint(w.Roditelj)+"."+fmt.Sprint(w.PrikazaniElement.Id)+" "+latcyr.C(w.PrikazaniElement.Naziv, w.Cyr)).Layout(gtx)
-						//})
-
+						return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["LightGray"]).Layout(gtx, layout.W, func(gtx C) D {
+							return material.H5(w.UI.Tema.T, fmt.Sprint(w.Podvrsta)+"."+fmt.Sprint(w.Roditelj)+"."+fmt.Sprint(w.PrikazaniElement.Id)+" "+latcyr.C(w.PrikazaniElement.Naziv, w.Cyr)).Layout(gtx)
+						})
 					}),
 					layout.Flexed(1, w.PrikazaniElementOpis()),
 					layout.Rigid(w.PrikazaniElementSuma()))
@@ -140,7 +138,7 @@ func (w *WingCal) PrikazaniElementOpis() func(gtx C) D {
 			func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 32, w.UI.Tema.Colors["Gray"]) },
 			material.H6(w.UI.Tema.T, latcyr.C("Neophodan materijal za izvrsenje radova", w.Cyr)).Layout,
 			w.PrikazaniElementStavkeMaterijala(),
-			w.RadNeophodanMaterijal(neophodanMaterijalList),
+			w.RadNeophodanMaterijal(gtx, neophodanMaterijalList),
 		}
 		return elementOpis.Layout(gtx, len(widgets), func(gtx C, i int) D {
 			return layout.UniformInset(unit.Dp(0)).Layout(gtx, widgets[i])

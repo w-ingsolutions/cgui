@@ -44,23 +44,21 @@ func (w *WingCal) strana() func(gtx C) D {
 		case "h":
 			//s = w.UI.SaMarginom.Layout(gtx, w.MaterijalStrana())
 			s = w.UI.SaMarginom.Layout(gtx, func(gtx C) D {
-				return w.UI.SaMarginom.Layout(gtx, func(gtx C) D {
-					return layout.Flex{
-						Axis: layout.Horizontal,
-					}.Layout(gtx,
-						layout.Flexed(0.3, func(gtx C) D {
-							return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.Center, w.IzbornikRadovaStrana())
-						}),
-						layout.Flexed(0.4, func(gtx C) D {
-							return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.Center, w.SumaStrana())
+				return layout.Flex{
+					Axis: layout.Horizontal,
+				}.Layout(gtx,
+					layout.Flexed(0.3, func(gtx C) D {
+						return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Light"]).Layout(gtx, layout.Center, w.IzbornikRadovaStrana())
+					}),
+					layout.Flexed(0.4, func(gtx C) D {
+						return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Light"]).Layout(gtx, layout.Center, w.SumaStrana())
 
-						}),
-						layout.Flexed(0.3, func(gtx C) D {
-							return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.Center, w.MaterijalStrana())
+					}),
+					layout.Flexed(0.3, func(gtx C) D {
+						return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Light"]).Layout(gtx, layout.Center, w.MaterijalStrana())
 
-						}),
-					)
-				})
+					}),
+				)
 			})
 		}
 		return s
