@@ -17,8 +17,8 @@ github.com/ruudk/golang-pdf417 v0.0.0-20181029194003-1af4ab5afa58/go.mod h1:6lfF
 github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966 h1:JIAuq3EEf9cgbU6AtGPK4CTG3Zf6CKMNqf0MHTggAUA=
 github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966/go.mod h1:sUM3LWHvSMaG192sy56D9F7CNvL7jUJVXoqM1QKLnog=
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
-github.com/w-ingsolutions/c v0.0.0-20200629175624-da960314de05 h1:N2gteJtQQv3ClNWo5Hhe9/+hwAA7MfMUhwjjp2bs1AY=
-github.com/w-ingsolutions/c v0.0.0-20200629175624-da960314de05/go.mod h1:KqO4TbOsRt80QxPhwH9Hg5MGLQTe8m25UlJHf32SelU=
+github.com/w-ingsolutions/c v0.0.0-20200702213948-c0312a2941d7 h1:WS+NTineN0gquJMnx3RGkXLFbrPlcgwtvPZYMoAnhfI=
+github.com/w-ingsolutions/c v0.0.0-20200702213948-c0312a2941d7/go.mod h1:KqO4TbOsRt80QxPhwH9Hg5MGLQTe8m25UlJHf32SelU=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20190510104115-cbcb75029529/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/exp v0.0.0-20190306152737-a1d7652674e8/go.mod h1:CJ0aWSM057203Lf6IL+f9T1iT9GByDxfZKAQTCR3kQA=

@@ -6,9 +6,18 @@ import (
 )
 
 func (w *WingCal) GlavniEkran() layout.Dimensions {
+	var top layout.Dimensions
+	if w.UI.Device == "p" {
+		top = w.UI.Tema.WingUIline(w.UI.Context, 32, 0, 0, w.UI.Tema.Colors["Light"])
+	}
 	return layout.Flex{
 		Axis: layout.Vertical,
 	}.Layout(w.UI.Context,
+
+		layout.Rigid(func(gtx C) D {
+			return top
+		}),
+
 		layout.Rigid(func(gtx C) D {
 			return w.UI.Tema.WingUIcontainer(0, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.Center, header(w))
 		}),
@@ -48,14 +57,15 @@ func (w *WingCal) strana() func(gtx C) D {
 					Axis: layout.Horizontal,
 				}.Layout(gtx,
 					layout.Flexed(0.3, func(gtx C) D {
-						return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Light"]).Layout(gtx, layout.Center, w.IzbornikRadovaStrana())
+						return w.UI.SaMarginom.Layout(gtx, w.IzbornikRadovaStrana())
+						//return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Light"]).Layout(gtx, layout.N, w.IzbornikRadovaStrana())
 					}),
 					layout.Flexed(0.4, func(gtx C) D {
-						return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Light"]).Layout(gtx, layout.Center, w.SumaStrana())
+						return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Light"]).Layout(gtx, layout.N, w.SumaStrana())
 
 					}),
 					layout.Flexed(0.3, func(gtx C) D {
-						return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Light"]).Layout(gtx, layout.Center, w.MaterijalStrana())
+						return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Light"]).Layout(gtx, layout.N, w.MaterijalStrana())
 
 					}),
 				)

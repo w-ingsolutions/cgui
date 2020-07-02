@@ -20,16 +20,7 @@ func (w *WingCal) PrikazaniElementIzgled() func(gtx C) D {
 					Axis: layout.Vertical,
 				}.Layout(gtx,
 					layout.Rigid(func(gtx C) D {
-						btnZatvoriElement := material.Button(w.UI.Tema.T, zatvoriElementDugme, latcyr.C("zatvori", w.Cyr))
-						btnZatvoriElement.Background = gelook.HexARGB(w.UI.Tema.Colors["Secondary"])
-						for zatvoriElementDugme.Clicked() {
-							w.Element = false
-						}
-						return btnZatvoriElement.Layout(gtx)
-					}),
-					layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 24, w.UI.Tema.Colors["Primary"]) }),
-					layout.Rigid(func(gtx C) D {
-						return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["LightGray"]).Layout(gtx, layout.W, func(gtx C) D {
+						return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Light"]).Layout(gtx, layout.W, func(gtx C) D {
 							return material.H5(w.UI.Tema.T, fmt.Sprint(w.Podvrsta)+"."+fmt.Sprint(w.Roditelj)+"."+fmt.Sprint(w.PrikazaniElement.Id)+" "+latcyr.C(w.PrikazaniElement.Naziv, w.Cyr)).Layout(gtx)
 						})
 					}),
@@ -132,16 +123,13 @@ func (w *WingCal) PrikazaniElementOpis() func(gtx C) D {
 		//}
 		widgets := []layout.Widget{
 			material.Body1(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Opis, w.Cyr)).Layout,
-			func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 16, w.UI.Tema.Colors["Gray"]) },
 			material.Caption(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Obracun, w.Cyr)).Layout,
-			func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 8, w.UI.Tema.Colors["Gray"]) },
-			func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 32, w.UI.Tema.Colors["Gray"]) },
 			material.H6(w.UI.Tema.T, latcyr.C("Neophodan materijal za izvrsenje radova", w.Cyr)).Layout,
 			w.PrikazaniElementStavkeMaterijala(),
 			w.RadNeophodanMaterijal(gtx, neophodanMaterijalList),
 		}
 		return elementOpis.Layout(gtx, len(widgets), func(gtx C, i int) D {
-			return layout.UniformInset(unit.Dp(0)).Layout(gtx, widgets[i])
+			return layout.UniformInset(unit.Dp(8)).Layout(gtx, widgets[i])
 		})
 	}
 }
@@ -176,7 +164,7 @@ func (w *WingCal) PrikazaniElementSuma() func(gtx C) D {
 					return layout.Flex{
 						Axis: layout.Vertical,
 					}.Layout(gtx,
-						layout.Rigid(w.UI.Tema.WingUIcounter(kolicina, func() {}).Layout(kolicina, gtx, latcyr.C("KOLIČINA", w.Cyr), fmt.Sprint(kolicina.Value))),
+						layout.Rigid(w.UI.Tema.WingUIcounter(kolicina, func() {}).Layout(kolicina, gtx, w.UI.Tema.T, latcyr.C("KOLIČINA", w.Cyr), fmt.Sprint(kolicina.Value))),
 						layout.Rigid(w.PrikazaniElementDugmeDodaj(sumaCena)),
 					)
 				}))
