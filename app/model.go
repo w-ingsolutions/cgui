@@ -30,6 +30,9 @@ var (
 	izbornikRadova = &layout.List{
 		Axis: layout.Vertical,
 	}
+	elementOpis = &layout.List{
+		Axis: layout.Vertical,
+	}
 	sumList = &layout.List{
 		Axis: layout.Vertical,
 	}

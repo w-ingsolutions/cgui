@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"gioui.org/layout"
 	"gioui.org/widget/material"
+	"github.com/w-ingsolutions/c/pkg/latcyr"
 )
 
 func (w *WingCal) MaterijalStrana() func(gtx C) D {
@@ -19,13 +20,13 @@ func (w *WingCal) MaterijalStrana() func(gtx C) D {
 							Axis: layout.Horizontal,
 						}.Layout(gtx,
 							layout.Flexed(0.1, func(gtx C) D {
-								return material.H6(w.UI.Tema.T, fmt.Sprint(m.Id)).Layout(gtx)
+								return material.H6(w.UI.Tema.T, latcyr.C(fmt.Sprint(m.Id), w.Cyr)).Layout(gtx)
 							}),
 							layout.Flexed(0.4, func(gtx C) D {
-								return material.H6(w.UI.Tema.T, m.Naziv).Layout(gtx)
+								return material.Body1(w.UI.Tema.T, latcyr.C(m.Naziv, w.Cyr)).Layout(gtx)
 							}),
 							layout.Flexed(0.2, func(gtx C) D {
-								return material.Caption(w.UI.Tema.T, m.Obracun).Layout(gtx)
+								return material.Caption(w.UI.Tema.T, latcyr.C(m.Obracun, w.Cyr)).Layout(gtx)
 							}),
 							layout.Flexed(0.1, func(gtx C) D {
 								return material.Body2(w.UI.Tema.T, fmt.Sprint(m.Pakovanje)).Layout(gtx)
@@ -42,7 +43,7 @@ func (w *WingCal) MaterijalStrana() func(gtx C) D {
 					layout.Rigid(func(gtx C) D {
 						return layout.Flex{
 							Axis: layout.Horizontal,
-						}.Layout(gtx)//layout.Flexed(0.4, func(gtx C) D {
+						}.Layout(gtx) //layout.Flexed(0.4, func(gtx C) D {
 						//	return material.Body1(w.UI.Tema.T, m.NacinRada).Layout(gtx)
 						//}),
 

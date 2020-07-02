@@ -39,12 +39,12 @@ func (w *WingCal) SumaStrana() func(gtx C) D {
 									return layout.UniformInset(unit.Dp(4)).Layout(gtx, func(gtx C) D {
 										return layout.Flex{Axis: layout.Horizontal, Spacing: layout.SpaceBetween}.Layout(gtx,
 											layout.Flexed(1, func(gtx C) D {
-												return material.Caption(w.UI.Tema.T, "Naziv").Layout(gtx)
+												return material.Caption(w.UI.Tema.T, latcyr.C("Naziv", w.Cyr)).Layout(gtx)
 											}),
-											layout.Rigid(w.cell(0, "Pojedinačna cena")),
-											layout.Rigid(w.cell(1, "Količina")),
-											layout.Rigid(w.cell(2, "Cena")),
-											layout.Rigid(w.cell(3, "briši")))
+											layout.Rigid(w.cell(0, latcyr.C("Pojedinačna cena", w.Cyr))),
+											layout.Rigid(w.cell(1, latcyr.C("Količina", w.Cyr))),
+											layout.Rigid(w.cell(2, latcyr.C("Cena", w.Cyr))),
+											layout.Rigid(w.cell(3, latcyr.C("briši", w.Cyr))))
 									})
 								}),
 								layout.Rigid(func(gtx C) D {
@@ -53,7 +53,7 @@ func (w *WingCal) SumaStrana() func(gtx C) D {
 										return layout.UniformInset(unit.Dp(4)).Layout(gtx, func(gtx C) D {
 											return layout.Flex{Axis: layout.Horizontal, Spacing: layout.SpaceBetween}.Layout(gtx,
 												layout.Flexed(1, func(gtx C) D {
-													return material.Body1(w.UI.Tema.T, element.Element.Naziv).Layout(gtx)
+													return material.Body1(w.UI.Tema.T, latcyr.C(element.Element.Naziv, w.Cyr)).Layout(gtx)
 												}),
 												layout.Rigid(w.cell(0, fmt.Sprint(element.Element.Cena))),
 												layout.Rigid(w.cell(1, fmt.Sprint(element.Kolicina))),

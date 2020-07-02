@@ -3,6 +3,7 @@ package calc
 import (
 	"fmt"
 	"gioui.org/layout"
+	"gioui.org/unit"
 	"gioui.org/widget"
 	"gioui.org/widget/material"
 	"github.com/w-ingsolutions/c/model"
@@ -13,32 +14,37 @@ import (
 
 func (w *WingCal) PrikazaniElementIzgled() func(gtx C) D {
 	return func(gtx C) D {
-		return layout.Flex{
-			Axis: layout.Vertical,
-		}.Layout(gtx,
-			layout.Rigid(func(gtx C) D {
-				btnZatvoriElement := material.Button(w.UI.Tema.T, zatvoriElementDugme, latcyr.C("zatvori", w.Cyr))
-				btnZatvoriElement.Background = gelook.HexARGB(w.UI.Tema.Colors["Secondary"])
-				for zatvoriElementDugme.Clicked() {
-					w.Element = false
-				}
-				return btnZatvoriElement.Layout(gtx)
-			}),
-			layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 24, w.UI.Tema.Colors["Gray"]) }),
-			layout.Rigid(func(gtx C) D {
-				//w.Tema.DuoUIcontainer(8, w.Tema.Colors["LightGray"]).Layout(w.Context, layout.W, func() {
-				return material.H5(w.UI.Tema.T, fmt.Sprint(w.Podvrsta)+"."+fmt.Sprint(w.Roditelj)+"."+fmt.Sprint(w.PrikazaniElement.Id)+" "+latcyr.C(w.PrikazaniElement.Naziv, w.Cyr)).Layout(gtx)
-				//})
 
-			}),
-			layout.Flexed(1, w.PrikazaniElementOpis()),
-			layout.Rigid(w.PrikazaniElementSuma()))
+		return w.UI.Tema.WingUIcontainer(1, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.Center, func(gtx C) D {
+			return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["White"]).Layout(gtx, layout.Center, func(gtx C) D {
+				return layout.Flex{
+					Axis: layout.Vertical,
+				}.Layout(gtx,
+					layout.Rigid(func(gtx C) D {
+						btnZatvoriElement := material.Button(w.UI.Tema.T, zatvoriElementDugme, latcyr.C("zatvori", w.Cyr))
+						btnZatvoriElement.Background = gelook.HexARGB(w.UI.Tema.Colors["Secondary"])
+						for zatvoriElementDugme.Clicked() {
+							w.Element = false
+						}
+						return btnZatvoriElement.Layout(gtx)
+					}),
+					layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 24, w.UI.Tema.Colors["Gray"]) }),
+					layout.Rigid(func(gtx C) D {
+						//w.Tema.DuoUIcontainer(8, w.Tema.Colors["LightGray"]).Layout(w.Context, layout.W, func() {
+						return material.H5(w.UI.Tema.T, fmt.Sprint(w.Podvrsta)+"."+fmt.Sprint(w.Roditelj)+"."+fmt.Sprint(w.PrikazaniElement.Id)+" "+latcyr.C(w.PrikazaniElement.Naziv, w.Cyr)).Layout(gtx)
+						//})
+
+					}),
+					layout.Flexed(1, w.PrikazaniElementOpis()),
+					layout.Rigid(w.PrikazaniElementSuma()))
+			})
+		})
 	}
 }
 
-func (w *WingCal) PrikazaniElementStavkeMaterijala(width int) func(gtx C) D {
+func (w *WingCal) PrikazaniElementStavkeMaterijala() func(gtx C) D {
 	return func(gtx C) D {
-		gtx.Constraints.Min.X = width
+		//gtx.Constraints.Min.X = width
 		return layout.Flex{
 			Axis:    layout.Horizontal,
 			Spacing: layout.SpaceBetween,
@@ -105,25 +111,40 @@ func (w *WingCal) SumaElementiPrikaz() {
 }
 func (w *WingCal) PrikazaniElementOpis() func(gtx C) D {
 	return func(gtx C) D {
-		//w.Tema.DuoUIcontainer(8, w.Tema.Colors["LightGray"]).Layout(w.Context, layout.NW, func() {
-		//sumaCena := 111.33
-		width := gtx.Constraints.Max.X
-		return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
-			layout.Rigid(func(gtx C) D {
-				return material.Body1(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Opis, w.Cyr)).Layout(gtx)
-			}),
-			layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 16, w.UI.Tema.Colors["Gray"]) }),
-			layout.Rigid(func(gtx C) D {
-				return material.Caption(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Obracun, w.Cyr)).Layout(gtx)
-			}),
-			layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 8, w.UI.Tema.Colors["Gray"]) }),
-			layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 32, w.UI.Tema.Colors["Gray"]) }),
-			layout.Rigid(func(gtx C) D {
-				return material.H6(w.UI.Tema.T, latcyr.C("Neophodan materijal za izvrsenje radova", w.Cyr)).Layout(gtx)
-			}),
-			layout.Rigid(w.PrikazaniElementStavkeMaterijala(width)),
-			layout.Rigid(w.RadNeophodanMaterijal(neophodanMaterijalList)),
-		)
+		//return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["LightGray"]).Layout(gtx, layout.NW, func(gtx C) D {
+		//	//sumaCena := 111.33
+		//	//width := gtx.Constraints.Max.X
+		//	return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
+		//layout.Rigid(func(gtx C) D {
+		//	return material.Body1(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Opis, w.Cyr)).Layout(gtx)
+		//}),
+		//layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 16, w.UI.Tema.Colors["Gray"]) }),
+		//layout.Rigid(func(gtx C) D {
+		//	return material.Caption(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Obracun, w.Cyr)).Layout(gtx)
+		//}),
+		//layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 8, w.UI.Tema.Colors["Gray"]) }),
+		//layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 32, w.UI.Tema.Colors["Gray"]) }),
+		//layout.Rigid(func(gtx C) D {
+		//	return material.H6(w.UI.Tema.T, latcyr.C("Neophodan materijal za izvrsenje radova", w.Cyr)).Layout(gtx)
+		//}),
+		//layout.Rigid(w.PrikazaniElementStavkeMaterijala(width)),
+		//layout.Rigid(w.RadNeophodanMaterijal(neophodanMaterijalList)),
+		//		)
+		//	})
+		//}
+		widgets := []layout.Widget{
+			material.Body1(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Opis, w.Cyr)).Layout,
+			func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 16, w.UI.Tema.Colors["Gray"]) },
+			material.Caption(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Obracun, w.Cyr)).Layout,
+			func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 8, w.UI.Tema.Colors["Gray"]) },
+			func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 32, w.UI.Tema.Colors["Gray"]) },
+			material.H6(w.UI.Tema.T, latcyr.C("Neophodan materijal za izvrsenje radova", w.Cyr)).Layout,
+			w.PrikazaniElementStavkeMaterijala(),
+			w.RadNeophodanMaterijal(neophodanMaterijalList),
+		}
+		return elementOpis.Layout(gtx, len(widgets), func(gtx C, i int) D {
+			return layout.UniformInset(unit.Dp(0)).Layout(gtx, widgets[i])
+		})
 	}
 }
 
