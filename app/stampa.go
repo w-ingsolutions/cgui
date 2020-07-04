@@ -11,7 +11,7 @@ import (
 func (w *WingCal) Stampa() func(gtx C) D {
 	return func(gtx C) D {
 		btn := material.Button(w.UI.Tema.T, stampajDugme, latcyr.C("Štampaj", w.Cyr))
-		if len(w.Suma.Elementi) != 0 {
+		if len(w.Suma.ElementiPrikaz) != 0 {
 			for stampajDugme.Clicked() {
 
 				pdf := gofpdf.New("P", "", "", "./../pkg/font")
@@ -106,7 +106,7 @@ func (w *WingCal) Stampa() func(gtx C) D {
 				pdf.Ln(20)
 
 				pdf.SetFont("Arial", "", 10)
-				for _, e := range w.Suma.Elementi {
+				for _, e := range w.Suma.ElementiPrikaz {
 					cols := []float64{40, pagew - mleft - mright - 20}
 					//rows := [][]string{}
 

@@ -32,12 +32,12 @@ func header(w *WingCal) func(gtx C) D {
 		}.Layout(gtx,
 
 			layout.Rigid(func(gtx C) D {
-				return w.UI.Tema.WingUIcontainer(4, w.UI.Tema.Colors["Gray"]).Layout(gtx, layout.NW, func(gtx C) D {
+				return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Dark-Gray"]).Layout(gtx, layout.W, func(gtx C) D {
 
 					return layout.Center.Layout(gtx, func(gtx C) D {
 						ic := w.UI.Tema.Icons["logo"]
 						ic.Color = gelook.HexARGB("ffb8df42")
-						return ic.Layout(gtx, unit.Dp(48))
+						return ic.Layout(gtx, unit.Dp(32))
 					})
 				})
 			}),

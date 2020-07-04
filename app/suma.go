@@ -7,7 +7,6 @@ import (
 	"gioui.org/unit"
 	"gioui.org/widget/material"
 	"github.com/w-ingsolutions/c/model"
-	"github.com/w-ingsolutions/c/pkg/gelook"
 	"github.com/w-ingsolutions/c/pkg/latcyr"
 )
 
@@ -20,16 +19,14 @@ func (w *WingCal) SumaStrana() func(gtx C) D {
 		return w.UI.Tema.WingUIcontainer(1, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.Center, func(gtx C) D {
 			return w.UI.Tema.WingUIcontainer(0, w.UI.Tema.Colors["White"]).Layout(gtx, layout.Center, func(gtx C) D {
 				//w.Tema.DuoUIcontainer(0, w.Tema.Colors["LightGrayI"]).Layout(w.Context, layout.NW, func() {
-				width := gtx.Constraints.Max.X
 				return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
 					layout.Flexed(0.5, func(gtx C) D {
 						return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
 							layout.Rigid(func(gtx C) D {
-								ukupan := w.UI.Tema.WingUIcontainer(16, w.UI.Tema.Colors["Primary"])
-								ukupan.FullWidth = true
-								return ukupan.Layout(gtx, layout.W, func(gtx C) D {
+								return w.UI.Tema.WingUIcontainer(4, w.UI.Tema.Colors["Primary"]).Layout(gtx, layout.W, func(gtx C) D {
+									gtx.Constraints.Min.X = gtx.Constraints.Max.X
 									suma := material.H6(w.UI.Tema.T, latcyr.C("Ukupna cena radova", w.Cyr))
-									suma.Alignment = text.End
+									suma.Alignment = text.Start
 									return suma.Layout(gtx)
 								})
 
@@ -39,13 +36,11 @@ func (w *WingCal) SumaStrana() func(gtx C) D {
 									layout.Rigid(func(gtx C) D {
 										return layout.UniformInset(unit.Dp(4)).Layout(gtx, func(gtx C) D {
 											return layout.Flex{Axis: layout.Horizontal, Spacing: layout.SpaceBetween}.Layout(gtx,
-												layout.Flexed(1, func(gtx C) D {
-													return material.Caption(w.UI.Tema.T, latcyr.C("Naziv", w.Cyr)).Layout(gtx)
-												}),
-												layout.Rigid(w.cell(0, latcyr.C("Pojedinačna cena", w.Cyr))),
-												layout.Rigid(w.cell(1, latcyr.C("Količina", w.Cyr))),
-												layout.Rigid(w.cell(2, latcyr.C("Cena", w.Cyr))),
-												layout.Rigid(w.cell(3, latcyr.C("briši", w.Cyr))))
+												layout.Flexed(0.6, w.cell(latcyr.C("Naziv", w.Cyr))),
+												layout.Flexed(0.15, w.cell(latcyr.C("Pojedinačna cena", w.Cyr))),
+												layout.Flexed(0.1, w.cell(latcyr.C("Količina", w.Cyr))),
+												layout.Flexed(0.1, w.cell(latcyr.C("Cena", w.Cyr))),
+												layout.Flexed(0.05, w.cell(latcyr.C("briši", w.Cyr))))
 										})
 									}),
 									layout.Rigid(func(gtx C) D {
@@ -53,34 +48,18 @@ func (w *WingCal) SumaStrana() func(gtx C) D {
 											element := w.Suma.Elementi[i]
 											return layout.UniformInset(unit.Dp(4)).Layout(gtx, func(gtx C) D {
 												return layout.Flex{Axis: layout.Horizontal, Spacing: layout.SpaceBetween}.Layout(gtx,
-													layout.Flexed(1, func(gtx C) D {
-														return material.Body1(w.UI.Tema.T, latcyr.C(element.Element.Naziv, w.Cyr)).Layout(gtx)
-													}),
-													layout.Rigid(w.cell(0, fmt.Sprint(element.Element.Cena))),
-													layout.Rigid(w.cell(1, fmt.Sprint(element.Kolicina))),
-													layout.Rigid(w.cell(2, fmt.Sprintf("%.2f", element.SumaCena))),
-													layout.Rigid(func(gtx C) D {
-														btn := material.Button(w.UI.Tema.T, element.DugmeBrisanje, latcyr.C("BRIŠI", w.Cyr)+fmt.Sprint(i))
-														btn.Inset = layout.Inset{unit.Dp(5), unit.Dp(3), unit.Dp(5), unit.Dp(5)}
-														btn.TextSize = unit.Dp(12)
-														btn.Color = gelook.HexARGB(w.UI.Tema.Colors["Gray"])
-														btn.Background = gelook.HexARGB(w.UI.Tema.Colors["yellow"])
-														for element.DugmeBrisanje.Clicked() {
-															w.Suma.Elementi = append(w.Suma.Elementi[:i], w.Suma.Elementi[i+1:]...)
-															tabelaSuma = map[int]int{}
-															w.NeopodanMaterijal()
-															w.SumaRacunica()
-														}
-														return btn.Layout(gtx)
-														//w.tabela(3, w.Context.Dimensions.Size.X)
-													}))
+													layout.Flexed(0.6, w.cell(latcyr.C(element.Element.Naziv, w.Cyr))),
+													layout.Flexed(0.1, w.cell(fmt.Sprint(element.Element.Cena))),
+													layout.Flexed(0.1, w.cell(fmt.Sprint(element.Kolicina))),
+													layout.Flexed(0.1, w.cell(fmt.Sprintf("%.2f", element.SumaCena))),
+													layout.Rigid(w.brisi(element, i)))
 											})
 										})
 									}))
 							}),
 							layout.Rigid(func(gtx C) D {
-								gtx.Constraints.Min.X = width
 								return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.SE, func(gtx C) D {
+									gtx.Constraints.Min.X = gtx.Constraints.Max.X
 									suma := material.H5(w.UI.Tema.T, latcyr.C("Suma: ", w.Cyr)+fmt.Sprintf("%.2f", w.Suma.SumaCena))
 									suma.Alignment = text.End
 									return suma.Layout(gtx)
@@ -92,21 +71,21 @@ func (w *WingCal) SumaStrana() func(gtx C) D {
 					layout.Flexed(0.5, func(gtx C) D {
 						return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
 							layout.Rigid(func(gtx C) D {
-								ukupan := w.UI.Tema.WingUIcontainer(16, w.UI.Tema.Colors["Primary"])
-								ukupan.FullWidth = true
-								return ukupan.Layout(gtx, layout.W, func(gtx C) D {
+								return w.UI.Tema.WingUIcontainer(4, w.UI.Tema.Colors["Primary"]).Layout(gtx, layout.W, func(gtx C) D {
+									gtx.Constraints.Min.X = gtx.Constraints.Max.X
 									suma := material.H6(w.UI.Tema.T, latcyr.C("Ukupan neophodni materijal", w.Cyr))
-									suma.Alignment = text.End
+									suma.Alignment = text.Start
 									return suma.Layout(gtx)
 								})
 							}),
-							layout.Rigid(w.SumaStavkeMaterijala(width)),
+							layout.Rigid(w.SumaStavkeMaterijala()),
 							layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 2, w.UI.Tema.Colors["Gray"]) }),
 							layout.Flexed(1, w.UkupanNeophodanMaterijal(ukupanNeophodanMaterijalList)),
 
 							layout.Rigid(func(gtx C) D {
-								gtx.Constraints.Min.X = width
+								gtx.Constraints.Min.X = gtx.Constraints.Max.X
 								return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.SE, func(gtx C) D {
+									gtx.Constraints.Min.X = gtx.Constraints.Max.X
 									suma := material.Body2(w.UI.Tema.T, latcyr.C("Suma materijal: ", w.Cyr)+fmt.Sprintf("%.2f", w.Suma.SumaCenaMaterijal))
 									suma.Alignment = text.End
 									return suma.Layout(gtx)
@@ -149,28 +128,6 @@ func (w *WingCal) NeopodanMaterijal() {
 		i++
 	}
 	w.Suma.UkupanNeophodanMaterijalPrikaz = unm
-}
-
-func (w *WingCal) tabela(d D, colona, width int) {
-	if width > tabelaSuma[colona] {
-		tabelaSuma[colona] = width
-	}
-	d.Size.X = tabelaSuma[colona]
-}
-
-func (w *WingCal) cell(colona int, tekst string) func(gtx C) D {
-	return func(gtx C) D {
-		var d D
-		w.tabela(d, colona, d.Size.X)
-		return layout.Inset{
-			Top:    unit.Dp(0),
-			Right:  unit.Dp(4),
-			Bottom: unit.Dp(0),
-			Left:   unit.Dp(4),
-		}.Layout(gtx, func(gtx C) D {
-			return material.Caption(w.UI.Tema.T, tekst).Layout(gtx)
-		})
-	}
 }
 
 func (w *WingCal) SumaRacunica() {

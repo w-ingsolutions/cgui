@@ -2,13 +2,14 @@ package calc
 
 import (
 	"gioui.org/layout"
+	"gioui.org/unit"
 	"gioui.org/widget/material"
 )
 
 func (w *WingCal) GlavniEkran() layout.Dimensions {
 	var top layout.Dimensions
 	if w.UI.Device == "p" {
-		top = w.UI.Tema.WingUIline(w.UI.Context, 32, 0, 0, w.UI.Tema.Colors["Light"])
+		top = w.UI.Tema.WingUIline(w.UI.Context, 0, 0, 24, w.UI.Tema.Colors["Dark"])
 	}
 	return layout.Flex{
 		Axis: layout.Vertical,
@@ -26,7 +27,7 @@ func (w *WingCal) GlavniEkran() layout.Dimensions {
 		}),
 		layout.Rigid(func(gtx C) D {
 			//w.Tema.DuoUIcontainer(0, w.Tema.Colors["DarkGray"]).Layout(w.Context, layout.Center, func() {
-			return material.H3(w.UI.Tema.T, "Footer").Layout(gtx)
+			return material.H6(w.UI.Tema.T, "Footer").Layout(gtx)
 		}))
 }
 
@@ -80,4 +81,20 @@ func (w *WingCal) strana() func(gtx C) D {
 	//	layout.Flexed(1, func(gtx C) D {
 	//		return w.UI.BezMargine.Layout(gtx, s)
 	//	}))
+}
+
+func (w *WingCal) cell(tekst string) func(gtx C) D {
+	return func(gtx C) D {
+		return layout.UniformInset(unit.Dp(0)).Layout(gtx, func(gtx C) D {
+			return w.UI.Tema.WingUIcontainer(2, w.UI.Tema.Colors["LightGray"]).Layout(gtx, layout.N, func(gtx C) D {
+				return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.N, func(gtx C) D {
+					gtx.Constraints.Min.X = gtx.Constraints.Max.X
+					//gtx.Constraints.Min.Y = gtx.Constraints.Max.Y
+					cell := material.Caption(w.UI.Tema.T, tekst)
+					cell.TextSize = unit.Dp(12)
+					return cell.Layout(gtx)
+				})
+			})
+		})
+	}
 }

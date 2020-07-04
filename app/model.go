@@ -23,7 +23,7 @@ var (
 		Axis: layout.Vertical,
 	}
 	putanjaList = &layout.List{
-		Axis: layout.Horizontal,
+		Axis: layout.Vertical,
 	}
 
 	selected       int
@@ -85,16 +85,17 @@ type WingCal struct {
 }
 
 type WingUI struct {
-	Device     string
-	Window     *app.Window
-	Tema       *gelook.WingUItheme
-	Context    layout.Context
-	Ekran      func(gtx layout.Context) layout.Dimensions
-	D          layout.Dimensions
-	C          layout.Context
-	Ops        op.Ops
-	BezMargine layout.Inset
-	SaMarginom layout.Inset
+	Device          string
+	Window          *app.Window
+	Tema            *gelook.WingUItheme
+	Context         layout.Context
+	Ekran           func(gtx layout.Context) layout.Dimensions
+	D               layout.Dimensions
+	C               layout.Context
+	Ops             op.Ops
+	BezMargine      layout.Inset
+	SaMarginom      layout.Inset
+	SaMalomMarginom layout.Inset
 }
 
 type WingAPI struct {

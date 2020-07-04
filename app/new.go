@@ -35,9 +35,10 @@ func NewWingCal() *WingCal {
 			app.Size(unit.Dp(999), unit.Dp(1024)),
 			app.Title("W-ing Solutions - Kalkulator"),
 		),
-		Tema:       gelook.NewWingUItheme(),
-		BezMargine: layout.UniformInset(unit.Dp(0)),
-		SaMarginom: layout.UniformInset(unit.Dp(8)),
+		Tema:            gelook.NewWingUItheme(),
+		BezMargine:      layout.UniformInset(unit.Dp(0)),
+		SaMarginom:      layout.UniformInset(unit.Dp(8)),
+		SaMalomMarginom: layout.UniformInset(unit.Dp(4)),
 	}
 	w.API = WingAPI{
 		OK:     true,
