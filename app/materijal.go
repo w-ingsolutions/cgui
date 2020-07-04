@@ -3,6 +3,7 @@ package calc
 import (
 	"fmt"
 	"gioui.org/layout"
+	"gioui.org/unit"
 	"github.com/w-ingsolutions/c/pkg/latcyr"
 )
 
@@ -17,19 +18,23 @@ func (w *WingCal) MaterijalStrana() func(gtx C) D {
 						Axis: layout.Vertical,
 					}.Layout(gtx,
 						layout.Rigid(func(gtx C) D {
-							return layout.Flex{
-								Axis: layout.Horizontal,
-							}.Layout(gtx,
-
-								layout.Flexed(0.1, w.cell(latcyr.C(fmt.Sprint(m.Id), w.Cyr))),
-								layout.Flexed(0.3, w.cell(latcyr.C(m.Naziv, w.Cyr))),
-								layout.Flexed(0.2, w.cell(latcyr.C(m.Obracun, w.Cyr))),
-								layout.Flexed(0.1, w.cell(latcyr.C(fmt.Sprint(m.Pakovanje), w.Cyr))),
-								layout.Flexed(0.1, w.cell(latcyr.C(m.Jedinica, w.Cyr))),
-								layout.Flexed(0.2, w.cell(latcyr.C(fmt.Sprint(m.Cena), w.Cyr))),
-							)
+							return layout.UniformInset(unit.Dp(4)).Layout(gtx, func(gtx C) D {
+								return layout.Flex{
+									Axis:      layout.Horizontal,
+									Alignment: layout.Middle,
+								}.Layout(gtx,
+									layout.Flexed(0.1, w.cell(latcyr.C(fmt.Sprint(m.Id), w.Cyr))),
+									layout.Rigid(w.UI.Tema.WingUIline(true, 0, 2, 2, w.UI.Tema.Colors["Gray"])),
+									layout.Flexed(0.3, w.cell(latcyr.C(m.Naziv, w.Cyr))),
+									layout.Rigid(w.UI.Tema.WingUIline(true, 0, 2, 2, w.UI.Tema.Colors["Gray"])),
+									layout.Flexed(0.1, w.cell(latcyr.C(fmt.Sprint(m.Pakovanje), w.Cyr))),
+									layout.Rigid(w.UI.Tema.WingUIline(true, 0, 2, 2, w.UI.Tema.Colors["Gray"])),
+									layout.Flexed(0.1, w.cell(latcyr.C(m.Jedinica, w.Cyr))),
+									layout.Rigid(w.UI.Tema.WingUIline(true, 0, 2, 2, w.UI.Tema.Colors["Gray"])),
+									layout.Flexed(0.2, w.cell(latcyr.C(fmt.Sprint(m.Cena), w.Cyr))),
+								)
+							})
 						}),
-
 						//layout.Rigid(func(gtx C) D {
 						//	return layout.Flex{
 						//		Axis: layout.Horizontal,
@@ -49,8 +54,9 @@ func (w *WingCal) MaterijalStrana() func(gtx C) D {
 						//	return material.H6(w.UI.Tema.T, m.RokUpotrebe).Layout(gtx)
 						//}),
 						//}),
-						layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 1, 1, 1, w.UI.Tema.Colors["Dark"]) }),
+						layout.Rigid(w.UI.Tema.WingUIline(false, 0, 0, 1, w.UI.Tema.Colors["Dark"])),
 					)
+
 				})
 			})
 		})

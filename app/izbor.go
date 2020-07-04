@@ -72,9 +72,9 @@ func (w *WingCal) IzbornikRadovaStrana() func(gtx C) D {
 						return p
 					})
 				}),
-				layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 4, 4, 0, w.UI.Tema.Colors["Dark"]) }),
+				layout.Rigid(w.UI.Tema.WingUIline(false, 4, 4, 0, w.UI.Tema.Colors["Dark"])),
 				layout.Rigid(w.Nazad()),
-				layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 4, 4, 0, w.UI.Tema.Colors["Dark"]) }),
+				layout.Rigid(w.UI.Tema.WingUIline(false, 4, 4, 0, w.UI.Tema.Colors["Dark"])),
 				layout.Flexed(1, izbor))
 		})
 	}

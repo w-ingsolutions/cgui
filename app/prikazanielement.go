@@ -116,11 +116,13 @@ func (w *WingCal) PrikazaniElementOpis() func(gtx C) D {
 		//		)
 		//	})
 		//}
+		neophodanNaslov := material.H6(w.UI.Tema.T, latcyr.C("Neophodan materijal za izvrsenje radova", w.Cyr))
+		neophodanNaslov.Color = gelook.HexARGB(w.UI.Tema.Colors["Primary"])
 		widgets := []layout.Widget{
 			material.H5(w.UI.Tema.T, fmt.Sprint(w.Podvrsta)+"."+fmt.Sprint(w.Roditelj)+"."+fmt.Sprint(w.PrikazaniElement.Id)+" "+latcyr.C(w.PrikazaniElement.Naziv, w.Cyr)).Layout,
 			material.Body1(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Opis, w.Cyr)).Layout,
 			material.Caption(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Obracun, w.Cyr)).Layout,
-			material.H6(w.UI.Tema.T, latcyr.C("Neophodan materijal za izvrsenje radova", w.Cyr)).Layout,
+			neophodanNaslov.Layout,
 			w.PrikazaniElementStavkeMaterijala(),
 			w.RadNeophodanMaterijal(neophodanMaterijalList),
 		}
@@ -136,8 +138,9 @@ func (w *WingCal) PrikazaniElementSuma() func(gtx C) D {
 			gtx.Constraints.Min.X = gtx.Constraints.Max.X
 			sumaCena := float64(kolicina.Value) * w.PrikazaniElement.Cena
 			return layout.Flex{
-				Axis:    layout.Horizontal,
-				Spacing: layout.SpaceBetween,
+				Axis:      layout.Horizontal,
+				Spacing:   layout.SpaceBetween,
+				Alignment: layout.Middle,
 			}.Layout(gtx,
 				layout.Flexed(1, func(gtx C) D {
 					return layout.Flex{
@@ -149,7 +152,7 @@ func (w *WingCal) PrikazaniElementSuma() func(gtx C) D {
 								return material.H6(w.UI.Tema.T, latcyr.C("Cena:", w.Cyr)+fmt.Sprint(w.PrikazaniElement.Cena)).Layout(gtx)
 							})
 						}),
-						layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 0, w.UI.Tema.Colors["Gray"]) }),
+						layout.Rigid(w.UI.Tema.WingUIline(false, 0, 0, 0, w.UI.Tema.Colors["Gray"])),
 						layout.Rigid(func(gtx C) D {
 							return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Primary"]).Layout(gtx, layout.NW, func(gtx C) D {
 								gtx.Constraints.Min.X = gtx.Constraints.Max.X
