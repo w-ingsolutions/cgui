@@ -38,19 +38,13 @@ func loop(w *calc.WingCal) error {
 			case system.FrameEvent:
 				w.UI.Context = layout.NewContext(&w.UI.Ops, e)
 				gelook.WingUIfill(w.UI.Context, w.UI.Tema.Colors["Light"])
-				ekran := w.GlavniEkran()
+
 				if !w.API.OK {
-					ekran = w.GreskaEkran()
+					w.GreskaEkran()
+				} else {
+					w.GlavniEkran(w.UI.Context)
 				}
 
-				layout.Flex{
-					Axis: layout.Vertical,
-				}.Layout(w.UI.Context,
-					//layout.Rigid(material.H3(w.UI.Tema.T, "W-ing Solutions ").Layout),
-					layout.Flexed(1, func(gtx layout.Context) layout.Dimensions {
-						return ekran
-					}),
-				)
 				e.Frame(w.UI.Context.Ops)
 			}
 			w.UI.Window.Invalidate()

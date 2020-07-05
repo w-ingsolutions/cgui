@@ -57,6 +57,7 @@ var (
 			Alignment:  text.Middle,
 			SingleLine: true,
 		},
+
 		CounterIncrease: new(widget.Clickable),
 		CounterDecrease: new(widget.Clickable),
 		CounterReset:    new(widget.Clickable),
@@ -87,6 +88,8 @@ type WingCal struct {
 
 type WingUI struct {
 	Device          string
+	TopSpace        int
+	BottomSpace     int
 	Window          *app.Window
 	Tema            *gelook.WingUItheme
 	Context         layout.Context

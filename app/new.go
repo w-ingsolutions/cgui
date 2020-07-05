@@ -32,7 +32,9 @@ func NewWingCal() *WingCal {
 	}
 
 	w.UI = WingUI{
-		Device: "p",
+		Device:      "p",
+		TopSpace:    28,
+		BottomSpace: 56,
 		Window: app.NewWindow(
 			app.Size(unit.Dp(999), unit.Dp(1024)),
 			app.Title("W-ing Solutions - Kalkulator"),

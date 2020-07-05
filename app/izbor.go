@@ -56,26 +56,30 @@ func (w *WingCal) IzbornikRadovaStrana() func(gtx C) D {
 	return func(gtx C) D {
 		return w.UI.BezMargine.Layout(gtx, func(gtx C) D {
 			return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
-				layout.Rigid(func(gtx C) D {
-					return putanjaList.Layout(gtx, len(w.Putanja), func(gtx C, i int) D {
-						var p layout.Dimensions
-						put := material.Body1(w.UI.Tema.T, w.Putanja[i])
-						put.Alignment = text.Middle
-						if w.Putanja[i] != "Radovi" {
-							return w.UI.Tema.WingUIcontainer(1, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.N, func(gtx C) D {
-								return w.UI.Tema.WingUIcontainer(4, w.UI.Tema.Colors["White"]).Layout(gtx, layout.N, func(gtx C) D {
-									gtx.Constraints.Min.X = gtx.Constraints.Max.X
-									return put.Layout(gtx)
-								})
-							})
-						}
-						return p
-					})
-				}),
+				layout.Rigid(w.Izbornik()),
 				layout.Rigid(w.UI.Tema.WingUIline(false, 4, 4, 0, w.UI.Tema.Colors["Dark"])),
 				layout.Rigid(w.Nazad()),
 				layout.Rigid(w.UI.Tema.WingUIline(false, 4, 4, 0, w.UI.Tema.Colors["Dark"])),
 				layout.Flexed(1, izbor))
+		})
+	}
+}
+
+func (w *WingCal) Izbornik() func(gtx C) D {
+	return func(gtx C) D {
+		return putanjaList.Layout(gtx, len(w.Putanja), func(gtx C, i int) D {
+			var p layout.Dimensions
+			put := material.Body1(w.UI.Tema.T, w.Putanja[i])
+			put.Alignment = text.Middle
+			if w.Putanja[i] != "Radovi" {
+				return w.UI.Tema.WingUIcontainer(1, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.N, func(gtx C) D {
+					return w.UI.Tema.WingUIcontainer(4, w.UI.Tema.Colors["White"]).Layout(gtx, layout.N, func(gtx C) D {
+						gtx.Constraints.Min.X = gtx.Constraints.Max.X
+						return put.Layout(gtx)
+					})
+				})
+			}
+			return p
 		})
 	}
 }

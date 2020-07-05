@@ -27,13 +27,12 @@ var (
 func header(w *WingCal) func(gtx C) D {
 	return func(gtx C) D {
 		return layout.Flex{
-			Axis:    layout.Horizontal,
-			Spacing: layout.SpaceBetween,
+			Axis:      layout.Horizontal,
+			Spacing:   layout.SpaceBetween,
+			Alignment: layout.Middle,
 		}.Layout(gtx,
-
 			layout.Rigid(func(gtx C) D {
-				return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["Dark-Gray"]).Layout(gtx, layout.W, func(gtx C) D {
-
+				return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.W, func(gtx C) D {
 					return layout.Center.Layout(gtx, func(gtx C) D {
 						ic := w.UI.Tema.Icons["logo"]
 						ic.Color = gelook.HexARGB("ffb8df42")
