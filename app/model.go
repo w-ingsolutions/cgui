@@ -64,6 +64,7 @@ var (
 )
 
 type WingCal struct {
+	Dir                      string
 	Naziv                    string
 	Strana                   string
 	LinkoviIzboraVrsteRadova map[int]*widget.Clickable

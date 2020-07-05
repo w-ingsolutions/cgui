@@ -7,11 +7,14 @@ import (
 	"gioui.org/widget"
 	"github.com/w-ingsolutions/c/pkg/gelook"
 	"github.com/w-ingsolutions/cgui/app"
+	in "github.com/w-ingsolutions/cgui/cfg/ini"
 	"log"
 	"os"
 )
 
 func main() {
+	in.Init()
+
 	w := calc.NewWingCal()
 	w.LinkoviIzboraVrsteRadova = map[int]*widget.Clickable{}
 	w.APIpozivIzbornik("radovi")

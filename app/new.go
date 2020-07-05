@@ -5,11 +5,13 @@ import (
 	"gioui.org/layout"
 	"gioui.org/unit"
 	"github.com/w-ingsolutions/c/model"
+	"github.com/w-ingsolutions/c/pkg/appdata"
 	"github.com/w-ingsolutions/c/pkg/gelook"
 )
 
 func NewWingCal() *WingCal {
 	w := &WingCal{
+		Dir:   appdata.Dir("wing", false),
 		Naziv: "W-ing Solutions - Kalkulator",
 
 		Strana:           "izbornik",

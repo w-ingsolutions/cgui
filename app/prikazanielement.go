@@ -95,27 +95,6 @@ func (w *WingCal) SumaElementiPrikaz() {
 }
 func (w *WingCal) PrikazaniElementOpis() func(gtx C) D {
 	return func(gtx C) D {
-		//return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["LightGray"]).Layout(gtx, layout.NW, func(gtx C) D {
-		//	//sumaCena := 111.33
-		//	//width := gtx.Constraints.Max.X
-		//	return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
-		//layout.Rigid(func(gtx C) D {
-		//	return material.Body1(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Opis, w.Cyr)).Layout(gtx)
-		//}),
-		//layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 16, w.UI.Tema.Colors["Gray"]) }),
-		//layout.Rigid(func(gtx C) D {
-		//	return material.Caption(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Obracun, w.Cyr)).Layout(gtx)
-		//}),
-		//layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 8, w.UI.Tema.Colors["Gray"]) }),
-		//layout.Rigid(func(gtx C) D { return w.UI.Tema.WingUIline(gtx, 0, 0, 32, w.UI.Tema.Colors["Gray"]) }),
-		//layout.Rigid(func(gtx C) D {
-		//	return material.H6(w.UI.Tema.T, latcyr.C("Neophodan materijal za izvrsenje radova", w.Cyr)).Layout(gtx)
-		//}),
-		//layout.Rigid(w.PrikazaniElementStavkeMaterijala(width)),
-		//layout.Rigid(w.RadNeophodanMaterijal(neophodanMaterijalList)),
-		//		)
-		//	})
-		//}
 		neophodanNaslov := material.H6(w.UI.Tema.T, latcyr.C("Neophodan materijal za izvrsenje radova", w.Cyr))
 		neophodanNaslov.Color = gelook.HexARGB(w.UI.Tema.Colors["Primary"])
 		widgets := []layout.Widget{
