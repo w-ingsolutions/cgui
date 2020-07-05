@@ -44,16 +44,18 @@ func header(w *WingCal) func(gtx C) D {
 
 				headerMenu := []func(gtx C) D{
 					func(gtx C) D {
-						btnKalkulator := material.Button(w.UI.Tema.T, izbornikDugme, latcyr.C("IZBORNIK", w.Cyr))
+						btnKalkulator := material.Button(w.UI.Tema.T, izbornikDugme, latcyr.C("RADOVI", w.Cyr))
+						btnKalkulator.CornerRadius = unit.Dp(0)
 						btnKalkulator.Background = gelook.HexARGB(w.UI.Tema.Colors["Secondary"])
 						for izbornikDugme.Clicked() {
-							w.Strana = "izbornik"
+							w.Strana = "radovi"
 						}
 						return btnKalkulator.Layout(gtx)
 					},
 
 					func(gtx C) D {
 						btnMaterijal := material.Button(w.UI.Tema.T, sumaDugme, latcyr.C("SUMA", w.Cyr))
+						btnMaterijal.CornerRadius = unit.Dp(0)
 						btnMaterijal.Background = gelook.HexARGB(w.UI.Tema.Colors["Secondary"])
 						for sumaDugme.Clicked() {
 							w.Strana = "suma"
@@ -62,6 +64,7 @@ func header(w *WingCal) func(gtx C) D {
 					},
 					func(gtx C) D {
 						btnMaterijal := material.Button(w.UI.Tema.T, materijalDugme, latcyr.C("MATERIJAL", w.Cyr))
+						btnMaterijal.CornerRadius = unit.Dp(0)
 						btnMaterijal.Background = gelook.HexARGB(w.UI.Tema.Colors["Secondary"])
 						for materijalDugme.Clicked() {
 							w.Strana = "materijal"
@@ -81,7 +84,9 @@ func header(w *WingCal) func(gtx C) D {
 				}
 
 				btnLatcyr := material.Button(w.UI.Tema.T, latcyrDugme, latcyr)
-				btnLatcyr.Background = gelook.HexARGB(w.UI.Tema.Colors["Secondary"])
+				btnLatcyr.CornerRadius = unit.Dp(0)
+				btnLatcyr.TextSize = unit.Dp(10)
+				btnLatcyr.Background = gelook.HexARGB(w.UI.Tema.Colors["Warning"])
 				for latcyrDugme.Clicked() {
 					if w.Cyr {
 						w.Cyr = false

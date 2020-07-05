@@ -9,8 +9,8 @@ import (
 
 func (w *WingCal) GlavniEkran(gtx layout.Context) {
 	if w.UI.Device == "p" {
-		w.UI.TopSpace = 28
-		w.UI.BottomSpace = 56
+		w.UI.TopSpace = 64
+		w.UI.BottomSpace = 64
 	} else {
 		w.UI.TopSpace = 0
 		w.UI.BottomSpace = 0
@@ -49,7 +49,7 @@ func (w *WingCal) strana() func(gtx C) D {
 			switch w.Strana {
 			case "materijal":
 				s = w.UI.SaMarginom.Layout(gtx, w.MaterijalStrana())
-			case "izbornik":
+			case "radovi":
 				s = w.UI.SaMarginom.Layout(gtx, w.IzbornikRadovaStrana())
 			case "suma":
 				s = w.UI.SaMarginom.Layout(gtx, w.SumaStrana())
