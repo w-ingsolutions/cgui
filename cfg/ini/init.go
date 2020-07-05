@@ -23,7 +23,7 @@ func Init() {
 		if !utl.EnsureDir(cfg.File) {
 			panic("could not create data directory to write config")
 		}
-		os.Mkdir(cfg.Dir+"/www", 0700)
+		//os.Mkdir(cfg.Dir+"/www", 0700)
 		// if !util.EnsureDir(filepath.Join(Coins, "something")) {
 		// 	panic("could not create coins directory")
 		// }

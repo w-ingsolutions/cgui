@@ -27,8 +27,8 @@ github.com/rwcarlsen/goexif v0.0.0-20190401172101-9e8deecbddbd/go.mod h1:hPqNNc0
 github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966 h1:JIAuq3EEf9cgbU6AtGPK4CTG3Zf6CKMNqf0MHTggAUA=
 github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966/go.mod h1:sUM3LWHvSMaG192sy56D9F7CNvL7jUJVXoqM1QKLnog=
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
-github.com/w-ingsolutions/c v0.0.0-20200704225945-2ea966b371d5 h1:w5vEJjMogUs+WrqHlgOwfNEuP5sSm3ITDrOM+yiMTNY=
-github.com/w-ingsolutions/c v0.0.0-20200704225945-2ea966b371d5/go.mod h1:KqO4TbOsRt80QxPhwH9Hg5MGLQTe8m25UlJHf32SelU=
+github.com/w-ingsolutions/c v0.0.0-20200705005028-3b623cd478ae h1:1dl4k15ziVv7ePOXnoSxm/tf01Et2A/YkFMc0vZpRus=
+github.com/w-ingsolutions/c v0.0.0-20200705005028-3b623cd478ae/go.mod h1:KqO4TbOsRt80QxPhwH9Hg5MGLQTe8m25UlJHf32SelU=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20190510104115-cbcb75029529/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/exp v0.0.0-20190306152737-a1d7652674e8/go.mod h1:CJ0aWSM057203Lf6IL+f9T1iT9GByDxfZKAQTCR3kQA=

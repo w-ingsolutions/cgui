@@ -3,7 +3,7 @@ package cfg
 import (
 	"path/filepath"
 
-	"github.com/w-ingsolutions/c/pkg/appdata"
+	"github.com/w-ingsolutions/c/pkg/homedir"
 )
 
 // Conf is the configuration for accessing bitnodes endpoint
@@ -13,10 +13,10 @@ type Conf struct {
 
 // configurations for jorm
 var (
-	Dir  = appdata.Dir("wing", false)
-	File = filepath.Join(Dir, "conf.json")
+	home, _ = homedir.UserHomeDir()
+	File    = filepath.Join(home, "conf.json")
 	// Web is a subfolder because otherwise the config above would be served by the http.Dir webserver
-	TSL         = Dir + "/tsl/"
+	TSL         = home + "/tsl/"
 	Web         = "/www/"
 	Credentials = Conf{}
 )

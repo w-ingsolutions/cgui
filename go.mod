@@ -12,6 +12,6 @@ require (
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646 // indirect
 	github.com/rwcarlsen/goexif v0.0.0-20190401172101-9e8deecbddbd // indirect
 	github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966
-	github.com/w-ingsolutions/c v0.0.0-20200704225945-2ea966b371d5
+	github.com/w-ingsolutions/c v0.0.0-20200705005028-3b623cd478ae
 	willnorris.com/go/gifresize v1.0.0 // indirect
 )
