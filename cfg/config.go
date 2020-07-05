@@ -1,7 +1,7 @@
 package cfg
 
 import (
-	"github.com/w-ingsolutions/c/pkg/appdata"
+	"github.com/w-ingsolutions/c/pkg/app"
 	"path/filepath"
 )
 
@@ -12,7 +12,7 @@ type Conf struct {
 
 // configurations for jorm
 var (
-	home = appdata.Dir("wing", false)
+	home = app.Dir("wing", false)
 
 	File = filepath.Join(home, "conf.json")
 	// Web is a subfolder because otherwise the config above would be served by the http.Dir webserver
