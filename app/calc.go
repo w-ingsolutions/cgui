@@ -10,7 +10,8 @@ import (
 func (w *WingCal) GlavniEkran() layout.Dimensions {
 	s := layout.UniformInset(unit.Dp(0))
 	if w.UI.Device == "p" {
-		s.Top = unit.Dp(24)
+		s.Top = unit.Dp(26)
+		s.Bottom = unit.Dp(48)
 	}
 	return s.Layout(w.UI.Context, func(gtx C) D {
 		return layout.Flex{
