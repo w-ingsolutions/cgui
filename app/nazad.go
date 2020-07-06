@@ -3,7 +3,9 @@ package calc
 import (
 	"fmt"
 	"gioui.org/layout"
+	"gioui.org/unit"
 	"gioui.org/widget/material"
+	"github.com/gioapp/gel/helper"
 	"github.com/w-ingsolutions/c/pkg/latcyr"
 )
 
@@ -12,7 +14,8 @@ func (w *WingCal) Nazad() func(gtx C) D {
 		var btn layout.Dimensions
 		if len(w.Putanja) > 1 {
 			btnNazad := material.Button(w.UI.Tema.T, nazadDugme, latcyr.C("NAZAD", w.Cyr))
-			//btnNazad.Background = gelook.HexARGB(w.Tema.Colors["Secondary"])
+			btnNazad.Background = helper.HexARGB(w.UI.Tema.Colors["Secondary"])
+			btnNazad.CornerRadius = unit.Dp(0)
 			for nazadDugme.Clicked() {
 				if w.Element {
 					w.Element = false

@@ -4,8 +4,8 @@ go 1.14
 
 require (
 	gioui.org v0.0.0-20200704155525-7bbe0da0c75f
-	github.com/gioapp/gel v0.0.0-20200628122116-d9f6242bae99
+	github.com/gioapp/gel v0.0.0-20200705205802-b584453560a1
 	github.com/jung-kurt/gofpdf v1.16.2
 	github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966
-	github.com/w-ingsolutions/c v0.0.0-20200705162354-81e109f662eb
+	github.com/w-ingsolutions/c v0.0.0-20200705235635-65be5c08f36e
 )

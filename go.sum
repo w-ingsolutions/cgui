@@ -4,8 +4,8 @@ gioui.org v0.0.0-20200704155525-7bbe0da0c75f/go.mod h1:jiUwifN9cRl/zmco43aAqh0aV
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/boombuler/barcode v1.0.0/go.mod h1:paBWMcWSl3LHKBqUq+rly7CNSldXjb2rDl3JlRe0mD8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/gioapp/gel v0.0.0-20200628122116-d9f6242bae99 h1:/jwT7u+Vueui6u55Zxw+x68IUtN0PYGDVOu9S0LbjKI=
-github.com/gioapp/gel v0.0.0-20200628122116-d9f6242bae99/go.mod h1:62fr52z5UXL14elSb9ivSwJUmJITmbyxjiv6GanDCSE=
+github.com/gioapp/gel v0.0.0-20200705205802-b584453560a1 h1:B36xGJVXVul+pJnbPeYCQprq7VfjZfhF4DDtrmAtVcc=
+github.com/gioapp/gel v0.0.0-20200705205802-b584453560a1/go.mod h1:62fr52z5UXL14elSb9ivSwJUmJITmbyxjiv6GanDCSE=
 github.com/go-gl/glfw v0.0.0-20190409004039-e6da0acd62b1/go.mod h1:vR7hzQXu2zJy9AVAgeJqvqgH9Q5CA+iKCZ2gyEVpxRU=
 github.com/jung-kurt/gofpdf v1.0.0/go.mod h1:7Id9E/uU8ce6rXgefFLlgrJj/GYY22cpxn+r32jIOes=
 github.com/jung-kurt/gofpdf v1.16.2 h1:jgbatWHfRlPYiK85qgevsZTHviWXKwB1TTiKdz5PtRc=
@@ -17,8 +17,8 @@ github.com/ruudk/golang-pdf417 v0.0.0-20181029194003-1af4ab5afa58/go.mod h1:6lfF
 github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966 h1:JIAuq3EEf9cgbU6AtGPK4CTG3Zf6CKMNqf0MHTggAUA=
 github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966/go.mod h1:sUM3LWHvSMaG192sy56D9F7CNvL7jUJVXoqM1QKLnog=
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
-github.com/w-ingsolutions/c v0.0.0-20200705162354-81e109f662eb h1:ZvY970nsB8TKjIpqJLo5dKukngRhKBft9jcT/6tS778=
-github.com/w-ingsolutions/c v0.0.0-20200705162354-81e109f662eb/go.mod h1:KqO4TbOsRt80QxPhwH9Hg5MGLQTe8m25UlJHf32SelU=
+github.com/w-ingsolutions/c v0.0.0-20200705235635-65be5c08f36e h1:GrNdsCX/eoiLn1UJBT1tTeNXIVd3Zb2PiavLUHp9pVo=
+github.com/w-ingsolutions/c v0.0.0-20200705235635-65be5c08f36e/go.mod h1:KqO4TbOsRt80QxPhwH9Hg5MGLQTe8m25UlJHf32SelU=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20190510104115-cbcb75029529/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/exp v0.0.0-20190306152737-a1d7652674e8/go.mod h1:CJ0aWSM057203Lf6IL+f9T1iT9GByDxfZKAQTCR3kQA=

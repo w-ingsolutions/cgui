@@ -6,16 +6,17 @@ import (
 	"gioui.org/unit"
 	"gioui.org/widget"
 	"gioui.org/widget/material"
+	"github.com/gioapp/gel/container"
+	"github.com/gioapp/gel/counter"
+	"github.com/gioapp/gel/helper"
 	"github.com/w-ingsolutions/c/model"
-	"github.com/w-ingsolutions/c/pkg/gelook"
-
 	"github.com/w-ingsolutions/c/pkg/latcyr"
 )
 
 func (w *WingCal) PrikazaniElementIzgled() func(gtx C) D {
 	return func(gtx C) D {
-		return w.UI.Tema.WingUIcontainer(1, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.Center, func(gtx C) D {
-			return w.UI.Tema.WingUIcontainer(0, w.UI.Tema.Colors["White"]).Layout(gtx, layout.Center, func(gtx C) D {
+		return container.DuoUIcontainer(w.UI.Tema, 1, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.Center, func(gtx C) D {
+			return container.DuoUIcontainer(w.UI.Tema, 0, w.UI.Tema.Colors["White"]).Layout(gtx, layout.Center, func(gtx C) D {
 				return layout.Flex{
 					Axis: layout.Vertical,
 				}.Layout(gtx,
@@ -34,7 +35,10 @@ func (w *WingCal) PrikazaniElementDugmeDodaj(sumaCena float64) func(gtx C) D {
 			btn := material.Button(w.UI.Tema.T, dodajDugme, latcyr.C("DODAJ", w.Cyr))
 			//btn.FullWidth = true
 			//btn.FullHeight = true
-			btn.Background = gelook.HexARGB(w.UI.Tema.Colors["Secondary"])
+			btn.CornerRadius = unit.Dp(0)
+			btn.TextSize = unit.Dp(14)
+			btn.Inset = layout.Inset{unit.Dp(8), unit.Dp(8), unit.Dp(10), unit.Dp(8)}
+			btn.Background = helper.HexARGB("ffb8df42")
 			var varijacijaRada int
 
 			for dodajDugme.Clicked() {
@@ -75,15 +79,15 @@ func (w *WingCal) SumaElementiPrikaz() {
 func (w *WingCal) PrikazaniElementOpis() func(gtx C) D {
 	return func(gtx C) D {
 		neophodanNaslov := material.H6(w.UI.Tema.T, latcyr.C("Neophodan materijal za izvrsenje radova", w.Cyr))
-		neophodanNaslov.Color = gelook.HexARGB(w.UI.Tema.Colors["Primary"])
+		neophodanNaslov.Color = helper.HexARGB(w.UI.Tema.Colors["Primary"])
 		widgets := []layout.Widget{
 			material.H5(w.UI.Tema.T, fmt.Sprint(w.Podvrsta)+"."+fmt.Sprint(w.Roditelj)+"."+fmt.Sprint(w.PrikazaniElement.Id)+" "+latcyr.C(w.PrikazaniElement.Naziv, w.Cyr)).Layout,
 			material.Body1(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Opis, w.Cyr)).Layout,
 			material.Caption(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Obracun, w.Cyr)).Layout,
 			neophodanNaslov.Layout,
-			w.UI.Tema.WingUIline(false, 4, 0, 4, w.UI.Tema.Colors["Secondary"]),
+			helper.DuoUIline(false, 4, 0, 4, w.UI.Tema.Colors["Secondary"]),
 			w.PrikazaniElementStavkeMaterijala(),
-			w.UI.Tema.WingUIline(false, 4, 0, 2, w.UI.Tema.Colors["Primary"]),
+			helper.DuoUIline(false, 4, 0, 2, w.UI.Tema.Colors["Primary"]),
 			w.RadNeophodanMaterijal(neophodanMaterijalList),
 		}
 		return elementOpis.Layout(gtx, len(widgets), func(gtx C, i int) D {
@@ -94,7 +98,7 @@ func (w *WingCal) PrikazaniElementOpis() func(gtx C) D {
 
 func (w *WingCal) PrikazaniElementSuma() func(gtx C) D {
 	return func(gtx C) D {
-		return w.UI.Tema.WingUIcontainer(0, w.UI.Tema.Colors["Gray"]).Layout(gtx, layout.NW, func(gtx C) D {
+		return container.DuoUIcontainer(w.UI.Tema, 0, w.UI.Tema.Colors["Gray"]).Layout(gtx, layout.NW, func(gtx C) D {
 			gtx.Constraints.Min.X = gtx.Constraints.Max.X
 			sumaCena := float64(kolicina.Value) * w.PrikazaniElement.Cena
 			return layout.Flex{
@@ -107,14 +111,14 @@ func (w *WingCal) PrikazaniElementSuma() func(gtx C) D {
 						Axis: layout.Vertical,
 					}.Layout(gtx,
 						layout.Rigid(func(gtx C) D {
-							return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.NW, func(gtx C) D {
+							return container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.NW, func(gtx C) D {
 								gtx.Constraints.Min.X = gtx.Constraints.Max.X
 								return material.H6(w.UI.Tema.T, latcyr.C("Cena:", w.Cyr)+fmt.Sprint(w.PrikazaniElement.Cena)).Layout(gtx)
 							})
 						}),
-						layout.Rigid(w.UI.Tema.WingUIline(false, 0, 0, 1, w.UI.Tema.Colors["Dark"])),
+						layout.Rigid(helper.DuoUIline(false, 0, 0, 1, w.UI.Tema.Colors["Dark"])),
 						layout.Rigid(func(gtx C) D {
-							return w.UI.Tema.WingUIcontainer(8, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.NW, func(gtx C) D {
+							return container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.NW, func(gtx C) D {
 								gtx.Constraints.Min.X = gtx.Constraints.Max.X
 								return material.H6(w.UI.Tema.T, latcyr.C("Suma:", w.Cyr)+fmt.Sprintf("%.2f", w.PrikazaniElement.Cena*float64(kolicina.Value))).Layout(gtx)
 
@@ -129,7 +133,7 @@ func (w *WingCal) PrikazaniElementSuma() func(gtx C) D {
 							Spacing:   layout.SpaceBetween,
 							Alignment: layout.Middle,
 						}.Layout(gtx,
-							layout.Rigid(w.UI.Tema.WingUIcounter(kolicina, func() {}).Layout(kolicina, gtx, w.UI.Tema.T, latcyr.C("KOLIČINA", w.Cyr), fmt.Sprint(kolicina.Value))),
+							layout.Rigid(counter.DuoUIcounterSt(w.UI.Tema, kolicina, func(gtx layout.Context) layout.Dimensions { return layout.Dimensions{} }).Layout(kolicina, gtx, w.UI.Tema.T, latcyr.C("KOLIČINA", w.Cyr), fmt.Sprint(kolicina.Value))),
 							layout.Rigid(w.PrikazaniElementDugmeDodaj(sumaCena)),
 						)
 					})

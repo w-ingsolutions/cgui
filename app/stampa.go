@@ -2,6 +2,7 @@ package calc
 
 import (
 	"fmt"
+	"gioui.org/unit"
 	"gioui.org/widget/material"
 	"github.com/jung-kurt/gofpdf"
 	"github.com/skratchdot/open-golang/open"
@@ -11,6 +12,8 @@ import (
 func (w *WingCal) Stampa() func(gtx C) D {
 	return func(gtx C) D {
 		btn := material.Button(w.UI.Tema.T, stampajDugme, latcyr.C("Štampaj", w.Cyr))
+		btn.CornerRadius = unit.Dp(0)
+
 		if len(w.Suma.ElementiPrikaz) != 0 {
 			for stampajDugme.Clicked() {
 

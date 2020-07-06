@@ -5,7 +5,7 @@ import (
 	"gioui.org/io/system"
 	"gioui.org/layout"
 	"gioui.org/widget"
-	"github.com/w-ingsolutions/c/pkg/gelook"
+	"github.com/gioapp/gel/helper"
 	"github.com/w-ingsolutions/cgui/app"
 	"log"
 	"os"
@@ -37,7 +37,7 @@ func loop(w *calc.WingCal) error {
 				return e.Err
 			case system.FrameEvent:
 				w.UI.Context = layout.NewContext(&w.UI.Ops, e)
-				gelook.WingUIfill(w.UI.Context, w.UI.Tema.Colors["Light"])
+				helper.Fill(w.UI.Context, helper.HexARGB(w.UI.Tema.Colors["Light"]))
 
 				if !w.API.OK {
 					w.GreskaEkran()

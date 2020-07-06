@@ -6,9 +6,9 @@ import (
 	"gioui.org/op"
 	"gioui.org/text"
 	"gioui.org/widget"
-	"github.com/gioapp/gel"
+	"github.com/gioapp/gel/counter"
+	"github.com/gioapp/gel/theme"
 	"github.com/w-ingsolutions/c/model"
-	"github.com/w-ingsolutions/c/pkg/gelook"
 )
 
 type (
@@ -48,7 +48,7 @@ var (
 	dodajDugme          = new(widget.Clickable)
 	nazadDugme          = new(widget.Clickable)
 	zatvoriElementDugme = new(widget.Clickable)
-	kolicina            = &gel.DuoUIcounter{
+	kolicina            = &counter.DuoUIcounter{
 		Value:        1,
 		OperateValue: 1,
 		From:         1,
@@ -87,19 +87,20 @@ type WingCal struct {
 }
 
 type WingUI struct {
-	Device          string
-	TopSpace        int
-	BottomSpace     int
-	Window          *app.Window
-	Tema            *gelook.WingUItheme
-	Context         layout.Context
-	Ekran           func(gtx layout.Context) layout.Dimensions
-	D               layout.Dimensions
-	C               layout.Context
-	Ops             op.Ops
-	BezMargine      layout.Inset
-	SaMarginom      layout.Inset
-	SaMalomMarginom layout.Inset
+	Device           string
+	TopSpace         int
+	BottomSpace      int
+	Window           *app.Window
+	Tema             *theme.DuoUItheme
+	Context          layout.Context
+	Ekran            func(gtx layout.Context) layout.Dimensions
+	D                layout.Dimensions
+	C                layout.Context
+	Ops              op.Ops
+	BezMargine       layout.Inset
+	SaMarginom       layout.Inset
+	SaMalomMarginom  layout.Inset
+	SaStraneMarginom layout.Inset
 }
 
 type WingAPI struct {
