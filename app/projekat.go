@@ -1,7 +1,6 @@
 package calc
 
 import (
-	"fmt"
 	"gioui.org/layout"
 	"gioui.org/widget/material"
 	"github.com/gioapp/gel/container"
@@ -36,7 +35,7 @@ func (w *WingCal) projekat() []func(gtx C) D {
 						return projektantiList.Layout(gtx, len(w.Lica.Projektanti), func(gtx C, i int) D {
 							p := w.Lica.Projektanti[i]
 							return container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["White"]).Layout(gtx, layout.Center, func(gtx C) D {
-								return material.RadioButton(w.UI.Tema.T, projektantIzbor, fmt.Sprint(p.Id), p.Ime+" "+p.Prezime).Layout(gtx)
+								return material.RadioButton(w.UI.Tema.T, projektantIzbor, strconv.Itoa(i), p.Ime+" "+p.Prezime).Layout(gtx)
 							})
 						})
 					}),
