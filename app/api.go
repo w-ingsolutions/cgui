@@ -12,8 +12,9 @@ import (
 )
 
 func (w *WingCal) GenerisanjeLinkova(radovi map[int]model.ElementMenu) {
-	for rad, _ := range radovi {
-		w.LinkoviIzboraVrsteRadova[rad] = new(widget.Clickable)
+	for i, rad := range radovi {
+		rad.Link = new(widget.Clickable)
+		w.IzbornikRadova[i] = rad
 	}
 	return
 }

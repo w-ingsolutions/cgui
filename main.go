@@ -6,7 +6,6 @@ import (
 	_ "gioui.org/app/permission/storage"
 	"gioui.org/io/system"
 	"gioui.org/layout"
-	"gioui.org/widget"
 	"github.com/gioapp/gel/helper"
 	"github.com/w-ingsolutions/cgui/app"
 	"github.com/w-ingsolutions/cgui/cfg"
@@ -23,7 +22,6 @@ func main() {
 		fmt.Println("running initial sync")
 	}
 	in.Init(w.Podesavanja.File)
-	w.LinkoviIzboraVrsteRadova = map[int]*widget.Clickable{}
 	w.APIpozivIzbornik("radovi")
 
 	w.GenerisanjeLinkova(w.IzbornikRadova)

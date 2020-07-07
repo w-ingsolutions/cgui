@@ -70,7 +70,7 @@ func (w *WingCal) strana(gtx C) func(gtx C) D {
 		}
 	case "h":
 		//s = w.UI.SaMarginom.Layout(gtx, w.MaterijalStrana())
-		s = w.Monitor(izbornikStrana, sumaRadovaStrana, sumaMaterijalStrana, materijalStrana)
+		s = w.Monitor(izbornikStrana, sumaRadovaStrana, sumaMaterijalStrana, materijalStrana, projekatStrana)
 	}
 	return s
 

@@ -45,26 +45,26 @@ var (
 )
 
 type WingCal struct {
-	Strana                   string
-	LinkoviIzboraVrsteRadova map[int]*widget.Clickable
-	EditPolja                *model.EditabilnaPoljaVrsteRadova
-	Materijal                map[int]*model.WingMaterijal
-	Lica                     WingUloge
-	Radovi                   model.WingVrstaRadova
-	Putanja                  []string
-	IzbornikRadova           map[int]model.ElementMenu
-	Transfered               model.WingCalGrupaRadova
-	Client                   *model.Client
-	PrikazaniElement         *model.WingVrstaRadova
-	Suma                     *model.WingIzabraniElementi
-	Podvrsta                 int
-	Roditelj                 int
-	Element                  bool
-	UI                       WingUI
-	API                      WingAPI
-	Jezik                    WingJezik
-	Kes                      cache.Cache
-	Podesavanja              *WingPodesavanja
+	Strana string
+	//LinkoviIzboraVrsteRadova map[int]*widget.Clickable
+	EditPolja        *model.EditabilnaPoljaVrsteRadova
+	Materijal        map[int]*model.WingMaterijal
+	Lica             WingUloge
+	Radovi           model.WingVrstaRadova
+	Putanja          []string
+	IzbornikRadova   map[int]model.ElementMenu
+	Transfered       model.WingCalGrupaRadova
+	Client           *model.Client
+	PrikazaniElement *model.WingVrstaRadova
+	Suma             *model.WingIzabraniElementi
+	Podvrsta         int
+	Roditelj         int
+	Element          bool
+	UI               WingUI
+	API              WingAPI
+	Jezik            WingJezik
+	Kes              cache.Cache
+	Podesavanja      *WingPodesavanja
 }
 
 type WingUI struct {

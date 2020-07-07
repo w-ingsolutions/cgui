@@ -18,7 +18,7 @@ var (
 	Elementi                     string
 )
 
-func (w *WingCal) IzborVrsteRadova() func(gtx C) D {
+func (w *WingCal) IzborPodVrsteRadova() func(gtx C) D {
 	return func(gtx C) D {
 		IzborVrsteRadovaPanelElement.PanelObject = w.IzbornikRadova
 		IzborVrsteRadovaPanelElement.PanelObjectsNumber = len(w.IzbornikRadova)
@@ -35,14 +35,14 @@ func (w *WingCal) IzborVrsteRadova() func(gtx C) D {
 			//	layout.Flex{Axis: layout.Vertical}.Layout(w.Context,
 			//		layout.Rigid(func() {
 
-			btn := material.Button(w.UI.Tema.T, w.LinkoviIzboraVrsteRadova[i], fmt.Sprint(vrstarada.Id)+". "+w.text(vrstarada.Title))
+			btn := material.Button(w.UI.Tema.T, vrstarada.Link, fmt.Sprint(vrstarada.Id)+". "+w.text(vrstarada.Title))
 			btn.CornerRadius = unit.Dp(0)
 			btn.Background = helper.HexARGB(w.UI.Tema.Colors["Gray"])
 			if vrstarada.Materijal {
 				btn.Background = helper.HexARGB(w.UI.Tema.Colors["DarkGray"])
 			}
 
-			w.LinkoviIzboraVrsteRadovaKlik(vrstarada, i)
+			w.LinkoviIzboraVrsteRadovaKlik(vrstarada)
 			return btn.Layout(gtx)
 		})
 	}
@@ -50,8 +50,11 @@ func (w *WingCal) IzborVrsteRadova() func(gtx C) D {
 
 func (w *WingCal) IzbornikRadovaStrana() func(gtx C) D {
 	izbor := w.IzborVrsteRadova()
-	if w.Element {
-		izbor = w.PrikazaniElementIzgled()
+	if len(w.Putanja) > 1 {
+		izbor = w.IzborPodVrsteRadova()
+		if w.Element {
+			izbor = w.PrikazaniElementIzgled()
+		}
 	}
 	return func(gtx C) D {
 		return w.UI.BezMargine.Layout(gtx, func(gtx C) D {
@@ -90,21 +93,21 @@ func (w *WingCal) Izbornik() func(gtx C) D {
 //btn.Layout(w.Context, w.LinkoviIzboraVrsteRadova[i])
 //layout.Rigid(w.Tema.DuoUIline(w.Context, 0, 0, 0, w.Tema.Colors["Gray"])),
 
-func (w *WingCal) LinkoviIzboraVrsteRadovaKlik(vrstarada model.ElementMenu, i int) {
-	for w.LinkoviIzboraVrsteRadova[i].Clicked() {
-		komanda := fmt.Sprint(i + 1)
+func (w *WingCal) LinkoviIzboraVrsteRadovaKlik(l model.ElementMenu) {
+	for l.Link.Clicked() {
+		komanda := fmt.Sprint(l.Id)
 		if len(w.Putanja) == 1 {
-			komanda = fmt.Sprint(i + 1)
-			Podvrstaradova = fmt.Sprint(i + 1)
-			w.Podvrsta = i + 1
+			komanda = fmt.Sprint(l.Id)
+			Podvrstaradova = fmt.Sprint(l.Id)
+			w.Podvrsta = l.Id
 		}
 		if len(w.Putanja) == 2 {
-			komanda = Podvrstaradova + "/" + fmt.Sprint(i+1)
-			Elementi = fmt.Sprint(i + 1)
-			w.Roditelj = i + 1
+			komanda = Podvrstaradova + "/" + fmt.Sprint(l.Id)
+			Elementi = fmt.Sprint(l.Id)
+			w.Roditelj = l.Id
 		}
 		if len(w.Putanja) == 3 {
-			komanda = Podvrstaradova + "/" + Elementi + "/" + fmt.Sprint(i+1)
+			komanda = Podvrstaradova + "/" + Elementi + "/" + fmt.Sprint(l.Id+1)
 		}
 		if len(w.Putanja) == 1 {
 			w.APIpozivIzbornik("radovi/" + komanda)
@@ -118,7 +121,7 @@ func (w *WingCal) LinkoviIzboraVrsteRadovaKlik(vrstarada model.ElementMenu, i in
 		}
 		if len(w.Putanja) < 3 {
 
-			w.Putanja = append(w.Putanja, vrstarada.Title)
+			w.Putanja = append(w.Putanja, l.Title)
 		}
 		w.GenerisanjeLinkova(w.IzbornikRadova)
 		kolicina.Value = 0

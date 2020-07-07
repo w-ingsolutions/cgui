@@ -119,7 +119,7 @@ func (w *WingCal) PrikazaniElementSuma() func(gtx C) D {
 							Spacing:   layout.SpaceBetween,
 							Alignment: layout.Middle,
 						}.Layout(gtx,
-							layout.Rigid(counter.DuoUIcounterSt(w.UI.Tema, kolicina, func(gtx layout.Context) layout.Dimensions { return layout.Dimensions{} }).Layout(kolicina, gtx, w.UI.Tema.T, latcyr.C("KOLIČINA", w.Podesavanja.Cyr), fmt.Sprint(kolicina.Value))),
+							layout.Rigid(counter.DuoUIcounterSt(w.UI.Tema, kolicina, func(gtx C) D { return D{} }).Layout(kolicina, gtx, w.UI.Tema.T, latcyr.C("KOLIČINA", w.Podesavanja.Cyr), fmt.Sprint(kolicina.Value))),
 							layout.Rigid(w.PrikazaniElementDugmeDodaj(sumaCena)),
 						)
 					})
