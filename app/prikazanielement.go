@@ -13,20 +13,6 @@ import (
 	"github.com/w-ingsolutions/c/pkg/latcyr"
 )
 
-func (w *WingCal) PrikazaniElementIzgled() func(gtx C) D {
-	return func(gtx C) D {
-		return container.DuoUIcontainer(w.UI.Tema, 1, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.Center, func(gtx C) D {
-			return container.DuoUIcontainer(w.UI.Tema, 0, w.UI.Tema.Colors["White"]).Layout(gtx, layout.Center, func(gtx C) D {
-				return layout.Flex{
-					Axis: layout.Vertical,
-				}.Layout(gtx,
-					layout.Flexed(1, w.PrikazaniElementOpis()),
-					layout.Rigid(w.PrikazaniElementSuma()))
-			})
-		})
-	}
-}
-
 func (w *WingCal) PrikazaniElementDugmeDodaj(sumaCena float64) func(gtx C) D {
 	return func(gtx C) D {
 		return w.UI.BezMargine.Layout(gtx, func(gtx C) D {
@@ -43,7 +29,7 @@ func (w *WingCal) PrikazaniElementDugmeDodaj(sumaCena float64) func(gtx C) D {
 
 			for dodajDugme.Clicked() {
 				if kolicina.Value > 0 {
-					for _, s := range w.Suma.ElementiPrikaz {
+					for _, s := range w.Suma.Elementi {
 						if s.Element.Id == w.PrikazaniElement.Id {
 							varijacijaRada = varijacijaRada + 1
 							fmt.Println("varijacijaRada:", varijacijaRada)
@@ -69,14 +55,14 @@ func (w *WingCal) PrikazaniElementDugmeDodaj(sumaCena float64) func(gtx C) D {
 	}
 }
 func (w *WingCal) SumaElementiPrikaz() {
-	w.Suma.ElementiPrikaz = nil
-	for _, e := range w.Suma.Elementi {
-		w.Suma.ElementiPrikaz = append(w.Suma.ElementiPrikaz, e)
-
-	}
+	//w.Suma.ElementiPrikaz = nil
+	//for _, e := range w.Suma.Elementi {
+	//	w.Suma.ElementiPrikaz = append(w.Suma.Elementi, e)
+	//
+	//}
 
 }
-func (w *WingCal) PrikazaniElementOpis() func(gtx C) D {
+func (w *WingCal) PrikazaniElementIzgled() func(gtx C) D {
 	return func(gtx C) D {
 		neophodanNaslov := material.H6(w.UI.Tema.T, latcyr.C("Neophodan materijal za izvrsenje radova", w.Cyr))
 		neophodanNaslov.Color = helper.HexARGB(w.UI.Tema.Colors["Primary"])

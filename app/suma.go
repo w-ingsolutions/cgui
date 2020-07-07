@@ -20,7 +20,7 @@ var (
 func (w *WingCal) SumaStrana() func(gtx C) D {
 	return func(gtx C) D {
 		s := w.SumaStranaPrazno()
-		if w.Suma.ElementiPrikaz != nil {
+		if w.Suma.Elementi != nil {
 			s = w.SumaStranaUnutra()
 		}
 		return container.DuoUIcontainer(w.UI.Tema, 1, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.Center, func(gtx C) D {
@@ -142,7 +142,7 @@ func (w *WingCal) SumaRacunica() {
 
 func (w *WingCal) SumaElementi() func(gtx C) D {
 	return func(gtx C) D {
-		return sumList.Layout(gtx, len(w.Suma.ElementiPrikaz), func(gtx C, i int) D {
+		return sumList.Layout(gtx, len(w.Suma.Elementi), func(gtx C, i int) D {
 			element := w.Suma.Elementi[i]
 			return layout.UniformInset(unit.Dp(4)).Layout(gtx, func(gtx C) D {
 				return layout.Flex{Axis: layout.Horizontal, Spacing: layout.SpaceBetween, Alignment: layout.Middle}.Layout(gtx,

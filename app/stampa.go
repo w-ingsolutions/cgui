@@ -109,7 +109,7 @@ func (w *WingCal) Stampa() func(gtx C) D {
 				pdf.Ln(20)
 
 				pdf.SetFont("Arial", "", 10)
-				for _, e := range w.Suma.ElementiPrikaz {
+				for _, e := range w.Suma.Elementi {
 					cols := []float64{40, pagew - mleft - mright - 20}
 					//rows := [][]string{}
 

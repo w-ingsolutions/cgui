@@ -11,9 +11,9 @@ import (
 
 func NewWingCal() *WingCal {
 	w := &WingCal{
-		Dir:   wapp.Dir("wing", false),
-		Naziv: "W-ing Solutions - Kalkulator",
-
+		Dir:              wapp.Dir("wing", false),
+		Naziv:            "W-ing Solutions - Kalkulator",
+		Cyr:              true,
 		Strana:           "radovi",
 		PrikazaniElement: &model.WingVrstaRadova{},
 		Suma: &model.WingIzabraniElementi{

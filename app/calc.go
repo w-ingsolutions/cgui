@@ -75,20 +75,25 @@ func (w *WingCal) strana() func(gtx C) D {
 		case "h":
 			//s = w.UI.SaMarginom.Layout(gtx, w.MaterijalStrana())
 			s = w.UI.SaMarginom.Layout(gtx, func(gtx C) D {
+				prikazani := func(gtx C) D { return D{} }
+				if w.Element {
+					prikazani = w.PrikazaniElementSuma()
+
+				}
 				return layout.Flex{
 					Axis: layout.Horizontal,
 				}.Layout(gtx,
 					layout.Flexed(0.3,
 						//return w.UI.SaMarginom.Layout(gtx, w.IzbornikRadovaStrana())
 						//return container.DuoUIcontainer(w.UI.Tema,8, w.UI.Tema.Colors["Light"]).Layout(gtx, layout.N, w.IzbornikRadovaStrana())
-						w.Panel(latcyr.C("Radovi", w.Cyr), latcyr.C("radovi", w.Cyr), func(gtx C) D { return D{} }, w.IzbornikRadovaStrana()),
+						w.Panel(latcyr.C("Radovi", w.Cyr), func(gtx C) D { return D{} }, w.IzbornikRadovaStrana(), prikazani),
 					),
 					layout.Flexed(0.4, func(gtx C) D {
 						return layout.Flex{
 							Axis: layout.Vertical,
 						}.Layout(gtx,
-							layout.Flexed(0.5, w.Panel(latcyr.C("Ukupna cena radova", w.Cyr), latcyr.C("Suma:", w.Cyr), w.SumaRadoviStavke(), w.SumaElementi())),
-							layout.Flexed(0.5, w.Panel(latcyr.C("Ukupan neophodni materijal", w.Cyr), latcyr.C("Suma materijal:", w.Cyr), w.SumaStavkeMaterijala(), w.UkupanNeophodanMaterijal(ukupanNeophodanMaterijalList))))
+							layout.Flexed(0.5, w.Panel(latcyr.C("Ukupna cena radova", w.Cyr), w.SumaRadoviStavke(), w.SumaElementi(), w.sumaFooter(latcyr.C("Suma:", w.Cyr)))),
+							layout.Flexed(0.5, w.Panel(latcyr.C("Ukupan neophodni materijal", w.Cyr), w.SumaStavkeMaterijala(), w.UkupanNeophodanMaterijal(ukupanNeophodanMaterijalList), w.sumaFooter(latcyr.C("Suma materijal:", w.Cyr)))))
 						//return container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["Light"]).Layout(gtx, layout.N, w.SumaStrana())
 						//return cont.Layout(gtx, layout.N, w.Panel(latcyr.C("Ukupna cena radova", w.Cyr),latcyr.C("Suma: ", w.Cyr)+fmt.Sprintf("%.2f", w.Suma.SumaCena), w.SumaRadoviStavke(),  w.SumaElementi()))
 						//w.Panel(latcyr.C("Ukupna cena radova", w.Cyr),latcyr.C("Suma", w.Cyr), w.SumaRadoviStavke(),  w.SumaStrana()),
@@ -97,7 +102,7 @@ func (w *WingCal) strana() func(gtx C) D {
 					layout.Flexed(0.3,
 						//cont := container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["Light"])
 						//return cont.Layout(gtx, layout.N, w.MaterijalStrana())
-						w.Panel(latcyr.C("Materijal", w.Cyr), latcyr.C("Materijal", w.Cyr), w.MaterijalStavke(), w.MaterijalStrana()),
+						w.Panel(latcyr.C("Materijal", w.Cyr), w.MaterijalStavke(), w.MaterijalStrana(), w.sumaFooter(latcyr.C("Materijal", w.Cyr))),
 						//return cont.Layout(gtx, layout.N, w.Panel(latcyr.C("Ukupna cena radova", w.Cyr),latcyr.C("Suma: ", w.Cyr)+fmt.Sprintf("%.2f", w.Suma.SumaCena), w.SumaRadoviStavke(),  w.SumaElementi()))
 
 					),
@@ -129,5 +134,14 @@ func (w *WingCal) cell(align text.Alignment, tekst string) func(gtx C) D {
 				})
 			})
 		})
+	}
+}
+
+func (w *WingCal) sumaFooter(t string) func(gtx C) D {
+	return func(gtx C) D {
+		gtx.Constraints.Min.X = gtx.Constraints.Max.X
+		suma := material.Body2(w.UI.Tema.T, t)
+		suma.Alignment = text.End
+		return suma.Layout(gtx)
 	}
 }

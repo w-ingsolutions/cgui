@@ -2,6 +2,7 @@ package main
 
 import (
 	"gioui.org/app"
+	_ "gioui.org/app/permission/storage"
 	"gioui.org/io/system"
 	"gioui.org/layout"
 	"gioui.org/widget"
