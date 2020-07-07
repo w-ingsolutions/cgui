@@ -5,7 +5,7 @@ import (
 	"gioui.org/layout"
 	"gioui.org/text"
 	"github.com/gioapp/gel/helper"
-	"github.com/w-ingsolutions/c/pkg/latcyr"
+	"github.com/w-ingsolutions/c/model"
 )
 
 func (w *WingCal) RadNeophodanMaterijal(l *layout.List) func(gtx C) D {
@@ -35,7 +35,7 @@ func (w *WingCal) RadNeophodanMaterijal(l *layout.List) func(gtx C) D {
 						Spacing:   layout.SpaceBetween,
 						Alignment: layout.Middle,
 					}.Layout(gtx,
-						layout.Flexed(0.4, w.cell(text.Start, latcyr.C(materijal.Materijal.Naziv, w.Cyr))),
+						layout.Flexed(0.4, w.cell(text.Start, w.text(materijal.Materijal.Naziv))),
 						layout.Rigid(helper.DuoUIline(true, 0, 2, 2, w.UI.Tema.Colors["Gray"])),
 						layout.Flexed(0.15, w.cell(text.Middle, fmt.Sprintf("%.2f", materijal.Materijal.Potrosnja))),
 						layout.Rigid(helper.DuoUIline(true, 0, 2, 2, w.UI.Tema.Colors["Gray"])),
@@ -65,7 +65,7 @@ func (w *WingCal) UkupanNeophodanMaterijal(l *layout.List) func(gtx C) D {
 						Spacing:   layout.SpaceBetween,
 						Alignment: layout.Middle,
 					}.Layout(gtx,
-						layout.Flexed(0.5, w.cell(text.Start, latcyr.C(materijal.Materijal.Naziv, w.Cyr))),
+						layout.Flexed(0.5, w.cell(text.Start, w.text(materijal.Materijal.Naziv))),
 						layout.Rigid(helper.DuoUIline(true, 0, 2, 2, w.UI.Tema.Colors["Gray"])),
 						layout.Flexed(0.15, w.cell(text.Middle, fmt.Sprint(materijal.Materijal.Cena))),
 						layout.Rigid(helper.DuoUIline(true, 0, 2, 2, w.UI.Tema.Colors["Gray"])),
@@ -77,4 +77,33 @@ func (w *WingCal) UkupanNeophodanMaterijal(l *layout.List) func(gtx C) D {
 			)
 		})
 	}
+}
+
+func (w *WingCal) NeopodanMaterijal() {
+	u := make(map[int]model.WingNeophodanMaterijal)
+	unm := make(map[int]model.WingNeophodanMaterijal)
+	sumaCena := 0.0
+	for _, e := range w.Suma.Elementi {
+		for _, n := range e.Element.NeophodanMaterijal {
+			uu := model.WingNeophodanMaterijal{
+				Id:        n.Id,
+				Materijal: *w.Materijal[n.Id-1],
+			}
+			k := uu.Materijal.Potrosnja * float64(e.Kolicina) * n.Koeficijent
+			uu.Kolicina = u[n.Id].Kolicina + k
+			ukupnaCena := uu.Kolicina * uu.Materijal.Cena
+			uu.UkupnaCena = ukupnaCena
+			uu.UkupnoPakovanja = int(k / float64(uu.Materijal.Pakovanje))
+			u[n.Id] = uu
+			sumaCena = sumaCena + ukupnaCena
+		}
+	}
+	w.Suma.UkupanNeophodanMaterijal = u
+	w.Suma.SumaCenaMaterijal = sumaCena
+	i := 0
+	for _, uuu := range u {
+		unm[i] = uuu
+		i++
+	}
+	w.Suma.UkupanNeophodanMaterijalPrikaz = unm
 }

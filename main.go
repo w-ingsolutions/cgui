@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"gioui.org/app"
 	_ "gioui.org/app/permission/storage"
 	"gioui.org/io/system"
@@ -8,6 +9,8 @@ import (
 	"gioui.org/widget"
 	"github.com/gioapp/gel/helper"
 	"github.com/w-ingsolutions/cgui/app"
+	"github.com/w-ingsolutions/cgui/cfg"
+	in "github.com/w-ingsolutions/cgui/cfg/ini"
 	"log"
 	"os"
 )
@@ -15,6 +18,11 @@ import (
 func main() {
 
 	w := calc.NewWingCal()
+
+	if cfg.Initial {
+		fmt.Println("running initial sync")
+	}
+	in.Init(w.Podesavanja.File)
 	w.LinkoviIzboraVrsteRadova = map[int]*widget.Clickable{}
 	w.APIpozivIzbornik("radovi")
 

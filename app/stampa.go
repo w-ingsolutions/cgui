@@ -4,111 +4,110 @@ import (
 	"fmt"
 	"gioui.org/unit"
 	"gioui.org/widget/material"
-	"github.com/jung-kurt/gofpdf"
 	"github.com/skratchdot/open-golang/open"
-	"github.com/w-ingsolutions/c/pkg/latcyr"
+	"github.com/w-ingsolutions/c/pkg/pdf"
 )
 
 func (w *WingCal) Stampa() func(gtx C) D {
 	return func(gtx C) D {
-		btn := material.Button(w.UI.Tema.T, stampajDugme, latcyr.C("Štampaj", w.Cyr))
+		btn := material.Button(w.UI.Tema.T, stampajDugme, w.text("Štampaj"))
 		btn.CornerRadius = unit.Dp(0)
 
-		if len(w.Suma.ElementiPrikaz) != 0 {
+		if len(w.Suma.Elementi) != 0 {
 			for stampajDugme.Clicked() {
 
-				pdf := gofpdf.New("P", "", "", "./../pkg/font")
+				p := pdf.P()
 
-				tr := pdf.UnicodeTranslatorFromDescriptor("")
+				tr := p.UnicodeTranslatorFromDescriptor("")
 
-				pdf.SetTopMargin(30)
+				p.SetTopMargin(30)
 
 				marginCell := 2. // margin of top/bottom of cell
-				pagew, pageh := pdf.GetPageSize()
-				mleft, mright, _, mbottom := pdf.GetMargins()
+				pagew, pageh := p.GetPageSize()
+				mleft, mright, _, mbottom := p.GetMargins()
 
-				pdf.SetHeaderFuncMode(func() {
+				p.SetHeaderFuncMode(func() {
 					//pdf.Image("/usr/home/marcetin/Public/wingcal/NOVOGUI/pdfheader.png", 5, 5, 200, 25, false, "", 0, "")
 					//pdf.SetDrawColor(200,200,200)
-					pdf.SetFillColor(200, 200, 200)
-					pdf.Rect(5, 5, 200, 20, "F")
-					pdf.SetY(5)
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 6, "MB:20701005", "0", 0, "L", false, 0, "")
-					pdf.SetFont("Arial", "B", 10)
-					pdf.CellFormat(47, 10, "W-ing Solutions D.o.o.", "0", 0, "R", false, 0, "")
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 8, "     SIFRA PROJEKTA", "0", 0, "L", false, 0, "")
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 8, "fhe38833", "0", 0, "R", false, 0, "")
-					pdf.Ln(5)
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 6, "PIB:106892584", "0", 0, "L", false, 0, "")
-					pdf.CellFormat(47, 8, "Bulevar Oslobodjenja 30A", "0", 0, "R", false, 0, "")
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 8, "     NAZIV PROJEKTA", "0", 0, "L", false, 0, "")
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 8, "projekat za evidentiranje", "0", 0, "R", false, 0, "")
-					pdf.Ln(5)
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 6, "tel:069/222-44-33", "0", 0, "L", false, 0, "")
-					pdf.CellFormat(47, 8, "21000 Novi Sad", "0", 0, "R", false, 0, "")
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 8, "     DATUM PROJEKTA", "0", 0, "L", false, 0, "")
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 10, "mart 2020", "0", 0, "R", false, 0, "")
-					pdf.Ln(5)
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 6, "email:vukobrat.cedomir@gmail.com", "0", 0, "L", false, 0, "")
+					p.SetFillColor(200, 200, 200)
+					p.Rect(5, 5, 200, 20, "F")
+					p.SetY(5)
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 6, "MB:20701005", "0", 0, "L", false, 0, "")
+					p.SetFont("Arial", "B", 10)
+					p.CellFormat(47, 10, "W-ing Solutions D.o.o.", "0", 0, "R", false, 0, "")
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 8, "     SIFRA PROJEKTA", "0", 0, "L", false, 0, "")
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 8, "fhe38833", "0", 0, "R", false, 0, "")
+					p.Ln(5)
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 6, "PIB:106892584", "0", 0, "L", false, 0, "")
+					p.CellFormat(47, 8, "Bulevar Oslobodjenja 30A", "0", 0, "R", false, 0, "")
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 8, "     NAZIV PROJEKTA", "0", 0, "L", false, 0, "")
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 8, "projekat za evidentiranje", "0", 0, "R", false, 0, "")
+					p.Ln(5)
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 6, "tel:069/222-44-33", "0", 0, "L", false, 0, "")
+					p.CellFormat(47, 8, "21000 Novi Sad", "0", 0, "R", false, 0, "")
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 8, "     DATUM PROJEKTA", "0", 0, "L", false, 0, "")
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 10, "mart 2020", "0", 0, "R", false, 0, "")
+					p.Ln(5)
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 6, "email:vukobrat.cedomir@gmail.com", "0", 0, "L", false, 0, "")
 
 				}, true)
-				pdf.SetFooterFunc(func() {
+				p.SetFooterFunc(func() {
 
-					pdf.SetY(-15)
-					pdf.SetFont("Arial", "I", 8)
-					pdf.CellFormat(0, 10, fmt.Sprintf("Strana %d/{nb}", pdf.PageNo()),
+					p.SetY(-15)
+					p.SetFont("Arial", "I", 8)
+					p.CellFormat(0, 10, fmt.Sprintf("Strana %d/{nb}", p.PageNo()),
 						"", 0, "C", false, 0, "")
-					pdf.Ln(0)
-					pdf.SetFillColor(200, 200, 200)
-					pdf.Rect(5, 275, 200, 20, "F")
-					pdf.SetY(-22)
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 6, "MB:20701005", "0", 0, "L", false, 0, "")
-					pdf.SetFont("Arial", "B", 10)
-					pdf.CellFormat(47, 10, "W-ing Solutions D.o.o.", "0", 0, "R", false, 0, "")
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 8, "     SIFRA PROJEKTA", "0", 0, "L", false, 0, "")
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 8, "fhe38833", "0", 0, "R", false, 0, "")
-					pdf.Ln(5)
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 6, "PIB:106892584", "0", 0, "L", false, 0, "")
-					pdf.CellFormat(47, 8, "Bulevar Oslobodjenja 30A", "0", 0, "R", false, 0, "")
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 8, "     NAZIV PROJEKTA", "0", 0, "L", false, 0, "")
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 8, "projekat za evidentiranje", "0", 0, "R", false, 0, "")
-					pdf.Ln(5)
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 6, "tel:069/222-44-33", "0", 0, "L", false, 0, "")
-					pdf.CellFormat(47, 8, "21000 Novi Sad", "0", 0, "R", false, 0, "")
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 8, "     DATUM PROJEKTA", "0", 0, "L", false, 0, "")
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 10, "mart 2020", "0", 0, "R", false, 0, "")
-					pdf.Ln(5)
-					pdf.SetFont("Arial", "", 8)
-					pdf.CellFormat(47, 6, "email:vukobrat.cedomir@gmail.com", "0", 0, "L", false, 0, "")
+					p.Ln(0)
+					p.SetFillColor(200, 200, 200)
+					p.Rect(5, 275, 200, 20, "F")
+					p.SetY(-22)
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 6, "MB:20701005", "0", 0, "L", false, 0, "")
+					p.SetFont("Arial", "B", 10)
+					p.CellFormat(47, 10, "W-ing Solutions D.o.o.", "0", 0, "R", false, 0, "")
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 8, "     SIFRA PROJEKTA", "0", 0, "L", false, 0, "")
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 8, "fhe38833", "0", 0, "R", false, 0, "")
+					p.Ln(5)
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 6, "PIB:106892584", "0", 0, "L", false, 0, "")
+					p.CellFormat(47, 8, "Bulevar Oslobodjenja 30A", "0", 0, "R", false, 0, "")
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 8, "     NAZIV PROJEKTA", "0", 0, "L", false, 0, "")
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 8, "projekat za evidentiranje", "0", 0, "R", false, 0, "")
+					p.Ln(5)
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 6, "tel:069/222-44-33", "0", 0, "L", false, 0, "")
+					p.CellFormat(47, 8, "21000 Novi Sad", "0", 0, "R", false, 0, "")
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 8, "     DATUM PROJEKTA", "0", 0, "L", false, 0, "")
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 10, "mart 2020", "0", 0, "R", false, 0, "")
+					p.Ln(5)
+					p.SetFont("Arial", "", 8)
+					p.CellFormat(47, 6, "email:vukobrat.cedomir@gmail.com", "0", 0, "L", false, 0, "")
 
 				})
-				pdf.AliasNbPages("")
+				p.AliasNbPages("")
 
-				pdf.AddPage()
-				pdf.SetFont("Times", "B", 16)
-				pdf.CellFormat(0, 10, tr(latcyr.C("Specifikacija aktivnosti", w.Cyr)), "0", 0, "", false, 0, "")
-				pdf.Ln(20)
+				p.AddPage()
+				p.SetFont("Times", "B", 16)
+				p.CellFormat(0, 10, tr(w.text("Specifikacija aktivnosti")), "0", 0, "", false, 0, "")
+				p.Ln(20)
 
-				pdf.SetFont("Arial", "", 10)
+				p.SetFont("Arial", "", 10)
 				for _, e := range w.Suma.Elementi {
 					cols := []float64{40, pagew - mleft - mright - 20}
 					//rows := [][]string{}
@@ -137,51 +136,51 @@ func (w *WingCal) Stampa() func(gtx C) D {
 						},
 					}
 					for _, row := range rows {
-						curx, y := pdf.GetXY()
+						curx, y := p.GetXY()
 						x := curx
 						height := 0.
-						_, lineHt := pdf.GetFontSize()
+						_, lineHt := p.GetFontSize()
 						for i, txt := range row {
-							lines := pdf.SplitLines([]byte(txt), cols[i])
+							lines := p.SplitLines([]byte(txt), cols[i])
 							h := float64(len(lines))*lineHt + marginCell*float64(len(lines))
 							if h > height {
 								height = h
 							}
 						}
 						// add a new page if the height of the row doesn't fit on the page
-						if pdf.GetY()+height > pageh-mbottom {
-							pdf.AddPage()
-							y = pdf.GetY()
+						if p.GetY()+height > pageh-mbottom {
+							p.AddPage()
+							y = p.GetY()
 						}
 						for i, txt := range row {
 							width := cols[i]
 							//pdf.Rect(x, y, width, height, "")
 							if i < 1 {
-								pdf.SetFont("Arial", "B", 10)
+								p.SetFont("Arial", "B", 10)
 							} else {
-								pdf.SetFont("Arial", "", 10)
+								p.SetFont("Arial", "", 10)
 							}
 							//fmt.Println("Col::", i)
 
-							pdf.MultiCell(width, lineHt+marginCell, tr(txt), "", "", false)
+							p.MultiCell(width, lineHt+marginCell, tr(txt), "", "", false)
 							x += width
-							pdf.SetXY(x, y)
+							p.SetXY(x, y)
 						}
-						pdf.SetXY(curx, y+height)
+						p.SetXY(curx, y+height)
 					}
-					pdf.Ln(8)
+					p.Ln(8)
 				}
 
-				pdf.SetFont("Times", "B", 16)
-				pdf.CellFormat(0, 10, latcyr.C("Suma: ", w.Cyr)+fmt.Sprintf("%.2f", w.Suma.SumaCena), "0", 0, "", false, 0, "")
-				pdf.Ln(40)
-				pdf.AddPage()
+				p.SetFont("Times", "B", 16)
+				p.CellFormat(0, 10, w.text("Suma: ")+fmt.Sprintf("%.2f", w.Suma.SumaCena), "0", 0, "", false, 0, "")
+				p.Ln(40)
+				p.AddPage()
 
-				pdf.SetFont("Times", "B", 16)
-				pdf.CellFormat(0, 10, latcyr.C("Specifikacija materijala", w.Cyr), "0", 0, "", false, 0, "")
-				pdf.Ln(20)
+				p.SetFont("Times", "B", 16)
+				p.CellFormat(0, 10, w.text("Specifikacija materijala"), "0", 0, "", false, 0, "")
+				p.Ln(20)
 
-				pdf.SetFont("Arial", "", 10)
+				p.SetFont("Arial", "", 10)
 				for _, e := range w.Suma.UkupanNeophodanMaterijalPrikaz {
 					cols := []float64{40, pagew - mleft - mright - 20}
 					//rows := [][]string{}
@@ -210,47 +209,47 @@ func (w *WingCal) Stampa() func(gtx C) D {
 						},
 					}
 					for _, row := range rows {
-						curx, y := pdf.GetXY()
+						curx, y := p.GetXY()
 						x := curx
 						height := 0.
-						_, lineHt := pdf.GetFontSize()
+						_, lineHt := p.GetFontSize()
 						for i, txt := range row {
-							lines := pdf.SplitLines([]byte(txt), cols[i])
+							lines := p.SplitLines([]byte(txt), cols[i])
 							h := float64(len(lines))*lineHt + marginCell*float64(len(lines))
 							if h > height {
 								height = h
 							}
 						}
 						// add a new page if the height of the row doesn't fit on the page
-						if pdf.GetY()+height > pageh-mbottom {
-							pdf.AddPage()
-							y = pdf.GetY()
+						if p.GetY()+height > pageh-mbottom {
+							p.AddPage()
+							y = p.GetY()
 						}
 						for i, txt := range row {
 							width := cols[i]
 							//pdf.Rect(x, y, width, height, "")
-							pdf.MultiCell(width, lineHt+marginCell, tr(txt), "", "", false)
+							p.MultiCell(width, lineHt+marginCell, tr(txt), "", "", false)
 							x += width
-							pdf.SetXY(x, y)
+							p.SetXY(x, y)
 						}
-						pdf.SetXY(curx, y+height)
+						p.SetXY(curx, y+height)
 					}
-					pdf.Ln(8)
+					p.Ln(8)
 				}
 
-				pdf.SetFont("Times", "B", 16)
-				pdf.CellFormat(0, 10, latcyr.C("Suma materijal: ", w.Cyr)+fmt.Sprintf("%.2f", w.Suma.SumaCenaMaterijal), "0", 0, "", false, 0, "")
-				pdf.Ln(20)
+				p.SetFont("Times", "B", 16)
+				p.CellFormat(0, 10, w.text("Suma materijal: ")+fmt.Sprintf("%.2f", w.Suma.SumaCenaMaterijal), "0", 0, "", false, 0, "")
+				p.Ln(20)
 
 				///////////////////////////////////
 
-				pdf.AddPage()
+				p.AddPage()
 
-				pdf.SetFont("Times", "B", 16)
-				pdf.CellFormat(0, 10, latcyr.C("Tehnički list", w.Cyr), "0", 0, "", false, 0, "")
-				pdf.Ln(20)
+				p.SetFont("Times", "B", 16)
+				p.CellFormat(0, 10, w.text("Tehnički list"), "0", 0, "", false, 0, "")
+				p.Ln(20)
 
-				pdf.SetFont("Arial", "", 10)
+				p.SetFont("Arial", "", 10)
 				for _, e := range w.Suma.UkupanNeophodanMaterijalPrikaz {
 					cols := []float64{40, pagew - mleft - mright - 20}
 					//rows := [][]string{}
@@ -274,32 +273,32 @@ func (w *WingCal) Stampa() func(gtx C) D {
 						},
 					}
 					for _, row := range rows {
-						curx, y := pdf.GetXY()
+						curx, y := p.GetXY()
 						x := curx
 						height := 0.
-						_, lineHt := pdf.GetFontSize()
+						_, lineHt := p.GetFontSize()
 						for i, txt := range row {
-							lines := pdf.SplitLines([]byte(txt), cols[i])
+							lines := p.SplitLines([]byte(txt), cols[i])
 							h := float64(len(lines))*lineHt + marginCell*float64(len(lines))
 							if h > height {
 								height = h
 							}
 						}
 						// add a new page if the height of the row doesn't fit on the page
-						if pdf.GetY()+height > pageh-mbottom {
-							pdf.AddPage()
-							y = pdf.GetY()
+						if p.GetY()+height > pageh-mbottom {
+							p.AddPage()
+							y = p.GetY()
 						}
 						for i, txt := range row {
 							width := cols[i]
 							//pdf.Rect(x, y, width, height, "")
-							pdf.MultiCell(width, lineHt+marginCell, tr(txt), "", "", false)
+							p.MultiCell(width, lineHt+marginCell, tr(txt), "", "", false)
 							x += width
-							pdf.SetXY(x, y)
+							p.SetXY(x, y)
 						}
-						pdf.SetXY(curx, y+height)
+						p.SetXY(curx, y+height)
 					}
-					pdf.Ln(8)
+					p.Ln(8)
 				}
 
 				//////////////////
@@ -337,10 +336,10 @@ func (w *WingCal) Stampa() func(gtx C) D {
 				// Output:
 				// Successfully generated pdf/Fpdf_CellFormat_codepage.pdf
 
-				err := pdf.OutputFileAndClose(w.Dir + "/nalog.pdf")
+				err := p.OutputFileAndClose("nalog.pdf")
 				if err != nil {
 				}
-				open.Run(w.Dir + "/nalog.pdf")
+				open.Run("nalog.pdf")
 
 			}
 		}

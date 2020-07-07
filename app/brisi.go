@@ -20,7 +20,7 @@ func (w WingCal) brisi(element *model.WingIzabraniElement, i int) func(gtx C) D 
 		btn.Size = unit.Dp(16)
 		btn.Background = helper.HexARGB(w.UI.Tema.Colors["White"])
 		for element.DugmeBrisanje.Clicked() {
-			w.Suma.Elementi = remove(w.Suma.ElementiPrikaz, i)
+			w.Suma.Elementi = remove(w.Suma.Elementi, i)
 			//w.Suma.Elementi = append(w.Suma.Elementi[:i], w.Suma.Elementi[i+1:]...)
 			//w.Suma.Elementi[i] = nil
 			//tabelaSuma = map[int]int{}

@@ -10,7 +10,6 @@ import (
 	"github.com/gioapp/gel/helper"
 	"github.com/gioapp/gel/panel"
 	"github.com/w-ingsolutions/c/model"
-	"github.com/w-ingsolutions/c/pkg/latcyr"
 )
 
 var (
@@ -36,7 +35,7 @@ func (w *WingCal) IzborVrsteRadova() func(gtx C) D {
 			//	layout.Flex{Axis: layout.Vertical}.Layout(w.Context,
 			//		layout.Rigid(func() {
 
-			btn := material.Button(w.UI.Tema.T, w.LinkoviIzboraVrsteRadova[i], fmt.Sprint(vrstarada.Id)+". "+latcyr.C(vrstarada.Title, w.Cyr))
+			btn := material.Button(w.UI.Tema.T, w.LinkoviIzboraVrsteRadova[i], fmt.Sprint(vrstarada.Id)+". "+w.text(vrstarada.Title))
 			btn.CornerRadius = unit.Dp(0)
 			btn.Background = helper.HexARGB(w.UI.Tema.Colors["Gray"])
 			if vrstarada.Materijal {
@@ -73,7 +72,7 @@ func (w *WingCal) Izbornik() func(gtx C) D {
 	return func(gtx C) D {
 		return putanjaList.Layout(gtx, len(w.Putanja), func(gtx C, i int) D {
 			var p layout.Dimensions
-			put := material.Body1(w.UI.Tema.T, latcyr.C(w.Putanja[i], w.Cyr))
+			put := material.Body1(w.UI.Tema.T, w.text(w.Putanja[i]))
 			put.Alignment = text.Middle
 			if w.Putanja[i] != "Radovi" {
 				return container.DuoUIcontainer(w.UI.Tema, 1, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.N, func(gtx C) D {

@@ -18,7 +18,7 @@ func (w *WingCal) PrikazaniElementDugmeDodaj(sumaCena float64) func(gtx C) D {
 		return w.UI.BezMargine.Layout(gtx, func(gtx C) D {
 			//fmt.Println("maxOPED:", gtx.Constraints.Max.X)
 			//fmt.Println("minOPED:", gtx.Constraints.Min.X)
-			btn := material.Button(w.UI.Tema.T, dodajDugme, latcyr.C("DODAJ", w.Cyr))
+			btn := material.Button(w.UI.Tema.T, dodajDugme, latcyr.C("DODAJ", w.Podesavanja.Cyr))
 			//btn.FullWidth = true
 			//btn.FullHeight = true
 			btn.CornerRadius = unit.Dp(0)
@@ -48,7 +48,7 @@ func (w *WingCal) PrikazaniElementDugmeDodaj(sumaCena float64) func(gtx C) D {
 				}
 				w.NeopodanMaterijal()
 				w.SumaRacunica()
-				w.Strana = "suma"
+				w.Strana = "sumaRadovi"
 			}
 			return btn.Layout(gtx)
 		})
@@ -64,12 +64,12 @@ func (w *WingCal) SumaElementiPrikaz() {
 }
 func (w *WingCal) PrikazaniElementIzgled() func(gtx C) D {
 	return func(gtx C) D {
-		neophodanNaslov := material.H6(w.UI.Tema.T, latcyr.C("Neophodan materijal za izvrsenje radova", w.Cyr))
+		neophodanNaslov := material.H6(w.UI.Tema.T, w.text("Neophodan materijal za izvrsenje radova"))
 		neophodanNaslov.Color = helper.HexARGB(w.UI.Tema.Colors["Primary"])
 		widgets := []layout.Widget{
-			material.H5(w.UI.Tema.T, fmt.Sprint(w.Podvrsta)+"."+fmt.Sprint(w.Roditelj)+"."+fmt.Sprint(w.PrikazaniElement.Id)+" "+latcyr.C(w.PrikazaniElement.Naziv, w.Cyr)).Layout,
-			material.Body1(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Opis, w.Cyr)).Layout,
-			material.Caption(w.UI.Tema.T, latcyr.C(w.PrikazaniElement.Obracun, w.Cyr)).Layout,
+			material.H5(w.UI.Tema.T, fmt.Sprint(w.Podvrsta)+"."+fmt.Sprint(w.Roditelj)+"."+fmt.Sprint(w.PrikazaniElement.Id)+" "+w.text(w.PrikazaniElement.Naziv)).Layout,
+			material.Body1(w.UI.Tema.T, w.text(w.PrikazaniElement.Opis)).Layout,
+			material.Caption(w.UI.Tema.T, w.text(w.PrikazaniElement.Obracun)).Layout,
 			neophodanNaslov.Layout,
 			helper.DuoUIline(false, 4, 0, 4, w.UI.Tema.Colors["Secondary"]),
 			w.PrikazaniElementStavkeMaterijala(),
@@ -99,14 +99,14 @@ func (w *WingCal) PrikazaniElementSuma() func(gtx C) D {
 						layout.Rigid(func(gtx C) D {
 							return container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.NW, func(gtx C) D {
 								gtx.Constraints.Min.X = gtx.Constraints.Max.X
-								return material.H6(w.UI.Tema.T, latcyr.C("Cena:", w.Cyr)+fmt.Sprint(w.PrikazaniElement.Cena)).Layout(gtx)
+								return material.H6(w.UI.Tema.T, w.text("Cena:")+fmt.Sprint(w.PrikazaniElement.Cena)).Layout(gtx)
 							})
 						}),
 						layout.Rigid(helper.DuoUIline(false, 0, 0, 1, w.UI.Tema.Colors["Dark"])),
 						layout.Rigid(func(gtx C) D {
 							return container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.NW, func(gtx C) D {
 								gtx.Constraints.Min.X = gtx.Constraints.Max.X
-								return material.H6(w.UI.Tema.T, latcyr.C("Suma:", w.Cyr)+fmt.Sprintf("%.2f", w.PrikazaniElement.Cena*float64(kolicina.Value))).Layout(gtx)
+								return material.H6(w.UI.Tema.T, latcyr.C("Suma:", w.Podesavanja.Cyr)+fmt.Sprintf("%.2f", w.PrikazaniElement.Cena*float64(kolicina.Value))).Layout(gtx)
 
 							})
 						}),
@@ -119,7 +119,7 @@ func (w *WingCal) PrikazaniElementSuma() func(gtx C) D {
 							Spacing:   layout.SpaceBetween,
 							Alignment: layout.Middle,
 						}.Layout(gtx,
-							layout.Rigid(counter.DuoUIcounterSt(w.UI.Tema, kolicina, func(gtx layout.Context) layout.Dimensions { return layout.Dimensions{} }).Layout(kolicina, gtx, w.UI.Tema.T, latcyr.C("KOLIČINA", w.Cyr), fmt.Sprint(kolicina.Value))),
+							layout.Rigid(counter.DuoUIcounterSt(w.UI.Tema, kolicina, func(gtx layout.Context) layout.Dimensions { return layout.Dimensions{} }).Layout(kolicina, gtx, w.UI.Tema.T, latcyr.C("KOLIČINA", w.Podesavanja.Cyr), fmt.Sprint(kolicina.Value))),
 							layout.Rigid(w.PrikazaniElementDugmeDodaj(sumaCena)),
 						)
 					})

@@ -1,11 +1,11 @@
-package calc
+package db
 
 import (
 	"github.com/w-ingsolutions/c/model"
 )
 
-func (w *WingCal) NewMaterijal() {
-	w.Materijal = map[int]*model.WingMaterijal{
+func NewMaterijal() map[int]*model.WingMaterijal {
+	return map[int]*model.WingMaterijal{
 		0: &model.WingMaterijal{
 			Id:                1,
 			Naziv:             "Glet masa-gletokol",
@@ -359,6 +359,4 @@ func (w *WingCal) NewMaterijal() {
 			Slug:              "lepak_za_kamen_sivi",
 		},
 	}
-
-	return
 }

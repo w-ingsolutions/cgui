@@ -1,6 +1,7 @@
 package calc
 
 import (
+	"fmt"
 	"gioui.org/layout"
 	"gioui.org/text"
 	"gioui.org/unit"
@@ -26,91 +27,52 @@ func (w *WingCal) GlavniEkran(gtx layout.Context) {
 			return layout.Flex{
 				Axis: layout.Vertical,
 			}.Layout(gtx,
-				layout.Rigid(func(gtx C) D {
-					return container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.Center, header(w))
-				}),
-				layout.Flexed(1, w.strana()),
-				layout.Rigid(func(gtx C) D {
-					latcyr := "Ћирилица"
-					if w.Cyr {
-						latcyr = "Latinica"
-					}
-					btn := material.Button(w.UI.Tema.T, latcyrDugme, latcyr)
-					btn.CornerRadius = unit.Dp(0)
-					btn.TextSize = unit.Dp(10)
-					btn.Background = helper.HexARGB(w.UI.Tema.Colors["Warning"])
-					btn.Color = helper.HexARGB(w.UI.Tema.Colors["Dark"])
-					for latcyrDugme.Clicked() {
-						if w.Cyr {
-							w.Cyr = false
-						} else {
-							w.Cyr = true
-						}
-					}
-					return btn.Layout(gtx)
-				}))
+				layout.Rigid(header(w)),
+				layout.Flexed(1, w.strana(gtx)),
+				layout.Rigid(footer(w)))
 		}),
 		layout.Rigid(helper.DuoUIline(false, 0, 0, w.UI.BottomSpace, w.UI.Tema.Colors["Dark"])))
 }
-func (w *WingCal) strana() func(gtx C) D {
-	return func(gtx C) D {
-		switch d := gtx.Constraints.Max.X; {
-		case d > 1100:
-			w.UI.Device = "h"
-		case d < 1100:
-			w.UI.Device = "p"
-		}
-		var s D
 
-		switch w.UI.Device {
-		case "p":
-			switch w.Strana {
-			case "materijal":
-				s = w.UI.SaMarginom.Layout(gtx, w.MaterijalStrana())
-			case "radovi":
-				s = w.UI.SaMarginom.Layout(gtx, w.IzbornikRadovaStrana())
-			case "suma":
-				s = w.UI.SaMarginom.Layout(gtx, w.SumaStrana())
-			}
-		case "h":
-			//s = w.UI.SaMarginom.Layout(gtx, w.MaterijalStrana())
-			s = w.UI.SaMarginom.Layout(gtx, func(gtx C) D {
-				prikazani := func(gtx C) D { return D{} }
-				if w.Element {
-					prikazani = w.PrikazaniElementSuma()
-
-				}
-				return layout.Flex{
-					Axis: layout.Horizontal,
-				}.Layout(gtx,
-					layout.Flexed(0.3,
-						//return w.UI.SaMarginom.Layout(gtx, w.IzbornikRadovaStrana())
-						//return container.DuoUIcontainer(w.UI.Tema,8, w.UI.Tema.Colors["Light"]).Layout(gtx, layout.N, w.IzbornikRadovaStrana())
-						w.Panel(latcyr.C("Radovi", w.Cyr), func(gtx C) D { return D{} }, w.IzbornikRadovaStrana(), prikazani),
-					),
-					layout.Flexed(0.4, func(gtx C) D {
-						return layout.Flex{
-							Axis: layout.Vertical,
-						}.Layout(gtx,
-							layout.Flexed(0.5, w.Panel(latcyr.C("Ukupna cena radova", w.Cyr), w.SumaRadoviStavke(), w.SumaElementi(), w.sumaFooter(latcyr.C("Suma:", w.Cyr)))),
-							layout.Flexed(0.5, w.Panel(latcyr.C("Ukupan neophodni materijal", w.Cyr), w.SumaStavkeMaterijala(), w.UkupanNeophodanMaterijal(ukupanNeophodanMaterijalList), w.sumaFooter(latcyr.C("Suma materijal:", w.Cyr)))))
-						//return container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["Light"]).Layout(gtx, layout.N, w.SumaStrana())
-						//return cont.Layout(gtx, layout.N, w.Panel(latcyr.C("Ukupna cena radova", w.Cyr),latcyr.C("Suma: ", w.Cyr)+fmt.Sprintf("%.2f", w.Suma.SumaCena), w.SumaRadoviStavke(),  w.SumaElementi()))
-						//w.Panel(latcyr.C("Ukupna cena radova", w.Cyr),latcyr.C("Suma", w.Cyr), w.SumaRadoviStavke(),  w.SumaStrana()),
-
-					}),
-					layout.Flexed(0.3,
-						//cont := container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["Light"])
-						//return cont.Layout(gtx, layout.N, w.MaterijalStrana())
-						w.Panel(latcyr.C("Materijal", w.Cyr), w.MaterijalStavke(), w.MaterijalStrana(), w.sumaFooter(latcyr.C("Materijal", w.Cyr))),
-						//return cont.Layout(gtx, layout.N, w.Panel(latcyr.C("Ukupna cena radova", w.Cyr),latcyr.C("Suma: ", w.Cyr)+fmt.Sprintf("%.2f", w.Suma.SumaCena), w.SumaRadoviStavke(),  w.SumaElementi()))
-
-					),
-				)
-			})
-		}
-		return s
+func (w *WingCal) strana(gtx C) func(gtx C) D {
+	switch d := gtx.Constraints.Max.X; {
+	case d > 1100:
+		w.UI.Device = "h"
+	case d < 1100:
+		w.UI.Device = "p"
 	}
+	var s func(gtx C) D
+	prikazani := func(gtx C) D { return D{} }
+	if w.Element {
+		prikazani = w.PrikazaniElementSuma()
+	}
+	izbornikStrana := w.Panel(w.text("Radovi"), func(gtx C) D { return D{} }, w.IzbornikRadovaStrana(), prikazani)
+	podesavanjaStrana := w.Panel(w.text("Podešavanja"), func(gtx C) D { return D{} }, w.PodesavanjaStrana(), w.sumaFooter(w.text("Podešavanja")))
+	projekatStrana := w.Panel(w.text("Projekat"), func(gtx C) D { return D{} }, w.ProjekatStrana(), w.sumaFooter(w.text("Projekat")))
+	materijalStrana := w.Panel(w.text("Materijal"), w.MaterijalStavke(), w.MaterijalStrana(), w.sumaFooter(w.text("Materijal")))
+	sumaRadovaStrana := w.Panel(w.text("Ukupna cena radova"), w.SumaRadoviStavke(), w.SumaElementi(), w.sumaFooter(w.text("Suma: "+fmt.Sprintf("%.2f", w.Suma.SumaCena))))
+	sumaMaterijalStrana := w.Panel(w.text("Ukupan neophodni materijal"), w.SumaStavkeMaterijala(), w.UkupanNeophodanMaterijal(ukupanNeophodanMaterijalList), w.sumaFooter(w.text("Suma materijal: ")+fmt.Sprintf("%.2f", w.Suma.SumaCenaMaterijal)))
+	switch w.UI.Device {
+	case "p":
+		switch w.Strana {
+		case "materijal":
+			s = materijalStrana
+		case "projekat":
+			s = projekatStrana
+		case "radovi":
+			s = izbornikStrana
+		case "sumaRadovi":
+			s = sumaRadovaStrana
+		case "sumaMaterijal":
+			s = sumaMaterijalStrana
+		case "podesavanja":
+			s = podesavanjaStrana
+		}
+	case "h":
+		//s = w.UI.SaMarginom.Layout(gtx, w.MaterijalStrana())
+		s = w.Monitor(izbornikStrana, sumaRadovaStrana, sumaMaterijalStrana, materijalStrana)
+	}
+	return s
 
 	//return layout.Flex{
 	//	Axis: layout.Horizontal,
@@ -126,7 +88,6 @@ func (w *WingCal) cell(align text.Alignment, tekst string) func(gtx C) D {
 			return container.DuoUIcontainer(w.UI.Tema, 0, w.UI.Tema.Colors["LightGray"]).Layout(gtx, layout.N, func(gtx C) D {
 				return container.DuoUIcontainer(w.UI.Tema, 0, w.UI.Tema.Colors["White"]).Layout(gtx, layout.N, func(gtx C) D {
 					gtx.Constraints.Min.X = gtx.Constraints.Max.X
-					//gtx.Constraints.Min.Y = gtx.Constraints.Max.Y
 					cell := material.Caption(w.UI.Tema.T, tekst)
 					cell.TextSize = unit.Dp(12)
 					cell.Alignment = align
@@ -144,4 +105,8 @@ func (w *WingCal) sumaFooter(t string) func(gtx C) D {
 		suma.Alignment = text.End
 		return suma.Layout(gtx)
 	}
+}
+
+func (w *WingCal) text(t string) string {
+	return w.Kes.C(w.Jezik.t.T(latcyr.C(t, w.Podesavanja.Cyr)))
 }

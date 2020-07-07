@@ -18,9 +18,9 @@ func (w *WingCal) GenerisanjeLinkova(radovi map[int]model.ElementMenu) {
 	return
 }
 
-func (w *WingCal) GenerisanjeDugmicaBrisanje(radovi map[int]string) {
-	for rad, _ := range radovi {
-		w.LinkoviIzboraVrsteRadova[rad] = new(widget.Clickable)
+func (w *WingCal) GenerisanjeDugmicaJezici() {
+	for _, jezik := range w.Jezik.dostupni {
+		w.Jezik.linkovi[jezik] = new(widget.Clickable)
 	}
 	return
 }

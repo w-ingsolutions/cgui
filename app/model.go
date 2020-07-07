@@ -9,6 +9,8 @@ import (
 	"github.com/gioapp/gel/counter"
 	"github.com/gioapp/gel/theme"
 	"github.com/w-ingsolutions/c/model"
+	"github.com/w-ingsolutions/c/pkg/cache"
+	"github.com/w-ingsolutions/c/pkg/translate"
 )
 
 type (
@@ -18,37 +20,15 @@ type (
 
 var (
 	//post             = new(model.DuoCMSpost)
-	stampajDugme  = new(widget.Clickable)
-	materijalList = &layout.List{
-		Axis: layout.Vertical,
-	}
-	putanjaList = &layout.List{
-		Axis: layout.Vertical,
-	}
 
-	selected       int
-	izbornikRadova = &layout.List{
-		Axis: layout.Vertical,
-	}
-	elementOpis = &layout.List{
-		Axis: layout.Vertical,
-	}
-	sumList = &layout.List{
-		Axis: layout.Vertical,
-	}
-	neophodanMaterijalList = &layout.List{
-		Axis: layout.Vertical,
-	}
-	ukupanNeophodanMaterijalList = &layout.List{
-		Axis: layout.Vertical,
-	}
-	izborVrsteRadovaPanel = &layout.List{
-		Axis: layout.Vertical,
-	}
-	dodajDugme          = new(widget.Clickable)
-	nazadDugme          = new(widget.Clickable)
-	zatvoriElementDugme = new(widget.Clickable)
-	kolicina            = &counter.DuoUIcounter{
+	selected int
+
+	latCyrBool = new(widget.Bool)
+
+	projektantIzbor = new(widget.Enum)
+	klijentiIzbor   = new(widget.Enum)
+
+	kolicina = &counter.DuoUIcounter{
 		Value:        1,
 		OperateValue: 1,
 		From:         1,
@@ -65,12 +45,11 @@ var (
 )
 
 type WingCal struct {
-	Dir                      string
-	Naziv                    string
 	Strana                   string
 	LinkoviIzboraVrsteRadova map[int]*widget.Clickable
 	EditPolja                *model.EditabilnaPoljaVrsteRadova
 	Materijal                map[int]*model.WingMaterijal
+	Lica                     WingUloge
 	Radovi                   model.WingVrstaRadova
 	Putanja                  []string
 	IzbornikRadova           map[int]model.ElementMenu
@@ -80,10 +59,12 @@ type WingCal struct {
 	Suma                     *model.WingIzabraniElementi
 	Podvrsta                 int
 	Roditelj                 int
-	Cyr                      bool
 	Element                  bool
 	UI                       WingUI
 	API                      WingAPI
+	Jezik                    WingJezik
+	Kes                      cache.Cache
+	Podesavanja              *WingPodesavanja
 }
 
 type WingUI struct {
@@ -106,4 +87,23 @@ type WingUI struct {
 type WingAPI struct {
 	OK     bool
 	Adresa string
+}
+
+type WingJezik struct {
+	t        translate.Translation
+	izabrani string
+	dostupni []string
+	linkovi  map[string]*widget.Clickable
+}
+
+type WingPodesavanja struct {
+	Naziv string
+	Dir   string
+	File  string
+	Cyr   bool
+}
+
+type WingUloge struct {
+	Projektanti []*model.WingLice
+	Klijenti    []*model.WingLice
 }
