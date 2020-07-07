@@ -2,7 +2,6 @@ package in
 
 import (
 	"fmt"
-	"github.com/w-ingsolutions/c/pkg/util"
 )
 
 // Init checks to see if an appdata directory has been created
@@ -25,9 +24,13 @@ func Init(f string) {
 	//	Username: os.Args[1],
 	//	Password: os.Args[2],
 	//}
-	if !util.EnsureDir(f) {
-		panic("could not create data directory to write config")
-	}
+	//////////////
+	///////////////
+	//if !util.EnsureDir(f) {
+	//	panic("could not create data directory to write config")
+	//}
+	///////////////
+	///////////////
 	//os.Mkdir(cfg.Dir+"/www", 0700)
 	// if !util.EnsureDir(filepath.Join(Coins, "something")) {
 	// 	panic("could not create coins directory")
