@@ -37,7 +37,7 @@ func (w *WingCal) Panel(naslov string, stavke, sadrzaj, footer func(gtx C) D) fu
 							}),
 							layout.Rigid(func(gtx C) D {
 								gtx.Constraints.Min.X = gtx.Constraints.Max.X
-								return container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.SE, footer)
+								return container.DuoUIcontainer(w.UI.Tema, 0, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.SE, footer)
 							}),
 						)
 					})

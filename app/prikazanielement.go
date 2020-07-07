@@ -25,6 +25,7 @@ func (w *WingCal) PrikazaniElementDugmeDodaj(sumaCena float64) func(gtx C) D {
 			btn.TextSize = unit.Dp(14)
 			btn.Inset = layout.Inset{unit.Dp(8), unit.Dp(8), unit.Dp(10), unit.Dp(8)}
 			btn.Background = helper.HexARGB("ffb8df42")
+			btn.Color = helper.HexARGB(w.UI.Tema.Colors["Dark"])
 			var varijacijaRada int
 
 			for dodajDugme.Clicked() {
@@ -92,27 +93,27 @@ func (w *WingCal) PrikazaniElementSuma() func(gtx C) D {
 				Spacing:   layout.SpaceBetween,
 				Alignment: layout.Middle,
 			}.Layout(gtx,
-				layout.Flexed(1, func(gtx C) D {
+				layout.Flexed(0.5, func(gtx C) D {
 					return layout.Flex{
 						Axis: layout.Vertical,
 					}.Layout(gtx,
 						layout.Rigid(func(gtx C) D {
 							return container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.NW, func(gtx C) D {
 								gtx.Constraints.Min.X = gtx.Constraints.Max.X
-								return material.H6(w.UI.Tema.T, w.text("Cena:")+fmt.Sprint(w.PrikazaniElement.Cena)).Layout(gtx)
+								return material.Body2(w.UI.Tema.T, w.text("Cena:")+fmt.Sprint(w.PrikazaniElement.Cena)).Layout(gtx)
 							})
 						}),
 						layout.Rigid(helper.DuoUIline(false, 0, 0, 1, w.UI.Tema.Colors["Dark"])),
 						layout.Rigid(func(gtx C) D {
 							return container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.NW, func(gtx C) D {
 								gtx.Constraints.Min.X = gtx.Constraints.Max.X
-								return material.H6(w.UI.Tema.T, latcyr.C("Suma:", w.Podesavanja.Cyr)+fmt.Sprintf("%.2f", w.PrikazaniElement.Cena*float64(kolicina.Value))).Layout(gtx)
+								return material.Body2(w.UI.Tema.T, latcyr.C("Suma:", w.Podesavanja.Cyr)+fmt.Sprintf("%.2f", w.PrikazaniElement.Cena*float64(kolicina.Value))).Layout(gtx)
 
 							})
 						}),
 					)
 				}),
-				layout.Rigid(func(gtx C) D {
+				layout.Flexed(0.5, func(gtx C) D {
 					return w.UI.BezMargine.Layout(gtx, func(gtx C) D {
 						return layout.Flex{
 							Axis:      layout.Vertical,
