@@ -26,6 +26,7 @@ func lica() map[int]*model.WingLice {
 			Ulica:       "Josifa Marinkovića",
 			Broj:        "24",
 			Grad:        "Novi Sad",
+			Email:       "marcetin@gmail.com",
 			Admin:       true,
 		},
 		1: &model.WingLice{
@@ -38,6 +39,7 @@ func lica() map[int]*model.WingLice {
 			Ulica:       "Iza Cao Picerije",
 			Broj:        "44",
 			Grad:        "Novi Sad",
+			Email:       "cedomir.vukobrat@gmail.com",
 			Admin:       true,
 		},
 		2: &model.WingLice{
@@ -49,6 +51,7 @@ func lica() map[int]*model.WingLice {
 			Grad:   "Novi Sad",
 			PIB:    "wingPIBPIBPIB",
 			MB:     "wingMBMBMBMB",
+			Email:  "wingg@gmail.com",
 		},
 		3: &model.WingLice{
 			Id:     3,
@@ -59,6 +62,7 @@ func lica() map[int]*model.WingLice {
 			Grad:   "Fjutog",
 			PIB:    "SSSSPIBPIBPIB",
 			MB:     "SSSSMBMBMBMB",
+			Email:  "susss@gmail.com",
 		},
 		4: &model.WingLice{
 			Id:     4,
@@ -69,6 +73,7 @@ func lica() map[int]*model.WingLice {
 			Grad:   "Vranje",
 			PIB:    "1212SSSSPIBPIBPIB",
 			MB:     "1212SSSSMBMBMBMB",
+			Email:  "lajos@gmail.com",
 		},
 		5: &model.WingLice{
 			Id:     5,
@@ -79,6 +84,7 @@ func lica() map[int]*model.WingLice {
 			Grad:   "Subotica",
 			PIB:    "2323SSSSPIBPIBPIB",
 			MB:     "2323SSSSMBMBMBMB",
+			Email:  "magneto@gmail.com",
 		},
 	}
 }
