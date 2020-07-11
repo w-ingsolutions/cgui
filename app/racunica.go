@@ -8,3 +8,15 @@ func (w *WingCal) SumaRacunica() {
 	}
 	w.Suma.SumaCena = s
 }
+
+func (w *WingCal) ProjekatSumaRacunica() func() {
+	return func() {
+		projekat.Radovi = w.Suma.Elementi
+	}
+}
+
+func (w *WingCal) PrikazaniElementSumaRacunica() func() {
+	return func() {
+		prikazaniElementSumaCena = w.PrikazaniElement.Cena * float64(kolicina.Value)
+	}
+}

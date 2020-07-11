@@ -20,10 +20,10 @@ type (
 
 var (
 	//post             = new(model.DuoCMSpost)
-
-	selected   int
-	projekat   = new(model.WingProjekat)
-	latCyrBool = new(widget.Bool)
+	prikazaniElementSumaCena float64
+	selected                 int
+	projekat                 = new(model.WingProjekat)
+	latCyrBool               = new(widget.Bool)
 
 	projektantIzbor = new(widget.Enum)
 	klijentiIzbor   = new(widget.Enum)
@@ -32,10 +32,11 @@ var (
 		Value:        1,
 		OperateValue: 1,
 		From:         1,
-		To:           100,
+		To:           999,
 		CounterInput: &widget.Editor{
 			Alignment:  text.Middle,
 			SingleLine: true,
+			Submit:     true,
 		},
 
 		CounterIncrease: new(widget.Clickable),
@@ -51,7 +52,6 @@ var (
 			Alignment:  text.Middle,
 			SingleLine: true,
 		},
-
 		CounterIncrease: new(widget.Clickable),
 		CounterDecrease: new(widget.Clickable),
 		CounterReset:    new(widget.Clickable),
