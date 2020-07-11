@@ -29,6 +29,7 @@ func (w *WingCal) PrikazaniElementDugmeDodaj(sumaCena float64) func(gtx C) D {
 			var varijacijaRada int
 
 			for dodajDugme.Clicked() {
+				fmt.Println("kolicina.Value", kolicina.Value)
 				if kolicina.Value > 0 {
 					for _, s := range w.Suma.Elementi {
 						if s.Element.Id == w.PrikazaniElement.Id {
@@ -46,10 +47,10 @@ func (w *WingCal) PrikazaniElementDugmeDodaj(sumaCena float64) func(gtx C) D {
 						DugmeBrisanje: new(widget.Clickable),
 					}
 					w.Suma.Elementi = append(w.Suma.Elementi, &suma)
+					w.NeopodanMaterijal()
+					w.SumaRacunica()
+					w.Strana = "sumaRadovi"
 				}
-				w.NeopodanMaterijal()
-				w.SumaRacunica()
-				w.Strana = "sumaRadovi"
 			}
 			return btn.Layout(gtx)
 		})
@@ -120,7 +121,7 @@ func (w *WingCal) PrikazaniElementSuma() func(gtx C) D {
 							Spacing:   layout.SpaceBetween,
 							Alignment: layout.Middle,
 						}.Layout(gtx,
-							layout.Rigid(counter.DuoUIcounterSt(w.UI.Tema, kolicina, func(gtx C) D { return D{} }).Layout(kolicina, gtx, w.UI.Tema.T, latcyr.C("KOLIČINA", w.Podesavanja.Cyr), fmt.Sprint(kolicina.Value))),
+							layout.Rigid(counter.DuoUIcounterSt(w.UI.Tema, kolicina, func() {}).Layout(kolicina, gtx, w.UI.Tema.T, latcyr.C("KOLIČINA", w.Podesavanja.Cyr), fmt.Sprint(kolicina.Value))),
 							layout.Rigid(w.PrikazaniElementDugmeDodaj(sumaCena)),
 						)
 					})

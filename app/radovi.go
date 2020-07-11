@@ -86,6 +86,12 @@ func (w *WingCal) btnLink(r model.ElementMenu) func(gtx C) D {
 	return func(gtx C) D {
 		btn := material.Button(w.UI.Tema.T, r.Link, fmt.Sprint(r.Id)+". "+w.text(r.Title))
 		btn.CornerRadius = unit.Dp(0)
+		btn.Inset = layout.Inset{
+			Top:    unit.Dp(2),
+			Right:  unit.Dp(2),
+			Bottom: unit.Dp(2),
+			Left:   unit.Dp(2),
+		}
 		btn.Background = helper.HexARGB(w.UI.Tema.Colors["Gray"])
 		if r.Materijal {
 			btn.Background = helper.HexARGB(w.UI.Tema.Colors["DarkGray"])

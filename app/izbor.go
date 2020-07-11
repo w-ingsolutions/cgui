@@ -107,7 +107,7 @@ func (w *WingCal) LinkoviIzboraVrsteRadovaKlik(l model.ElementMenu) {
 			w.Roditelj = l.Id
 		}
 		if len(w.Putanja) == 3 {
-			komanda = Podvrstaradova + "/" + Elementi + "/" + fmt.Sprint(l.Id+1)
+			komanda = Podvrstaradova + "/" + Elementi + "/" + fmt.Sprint(l.Id)
 		}
 		if len(w.Putanja) == 1 {
 			w.APIpozivIzbornik("radovi/" + komanda)

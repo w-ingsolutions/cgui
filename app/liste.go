@@ -51,4 +51,7 @@ var (
 	klijentiList = &layout.List{
 		Axis: layout.Vertical,
 	}
+	racuniList = &layout.List{
+		Axis: layout.Vertical,
+	}
 )

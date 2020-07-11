@@ -238,7 +238,7 @@ func (w *WingCal) Stampa() func(gtx C) D {
 				}
 
 				p.SetFont("Times", "B", 16)
-				p.CellFormat(0, 10, w.text("Suma materijal: ")+fmt.Sprintf("%.2f", w.Suma.SumaCenaMaterijal), "0", 0, "", false, 0, "")
+				p.CellFormat(0, 10, w.text("Suma materijal: ")+fmt.Sprintf("%.2f", projekat.CenaMaterijala), "0", 0, "", false, 0, "")
 				p.Ln(20)
 
 				///////////////////////////////////

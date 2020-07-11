@@ -87,14 +87,6 @@ func (w *WingCal) SumaStranaUnutra() func(gtx C) D {
 		//return  w.UI.D
 	}
 }
-func (w *WingCal) SumaRacunica() {
-	w.SumaElementiPrikaz()
-	s := 0.0
-	for _, e := range w.Suma.Elementi {
-		s = s + e.SumaCena
-	}
-	w.Suma.SumaCena = s
-}
 
 func (w *WingCal) SumaElementi() func(gtx C) D {
 	return func(gtx C) D {

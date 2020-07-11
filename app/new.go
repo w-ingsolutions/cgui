@@ -32,7 +32,7 @@ func NewWingCal() *WingCal {
 	w.Materijal = db.NewMaterijal()
 	projektanti, klijenti := db.NewLica()
 	w.Lica.Projektanti = projektanti
-	w.Lica.Klijenti = klijenti
+	w.Lica.Investotori = klijenti
 	saStraneMarginom := layout.UniformInset(unit.Dp(0))
 	saStraneMarginom.Left = unit.Dp(8)
 	saStraneMarginom.Right = unit.Dp(8)

@@ -21,14 +21,42 @@ type (
 var (
 	//post             = new(model.DuoCMSpost)
 
-	selected int
-
+	selected   int
+	projekat   = new(model.WingProjekat)
 	latCyrBool = new(widget.Bool)
 
 	projektantIzbor = new(widget.Enum)
 	klijentiIzbor   = new(widget.Enum)
 
 	kolicina = &counter.DuoUIcounter{
+		Value:        1,
+		OperateValue: 1,
+		From:         1,
+		To:           100,
+		CounterInput: &widget.Editor{
+			Alignment:  text.Middle,
+			SingleLine: true,
+		},
+
+		CounterIncrease: new(widget.Clickable),
+		CounterDecrease: new(widget.Clickable),
+		CounterReset:    new(widget.Clickable),
+	}
+	radovi = &counter.DuoUIcounter{
+		Value:        1,
+		OperateValue: 1,
+		From:         1,
+		To:           100,
+		CounterInput: &widget.Editor{
+			Alignment:  text.Middle,
+			SingleLine: true,
+		},
+
+		CounterIncrease: new(widget.Clickable),
+		CounterDecrease: new(widget.Clickable),
+		CounterReset:    new(widget.Clickable),
+	}
+	materijal = &counter.DuoUIcounter{
 		Value:        1,
 		OperateValue: 1,
 		From:         1,
@@ -105,5 +133,5 @@ type WingPodesavanja struct {
 
 type WingUloge struct {
 	Projektanti []*model.WingLice
-	Klijenti    []*model.WingLice
+	Investotori []*model.WingLice
 }
