@@ -48,10 +48,10 @@ func footer(w *WingCal) func(gtx C) D {
 
 func (w *WingCal) footerMenu() []func(gtx C) D {
 	return []func(gtx C) D{
-		w.stranaDugme(projekatDugme, w.text("PROJEKAT"), "projekat"),
+		w.stranaDugme(projekatDugme, w.ProjekatRacunica(), w.text("PROJEKAT"), "projekat"),
 		helper.DuoUIline(true, 0, 2, 2, w.UI.Tema.Colors["DarkGrayI"]),
-		w.stranaDugme(sumaMaterialDugme, w.text("SUMA MATERIJAL"), "sumaMaterijal"),
+		w.stranaDugme(sumaMaterialDugme, func() {}, w.text("SUMA MATERIJAL"), "sumaMaterijal"),
 		helper.DuoUIline(true, 0, 2, 2, w.UI.Tema.Colors["DarkGrayI"]),
-		w.stranaDugme(materijalDugme, w.text("MATERIJAL"), "materijal"),
+		w.stranaDugme(materijalDugme, func() {}, w.text("MATERIJAL"), "materijal"),
 	}
 }

@@ -29,8 +29,8 @@ func (w *WingCal) PrikazaniElementDugmeDodaj(sumaCena float64) func(gtx C) D {
 			var varijacijaRada int
 
 			for dodajDugme.Clicked() {
-				fmt.Println("kolicina.Value", kolicina.Value)
-				if kolicina.Value > 0 {
+				fmt.Println("kolicina.Value", w.UI.Counters.Kolicina.Value)
+				if w.UI.Counters.Kolicina.Value > 0 {
 					for _, s := range w.Suma.Elementi {
 						if s.Element.Id == w.PrikazaniElement.Id {
 							varijacijaRada = varijacijaRada + 1
@@ -41,13 +41,12 @@ func (w *WingCal) PrikazaniElementDugmeDodaj(sumaCena float64) func(gtx C) D {
 					fmt.Println("varijacijaRadaIIIIIIIIIIIII:", varijacijaRada)
 					suma := model.WingIzabraniElement{
 						Sifra:         fmt.Sprint(w.Podvrsta) + "." + fmt.Sprint(w.Roditelj) + "." + fmt.Sprint(w.PrikazaniElement.Id) + "." + fmt.Sprint(varijacijaRada+1),
-						Kolicina:      kolicina.Value,
+						Kolicina:      w.UI.Counters.Kolicina.Value,
 						SumaCena:      sumaCena,
 						Element:       *w.PrikazaniElement,
 						DugmeBrisanje: new(widget.Clickable),
 					}
 					w.Suma.Elementi = append(w.Suma.Elementi, &suma)
-					w.NeopodanMaterijal()
 					w.SumaRacunica()
 					w.Strana = "sumaRadovi"
 				}
@@ -88,7 +87,7 @@ func (w *WingCal) PrikazaniElementSuma() func(gtx C) D {
 	return func(gtx C) D {
 		return container.DuoUIcontainer(w.UI.Tema, 0, w.UI.Tema.Colors["Gray"]).Layout(gtx, layout.NW, func(gtx C) D {
 			gtx.Constraints.Min.X = gtx.Constraints.Max.X
-			sumaCena := float64(kolicina.Value) * w.PrikazaniElement.Cena
+			sumaCena := float64(w.UI.Counters.Kolicina.Value) * w.PrikazaniElement.Cena
 			return layout.Flex{
 				Axis:      layout.Horizontal,
 				Spacing:   layout.SpaceBetween,
@@ -99,14 +98,14 @@ func (w *WingCal) PrikazaniElementSuma() func(gtx C) D {
 						Axis: layout.Vertical,
 					}.Layout(gtx,
 						layout.Rigid(func(gtx C) D {
-							return container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.NW, func(gtx C) D {
+							return container.DuoUIcontainer(w.UI.Tema, 10, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.NW, func(gtx C) D {
 								gtx.Constraints.Min.X = gtx.Constraints.Max.X
 								return material.Body2(w.UI.Tema.T, w.text("Cena:")+fmt.Sprint(w.PrikazaniElement.Cena)).Layout(gtx)
 							})
 						}),
 						layout.Rigid(helper.DuoUIline(false, 0, 0, 1, w.UI.Tema.Colors["Dark"])),
 						layout.Rigid(func(gtx C) D {
-							return container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.NW, func(gtx C) D {
+							return container.DuoUIcontainer(w.UI.Tema, 10, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.NW, func(gtx C) D {
 								gtx.Constraints.Min.X = gtx.Constraints.Max.X
 								return material.Body2(w.UI.Tema.T, latcyr.C("Suma:", w.Podesavanja.Cyr)+fmt.Sprintf("%.2f", prikazaniElementSumaCena)).Layout(gtx)
 
@@ -121,7 +120,7 @@ func (w *WingCal) PrikazaniElementSuma() func(gtx C) D {
 							Spacing:   layout.SpaceBetween,
 							Alignment: layout.Middle,
 						}.Layout(gtx,
-							layout.Rigid(counter.DuoUIcounterSt(w.UI.Tema, kolicina, w.PrikazaniElementSumaRacunica()).Layout(gtx, w.UI.Tema.T, latcyr.C("KOLIČINA", w.Podesavanja.Cyr), fmt.Sprint(kolicina.Value))),
+							layout.Rigid(counter.DuoUIcounterSt(w.UI.Tema, w.UI.Counters.Kolicina).Layout(gtx, w.UI.Tema.T, latcyr.C("KOLIČINA", w.Podesavanja.Cyr), fmt.Sprint(w.UI.Counters.Kolicina.Value))),
 							layout.Rigid(w.PrikazaniElementDugmeDodaj(sumaCena)),
 						)
 					})

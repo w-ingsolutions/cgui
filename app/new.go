@@ -3,11 +3,14 @@ package calc
 import (
 	"gioui.org/app"
 	"gioui.org/layout"
+	"gioui.org/text"
 	"gioui.org/unit"
 	"gioui.org/widget"
+	"github.com/gioapp/gel/counter"
 	"github.com/gioapp/gel/theme"
 	"github.com/w-ingsolutions/c/model"
 	wapp "github.com/w-ingsolutions/c/pkg/app"
+	"github.com/w-ingsolutions/c/pkg/icons"
 	"github.com/w-ingsolutions/c/pkg/latcyr"
 	"github.com/w-ingsolutions/c/pkg/translate"
 	"github.com/w-ingsolutions/cgui/db"
@@ -19,14 +22,14 @@ func NewWingCal() *WingCal {
 		Strana:           "radovi",
 		PrikazaniElement: &model.WingVrstaRadova{},
 		Suma: &model.WingIzabraniElementi{
-			Elementi:                 []*model.WingIzabraniElement{},
-			UkupanNeophodanMaterijal: make(map[int]model.WingNeophodanMaterijal),
+			Elementi:           []*model.WingIzabraniElement{},
+			NeophodanMaterijal: make(map[int]model.WingNeophodanMaterijal),
 		},
 	}
 	w.Podesavanja = &WingPodesavanja{
 		Naziv: "Kalkulator",
 		Dir:   wapp.Dir("wing", false),
-		Cyr:   true,
+		Cyr:   false,
 	}
 	w.Podesavanja.File = filepath.Join(w.Podesavanja.Dir, "conf.json")
 	w.Materijal = db.NewMaterijal()
@@ -71,6 +74,53 @@ func NewWingCal() *WingCal {
 		app.Title("W-ing "+w.Jezik.t.T(latcyr.C(w.Podesavanja.Naziv, w.Podesavanja.Cyr))),
 	)
 
+	counters := WingCounters{
+		Kolicina: &counter.DuoUIcounter{
+			Value:        1,
+			OperateValue: 1,
+			From:         1,
+			To:           999,
+			CounterInput: &widget.Editor{
+				Alignment:  text.Middle,
+				SingleLine: true,
+				Submit:     true,
+			},
+			PageFunction:    w.ProjekatMaterijalSumaRacunica(),
+			CounterIncrease: new(widget.Clickable),
+			CounterDecrease: new(widget.Clickable),
+			CounterReset:    new(widget.Clickable),
+		},
+		Radovi: &counter.DuoUIcounter{
+			Value:        100,
+			OperateValue: 1,
+			From:         1,
+			To:           999,
+			CounterInput: &widget.Editor{
+				Alignment:  text.Middle,
+				SingleLine: true,
+			},
+			PageFunction:    w.ProjekatRacunica(),
+			CounterIncrease: new(widget.Clickable),
+			CounterDecrease: new(widget.Clickable),
+			CounterReset:    new(widget.Clickable),
+		},
+		Materijal: &counter.DuoUIcounter{
+			Value:        100,
+			OperateValue: 1,
+			From:         1,
+			To:           999,
+			CounterInput: &widget.Editor{
+				Alignment:  text.Middle,
+				SingleLine: true,
+			},
+			PageFunction:    w.ProjekatRacunica(),
+			CounterIncrease: new(widget.Clickable),
+			CounterDecrease: new(widget.Clickable),
+			CounterReset:    new(widget.Clickable),
+		},
+	}
+	w.UI.Counters = counters
+	w.UI.Tema.Icons = icons.NewWingUIicons()
 	w.Putanja = append(w.Putanja, w.Radovi.Naziv)
 	return w
 }

@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"gioui.org/layout"
 	"gioui.org/unit"
-	"gioui.org/widget/material"
 	"github.com/gioapp/gel/helper"
+	"github.com/gioapp/gel/icontextbtn"
 	"github.com/w-ingsolutions/c/model"
+	"strings"
 )
 
 //func (w *WingCal) tIzborVrsteRadova() func(gtx C) D {
@@ -84,17 +85,20 @@ func (w *WingCal) vBtnLinks(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o func(gtx
 }
 func (w *WingCal) btnLink(r model.ElementMenu) func(gtx C) D {
 	return func(gtx C) D {
-		btn := material.Button(w.UI.Tema.T, r.Link, fmt.Sprint(r.Id)+". "+w.text(r.Title))
+		icoNaziv := strings.Split(r.Title, " ")
+		btn := icontextbtn.IconTextBtn(w.UI.Tema.T, r.Link, w.UI.Tema.Icons[icoNaziv[0]], w.UI.Tema.Colors["Light"], fmt.Sprint(r.Id)+". "+w.text(r.Title))
+
+		//btn := material.Button(w.UI.Tema.T, r.Link, fmt.Sprint(r.Id)+". "+w.text(r.Title))
 		btn.CornerRadius = unit.Dp(0)
-		btn.Inset = layout.Inset{
-			Top:    unit.Dp(2),
-			Right:  unit.Dp(2),
-			Bottom: unit.Dp(2),
-			Left:   unit.Dp(2),
-		}
+		//btn.Inset = layout.Inset{
+		//	Top:    unit.Dp(2),
+		//	Right:  unit.Dp(2),
+		//	Bottom: unit.Dp(2),
+		//	Left:   unit.Dp(2),
+		//}
 		btn.Background = helper.HexARGB(w.UI.Tema.Colors["Gray"])
 		if r.Materijal {
-			btn.Background = helper.HexARGB(w.UI.Tema.Colors["DarkGray"])
+			//btn.Background = helper.HexARGB(w.UI.Tema.Colors["DarkGray"])
 		}
 		w.LinkoviIzboraVrsteRadovaKlik(r)
 		return btn.Layout(gtx)

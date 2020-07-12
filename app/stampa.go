@@ -181,64 +181,64 @@ func (w *WingCal) Stampa() func(gtx C) D {
 				p.Ln(20)
 
 				p.SetFont("Arial", "", 10)
-				for _, e := range w.Suma.UkupanNeophodanMaterijalPrikaz {
-					cols := []float64{40, pagew - mleft - mright - 20}
-					//rows := [][]string{}
-
-					rows := [][]string{
-						[]string{
-							"Šifra", fmt.Sprint(e.Id),
-						},
-						[]string{
-							"Naziv", e.Materijal.Naziv,
-						},
-						//[]string{
-						//	"Osobine i namena", e.Materijal.OsobineNamena,
-						//},
-						[]string{
-							"Jedinica mere", e.Materijal.JedinicaPotrosnje,
-						},
-						[]string{
-							"Jedinična cena", fmt.Sprint(e.Materijal.Cena),
-						},
-						[]string{
-							"Količina", fmt.Sprint(e.Kolicina),
-						},
-						[]string{
-							"Vrednost materijala", fmt.Sprintf("%.2f", e.UkupnaCena),
-						},
-					}
-					for _, row := range rows {
-						curx, y := p.GetXY()
-						x := curx
-						height := 0.
-						_, lineHt := p.GetFontSize()
-						for i, txt := range row {
-							lines := p.SplitLines([]byte(txt), cols[i])
-							h := float64(len(lines))*lineHt + marginCell*float64(len(lines))
-							if h > height {
-								height = h
-							}
-						}
-						// add a new page if the height of the row doesn't fit on the page
-						if p.GetY()+height > pageh-mbottom {
-							p.AddPage()
-							y = p.GetY()
-						}
-						for i, txt := range row {
-							width := cols[i]
-							//pdf.Rect(x, y, width, height, "")
-							p.MultiCell(width, lineHt+marginCell, tr(txt), "", "", false)
-							x += width
-							p.SetXY(x, y)
-						}
-						p.SetXY(curx, y+height)
-					}
-					p.Ln(8)
-				}
+				//for _, e := range w.Suma.UkupanNeophodanMaterijal {
+				//	cols := []float64{40, pagew - mleft - mright - 20}
+				//	//rows := [][]string{}
+				//
+				//	rows := [][]string{
+				//		[]string{
+				//			"Šifra", fmt.Sprint(e.Id),
+				//		},
+				//		[]string{
+				//			"Naziv", e.Materijal.Naziv,
+				//		},
+				//		//[]string{
+				//		//	"Osobine i namena", e.Materijal.OsobineNamena,
+				//		//},
+				//		[]string{
+				//			"Jedinica mere", e.Materijal.JedinicaPotrosnje,
+				//		},
+				//		[]string{
+				//			"Jedinična cena", fmt.Sprint(e.Materijal.Cena),
+				//		},
+				//		[]string{
+				//			"Količina", fmt.Sprint(e.Kolicina),
+				//		},
+				//		[]string{
+				//			"Vrednost materijala", fmt.Sprintf("%.2f", e.UkupnaCena),
+				//		},
+				//	}
+				//	for _, row := range rows {
+				//		curx, y := p.GetXY()
+				//		x := curx
+				//		height := 0.
+				//		_, lineHt := p.GetFontSize()
+				//		for i, txt := range row {
+				//			lines := p.SplitLines([]byte(txt), cols[i])
+				//			h := float64(len(lines))*lineHt + marginCell*float64(len(lines))
+				//			if h > height {
+				//				height = h
+				//			}
+				//		}
+				//		// add a new page if the height of the row doesn't fit on the page
+				//		if p.GetY()+height > pageh-mbottom {
+				//			p.AddPage()
+				//			y = p.GetY()
+				//		}
+				//		for i, txt := range row {
+				//			width := cols[i]
+				//			//pdf.Rect(x, y, width, height, "")
+				//			p.MultiCell(width, lineHt+marginCell, tr(txt), "", "", false)
+				//			x += width
+				//			p.SetXY(x, y)
+				//		}
+				//		p.SetXY(curx, y+height)
+				//	}
+				//	p.Ln(8)
+				//}
 
 				p.SetFont("Times", "B", 16)
-				p.CellFormat(0, 10, w.text("Suma materijal: ")+fmt.Sprintf("%.2f", projekat.CenaMaterijala), "0", 0, "", false, 0, "")
+				p.CellFormat(0, 10, w.text("Suma materijal: ")+fmt.Sprintf("%.2f", projekat.Elementi.SumaCena), "0", 0, "", false, 0, "")
 				p.Ln(20)
 
 				///////////////////////////////////
@@ -250,7 +250,7 @@ func (w *WingCal) Stampa() func(gtx C) D {
 				p.Ln(20)
 
 				p.SetFont("Arial", "", 10)
-				for _, e := range w.Suma.UkupanNeophodanMaterijalPrikaz {
+				for _, e := range w.Suma.NeophodanMaterijal {
 					cols := []float64{40, pagew - mleft - mright - 20}
 					//rows := [][]string{}
 

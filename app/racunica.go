@@ -1,5 +1,10 @@
 package calc
 
+import (
+	"fmt"
+	"github.com/w-ingsolutions/c/model"
+)
+
 func (w *WingCal) SumaRacunica() {
 	w.SumaElementiPrikaz()
 	s := 0.0
@@ -7,16 +12,44 @@ func (w *WingCal) SumaRacunica() {
 		s = s + e.SumaCena
 	}
 	w.Suma.SumaCena = s
-}
-
-func (w *WingCal) ProjekatSumaRacunica() func() {
-	return func() {
-		projekat.Radovi = w.Suma.Elementi
-	}
+	w.Suma.SumaCenaMaterijal, w.Suma.NeophodanMaterijal = w.NeopodanMaterijal(w.Suma.Elementi)
 }
 
 func (w *WingCal) PrikazaniElementSumaRacunica() func() {
 	return func() {
-		prikazaniElementSumaCena = w.PrikazaniElement.Cena * float64(kolicina.Value)
+		prikazaniElementSumaCena = w.PrikazaniElement.Cena * float64(w.UI.Counters.Kolicina.Value)
+	}
+}
+
+func (w *WingCal) ProjekatRacunica() func() {
+	return func() {
+		p := w.Suma
+		iz := []*model.WingIzabraniElement{}
+		for _, e := range w.Suma.Elementi {
+			ee := e
+			ee.SumaCena = e.SumaCena * float64(w.UI.Counters.Radovi.Value) / 100
+			iz = append(iz, e)
+			fmt.Println("Tetttt", e)
+		}
+		p.Elementi = iz
+		projekat.Elementi = p
+		//w.ProjekatSumaRacunica()
+	}
+}
+
+func (w *WingCal) ProjekatMaterijalSumaRacunica() func() {
+	return func() {
+		projekat.Elementi.SumaCena, projekat.Elementi.NeophodanMaterijal = w.NeopodanMaterijal(projekat.Elementi.Elementi)
+		//projekat.Elementi.SumaCena = w.Suma.SumaCenaMaterijal + w.Suma.SumaCenaMaterijal*float64(materijal.Value)/100
+	}
+}
+
+func (w *WingCal) ProjekatSumaRacunica() func() {
+	return func() {
+		s := 0.0
+		for _, e := range projekat.Elementi.Elementi {
+			s = s + e.SumaCena
+		}
+		projekat.Elementi.SumaCena = s
 	}
 }

@@ -53,8 +53,8 @@ func header(w *WingCal) func(gtx C) D {
 }
 func (w *WingCal) headerMenu() []func(gtx C) D {
 	return []func(gtx C) D{
-		w.stranaDugme(radoviDugme, w.text("RADOVI"), "radovi"),
+		w.stranaDugme(radoviDugme, func() {}, w.text("RADOVI"), "radovi"),
 		helper.DuoUIline(true, 0, 2, 2, w.UI.Tema.Colors["DarkGrayI"]),
-		w.stranaDugme(sumaDugme, w.text("SUMA"), "sumaRadovi"),
+		w.stranaDugme(sumaDugme, func() {}, w.text("SUMA"), "sumaRadovi"),
 	}
 }

@@ -24,7 +24,6 @@ func (w WingCal) brisi(element *model.WingIzabraniElement, i int) func(gtx C) D 
 			//w.Suma.Elementi = append(w.Suma.Elementi[:i], w.Suma.Elementi[i+1:]...)
 			//w.Suma.Elementi[i] = nil
 			//tabelaSuma = map[int]int{}
-			w.NeopodanMaterijal()
 			w.SumaRacunica()
 		}
 		return btn.Layout(gtx)

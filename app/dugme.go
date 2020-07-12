@@ -24,8 +24,9 @@ var (
 	stampajDugme        = new(widget.Clickable)
 )
 
-func (w *WingCal) stranaDugme(b *widget.Clickable, t, p string) func(gtx C) D {
+func (w *WingCal) stranaDugme(b *widget.Clickable, f func(), t, p string) func(gtx C) D {
 	return func(gtx C) D {
+		f()
 		btn := material.Button(w.UI.Tema.T, b, t)
 		btn.CornerRadius = unit.Dp(0)
 		btn.TextSize = unit.Dp(12)

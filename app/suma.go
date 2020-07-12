@@ -8,6 +8,7 @@ import (
 	"gioui.org/widget/material"
 	"github.com/gioapp/gel/container"
 	"github.com/gioapp/gel/helper"
+	"github.com/w-ingsolutions/c/model"
 )
 
 var (
@@ -47,7 +48,7 @@ func (w *WingCal) SumaStranaUnutra() func(gtx C) D {
 							}))
 					}),
 					layout.Rigid(helper.DuoUIline(false, 4, 4, 2, w.UI.Tema.Colors["Primary"])),
-					layout.Flexed(1, w.SumaElementi()))
+					layout.Flexed(1, w.SumaElementi(w.Suma.Elementi)))
 			}),
 			layout.Rigid(func(gtx C) D {
 				return container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["LightGrayII"]).Layout(gtx, layout.SE, func(gtx C) D {
@@ -69,7 +70,7 @@ func (w *WingCal) SumaStranaUnutra() func(gtx C) D {
 					}),
 					layout.Rigid(w.SumaStavkeMaterijala()),
 					layout.Rigid(helper.DuoUIline(false, 0, 0, 2, w.UI.Tema.Colors["Gray"])),
-					layout.Flexed(1, w.UkupanNeophodanMaterijal(ukupanNeophodanMaterijalList)),
+					layout.Flexed(1, w.UkupanNeophodanMaterijal(w.Suma.NeophodanMaterijal)),
 
 					layout.Rigid(func(gtx C) D {
 						gtx.Constraints.Min.X = gtx.Constraints.Max.X
@@ -88,10 +89,10 @@ func (w *WingCal) SumaStranaUnutra() func(gtx C) D {
 	}
 }
 
-func (w *WingCal) SumaElementi() func(gtx C) D {
+func (w *WingCal) SumaElementi(el []*model.WingIzabraniElement) func(gtx C) D {
 	return func(gtx C) D {
-		return sumList.Layout(gtx, len(w.Suma.Elementi), func(gtx C, i int) D {
-			element := w.Suma.Elementi[i]
+		return sumList.Layout(gtx, len(el), func(gtx C, i int) D {
+			element := el[i]
 			return layout.UniformInset(unit.Dp(4)).Layout(gtx, func(gtx C) D {
 				return layout.Flex{Axis: layout.Horizontal, Spacing: layout.SpaceBetween, Alignment: layout.Middle}.Layout(gtx,
 					layout.Flexed(0.6, w.cell(text.Start, w.text(element.Element.Naziv))),

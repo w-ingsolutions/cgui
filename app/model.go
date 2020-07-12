@@ -4,7 +4,6 @@ import (
 	"gioui.org/app"
 	"gioui.org/layout"
 	"gioui.org/op"
-	"gioui.org/text"
 	"gioui.org/widget"
 	"github.com/gioapp/gel/counter"
 	"github.com/gioapp/gel/theme"
@@ -22,54 +21,14 @@ var (
 	//post             = new(model.DuoCMSpost)
 	prikazaniElementSumaCena float64
 	selected                 int
-	projekat                 = new(model.WingProjekat)
-	latCyrBool               = new(widget.Bool)
+	projekat                 = &model.WingProjekat{
+		//Materijal: make(map[int]model.WingNeophodanMaterijal),
+		//Elementi: new(model.WingIzabraniElementi),
+	}
+	latCyrBool = new(widget.Bool)
 
 	projektantIzbor = new(widget.Enum)
 	klijentiIzbor   = new(widget.Enum)
-
-	kolicina = &counter.DuoUIcounter{
-		Value:        1,
-		OperateValue: 1,
-		From:         1,
-		To:           999,
-		CounterInput: &widget.Editor{
-			Alignment:  text.Middle,
-			SingleLine: true,
-			Submit:     true,
-		},
-
-		CounterIncrease: new(widget.Clickable),
-		CounterDecrease: new(widget.Clickable),
-		CounterReset:    new(widget.Clickable),
-	}
-	radovi = &counter.DuoUIcounter{
-		Value:        1,
-		OperateValue: 1,
-		From:         1,
-		To:           100,
-		CounterInput: &widget.Editor{
-			Alignment:  text.Middle,
-			SingleLine: true,
-		},
-		CounterIncrease: new(widget.Clickable),
-		CounterDecrease: new(widget.Clickable),
-		CounterReset:    new(widget.Clickable),
-	}
-	materijal = &counter.DuoUIcounter{
-		Value:        1,
-		OperateValue: 1,
-		From:         1,
-		To:           100,
-		CounterInput: &widget.Editor{
-			Alignment:  text.Middle,
-			SingleLine: true,
-		},
-
-		CounterIncrease: new(widget.Clickable),
-		CounterDecrease: new(widget.Clickable),
-		CounterReset:    new(widget.Clickable),
-	}
 )
 
 type WingCal struct {
@@ -110,6 +69,7 @@ type WingUI struct {
 	SaMarginom       layout.Inset
 	SaMalomMarginom  layout.Inset
 	SaStraneMarginom layout.Inset
+	Counters         WingCounters
 }
 
 type WingAPI struct {
@@ -134,4 +94,9 @@ type WingPodesavanja struct {
 type WingUloge struct {
 	Projektanti []*model.WingLice
 	Investotori []*model.WingLice
+}
+type WingCounters struct {
+	Kolicina  *counter.DuoUIcounter
+	Radovi    *counter.DuoUIcounter
+	Materijal *counter.DuoUIcounter
 }

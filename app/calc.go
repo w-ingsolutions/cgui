@@ -50,8 +50,8 @@ func (w *WingCal) strana(gtx C) func(gtx C) D {
 	podesavanjaStrana := w.Panel(w.text("Podešavanja"), func(gtx C) D { return D{} }, w.PodesavanjaStrana(), w.sumaFooter(w.text("Podešavanja")))
 	projekatStrana := w.Panel(w.text("Projekat"), func(gtx C) D { return D{} }, w.ProjekatStrana(), w.sumaFooter(w.text("Projekat")))
 	materijalStrana := w.Panel(w.text("Materijal"), w.MaterijalStavke(), w.MaterijalStrana(), w.sumaFooter(w.text("Materijal")))
-	sumaRadovaStrana := w.Panel(w.text("Ukupna cena radova"), w.SumaRadoviStavke(), w.SumaElementi(), w.sumaFooter(w.text("Suma: "+fmt.Sprintf("%.2f", w.Suma.SumaCena))))
-	sumaMaterijalStrana := w.Panel(w.text("Ukupan neophodni materijal"), w.SumaStavkeMaterijala(), w.UkupanNeophodanMaterijal(ukupanNeophodanMaterijalList), w.sumaFooter(w.text("Suma materijal: ")+fmt.Sprintf("%.2f", w.Suma.SumaCenaMaterijal)))
+	sumaRadovaStrana := w.Panel(w.text("Ukupna cena radova"), w.SumaRadoviStavke(), w.SumaElementi(w.Suma.Elementi), w.sumaFooter(w.text("Suma: "+fmt.Sprintf("%.2f", w.Suma.SumaCena))))
+	sumaMaterijalStrana := w.Panel(w.text("Ukupan neophodni materijal"), w.SumaStavkeMaterijala(), w.UkupanNeophodanMaterijal(w.Suma.NeophodanMaterijal), w.sumaFooter(w.text("Suma materijal: ")+fmt.Sprintf("%.2f", w.Suma.SumaCenaMaterijal)))
 	switch w.UI.Device {
 	case "p":
 		switch w.Strana {

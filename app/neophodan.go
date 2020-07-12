@@ -19,7 +19,7 @@ func (w *WingCal) RadNeophodanMaterijal(l *layout.List) func(gtx C) D {
 			materijal.Koeficijent = materijal.Koeficijent
 			materijal.Materijal = *w.Materijal[id]
 			if materijal.Koeficijent > 0 {
-				materijal.Kolicina = materijal.Materijal.Potrosnja * float64(kolicina.Value) * materijal.Koeficijent
+				materijal.Kolicina = materijal.Materijal.Potrosnja * float64(w.UI.Counters.Kolicina.Value) * materijal.Koeficijent
 			}
 			materijal.UkupnaCena = materijal.Materijal.Cena * float64(materijal.Kolicina)
 			materijal.UkupnoPakovanja = int(materijal.Kolicina / float64(materijal.Materijal.Pakovanje))
@@ -50,11 +50,11 @@ func (w *WingCal) RadNeophodanMaterijal(l *layout.List) func(gtx C) D {
 		})
 	}
 }
-func (w *WingCal) UkupanNeophodanMaterijal(l *layout.List) func(gtx C) D {
+func (w *WingCal) UkupanNeophodanMaterijal(unm map[int]model.WingNeophodanMaterijal) func(gtx C) D {
 	return func(gtx C) D {
 		width := gtx.Constraints.Max.X
-		return l.Layout(gtx, len(w.Suma.UkupanNeophodanMaterijal), func(gtx C, i int) D {
-			materijal := w.Suma.UkupanNeophodanMaterijalPrikaz[i]
+		return ukupanNeophodanMaterijalList.Layout(gtx, len(unm), func(gtx C, i int) D {
+			materijal := unm[i]
 			gtx.Constraints.Min.X = width
 			return layout.Flex{
 				Axis: layout.Vertical,
@@ -79,11 +79,10 @@ func (w *WingCal) UkupanNeophodanMaterijal(l *layout.List) func(gtx C) D {
 	}
 }
 
-func (w *WingCal) NeopodanMaterijal() {
+func (w *WingCal) NeopodanMaterijal(el []*model.WingIzabraniElement) (cena float64, nm map[int]model.WingNeophodanMaterijal) {
 	u := make(map[int]model.WingNeophodanMaterijal)
-	unm := make(map[int]model.WingNeophodanMaterijal)
 	sumaCena := 0.0
-	for _, e := range w.Suma.Elementi {
+	for _, e := range el {
 		for _, n := range e.Element.NeophodanMaterijal {
 			uu := model.WingNeophodanMaterijal{
 				Id:        n.Id,
@@ -98,12 +97,11 @@ func (w *WingCal) NeopodanMaterijal() {
 			sumaCena = sumaCena + ukupnaCena
 		}
 	}
-	w.Suma.UkupanNeophodanMaterijal = u
-	w.Suma.SumaCenaMaterijal = sumaCena
-	i := 0
-	for _, uuu := range u {
-		unm[i] = uuu
-		i++
-	}
-	w.Suma.UkupanNeophodanMaterijalPrikaz = unm
+
+	nm = u
+
+	cena = sumaCena
+	//w.Suma.NeophodanMaterijal = u
+	//w.Suma.SumaCenaMaterijal = sumaCena
+	return
 }

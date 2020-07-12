@@ -124,6 +124,6 @@ func (w *WingCal) LinkoviIzboraVrsteRadovaKlik(l model.ElementMenu) {
 			w.Putanja = append(w.Putanja, l.Title)
 		}
 		w.GenerisanjeLinkova(w.IzbornikRadova)
-		kolicina.Value = 0
+		w.UI.Counters.Kolicina.Value = 0
 	}
 }
