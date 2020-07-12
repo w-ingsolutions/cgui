@@ -1,5 +1,4 @@
 dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9/go.mod h1:H6x//7gZCb22OMCxBHrMx7a5I7Hp++hsVxbQ4BYO7hU=
-gioui.org v0.0.0-20200704155525-7bbe0da0c75f/go.mod h1:jiUwifN9cRl/zmco43aAqh0aV+s9GbhG13KcD+gEpkU=
 gioui.org v0.0.0-20200711123515-773939fe1dd1 h1:FdYhfjiEB5GUfY/6Z1MpdB/UgONXl/pWLTkC06XwWl8=
 gioui.org v0.0.0-20200711123515-773939fe1dd1/go.mod h1:jiUwifN9cRl/zmco43aAqh0aV+s9GbhG13KcD+gEpkU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
@@ -7,9 +6,8 @@ github.com/boombuler/barcode v1.0.0/go.mod h1:paBWMcWSl3LHKBqUq+rly7CNSldXjb2rDl
 github.com/bregydoc/gtranslate v0.0.0-20191225024717-45b28d4fda86 h1:t5TcUy7aayyxzBFMbwRAYdKgGg7kJpM+gQFOgYdzw1g=
 github.com/bregydoc/gtranslate v0.0.0-20191225024717-45b28d4fda86/go.mod h1:153ZQv0q0e2+tPGhDsQsYTRlVRTWIYMicEvriLNX2ZY=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/deelawn/gofpdf v1.17.0/go.mod h1:eRsPZphAf0t3Zr5kVIFP4Oc/hzi4NT+ybTgfaT/RN8U=
-github.com/gioapp/gel v0.0.0-20200711213520-60011212b793 h1:QqyQZzSosTvJQoT3Jg1X+gTreuft2MyJHIXFnqU6ZvE=
-github.com/gioapp/gel v0.0.0-20200711213520-60011212b793/go.mod h1:62fr52z5UXL14elSb9ivSwJUmJITmbyxjiv6GanDCSE=
+github.com/gioapp/gel v0.0.0-20200712124825-50b93b53a868 h1:LHgOA6dLHdqfj300nvzWyfwvgEAGTcZU3O0tvwzkB4A=
+github.com/gioapp/gel v0.0.0-20200712124825-50b93b53a868/go.mod h1:62fr52z5UXL14elSb9ivSwJUmJITmbyxjiv6GanDCSE=
 github.com/go-gl/glfw v0.0.0-20190409004039-e6da0acd62b1/go.mod h1:vR7hzQXu2zJy9AVAgeJqvqgH9Q5CA+iKCZ2gyEVpxRU=
 github.com/jung-kurt/gofpdf v1.0.0/go.mod h1:7Id9E/uU8ce6rXgefFLlgrJj/GYY22cpxn+r32jIOes=
 github.com/jung-kurt/gofpdf v1.16.2 h1:jgbatWHfRlPYiK85qgevsZTHviWXKwB1TTiKdz5PtRc=
@@ -25,8 +23,8 @@ github.com/ruudk/golang-pdf417 v0.0.0-20181029194003-1af4ab5afa58/go.mod h1:6lfF
 github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966 h1:JIAuq3EEf9cgbU6AtGPK4CTG3Zf6CKMNqf0MHTggAUA=
 github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966/go.mod h1:sUM3LWHvSMaG192sy56D9F7CNvL7jUJVXoqM1QKLnog=
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
-github.com/w-ingsolutions/c v0.0.0-20200711213451-6d011d399e4c h1:okKx6YDFrvylipWSAqKFJukjnPVszNzzoOXONa77SmI=
-github.com/w-ingsolutions/c v0.0.0-20200711213451-6d011d399e4c/go.mod h1:HPC2XEA+0ZOTeZAQ/WQhnQPuwg33tfmeooWE9kokCQ4=
+github.com/w-ingsolutions/c v0.0.0-20200712111622-9c8870714ff4 h1:dP+EPC2bkAAvPmndYgY6onbfMX35GmzcNqb0AXoFnCo=
+github.com/w-ingsolutions/c v0.0.0-20200712111622-9c8870714ff4/go.mod h1:KqO4TbOsRt80QxPhwH9Hg5MGLQTe8m25UlJHf32SelU=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20190510104115-cbcb75029529/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/exp v0.0.0-20190306152737-a1d7652674e8/go.mod h1:CJ0aWSM057203Lf6IL+f9T1iT9GByDxfZKAQTCR3kQA=
@@ -48,10 +46,8 @@ golang.org/x/sys v0.0.0-20190312061237-fead79001313/go.mod h1:h1NjWce9XRLGQEsW7w
 golang.org/x/sys v0.0.0-20190412213103-97732733099d/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200124204421-9fbb57f87de9 h1:1/DFK4b7JH8DmkqhUk48onnSfrPzImPoVxuomtbT2nk=
 golang.org/x/sys v0.0.0-20200124204421-9fbb57f87de9/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/text v0.3.0 h1:g61tztE5qeGQ89tm6NTjjM9VPIm088od1l6aSorWRWg=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
-golang.org/x/text v0.3.3 h1:cokOdA+Jmi5PJGXLlLllQSgYigAEfHXJAERHVMaCc2k=
-golang.org/x/text v0.3.3/go.mod h1:5Zoc/QRtKVWzQhOtBMvqHzDpF6irO9z98xDceosuGiQ=
-golang.org/x/tools v0.0.0-20180917221912-90fa682c2a6e/go.mod h1:n7NCudcB/nEzxVGmLbDWY5pfWTLqBcC2KZ6jyYvM4mQ=
 golang.org/x/tools v0.0.0-20190927191325-030b2cf1153e/go.mod h1:b+2E5dAYhXwXZwtnZ6UAqBI28+e2cm9otk0dWdXHAEo=
 golang.org/x/xerrors v0.0.0-20190717185122-a985d3407aa7/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
 gopkg.in/sourcemap.v1 v1.0.5 h1:inv58fC9f9J3TK2Y2R1NPntXEn3/wjWHkonhIUODNTI=
