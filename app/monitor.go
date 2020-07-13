@@ -4,9 +4,24 @@ import (
 	"gioui.org/layout"
 )
 
-func (w *WingCal) Monitor(izbornikStrana, sumaRadovaStrana, sumaMaterijalStrana, materijalStrana, projekatStrana func(gtx C) D) func(gtx C) D {
+func (w *WingCal) Monitor(izbornikStrana, sumaRadovaStrana, sumaMaterijalStrana func(gtx C) D) func(gtx C) D {
 	return func(gtx C) D {
-		return w.UI.SaMarginom.Layout(gtx, func(gtx C) D {
+		return w.UI.SaMalomMarginom.Layout(gtx, func(gtx C) D {
+			return layout.Flex{Axis: layout.Horizontal}.Layout(gtx,
+				layout.Flexed(0.4, izbornikStrana),
+				layout.Flexed(0.6, func(gtx C) D {
+					return layout.Flex{
+						Axis: layout.Vertical,
+					}.Layout(gtx, layout.Flexed(0.5, sumaRadovaStrana), layout.Flexed(0.5, sumaMaterijalStrana))
+				}),
+			)
+		})
+	}
+}
+
+func (w *WingCal) MonitorK(izbornikStrana, sumaRadovaStrana, sumaMaterijalStrana, materijalStrana, projekatStrana func(gtx C) D) func(gtx C) D {
+	return func(gtx C) D {
+		return w.UI.SaMalomMarginom.Layout(gtx, func(gtx C) D {
 			return layout.Flex{Axis: layout.Horizontal}.Layout(gtx,
 				layout.Flexed(0.3, izbornikStrana),
 				layout.Flexed(0.4, func(gtx C) D {

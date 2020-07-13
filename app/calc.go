@@ -36,11 +36,33 @@ func (w *WingCal) GlavniEkran(gtx layout.Context) {
 
 func (w *WingCal) strana(gtx C) func(gtx C) D {
 	switch d := gtx.Constraints.Max.X; {
-	case d > 1100:
-		w.UI.Device = "h"
-	case d < 1100:
-		w.UI.Device = "p"
+	case d > 1910:
+		w.UI.Device = "des"
+	case d > 1356:
+		w.UI.Device = "lap"
+	case d > 758:
+		w.UI.Device = "tab"
+	case d < 758:
+		w.UI.Device = "mob"
 	}
+
+	//case d > 2999:
+	//w.UI.Device = "kkk"
+	//case d > 1910:
+	//w.UI.Device = "dtp"
+	//case d > 1680:
+	//w.UI.Device = "dtm"
+	//case d > 1430:
+	//w.UI.Device = "law"
+	//case d > 1014:
+	//w.UI.Device = "lap"
+	//case d > 758:
+	//w.UI.Device = "tbl"
+	//case d > 558:
+	//w.UI.Device = "tbp"
+	//case d < 558:
+	//w.UI.Device = "mob"
+	//}
 	var s func(gtx C) D
 	prikazani := func(gtx C) D { return D{} }
 	if w.Element {
@@ -53,7 +75,7 @@ func (w *WingCal) strana(gtx C) func(gtx C) D {
 	sumaRadovaStrana := w.Panel(w.text("Ukupna cena radova"), w.SumaRadoviStavke(), w.SumaElementi(w.Suma.Elementi), w.sumaFooter(w.text("Suma: "+fmt.Sprintf("%.2f", w.Suma.SumaCena))))
 	sumaMaterijalStrana := w.Panel(w.text("Ukupan neophodni materijal"), w.SumaStavkeMaterijala(), w.UkupanNeophodanMaterijal(w.Suma.NeophodanMaterijal), w.sumaFooter(w.text("Suma materijal: ")+fmt.Sprintf("%.2f", w.Suma.SumaCenaMaterijal)))
 	switch w.UI.Device {
-	case "p":
+	case "mob":
 		switch w.Strana {
 		case "materijal":
 			s = materijalStrana
@@ -68,9 +90,15 @@ func (w *WingCal) strana(gtx C) func(gtx C) D {
 		case "podesavanja":
 			s = podesavanjaStrana
 		}
-	case "h":
+	case "tab":
 		//s = w.UI.SaMarginom.Layout(gtx, w.MaterijalStrana())
-		s = w.Monitor(izbornikStrana, sumaRadovaStrana, sumaMaterijalStrana, materijalStrana, projekatStrana)
+		s = w.Monitor(izbornikStrana, sumaRadovaStrana, sumaMaterijalStrana)
+	case "lap":
+		//s = w.UI.SaMarginom.Layout(gtx, w.MaterijalStrana())
+		s = w.Monitor(izbornikStrana, sumaRadovaStrana, sumaMaterijalStrana)
+	case "des":
+		//s = w.UI.SaMarginom.Layout(gtx, w.MaterijalStrana())
+		s = w.MonitorK(izbornikStrana, sumaRadovaStrana, sumaMaterijalStrana, materijalStrana, projekatStrana)
 	}
 	return s
 

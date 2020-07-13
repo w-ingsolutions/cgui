@@ -9,7 +9,7 @@ import (
 
 func header(w *WingCal) func(gtx C) D {
 	return func(gtx C) D {
-		return container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.Center, func(gtx C) D {
+		return container.DuoUIcontainer(w.UI.Tema, 4, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.Center, func(gtx C) D {
 			return layout.Flex{
 				Axis:      layout.Horizontal,
 				Spacing:   layout.SpaceBetween,

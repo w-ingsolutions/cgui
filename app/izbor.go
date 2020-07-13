@@ -8,6 +8,7 @@ import (
 	"gioui.org/widget/material"
 	"github.com/gioapp/gel/container"
 	"github.com/gioapp/gel/helper"
+	"github.com/gioapp/gel/icontextbtn"
 	"github.com/gioapp/gel/panel"
 	"github.com/w-ingsolutions/c/model"
 )
@@ -35,7 +36,9 @@ func (w *WingCal) IzborPodVrsteRadova() func(gtx C) D {
 			//	layout.Flex{Axis: layout.Vertical}.Layout(w.Context,
 			//		layout.Rigid(func() {
 
-			btn := material.Button(w.UI.Tema.T, vrstarada.Link, fmt.Sprint(vrstarada.Id)+". "+w.text(vrstarada.Title))
+			//btn := material.Button(w.UI.Tema.T, vrstarada.Link, fmt.Sprint(vrstarada.Id)+". "+w.text(vrstarada.Title))
+			//icoNaziv := strings.Split(vrstarada.Title, " ")
+			btn := icontextbtn.IconTextBtn(w.UI.Tema.T, vrstarada.Link, w.UI.Tema.Icons[vrstarada.Slug], unit.Dp(48), w.UI.Tema.Colors["Light"], fmt.Sprint(vrstarada.Id)+". "+w.text(vrstarada.Title))
 			btn.CornerRadius = unit.Dp(0)
 			btn.Background = helper.HexARGB(w.UI.Tema.Colors["Gray"])
 			if vrstarada.Materijal {
@@ -58,9 +61,7 @@ func (w *WingCal) IzbornikRadovaStrana() func(gtx C) D {
 	}
 	return func(gtx C) D {
 		return w.UI.BezMargine.Layout(gtx, func(gtx C) D {
-
 			gtx.Constraints.Min.X = gtx.Constraints.Max.X
-
 			return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
 				layout.Rigid(w.Izbornik()),
 				//layout.Rigid(helper.Tema.DuoUIline(false, 4, 4, 0, w.UI.Tema.Colors["Dark"])),

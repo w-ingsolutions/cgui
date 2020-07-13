@@ -1,7 +1,6 @@
 package calc
 
 import (
-	"fmt"
 	"github.com/w-ingsolutions/c/model"
 )
 
@@ -29,7 +28,6 @@ func (w *WingCal) ProjekatRacunica() func() {
 			ee := e
 			ee.SumaCena = e.SumaCena * float64(w.UI.Counters.Radovi.Value) / 100
 			iz = append(iz, e)
-			fmt.Println("Tetttt", e)
 		}
 		p.Elementi = iz
 		projekat.Elementi = p

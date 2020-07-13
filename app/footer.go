@@ -10,7 +10,7 @@ import (
 
 func footer(w *WingCal) func(gtx C) D {
 	return func(gtx C) D {
-		return container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.Center, func(gtx C) D {
+		return container.DuoUIcontainer(w.UI.Tema, 4, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.Center, func(gtx C) D {
 			return layout.Flex{
 				Axis:      layout.Horizontal,
 				Spacing:   layout.SpaceBetween,
@@ -27,6 +27,12 @@ func footer(w *WingCal) func(gtx C) D {
 								btn := material.IconButton(w.UI.Tema.T, podesavanjeDugme, w.UI.Tema.Icons["settingsIcon"])
 								btn.Color = helper.HexARGB(w.UI.Tema.Colors["Danger"])
 								btn.Size = unit.Dp(16)
+								btn.Inset = layout.Inset{
+									Top:    unit.Dp(4),
+									Right:  unit.Dp(4),
+									Bottom: unit.Dp(4),
+									Left:   unit.Dp(4),
+								}
 								btn.Background = helper.HexARGB(w.UI.Tema.Colors["White"])
 								for podesavanjeDugme.Clicked() {
 									w.Strana = "podesavanja"
