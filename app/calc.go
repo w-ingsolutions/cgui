@@ -36,7 +36,7 @@ func (w *WingCal) GlavniEkran(gtx layout.Context) {
 
 func (w *WingCal) strana(gtx C) func(gtx C) D {
 	switch d := gtx.Constraints.Max.X; {
-	case d > 1810:
+	case d > 1670:
 		w.UI.Device = "des"
 	case d > 1356:
 		w.UI.Device = "lap"
