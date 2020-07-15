@@ -10,6 +10,6 @@ require (
 	github.com/minio/highwayhash v1.0.0 // indirect
 	github.com/robertkrimen/otto v0.0.0-20191219234010-c382bd3c16ff // indirect
 	github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966
-	github.com/w-ingsolutions/c v0.0.0-20200712190131-306b38e88586
+	github.com/w-ingsolutions/c v0.0.0-20200715210850-58ddc4fd33b3
 	gopkg.in/sourcemap.v1 v1.0.5 // indirect
 )

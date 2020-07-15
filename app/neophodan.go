@@ -25,7 +25,6 @@ func (w *WingCal) RadNeophodanMaterijal(l *layout.List) func(gtx C) D {
 			materijal.UkupnoPakovanja = int(materijal.Kolicina / float64(materijal.Materijal.Pakovanje))
 
 			//gtx.Constraints.Min.X = width
-
 			return layout.Flex{
 				Axis: layout.Vertical,
 			}.Layout(gtx,
@@ -52,9 +51,16 @@ func (w *WingCal) RadNeophodanMaterijal(l *layout.List) func(gtx C) D {
 }
 func (w *WingCal) UkupanNeophodanMaterijal(unm map[int]model.WingNeophodanMaterijal) func(gtx C) D {
 	return func(gtx C) D {
+		//
+		//var u []model.WingNeophodanMaterijal
+		//for tt, uu :=range unm{
+		//	fmt.Println("umnnnn", tt)
+		//	u = append(u, uu)
+		//}
 		width := gtx.Constraints.Max.X
 		return ukupanNeophodanMaterijalList.Layout(gtx, len(unm), func(gtx C, i int) D {
-			materijal := unm[i]
+			//materijal := unm[i]
+			materijal := w.Suma.NeophodanMaterijalPrikaz[i]
 			gtx.Constraints.Min.X = width
 			return layout.Flex{
 				Axis: layout.Vertical,
@@ -77,31 +83,4 @@ func (w *WingCal) UkupanNeophodanMaterijal(unm map[int]model.WingNeophodanMateri
 			)
 		})
 	}
-}
-
-func (w *WingCal) NeopodanMaterijal(el []*model.WingIzabraniElement) (cena float64, nm map[int]model.WingNeophodanMaterijal) {
-	u := make(map[int]model.WingNeophodanMaterijal)
-	sumaCena := 0.0
-	for _, e := range el {
-		for _, n := range e.Element.NeophodanMaterijal {
-			uu := model.WingNeophodanMaterijal{
-				Id:        n.Id,
-				Materijal: *w.Materijal[n.Id-1],
-			}
-			k := uu.Materijal.Potrosnja * float64(e.Kolicina) * n.Koeficijent
-			uu.Kolicina = u[n.Id].Kolicina + k
-			ukupnaCena := uu.Kolicina * uu.Materijal.Cena
-			uu.UkupnaCena = ukupnaCena
-			uu.UkupnoPakovanja = int(k / float64(uu.Materijal.Pakovanje))
-			u[n.Id] = uu
-			sumaCena = sumaCena + ukupnaCena
-		}
-	}
-
-	nm = u
-
-	cena = sumaCena
-	//w.Suma.NeophodanMaterijal = u
-	//w.Suma.SumaCenaMaterijal = sumaCena
-	return
 }
