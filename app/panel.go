@@ -11,7 +11,7 @@ import (
 func (w *WingCal) Panel(naslov string, stavke, sadrzaj, footer func(gtx C) D) func(gtx C) D {
 	return func(gtx C) D {
 		return w.UI.SaMalomMarginom.Layout(gtx, func(gtx C) D {
-			return container.DuoUIcontainer(w.UI.Tema, 1, w.UI.Tema.Colors["DarkGrayI"]).Layout(gtx, layout.Center, func(gtx C) D {
+			return container.DuoUIcontainer(w.UI.Tema, 1, w.UI.Tema.Colors["LightGrayIII"]).Layout(gtx, layout.Center, func(gtx C) D {
 				return container.DuoUIcontainer(w.UI.Tema, 0, w.UI.Tema.Colors["White"]).Layout(gtx, layout.Center, func(gtx C) D {
 					return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
 						layout.Flexed(1, func(gtx C) D {

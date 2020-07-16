@@ -44,7 +44,6 @@ func (w *WingCal) IzborPodVrsteRadova() func(gtx C) D {
 			if vrstarada.Materijal {
 				btn.Background = helper.HexARGB(w.UI.Tema.Colors["DarkGray"])
 			}
-
 			w.LinkoviIzboraVrsteRadovaKlik(vrstarada)
 			return btn.Layout(gtx)
 		})
@@ -96,6 +95,8 @@ func (w *WingCal) Izbornik() func(gtx C) D {
 
 func (w *WingCal) LinkoviIzboraVrsteRadovaKlik(l model.ElementMenu) {
 	for l.Link.Clicked() {
+		fmt.Println("IZBORR", l.Title)
+
 		komanda := fmt.Sprint(l.Id)
 		if len(w.Putanja) == 1 {
 			komanda = fmt.Sprint(l.Id)
@@ -121,7 +122,6 @@ func (w *WingCal) LinkoviIzboraVrsteRadovaKlik(l model.ElementMenu) {
 			w.Element = true
 		}
 		if len(w.Putanja) < 3 {
-
 			w.Putanja = append(w.Putanja, l.Title)
 		}
 		w.GenerisanjeLinkova(w.IzbornikRadova)
