@@ -51,12 +51,6 @@ func (w *WingCal) RadNeophodanMaterijal(l *layout.List) func(gtx C) D {
 }
 func (w *WingCal) UkupanNeophodanMaterijal(unm map[int]model.WingNeophodanMaterijal) func(gtx C) D {
 	return func(gtx C) D {
-		//
-		//var u []model.WingNeophodanMaterijal
-		//for tt, uu :=range unm{
-		//	fmt.Println("umnnnn", tt)
-		//	u = append(u, uu)
-		//}
 		width := gtx.Constraints.Max.X
 		return ukupanNeophodanMaterijalList.Layout(gtx, len(unm), func(gtx C, i int) D {
 			//materijal := unm[i]

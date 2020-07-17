@@ -44,6 +44,7 @@ func (w *WingCal) IzborPodVrsteRadova() func(gtx C) D {
 			if vrstarada.Materijal {
 				btn.Background = helper.HexARGB(w.UI.Tema.Colors["DarkGray"])
 			}
+
 			w.LinkoviIzboraVrsteRadovaKlik(vrstarada)
 			return btn.Layout(gtx)
 		})

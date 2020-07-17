@@ -52,9 +52,17 @@ func header(w *WingCal) func(gtx C) D {
 	}
 }
 func (w *WingCal) headerMenu() []func(gtx C) D {
-	return []func(gtx C) D{
+	r := []func(gtx C) D{
 		w.stranaDugme(radoviDugme, func() {}, w.text("RADOVI"), "radovi"),
 		helper.DuoUIline(true, 0, 2, 2, w.UI.Tema.Colors["DarkGrayI"]),
 		w.stranaDugme(sumaDugme, func() {}, w.text("SUMA"), "sumaRadovi"),
+		helper.DuoUIline(true, 0, 2, 2, w.UI.Tema.Colors["DarkGrayI"]),
+		w.stranaDugme(sumaMaterialDugme, func() {}, w.text("SUMA MATERIJAL"), "sumaMaterijal"),
 	}
+	if w.UI.Device != "mob" {
+		r = []func(gtx C) D{
+			w.stranaDugme(radoviDugme, func() {}, w.text("RADOVI"), "radovi"),
+		}
+	}
+	return r
 }

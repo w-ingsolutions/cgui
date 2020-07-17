@@ -62,3 +62,33 @@ func (w *WingCal) MaterijalStrana() func(gtx C) D {
 		})
 	}
 }
+
+func (w *WingCal) MaterijalElementi() func(gtx C) D {
+	return func(gtx C) D {
+		return materijalList.Layout(gtx, len(w.Materijal), func(gtx C, i int) D {
+			m := w.Materijal[i]
+			return layout.Flex{
+				Axis: layout.Vertical,
+			}.Layout(gtx,
+				layout.Rigid(func(gtx C) D {
+					return layout.UniformInset(unit.Dp(4)).Layout(gtx, func(gtx C) D {
+						return layout.Flex{
+							Axis:      layout.Horizontal,
+							Alignment: layout.Middle,
+						}.Layout(gtx,
+							layout.Flexed(0.1, w.cell(text.Start, w.text(fmt.Sprint(m.Id)))),
+							layout.Rigid(helper.DuoUIline(true, 0, 8, 2, w.UI.Tema.Colors["Gray"])),
+							layout.Flexed(0.3, w.cell(text.Middle, w.text(m.Naziv))),
+							layout.Rigid(helper.DuoUIline(true, 0, 8, 2, w.UI.Tema.Colors["Gray"])),
+							layout.Flexed(0.1, w.cell(text.Middle, w.text(fmt.Sprint(m.Pakovanje)))),
+							layout.Rigid(helper.DuoUIline(true, 0, 8, 2, w.UI.Tema.Colors["Gray"])),
+							layout.Flexed(0.1, w.cell(text.Middle, w.text(m.Jedinica))),
+							layout.Rigid(helper.DuoUIline(true, 0, 8, 2, w.UI.Tema.Colors["Gray"])),
+							layout.Flexed(0.2, w.cell(text.End, w.text(fmt.Sprint(m.Cena)))),
+						)
+					})
+				}),
+				layout.Rigid(helper.DuoUIline(false, 0, 0, 1, w.UI.Tema.Colors["Gray"])))
+		})
+	}
+}

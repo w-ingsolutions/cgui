@@ -38,9 +38,9 @@ func (w *WingCal) projekat() []func(gtx C) D {
 		func(gtx C) D { return material.H6(w.UI.Tema.T, w.text("Radovi")).Layout(gtx) },
 		w.SumaElementi(projekat.Elementi.Elementi),
 		func(gtx C) D { return material.H6(w.UI.Tema.T, w.text("Materijal")).Layout(gtx) },
-		//w.materijal(),
+		w.materijal(),
 		func(gtx C) D { return material.H6(w.UI.Tema.T, w.text("Materijal")).Layout(gtx) },
-		//w.UkupanNeophodanMaterijal(projekat.Elementi.NeophodanMaterijal),
+		w.UkupanNeophodanMaterijal(projekat.Elementi.NeophodanMaterijal),
 	}
 }
 
@@ -93,48 +93,52 @@ func (w *WingCal) investitori() func(gtx C) D {
 						})
 					})
 				}),
-				layout.Flexed(0.6, func(gtx C) D {
-					return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
-						layout.Rigid(func(gtx C) D {
-							return material.Caption(w.UI.Tema.T, w.text("Naziv: ")+w.text(projekat.Investitor.KratakNaziv)).Layout(gtx)
-						}),
-						layout.Rigid(func(gtx C) D {
-							return material.Caption(w.UI.Tema.T, w.text("Adresa: ")+":"+w.text(projekat.Investitor.Adresa)+" "+w.text(projekat.Investitor.Grad)).Layout(gtx)
-						}),
-						layout.Rigid(func(gtx C) D {
-							return material.Caption(w.UI.Tema.T, w.text("PIB: ")+":"+w.text(projekat.Investitor.PIB)).Layout(gtx)
-						}),
-						layout.Rigid(func(gtx C) D {
-							return material.Caption(w.UI.Tema.T, w.text("Matičmi broj: ")+":"+w.text(projekat.Investitor.MB)).Layout(gtx)
-						}),
-						layout.Rigid(func(gtx C) D {
-							return material.Caption(w.UI.Tema.T, w.text("Datum osnivanja: ")+":"+w.text(projekat.Investitor.DatumOsnivanja)).Layout(gtx)
-						}),
-						layout.Rigid(func(gtx C) D {
-							return material.Caption(w.UI.Tema.T, w.text("Delatnost: ")+":"+w.text(projekat.Investitor.Delatnost)).Layout(gtx)
-						}),
-						layout.Rigid(func(gtx C) D {
-							return material.Caption(w.UI.Tema.T, w.text("Računi: ")).Layout(gtx)
-						}),
-						layout.Rigid(func(gtx C) D {
-							return racuniList.Layout(gtx, len(projekat.Investitor.Racuni), func(gtx C, i int) D {
-								racuni := projekat.Investitor.Racuni[i]
-								return container.DuoUIcontainer(w.UI.Tema, 0, w.UI.Tema.Colors["White"]).Layout(gtx, layout.Center, func(gtx C) D {
-									return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
-										layout.Rigid(func(gtx C) D {
-											return material.Caption(w.UI.Tema.T, w.text(racuni.Banka)).Layout(gtx)
-										}),
-										layout.Rigid(func(gtx C) D {
-											return material.Caption(w.UI.Tema.T, w.text(racuni.Racun)).Layout(gtx)
-										}))
-								})
-							})
-						}),
-						layout.Rigid(func(gtx C) D {
-							return material.Caption(w.UI.Tema.T, w.text("Email: ")+":"+w.text(projekat.Investitor.Email)).Layout(gtx)
-						}))
-				}))
+				layout.Flexed(0.6, w.lice()))
 		})
+	}
+}
+
+func (w *WingCal) lice() func(gtx C) D {
+	return func(gtx C) D {
+		return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
+			layout.Rigid(func(gtx C) D {
+				return material.Caption(w.UI.Tema.T, w.text("Naziv: ")+w.text(projekat.Investitor.KratakNaziv)).Layout(gtx)
+			}),
+			layout.Rigid(func(gtx C) D {
+				return material.Caption(w.UI.Tema.T, w.text("Adresa: ")+":"+w.text(projekat.Investitor.Adresa)+" "+w.text(projekat.Investitor.Grad)).Layout(gtx)
+			}),
+			layout.Rigid(func(gtx C) D {
+				return material.Caption(w.UI.Tema.T, w.text("PIB: ")+":"+w.text(projekat.Investitor.PIB)).Layout(gtx)
+			}),
+			layout.Rigid(func(gtx C) D {
+				return material.Caption(w.UI.Tema.T, w.text("Matičmi broj: ")+":"+w.text(projekat.Investitor.MB)).Layout(gtx)
+			}),
+			layout.Rigid(func(gtx C) D {
+				return material.Caption(w.UI.Tema.T, w.text("Datum osnivanja: ")+":"+w.text(projekat.Investitor.DatumOsnivanja)).Layout(gtx)
+			}),
+			layout.Rigid(func(gtx C) D {
+				return material.Caption(w.UI.Tema.T, w.text("Delatnost: ")+":"+w.text(projekat.Investitor.Delatnost)).Layout(gtx)
+			}),
+			layout.Rigid(func(gtx C) D {
+				return material.Caption(w.UI.Tema.T, w.text("Računi: ")).Layout(gtx)
+			}),
+			layout.Rigid(func(gtx C) D {
+				return racuniList.Layout(gtx, len(projekat.Investitor.Racuni), func(gtx C, i int) D {
+					racuni := projekat.Investitor.Racuni[i]
+					return container.DuoUIcontainer(w.UI.Tema, 0, w.UI.Tema.Colors["White"]).Layout(gtx, layout.Center, func(gtx C) D {
+						return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
+							layout.Rigid(func(gtx C) D {
+								return material.Caption(w.UI.Tema.T, w.text(racuni.Banka)).Layout(gtx)
+							}),
+							layout.Rigid(func(gtx C) D {
+								return material.Caption(w.UI.Tema.T, w.text(racuni.Racun)).Layout(gtx)
+							}))
+					})
+				})
+			}),
+			layout.Rigid(func(gtx C) D {
+				return material.Caption(w.UI.Tema.T, w.text("Email: ")+":"+w.text(projekat.Investitor.Email)).Layout(gtx)
+			}))
 	}
 }
 

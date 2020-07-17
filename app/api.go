@@ -3,28 +3,12 @@ package calc
 import (
 	"encoding/json"
 	"fmt"
-	"gioui.org/widget"
 	"github.com/w-ingsolutions/c/model"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"time"
 )
-
-func (w *WingCal) GenerisanjeLinkova(radovi map[int]model.ElementMenu) {
-	for i, rad := range radovi {
-		rad.Link = new(widget.Clickable)
-		w.IzbornikRadova[i] = rad
-	}
-	return
-}
-
-func (w *WingCal) GenerisanjeDugmicaJezici() {
-	for _, jezik := range w.Jezik.dostupni {
-		w.Jezik.linkovi[jezik] = new(widget.Clickable)
-	}
-	return
-}
 
 func (w *WingCal) APIpozivIzbornik(komanda string) {
 	radovi := map[int]model.ElementMenu{}

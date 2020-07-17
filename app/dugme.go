@@ -6,7 +6,7 @@ import (
 	"gioui.org/widget"
 	"gioui.org/widget/material"
 	"github.com/gioapp/gel/helper"
-	"github.com/w-ingsolutions/c/pkg/translate"
+	"github.com/w-ingsolutions/c/model"
 )
 
 var (
@@ -61,14 +61,30 @@ func (w *WingCal) latDugme() func(gtx C) D {
 	}
 }
 
-func (w *WingCal) jezikDugme(gtx C, d *widget.Clickable, jezik string) D {
-	btn := material.Button(w.UI.Tema.T, d, jezik)
-	btn.CornerRadius = unit.Dp(0)
-	btn.TextSize = unit.Dp(10)
-	btn.Background = helper.HexARGB(w.UI.Tema.Colors["Warning"])
-	btn.Color = helper.HexARGB(w.UI.Tema.Colors["Dark"])
-	for d.Clicked() {
-		w.Jezik.t = translate.Translation{"sr", jezik}
+//
+//func (w *WingCal) jezikDugme(gtx C, d *widget.Clickable, jezik string) D {
+//	btn := material.Button(w.UI.Tema.T, d, jezik)
+//	btn.CornerRadius = unit.Dp(0)
+//	btn.TextSize = unit.Dp(10)
+//	btn.Background = helper.HexARGB(w.UI.Tema.Colors["Warning"])
+//	btn.Color = helper.HexARGB(w.UI.Tema.Colors["Dark"])
+//	for d.Clicked() {
+//		w.Jezik.t = translate.Translation{"sr", jezik}
+//	}
+//	return btn.Layout(gtx)
+//}
+
+func (w *WingCal) GenerisanjeLinkova(radovi map[int]model.ElementMenu) {
+	for i, rad := range radovi {
+		rad.Link = new(widget.Clickable)
+		w.IzbornikRadova[i] = rad
 	}
-	return btn.Layout(gtx)
+	return
+}
+
+func (w *WingCal) GenerisanjeDugmicaJezici() {
+	for _, jezik := range w.Jezik.dostupni {
+		w.Jezik.linkovi[jezik] = new(widget.Clickable)
+	}
+	return
 }
