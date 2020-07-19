@@ -7,9 +7,9 @@ import (
 	"github.com/gioapp/gel/helper"
 	"github.com/gioapp/gel/icontextbtn"
 	"github.com/w-ingsolutions/c/model"
+	"github.com/w-ingsolutions/c/pkg/lyt"
 )
 
-/////////////
 func (w *WingCal) IzborVrsteRadova() func(gtx C) D {
 	izbornik := w.IzborPodVrsteRadova()
 	switch w.UI.Device {
@@ -26,129 +26,95 @@ func (w *WingCal) IzborVrsteRadova() func(gtx C) D {
 }
 func (w *WingCal) IzborVrsteRadovaDveKolone() func(gtx C) D {
 	return w.vBtnLinks(
-		w.hBtnLinks(w.btnLink(w.IzbornikRadova[0]), w.btnLink(w.IzbornikRadova[1])),
-		w.hBtnLinks(w.btnLink(w.IzbornikRadova[2]), w.btnLink(w.IzbornikRadova[3])),
-		w.hBtnLinks(w.btnLink(w.IzbornikRadova[4]), w.btnLink(w.IzbornikRadova[5])),
-		w.hBtnLinks(w.btnLink(w.IzbornikRadova[6]), w.btnLink(w.IzbornikRadova[7])),
-		w.hBtnLinks(w.btnLink(w.IzbornikRadova[8]), w.btnLink(w.IzbornikRadova[9])),
-		w.hBtnLinks(w.btnLink(w.IzbornikRadova[10]), w.btnLink(w.IzbornikRadova[11])),
-		w.hBtnLinks(w.btnLink(w.IzbornikRadova[12]), w.btnLink(w.IzbornikRadova[13])),
-		w.hBtnLinks(w.btnLink(w.IzbornikRadova[14]), w.btnLink(w.IzbornikRadova[15])),
-		w.hBtnLinks(w.btnLink(w.IzbornikRadova[16]), w.btnLink(w.IzbornikRadova[17])),
-		w.hBtnLinks(w.btnLink(w.IzbornikRadova[18]), w.btnLink(w.IzbornikRadova[19])),
-		w.hBtnLinks(w.btnLink(w.IzbornikRadova[20]), w.btnLink(w.IzbornikRadova[21])),
-		w.hBtnLinks(w.btnLink(w.IzbornikRadova[22]), w.btnLink(w.IzbornikRadova[23])),
-		w.hBtnLinks(w.btnLink(w.IzbornikRadova[24]), w.btnLink(w.IzbornikRadova[25])),
-		w.hBtnLinks(w.btnLink(w.IzbornikRadova[26]), w.btnLink(w.IzbornikRadova[27])),
-		w.hBtnLinks(w.btnLink(w.IzbornikRadova[28]), w.btnLink(w.IzbornikRadova[29])),
+		w.IzborVrsteRadovaDveKoloneRed(0, 1),
+		w.IzborVrsteRadovaDveKoloneRed(2, 3),
+		w.IzborVrsteRadovaDveKoloneRed(4, 5),
+		w.IzborVrsteRadovaDveKoloneRed(6, 7),
+		w.IzborVrsteRadovaDveKoloneRed(8, 9),
+		w.IzborVrsteRadovaDveKoloneRed(10, 11),
+		w.IzborVrsteRadovaDveKoloneRed(12, 13),
+		w.IzborVrsteRadovaDveKoloneRed(14, 15),
+		w.IzborVrsteRadovaDveKoloneRed(16, 17),
+		w.IzborVrsteRadovaDveKoloneRed(18, 19),
+		w.IzborVrsteRadovaDveKoloneRed(20, 21),
+		w.IzborVrsteRadovaDveKoloneRed(23, 23),
+		w.IzborVrsteRadovaDveKoloneRed(24, 25),
+		w.IzborVrsteRadovaDveKoloneRed(26, 27),
+		w.IzborVrsteRadovaDveKoloneRed(28, 29),
 	)
 }
+func (w *WingCal) IzborVrsteRadovaDveKoloneRed(a, b int) func(gtx C) D {
+	return w.hBtnLinks(w.btnLink(w.IzbornikRadova[a]), w.btnLink(w.IzbornikRadova[b]))
 
+}
 func (w *WingCal) hBtnLinks(a, b func(gtx C) D) func(gtx C) D {
 	return func(gtx C) D {
-		return layout.Flex{Axis: layout.Horizontal, Spacing: layout.SpaceBetween, Alignment: layout.Middle}.Layout(gtx,
-			layout.Flexed(0.333, a),
-			layout.Flexed(0.333, b))
+		return lyt.Format(gtx, "vflexb(middle,f(0.333,_),f(0.333,_))", a, b)
 	}
 }
 
 func (w *WingCal) vBtnLinks(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o func(gtx C) D) func(gtx C) D {
 	return func(gtx C) D {
-		return layout.Flex{Axis: layout.Vertical, Spacing: layout.SpaceBetween, Alignment: layout.Middle}.Layout(gtx,
-			layout.Flexed(0.06, a),
-			layout.Flexed(0.06, b),
-			layout.Flexed(0.06, c),
-			layout.Flexed(0.06, d),
-			layout.Flexed(0.06, e),
-			layout.Flexed(0.06, f),
-			layout.Flexed(0.06, g),
-			layout.Flexed(0.06, h),
-			layout.Flexed(0.06, i),
-			layout.Flexed(0.06, j),
-			layout.Flexed(0.06, k),
-			layout.Flexed(0.06, l),
-			layout.Flexed(0.06, m),
-			layout.Flexed(0.06, n),
-			layout.Flexed(0.06, o))
-
+		return lyt.Format(gtx, "vflexb(middle,f(0.06,_),f(0.06,_),f(0.06,_),f(0.06,_),f(0.06,_),f(0.06,_),f(0.06,_),f(0.06,_),f(0.06,_),f(0.06,_),f(0.06,_),f(0.06,_),f(0.06,_),f(0.06,_))", a, b, c, d, e, f, g, h, i, j, k, l, m, n, o)
 	}
 }
 
 func (w *WingCal) IzborVrsteRadovaTriKolone() func(gtx C) D {
 	return w.tvBtnLinks(
-		w.thBtnLinks(w.btnLink(w.IzbornikRadova[0]), w.btnLink(w.IzbornikRadova[1]), w.btnLink(w.IzbornikRadova[2])),
-		w.thBtnLinks(w.btnLink(w.IzbornikRadova[3]), w.btnLink(w.IzbornikRadova[4]), w.btnLink(w.IzbornikRadova[5])),
-		w.thBtnLinks(w.btnLink(w.IzbornikRadova[6]), w.btnLink(w.IzbornikRadova[7]), w.btnLink(w.IzbornikRadova[8])),
-		w.thBtnLinks(w.btnLink(w.IzbornikRadova[9]), w.btnLink(w.IzbornikRadova[10]), w.btnLink(w.IzbornikRadova[11])),
-		w.thBtnLinks(w.btnLink(w.IzbornikRadova[12]), w.btnLink(w.IzbornikRadova[13]), w.btnLink(w.IzbornikRadova[14])),
-		w.thBtnLinks(w.btnLink(w.IzbornikRadova[15]), w.btnLink(w.IzbornikRadova[16]), w.btnLink(w.IzbornikRadova[17])),
-		w.thBtnLinks(w.btnLink(w.IzbornikRadova[18]), w.btnLink(w.IzbornikRadova[19]), w.btnLink(w.IzbornikRadova[20])),
-		w.thBtnLinks(w.btnLink(w.IzbornikRadova[21]), w.btnLink(w.IzbornikRadova[22]), w.btnLink(w.IzbornikRadova[23])),
-		w.thBtnLinks(w.btnLink(w.IzbornikRadova[24]), w.btnLink(w.IzbornikRadova[25]), w.btnLink(w.IzbornikRadova[26])),
-		w.thBtnLinks(w.btnLink(w.IzbornikRadova[27]), w.btnLink(w.IzbornikRadova[28]), w.btnLink(w.IzbornikRadova[29])),
+		w.IzborVrsteRadovaTriKoloneRed(0, 1, 2),
+		w.IzborVrsteRadovaTriKoloneRed(3, 4, 5),
+		w.IzborVrsteRadovaTriKoloneRed(6, 7, 8),
+		w.IzborVrsteRadovaTriKoloneRed(9, 10, 11),
+		w.IzborVrsteRadovaTriKoloneRed(12, 13, 14),
+		w.IzborVrsteRadovaTriKoloneRed(15, 16, 17),
+		w.IzborVrsteRadovaTriKoloneRed(18, 19, 20),
+		w.IzborVrsteRadovaTriKoloneRed(21, 22, 23),
+		w.IzborVrsteRadovaTriKoloneRed(24, 5, 26),
+		w.IzborVrsteRadovaTriKoloneRed(27, 28, 29),
 	)
 }
+func (w *WingCal) IzborVrsteRadovaTriKoloneRed(a, b, c int) func(gtx C) D {
+	return w.thBtnLinks(w.btnLink(w.IzbornikRadova[a]), w.btnLink(w.IzbornikRadova[b]), w.btnLink(w.IzbornikRadova[c]))
 
+}
 func (w *WingCal) thBtnLinks(a, b, c func(gtx C) D) func(gtx C) D {
 	return func(gtx C) D {
-		return layout.Flex{Axis: layout.Horizontal, Spacing: layout.SpaceBetween, Alignment: layout.Middle}.Layout(gtx,
-			layout.Flexed(0.333, a),
-			layout.Flexed(0.333, b),
-			layout.Flexed(0.333, c))
+		return lyt.Format(gtx, "vflexb(middle,f(0.333,_),f(0.333,_),f(0.333,_))", a, b, c)
 	}
 }
 
 func (w *WingCal) tvBtnLinks(a, b, c, d, e, f, g, h, i, j func(gtx C) D) func(gtx C) D {
 	return func(gtx C) D {
-		return layout.Flex{Axis: layout.Vertical, Spacing: layout.SpaceBetween, Alignment: layout.Middle}.Layout(gtx,
-			layout.Flexed(0.1, a),
-			layout.Flexed(0.1, b),
-			layout.Flexed(0.1, c),
-			layout.Flexed(0.1, d),
-			layout.Flexed(0.1, e),
-			layout.Flexed(0.1, f),
-			layout.Flexed(0.1, g),
-			layout.Flexed(0.1, h),
-			layout.Flexed(0.1, i),
-			layout.Flexed(0.1, j))
+		return lyt.Format(gtx, "vflexb(middle,f(0.1,_),f(0.1,_),f(0.1,_),f(0.1,_),f(0.1,_),f(0.1,_),f(0.1,_),f(0.1,_),f(0.1,_),f(0.1,_))", a, b, c, d, e, f, g, h, i, j)
 	}
 }
 
 func (w *WingCal) IzborVrsteRadovaCetiriKolone() func(gtx C) D {
 	return w.fvBtnLinks(
-		w.fhBtnLinks(w.btnLink(w.IzbornikRadova[0]), w.btnLink(w.IzbornikRadova[1]), w.btnLink(w.IzbornikRadova[2]), w.btnLink(w.IzbornikRadova[3])),
-		w.fhBtnLinks(w.btnLink(w.IzbornikRadova[4]), w.btnLink(w.IzbornikRadova[5]), w.btnLink(w.IzbornikRadova[6]), w.btnLink(w.IzbornikRadova[7])),
-		w.fhBtnLinks(w.btnLink(w.IzbornikRadova[8]), w.btnLink(w.IzbornikRadova[9]), w.btnLink(w.IzbornikRadova[10]), w.btnLink(w.IzbornikRadova[11])),
-		w.fhBtnLinks(w.btnLink(w.IzbornikRadova[12]), w.btnLink(w.IzbornikRadova[13]), w.btnLink(w.IzbornikRadova[14]), w.btnLink(w.IzbornikRadova[15])),
-		w.fhBtnLinks(w.btnLink(w.IzbornikRadova[16]), w.btnLink(w.IzbornikRadova[17]), w.btnLink(w.IzbornikRadova[18]), w.btnLink(w.IzbornikRadova[19])),
-		w.fhBtnLinks(w.btnLink(w.IzbornikRadova[20]), w.btnLink(w.IzbornikRadova[21]), w.btnLink(w.IzbornikRadova[22]), w.btnLink(w.IzbornikRadova[23])),
-		w.fhBtnLinks(w.btnLink(w.IzbornikRadova[24]), w.btnLink(w.IzbornikRadova[25]), w.btnLink(w.IzbornikRadova[26]), w.btnLink(w.IzbornikRadova[27])),
-		w.fhBtnLinks(w.btnLink(w.IzbornikRadova[28]), w.btnLink(w.IzbornikRadova[29]), w.btnLink(w.IzbornikRadova[28]), w.btnLink(w.IzbornikRadova[29])),
+		w.IzborVrsteRadovaCetiriKoloneRed(0, 1, 2, 3),
+		w.IzborVrsteRadovaCetiriKoloneRed(4, 5, 6, 7),
+		w.IzborVrsteRadovaCetiriKoloneRed(8, 9, 10, 11),
+		w.IzborVrsteRadovaCetiriKoloneRed(12, 13, 14, 15),
+		w.IzborVrsteRadovaCetiriKoloneRed(16, 17, 18, 19),
+		w.IzborVrsteRadovaCetiriKoloneRed(20, 21, 22, 23),
+		w.IzborVrsteRadovaCetiriKoloneRed(24, 25, 26, 27),
+		w.IzborVrsteRadovaCetiriKoloneRed(28, 29, 30, 29),
 	)
+}
+
+func (w *WingCal) IzborVrsteRadovaCetiriKoloneRed(a, b, c, d int) func(gtx C) D {
+	return w.fhBtnLinks(w.btnLink(w.IzbornikRadova[a]), w.btnLink(w.IzbornikRadova[b]), w.btnLink(w.IzbornikRadova[c]), w.btnLink(w.IzbornikRadova[d]))
 }
 
 func (w *WingCal) fhBtnLinks(a, b, c, d func(gtx C) D) func(gtx C) D {
 	return func(gtx C) D {
-		return layout.Flex{Axis: layout.Horizontal, Spacing: layout.SpaceBetween, Alignment: layout.Middle}.Layout(gtx,
-			layout.Flexed(0.25, a),
-			layout.Flexed(0.25, b),
-			layout.Flexed(0.25, c),
-			layout.Flexed(0.25, d))
+		return lyt.Format(gtx, "hflexb(f(0.25,_),f(0.25,_),f(0.25,_),f(0.25,_))", a, b, c, d)
 	}
 }
 
 func (w *WingCal) fvBtnLinks(a, b, c, d, e, f, g, h func(gtx C) D) func(gtx C) D {
 	return func(gtx C) D {
-		return layout.Flex{Axis: layout.Vertical, Spacing: layout.SpaceBetween, Alignment: layout.Middle}.Layout(gtx,
-			layout.Flexed(0.125, a),
-			layout.Flexed(0.125, b),
-			layout.Flexed(0.125, c),
-			layout.Flexed(0.125, d),
-			layout.Flexed(0.125, e),
-			layout.Flexed(0.125, f),
-			layout.Flexed(0.125, g),
-			layout.Flexed(0.125, h))
-
+		return lyt.Format(gtx, "vflexb(f(0.125,_),f(0.125,_),f(0.125,_),f(0.125,_),f(0.125,_),f(0.125,_),f(0.125,_),f(0.125,_))", a, b, c, d, e, f, g, h)
 	}
 }
 

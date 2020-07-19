@@ -32,8 +32,8 @@ var (
 	podesavanjaList = &layout.List{
 		Axis: layout.Vertical,
 	}
-	headerMenuList = &layout.List{
-		Axis: layout.Horizontal,
+	pomocList = &layout.List{
+		Axis: layout.Vertical,
 	}
 	materijalList = &layout.List{
 		Axis: layout.Vertical,

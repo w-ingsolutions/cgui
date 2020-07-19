@@ -48,14 +48,10 @@ func NewWingCal() *WingCal {
 		Element:  false,
 	}
 	w.UI = WingUI{
-		Device:           "p",
-		TopSpace:         28,
-		BottomSpace:      56,
-		Tema:             theme.NewDuoUItheme(),
-		BezMargine:       layout.UniformInset(unit.Dp(0)),
-		SaMarginom:       layout.UniformInset(unit.Dp(8)),
-		SaMalomMarginom:  layout.UniformInset(unit.Dp(4)),
-		SaStraneMarginom: saStraneMarginom,
+		Device:      "p",
+		TopSpace:    28,
+		BottomSpace: 56,
+		Tema:        theme.NewDuoUItheme(),
 	}
 	w.API = WingAPI{
 		OK:     true,
@@ -85,7 +81,7 @@ func NewWingCal() *WingCal {
 				SingleLine: true,
 				Submit:     true,
 			},
-			PageFunction:    w.ProjekatMaterijalSumaRacunica(),
+			PageFunction:    w.PrikazaniElementSumaRacunica(),
 			CounterIncrease: new(widget.Clickable),
 			CounterDecrease: new(widget.Clickable),
 			CounterReset:    new(widget.Clickable),

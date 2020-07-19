@@ -55,21 +55,15 @@ type WingCal struct {
 }
 
 type WingUI struct {
-	Device           string
-	TopSpace         int
-	BottomSpace      int
-	Window           *app.Window
-	Tema             *theme.DuoUItheme
-	Context          layout.Context
-	Ekran            func(gtx layout.Context) layout.Dimensions
-	D                layout.Dimensions
-	C                layout.Context
-	Ops              op.Ops
-	BezMargine       layout.Inset
-	SaMarginom       layout.Inset
-	SaMalomMarginom  layout.Inset
-	SaStraneMarginom layout.Inset
-	Counters         WingCounters
+	Device      string
+	TopSpace    int
+	BottomSpace int
+	Window      *app.Window
+	Tema        *theme.DuoUItheme
+	Context     layout.Context
+	Ekran       func(gtx layout.Context) layout.Dimensions
+	Ops         op.Ops
+	Counters    WingCounters
 }
 
 type WingAPI struct {

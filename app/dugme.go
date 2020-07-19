@@ -17,6 +17,7 @@ var (
 	sumaMaterialDugme = new(widget.Clickable)
 
 	podesavanjeDugme    = new(widget.Clickable)
+	pomocDugme          = new(widget.Clickable)
 	projekatDugme       = new(widget.Clickable)
 	dodajDugme          = new(widget.Clickable)
 	nazadDugme          = new(widget.Clickable)
@@ -26,13 +27,13 @@ var (
 
 func (w *WingCal) stranaDugme(b *widget.Clickable, f func(), t, p string) func(gtx C) D {
 	return func(gtx C) D {
-		f()
 		btn := material.Button(w.UI.Tema.T, b, t)
 		btn.CornerRadius = unit.Dp(0)
 		btn.TextSize = unit.Dp(12)
 		btn.Inset = layout.Inset{unit.Dp(8), unit.Dp(8), unit.Dp(10), unit.Dp(8)}
 		btn.Background = helper.HexARGB(w.UI.Tema.Colors["Secondary"])
 		for b.Clicked() {
+			f()
 			w.Strana = p
 		}
 		return btn.Layout(gtx)

@@ -11,6 +11,7 @@ import (
 	"github.com/gioapp/gel/icontextbtn"
 	"github.com/gioapp/gel/panel"
 	"github.com/w-ingsolutions/c/model"
+	"github.com/w-ingsolutions/c/pkg/lyt"
 )
 
 var (
@@ -23,10 +24,10 @@ func (w *WingCal) IzborPodVrsteRadova() func(gtx C) D {
 	return func(gtx C) D {
 		IzborVrsteRadovaPanelElement.PanelObject = w.IzbornikRadova
 		IzborVrsteRadovaPanelElement.PanelObjectsNumber = len(w.IzbornikRadova)
-		//izborVrsteRadovaPanel := w.Tema.DuoUIpanel()
-		//izborVrsteRadovaPanel.ScrollBar = w.Tema.ScrollBar(0)
+		//izborVrsteRadovaPanel := panel.DuoUIpanelSt()
+		//izborVrsteRadovaPanel.ScrollBar = w.UI.Tema.ScrollBarSt(0)
 		//izborVrsteRadovaPanel.Layout(w.Context, IzborVrsteRadovaPanelElement, func(i int, in interface{}) {
-		//izborVrsteRadovaPanel.Layout(w.Context, IzborVrsteRadovaPanelElement, func(i int, in interface{}) {
+		//return izborVrsteRadovaPanel.Layout(w.Context, IzborVrsteRadovaPanelElement, func(i int, in interface{}) {
 		return izborVrsteRadovaPanel.Layout(gtx, len(w.IzbornikRadova), func(gtx C, i int) D {
 			vrstarada := w.IzbornikRadova[i]
 			//return layout.Flex{Alignment: layout.Middle}.Layout(gtx,
@@ -60,14 +61,15 @@ func (w *WingCal) IzbornikRadovaStrana() func(gtx C) D {
 		}
 	}
 	return func(gtx C) D {
-		return w.UI.BezMargine.Layout(gtx, func(gtx C) D {
+		return layout.Inset{}.Layout(gtx, func(gtx C) D {
 			gtx.Constraints.Min.X = gtx.Constraints.Max.X
-			return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
-				layout.Rigid(w.Izbornik()),
+
+			return lyt.Format(gtx, "vflexb(middle,r(_),r(_),f(1,_))",
+				w.Izbornik(),
 				//layout.Rigid(helper.Tema.DuoUIline(false, 4, 4, 0, w.UI.Tema.Colors["Dark"])),
-				layout.Rigid(w.Nazad()),
+				w.Nazad(),
 				//layout.Rigid(helper.Tema.DuoUIline(false, 4, 4, 0, w.UI.Tema.Colors["Dark"])),
-				layout.Flexed(1, izbor))
+				izbor)
 		})
 	}
 }

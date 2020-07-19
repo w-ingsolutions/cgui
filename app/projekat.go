@@ -83,7 +83,6 @@ func (w *WingCal) investitori() func(gtx C) D {
 		return container.DuoUIcontainer(w.UI.Tema, 8, w.UI.Tema.Colors["Gray"]).Layout(gtx, layout.Center, func(gtx C) D {
 			id, _ := strconv.Atoi(klijentiIzbor.Value)
 			projekat.Investitor = w.Lica.Investotori[id]
-
 			return layout.Flex{}.Layout(gtx,
 				layout.Flexed(0.4, func(gtx C) D {
 					return klijentiList.Layout(gtx, len(w.Lica.Investotori), func(gtx C, i int) D {
@@ -152,7 +151,7 @@ func (w *WingCal) radovi() func(gtx C) D {
 				layout.Flexed(0.5, func(gtx C) D {
 					return material.H6(w.UI.Tema.T, fmt.Sprintf("%.2f", projekat.Elementi.SumaCena)).Layout(gtx)
 				}),
-				layout.Rigid(counter.DuoUIcounterSt(w.UI.Tema, w.UI.Counters.Radovi).Layout(gtx, w.UI.Tema.T, latcyr.C("%", w.Podesavanja.Cyr), fmt.Sprint(w.UI.Counters.Radovi.Value))))
+				layout.Rigid(counter.DuoUIcounterSt(w.UI.Tema, w.UI.Counters.Radovi).Layout(gtx, w.UI.Tema.T, "%", fmt.Sprint(w.UI.Counters.Radovi.Value))))
 		})
 	}
 }

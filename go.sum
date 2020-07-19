@@ -1,6 +1,10 @@
 dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9/go.mod h1:H6x//7gZCb22OMCxBHrMx7a5I7Hp++hsVxbQ4BYO7hU=
 gioui.org v0.0.0-20200715101102-f958f9512e71 h1:oNHVWC9j6Kv7LAdlTLzBtXGlts/cYr34A80mC/evR/Q=
 gioui.org v0.0.0-20200715101102-f958f9512e71/go.mod h1:jiUwifN9cRl/zmco43aAqh0aV+s9GbhG13KcD+gEpkU=
+gioui.org v0.0.0-20200718064638-ae07c5f470cb h1:Q6RKE/fiHM2Ugxvu093ShbVEBRVtwEfrLuw7QY+xA+0=
+gioui.org v0.0.0-20200718064638-ae07c5f470cb/go.mod h1:jiUwifN9cRl/zmco43aAqh0aV+s9GbhG13KcD+gEpkU=
+gioui.org v0.0.0-20200719084717-6ab43aba3ea5 h1:0/WGMuFMZjkQC4hBpc2O69SqsWZt8AnR8f7ErjJIA6Y=
+gioui.org v0.0.0-20200719084717-6ab43aba3ea5/go.mod h1:jiUwifN9cRl/zmco43aAqh0aV+s9GbhG13KcD+gEpkU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/boombuler/barcode v1.0.0/go.mod h1:paBWMcWSl3LHKBqUq+rly7CNSldXjb2rDl3JlRe0mD8=
 github.com/bregydoc/gtranslate v0.0.0-20191225024717-45b28d4fda86 h1:t5TcUy7aayyxzBFMbwRAYdKgGg7kJpM+gQFOgYdzw1g=
@@ -28,6 +32,10 @@ github.com/w-ingsolutions/c v0.0.0-20200715210850-58ddc4fd33b3 h1:52ArShUoq6Ynsq
 github.com/w-ingsolutions/c v0.0.0-20200715210850-58ddc4fd33b3/go.mod h1:KqO4TbOsRt80QxPhwH9Hg5MGLQTe8m25UlJHf32SelU=
 github.com/w-ingsolutions/c v0.0.0-20200715223629-41c5cc30e639 h1:IIyoBySBMgDPa4w0jFCHuFyNQUAwSCLB70xqTbhbTDw=
 github.com/w-ingsolutions/c v0.0.0-20200715223629-41c5cc30e639/go.mod h1:KqO4TbOsRt80QxPhwH9Hg5MGLQTe8m25UlJHf32SelU=
+github.com/w-ingsolutions/c v0.0.0-20200719040552-fa6feae5fff5 h1:11dPkK7Dr/1PYiAC3GfR2NAPtGbxbCHFqhk7PnI1R+Y=
+github.com/w-ingsolutions/c v0.0.0-20200719040552-fa6feae5fff5/go.mod h1:KqO4TbOsRt80QxPhwH9Hg5MGLQTe8m25UlJHf32SelU=
+github.com/w-ingsolutions/c v0.0.0-20200719084439-44cba01f32e9 h1:YB5GKLzL3vo5FSxd06e9WJeYH+2foFKembvm90ak4/4=
+github.com/w-ingsolutions/c v0.0.0-20200719084439-44cba01f32e9/go.mod h1:KqO4TbOsRt80QxPhwH9Hg5MGLQTe8m25UlJHf32SelU=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20190510104115-cbcb75029529/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
