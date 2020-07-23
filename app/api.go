@@ -56,7 +56,7 @@ func (w *WingCal) APIpoziv(adresa, komanda string) ([]byte, error) {
 	url := adresa + komanda
 	fmt.Println("url", url)
 	spaceClient := http.Client{
-		Timeout: time.Second * 2, // Maximum of 2 secs
+		Timeout: time.Second * 10, // Maximum of 2 secs
 	}
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
