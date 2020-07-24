@@ -149,7 +149,7 @@ func (w *WingCal) radovi() func(gtx C) D {
 					return material.H6(w.UI.Tema.T, w.text("Ukupna cena radova")).Layout(gtx)
 				}),
 				layout.Flexed(0.5, func(gtx C) D {
-					return material.H6(w.UI.Tema.T, fmt.Sprintf("%.2f", projekat.Elementi.SumaCena)).Layout(gtx)
+					return material.H6(w.UI.Tema.T, fmt.Sprintf("%.2f", w.Suma.SumaCena)).Layout(gtx)
 				}),
 				layout.Rigid(counter.DuoUIcounterSt(w.UI.Tema, w.UI.Counters.Radovi).Layout(gtx, w.UI.Tema.T, "%", fmt.Sprint(w.UI.Counters.Radovi.Value))))
 		})
@@ -164,7 +164,7 @@ func (w *WingCal) materijal() func(gtx C) D {
 					return material.H6(w.UI.Tema.T, w.text("Ukupna cena materijala")).Layout(gtx)
 				}),
 				layout.Flexed(0.5, func(gtx C) D {
-					return material.H6(w.UI.Tema.T, fmt.Sprintf("%.2f", projekat.Elementi.SumaCena)).Layout(gtx)
+					return material.H6(w.UI.Tema.T, fmt.Sprintf("%.2f", w.Suma.SumaCenaMaterijal)).Layout(gtx)
 				}),
 				layout.Rigid(counter.DuoUIcounterSt(w.UI.Tema, w.UI.Counters.Materijal).Layout(gtx, w.UI.Tema.T, latcyr.C("%", w.Podesavanja.Cyr), fmt.Sprint(w.UI.Counters.Materijal.Value))))
 		})

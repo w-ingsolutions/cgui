@@ -314,7 +314,7 @@ func (w *WingCal) aktivnostiSuma(p *gofpdf.Fpdf, pagew, mleft, mright, marginCel
 	}
 
 	p.SetFont("Times", "B", 16)
-	p.CellFormat(0, 10, w.text("Suma: ")+fmt.Sprintf("%.2f", w.Suma.SumaCena), "0", 0, "", false, 0, "")
+	p.CellFormat(0, 10, w.text("Suma: ")+fmt.Sprintf("%.2f", w.Suma.SumaCenaMaterijal), "0", 0, "", false, 0, "")
 }
 
 func (w *WingCal) specifikacijaMaterijalaList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh, mbottom float64, tr func(string) string) {
