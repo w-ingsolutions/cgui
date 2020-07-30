@@ -141,5 +141,6 @@ func (w *WingCal) sumaFooter(t string) func(gtx C) D {
 }
 
 func (w *WingCal) text(t string) string {
-	return w.Kes.C(w.Jezik.t.T(latcyr.C(t, w.Podesavanja.Cyr)))
+	//return w.Kes.C(w.Jezik.t.T(latcyr.C(t, w.Podesavanja.Cyr)))
+	return w.Jezik.t.T(latcyr.C(t, w.Podesavanja.Cyr))
 }

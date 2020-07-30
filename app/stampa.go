@@ -39,7 +39,7 @@ func (w *WingCal) Stampa() func(gtx C) D {
 				w.specifikacijaRadovaList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
 				w.specifikacijaMaterijalaList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
 				w.tehnickiList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
-
+				w.sadrzajList(p, pagew, mleft, mright, marginCell, pageh, mbottom)
 				//err := p.OutputFileAndClose(w.Podesavanja.Dir + "/nalog.pdf")
 				err := p.OutputFileAndClose("nalog.pdf")
 				if err != nil {
@@ -457,6 +457,20 @@ func (w *WingCal) ipList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh
 	p.AddPage()
 	w.projektantList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
 	p.Ln(10)
+
+	p.SetFont("Arial", "", 12)
+	_, lineHt := p.GetFontSize()
+
+	linesA := p.SplitLines([]byte("Na osnovu člana 128a. Zakona o planiranju i izgradnji objekata (Sl. glasnik Republike Srbije br.72/09, 81/09 – ispravka, 64/10 odluka US, 24/11 i 121/12, 42/13 – odluka US, 50/2013 – odluka US, 98/2013 - odluka US, 132/14 i 145/14, 83/18, 31/19 i 37/19) i odredbi Pravilnika o sadržini, načinu i postupku izrade i način vršenja kontrole tehničke dokumentacije prema klasi i nameni objekta (Sl. glasnik Republike Srbije br.72/2018)"), 200)
+	for _, line := range linesA {
+		p.CellFormat(190.0, lineHt, string(line), "", 1, "J", false, 0, "")
+	}
+
+	linesB := p.SplitLines([]byte("Nsdsddd dsdsddd dsdsddd dsdsddd dsdsddd dsdsddd dsdsddd dsdsddd dsdsddd de br.72/2018)"), 200)
+	for _, line := range linesB {
+		p.CellFormat(190.0, lineHt, string(line), "", 1, "J", false, 0, "")
+	}
+
 	w.investitorList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
 }
 func (w *WingCal) investitorList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh, mbottom float64, tr func(string) string) {
