@@ -55,14 +55,14 @@ func (w *WingCal) projektant() func(gtx C) D {
 					return projektantiList.Layout(gtx, len(w.Lica.Projektanti), func(gtx C, i int) D {
 						p := w.Lica.Projektanti[i]
 						return container.DuoUIcontainer(w.UI.Tema, 0, w.UI.Tema.Colors["White"]).Layout(gtx, layout.Center, func(gtx C) D {
-							return material.RadioButton(w.UI.Tema.T, projektantIzbor, strconv.Itoa(i), p.KratakNaziv).Layout(gtx)
+							return material.RadioButton(w.UI.Tema.T, projektantIzbor, strconv.Itoa(i), p.Naziv).Layout(gtx)
 						})
 					})
 				}),
 				layout.Flexed(0.6, func(gtx C) D {
 					return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
 						layout.Rigid(func(gtx C) D {
-							return material.Caption(w.UI.Tema.T, w.text("Naziv: ")+projekat.Projektant.KratakNaziv).Layout(gtx)
+							return material.Caption(w.UI.Tema.T, w.text("Naziv: ")+projekat.Projektant.Naziv).Layout(gtx)
 						}),
 						layout.Rigid(func(gtx C) D {
 							return material.Caption(w.UI.Tema.T, w.text("Adresa: ")+":"+projekat.Projektant.Adresa+" "+projekat.Projektant.Grad).Layout(gtx)
@@ -88,7 +88,7 @@ func (w *WingCal) investitori() func(gtx C) D {
 					return klijentiList.Layout(gtx, len(w.Lica.Investotori), func(gtx C, i int) D {
 						inv := w.Lica.Investotori[i]
 						return container.DuoUIcontainer(w.UI.Tema, 0, w.UI.Tema.Colors["White"]).Layout(gtx, layout.Center, func(gtx C) D {
-							return material.RadioButton(w.UI.Tema.T, klijentiIzbor, strconv.Itoa(i), inv.KratakNaziv).Layout(gtx)
+							return material.RadioButton(w.UI.Tema.T, klijentiIzbor, strconv.Itoa(i), inv.Naziv).Layout(gtx)
 						})
 					})
 				}),
@@ -101,7 +101,7 @@ func (w *WingCal) lice() func(gtx C) D {
 	return func(gtx C) D {
 		return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
 			layout.Rigid(func(gtx C) D {
-				return material.Caption(w.UI.Tema.T, w.text("Naziv: ")+w.text(projekat.Investitor.KratakNaziv)).Layout(gtx)
+				return material.Caption(w.UI.Tema.T, w.text("Naziv: ")+w.text(projekat.Investitor.Naziv)).Layout(gtx)
 			}),
 			layout.Rigid(func(gtx C) D {
 				return material.Caption(w.UI.Tema.T, w.text("Adresa: ")+":"+w.text(projekat.Investitor.Adresa)+" "+w.text(projekat.Investitor.Grad)).Layout(gtx)

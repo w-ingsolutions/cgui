@@ -5,6 +5,8 @@ gioui.org v0.0.0-20200718064638-ae07c5f470cb h1:Q6RKE/fiHM2Ugxvu093ShbVEBRVtwEfr
 gioui.org v0.0.0-20200718064638-ae07c5f470cb/go.mod h1:jiUwifN9cRl/zmco43aAqh0aV+s9GbhG13KcD+gEpkU=
 gioui.org v0.0.0-20200719084717-6ab43aba3ea5 h1:0/WGMuFMZjkQC4hBpc2O69SqsWZt8AnR8f7ErjJIA6Y=
 gioui.org v0.0.0-20200719084717-6ab43aba3ea5/go.mod h1:jiUwifN9cRl/zmco43aAqh0aV+s9GbhG13KcD+gEpkU=
+gioui.org v0.0.0-20200726090339-83673ecb203f h1:09YCGWJqqcRI/X3HEODsA/val03uLETNjTmQ/dUBSAY=
+gioui.org v0.0.0-20200726090339-83673ecb203f/go.mod h1:jiUwifN9cRl/zmco43aAqh0aV+s9GbhG13KcD+gEpkU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/boombuler/barcode v1.0.0/go.mod h1:paBWMcWSl3LHKBqUq+rly7CNSldXjb2rDl3JlRe0mD8=
 github.com/bregydoc/gtranslate v0.0.0-20191225024717-45b28d4fda86 h1:t5TcUy7aayyxzBFMbwRAYdKgGg7kJpM+gQFOgYdzw1g=
@@ -12,6 +14,8 @@ github.com/bregydoc/gtranslate v0.0.0-20191225024717-45b28d4fda86/go.mod h1:153Z
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/gioapp/gel v0.0.0-20200712222030-586f25302e40 h1:y+qMptpLmqecPx6uhrXnfVjhP1rm8IK0cofEILHABbk=
 github.com/gioapp/gel v0.0.0-20200712222030-586f25302e40/go.mod h1:62fr52z5UXL14elSb9ivSwJUmJITmbyxjiv6GanDCSE=
+github.com/gioapp/gel v0.0.0-20200719184500-af01009f3e0f h1:UUAhNB03sPIJqQqFO/BxICZ44wQ2Z1p3hgLyY0D9uSw=
+github.com/gioapp/gel v0.0.0-20200719184500-af01009f3e0f/go.mod h1:62fr52z5UXL14elSb9ivSwJUmJITmbyxjiv6GanDCSE=
 github.com/go-gl/glfw v0.0.0-20190409004039-e6da0acd62b1/go.mod h1:vR7hzQXu2zJy9AVAgeJqvqgH9Q5CA+iKCZ2gyEVpxRU=
 github.com/go-gl/glfw/v3.3/glfw v0.0.0-20200222043503-6f7a984d4dc4/go.mod h1:tQ2UAYgL5IevRw8kRxooKSPJfGvJ9fJQFa0TUsXzTg8=
 github.com/jung-kurt/gofpdf v1.0.0/go.mod h1:7Id9E/uU8ce6rXgefFLlgrJj/GYY22cpxn+r32jIOes=
@@ -36,6 +40,8 @@ github.com/w-ingsolutions/c v0.0.0-20200719040552-fa6feae5fff5 h1:11dPkK7Dr/1PYi
 github.com/w-ingsolutions/c v0.0.0-20200719040552-fa6feae5fff5/go.mod h1:KqO4TbOsRt80QxPhwH9Hg5MGLQTe8m25UlJHf32SelU=
 github.com/w-ingsolutions/c v0.0.0-20200719084439-44cba01f32e9 h1:YB5GKLzL3vo5FSxd06e9WJeYH+2foFKembvm90ak4/4=
 github.com/w-ingsolutions/c v0.0.0-20200719084439-44cba01f32e9/go.mod h1:KqO4TbOsRt80QxPhwH9Hg5MGLQTe8m25UlJHf32SelU=
+github.com/w-ingsolutions/c v0.0.0-20200721194217-2cc89f97f4d2 h1:EogbV8DRhD185xGZFNUGZJwJHSHSq0tkD2p5yITsrjc=
+github.com/w-ingsolutions/c v0.0.0-20200721194217-2cc89f97f4d2/go.mod h1:KqO4TbOsRt80QxPhwH9Hg5MGLQTe8m25UlJHf32SelU=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20190510104115-cbcb75029529/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
@@ -65,6 +71,8 @@ golang.org/x/sys v0.0.0-20200124204421-9fbb57f87de9 h1:1/DFK4b7JH8DmkqhUk48onnSf
 golang.org/x/sys v0.0.0-20200124204421-9fbb57f87de9/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20200625212154-ddb9806d33ae h1:Ih9Yo4hSPImZOpfGuA4bR/ORKTAbhZo2AbWNRCnevdo=
 golang.org/x/sys v0.0.0-20200625212154-ddb9806d33ae/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20200728102440-3e129f6d46b1 h1:sIky/MyNRSHTrdxfsiUSS4WIAMvInbeXljJz+jDjeYE=
+golang.org/x/sys v0.0.0-20200728102440-3e129f6d46b1/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/text v0.3.0 h1:g61tztE5qeGQ89tm6NTjjM9VPIm088od1l6aSorWRWg=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.3 h1:cokOdA+Jmi5PJGXLlLllQSgYigAEfHXJAERHVMaCc2k=

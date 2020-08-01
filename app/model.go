@@ -41,7 +41,6 @@ type WingCal struct {
 	Putanja          []string
 	IzbornikRadova   map[int]model.ElementMenu
 	Transfered       model.WingCalGrupaRadova
-	Client           *model.Client
 	PrikazaniElement *model.WingVrstaRadova
 	Suma             *model.WingIzabraniElementi
 	Podvrsta         int
@@ -86,8 +85,8 @@ type WingPodesavanja struct {
 }
 
 type WingUloge struct {
-	Projektanti []*model.WingLice
-	Investotori []*model.WingLice
+	Projektanti []*model.WingPravnoLice
+	Investotori []*model.WingPravnoLice
 }
 type WingCounters struct {
 	Kolicina  *counter.DuoUIcounter

@@ -11,7 +11,7 @@ import (
 )
 
 var (
-	materijal, aktivnosti string
+	materijal, aktivnosti, tehnicki, ponuda, ugovor, nova int
 )
 
 func (w *WingCal) Stampa() func(gtx C) D {
@@ -21,35 +21,37 @@ func (w *WingCal) Stampa() func(gtx C) D {
 		if len(w.Suma.Elementi) != 0 {
 			for stampajDugme.Clicked() {
 				fmt.Println("proj::", projekat.Investitor)
-				p := pdf.P()
+				w.kreiranjeNalogaPDF("nalog.pdf")
 
-				tr := p.UnicodeTranslatorFromDescriptor("")
-
-				p.SetTopMargin(30)
-				marginCell := 2. // margin of top/bottom of cell
-				pagew, pageh := p.GetPageSize()
-				mleft, mright, _, mbottom := p.GetMargins()
-
-				p.SetHeaderFuncMode(w.pdfHeader(p), true)
-				p.SetFooterFunc(w.pdfFooter(p))
-				p.AliasNbPages("")
-				w.ponuda(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
-				w.ipList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
-
-				w.specifikacijaRadovaList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
-				w.specifikacijaMaterijalaList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
-				w.tehnickiList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
-				w.sadrzajList(p, pagew, mleft, mright, marginCell, pageh, mbottom)
-				//err := p.OutputFileAndClose(w.Podesavanja.Dir + "/nalog.pdf")
-				err := p.OutputFileAndClose("nalog.pdf")
-				if err != nil {
-				}
-				//open.Run(w.Podesavanja.Dir + "/nalog.pdf")
 				open.Run("nalog.pdf")
 
 			}
 		}
 		return btn.Layout(gtx)
+	}
+}
+
+func (w *WingCal) kreiranjeNalogaPDF(naziv string) {
+	p := pdf.P()
+	tr := p.UnicodeTranslatorFromDescriptor("")
+	p.SetTopMargin(30)
+	marginCell := 2. // margin of top/bottom of cell
+	pagew, pageh := p.GetPageSize()
+	mleft, mright, _, mbottom := p.GetMargins()
+	p.SetHeaderFuncMode(w.pdfHeader(p), true)
+	p.SetFooterFunc(w.pdfFooter(p))
+	p.AliasNbPages("")
+	w.ponuda(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
+	w.ipList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
+
+	w.specifikacijaRadovaList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
+	w.specifikacijaMaterijalaList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
+	w.tehnickiList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
+	w.novaStrana(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
+	w.sadrzajList(p, pagew, mleft, mright, marginCell, pageh, mbottom)
+	//err := p.OutputFileAndClose(w.Podesavanja.Dir + "/nalog.pdf")
+	err := p.OutputFileAndClose(naziv)
+	if err != nil {
 	}
 }
 
@@ -64,7 +66,7 @@ func (w *WingCal) pdfHeader(p *gofpdf.Fpdf) func() {
 		p.SetFont("Arial", "", 8)
 		p.CellFormat(47, 6, "MB:20701005", "0", 0, "L", false, 0, "")
 		p.SetFont("Arial", "B", 10)
-		p.CellFormat(47, 10, projekat.Projektant.KratakNaziv, "0", 0, "R", false, 0, "")
+		p.CellFormat(47, 10, projekat.Projektant.Naziv, "0", 0, "R", false, 0, "")
 		p.SetFont("Arial", "", 8)
 		p.CellFormat(47, 8, "     SIFRA PROJEKTA", "0", 0, "L", false, 0, "")
 		p.SetFont("Arial", "", 8)
@@ -103,7 +105,7 @@ func (w *WingCal) pdfFooter(p *gofpdf.Fpdf) func() {
 		p.SetFont("Arial", "", 8)
 		p.CellFormat(47, 6, "MB:"+projekat.Investitor.MB, "0", 0, "L", false, 0, "")
 		p.SetFont("Arial", "B", 10)
-		p.CellFormat(47, 10, projekat.Investitor.KratakNaziv, "0", 0, "R", false, 0, "")
+		p.CellFormat(47, 10, projekat.Investitor.Naziv, "0", 0, "R", false, 0, "")
 		p.SetFont("Arial", "", 8)
 		p.CellFormat(47, 8, "     SIFRA DOKUMENTA", "0", 0, "L", false, 0, "")
 		p.SetFont("Arial", "", 8)
@@ -134,6 +136,7 @@ func (w *WingCal) pdfFooter(p *gofpdf.Fpdf) func() {
 func (w *WingCal) tehnickiList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh, mbottom float64, tr func(string) string) {
 	p.AddPage()
 	p.SetFont("Times", "B", 16)
+	tehnicki = p.PageNo()
 	p.CellFormat(0, 10, w.text("Tehnički list"), "0", 0, "", false, 0, "")
 	p.Ln(20)
 
@@ -193,7 +196,7 @@ func (w *WingCal) tehnickiList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell,
 func (w *WingCal) specifikacijaRadovaList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh, mbottom float64, tr func(string) string) {
 	p.AddPage()
 	p.SetFont("Times", "B", 16)
-	aktivnosti = fmt.Sprintf("Specifikacija radova %d/{nb}", p.PageNo())
+	aktivnosti = p.PageNo()
 	p.CellFormat(0, 10, tr(w.text("Specifikacija aktivnosti")), "0", 0, "", false, 0, "")
 	p.Ln(20)
 
@@ -321,7 +324,7 @@ func (w *WingCal) specifikacijaMaterijalaList(p *gofpdf.Fpdf, pagew, mleft, mrig
 	p.AddPage()
 	p.SetFont("Times", "B", 16)
 	p.CellFormat(0, 10, w.text("Specifikacija materijala"), "0", 0, "", false, 0, "")
-	materijal = fmt.Sprintf("Specifikacija materijala %d/{nb}", p.PageNo())
+	materijal = p.PageNo()
 	p.Ln(20)
 
 	p.SetFont("Arial", "", 10)
@@ -436,15 +439,26 @@ func (w *WingCal) sadrzajList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, 
 	p.SetFont("Times", "B", 16)
 	p.CellFormat(0, 10, w.text("Sadržaj"), "0", 0, "", false, 0, "")
 	p.Ln(20)
-	p.CellFormat(0, 10, w.text(aktivnosti), "0", 0, "", false, 0, "")
+	p.CellFormat(0, 10, fmt.Sprintf("Ponuda %d", ponuda), "0", 0, "", false, 0, "")
 	p.Ln(20)
-	p.CellFormat(0, 10, w.text(materijal), "0", 0, "", false, 0, "")
+	p.CellFormat(0, 10, fmt.Sprintf("Ugovor %d", ugovor), "0", 0, "", false, 0, "")
+	p.Ln(20)
+	p.CellFormat(0, 10, fmt.Sprintf("Specifikacija radova %d", aktivnosti), "0", 0, "", false, 0, "")
+	p.Ln(20)
+	p.CellFormat(0, 10, fmt.Sprintf("Specifikacija materijala %d/{nb}", materijal), "0", 0, "", false, 0, "")
+	p.Ln(20)
+	p.CellFormat(0, 10, fmt.Sprintf("Tehnički list %d/{nb}", tehnicki), "0", 0, "", false, 0, "")
+	p.Ln(20)
+	p.CellFormat(0, 10, fmt.Sprint(tehnicki), "0", 0, "", false, 0, "")
+	p.Ln(20)
+	p.CellFormat(0, 10, fmt.Sprintf("Nova %d/", nova), "0", 0, "", false, 0, "")
 	p.Ln(20)
 }
 
 func (w *WingCal) ponuda(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh, mbottom float64, tr func(string) string) {
 	p.AddPage()
 	p.SetFont("Times", "B", 18)
+	ponuda = p.PageNo()
 	p.CellFormat(0, 10, w.text("Ponuda"), "0", 0, "", false, 0, "")
 	p.Ln(10)
 	w.investitorList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
@@ -455,6 +469,8 @@ func (w *WingCal) ponuda(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh
 }
 func (w *WingCal) ipList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh, mbottom float64, tr func(string) string) {
 	p.AddPage()
+	ugovor = p.PageNo()
+
 	w.projektantList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
 	p.Ln(10)
 
@@ -465,14 +481,9 @@ func (w *WingCal) ipList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh
 	for _, line := range linesA {
 		p.CellFormat(190.0, lineHt, string(line), "", 1, "J", false, 0, "")
 	}
-
-	linesB := p.SplitLines([]byte("Nsdsddd dsdsddd dsdsddd dsdsddd dsdsddd dsdsddd dsdsddd dsdsddd dsdsddd de br.72/2018)"), 200)
-	for _, line := range linesB {
-		p.CellFormat(190.0, lineHt, string(line), "", 1, "J", false, 0, "")
-	}
-
 	w.investitorList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
 }
+
 func (w *WingCal) investitorList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh, mbottom float64, tr func(string) string) {
 	p.SetFont("Times", "B", 16)
 	p.CellFormat(0, 10, w.text("Investitor"), "0", 0, "", false, 0, "")
@@ -487,7 +498,7 @@ func (w *WingCal) investitorList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCel
 			"PIB", projekat.Investitor.PIB,
 		},
 		[]string{
-			"KratakNaziv", projekat.Investitor.KratakNaziv,
+			"KratakNaziv", projekat.Investitor.Naziv,
 		},
 		[]string{
 			"DugiNaziv", projekat.Investitor.DugiNaziv,
@@ -553,7 +564,7 @@ func (w *WingCal) projektantList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCel
 			"PIB", projekat.Projektant.PIB,
 		},
 		[]string{
-			"KratakNaziv", projekat.Projektant.KratakNaziv,
+			"KratakNaziv", projekat.Projektant.Naziv,
 		},
 		[]string{
 			"DugiNaziv", projekat.Projektant.DugiNaziv,
@@ -599,5 +610,19 @@ func (w *WingCal) projektantList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCel
 			p.SetXY(x, y)
 		}
 		p.SetXY(curx, y+height)
+	}
+}
+
+func (w *WingCal) novaStrana(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh, mbottom float64, tr func(string) string) {
+	p.AddPage()
+
+	p.SetFont("Arial", "", 12)
+	nova = p.PageNo()
+
+	_, lineHt := p.GetFontSize()
+
+	linesB := p.SplitLines([]byte("Nsdsddd dsdsddd dsdsddd dsdsddd dsdsddd dsdsddd dsdsddd dsdsddd dsdsddd de br.72/2018)"), 200)
+	for _, line := range linesB {
+		p.CellFormat(190.0, lineHt, string(line), "", 1, "J", false, 0, "")
 	}
 }

@@ -120,7 +120,7 @@ func (w *WingCal) fvBtnLinks(a, b, c, d, e, f, g, h func(gtx C) D) func(gtx C) D
 
 func (w *WingCal) btnLink(r model.ElementMenu) func(gtx C) D {
 	return func(gtx C) D {
-		btn := icontextbtn.IconTextBtn(w.UI.Tema.T, r.Link, w.UI.Tema.Icons[r.Slug], unit.Dp(48), w.UI.Tema.Colors["Light"], fmt.Sprint(r.Id)+". "+w.text(r.Title))
+		btn := icontextbtn.IconTextBtn(w.UI.Tema.T, r.Link, w.UI.Tema.Icons[r.Slug], unit.Dp(48), w.UI.Tema.Colors["Light"], fmt.Sprint(r.Id)+". "+w.text(r.Naziv))
 		switch w.UI.Device {
 		case "mob":
 			btn.Axis = layout.Horizontal

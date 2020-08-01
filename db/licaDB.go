@@ -4,7 +4,7 @@ import (
 	"github.com/w-ingsolutions/c/model"
 )
 
-func NewLica() (p []*model.WingLice, k []*model.WingLice) {
+func NewLica() (p []*model.WingPravnoLice, k []*model.WingPravnoLice) {
 	for _, l := range lica() {
 		if l.Projektant {
 			p = append(p, l)
@@ -14,12 +14,12 @@ func NewLica() (p []*model.WingLice, k []*model.WingLice) {
 	}
 	return
 }
-func lica() map[int]*model.WingLice {
-	return map[int]*model.WingLice{
-		0: &model.WingLice{
+func lica() map[int]*model.WingPravnoLice {
+	return map[int]*model.WingPravnoLice{
+		0: &model.WingPravnoLice{
 			Id:             0,
 			Projektant:     true,
-			KratakNaziv:    "W-ING SOLUTIONS DOO",
+			Naziv:          "W-ING SOLUTIONS DOO",
 			DugiNaziv:      "W-ING SOLUTIONS DOO NOVI SAD",
 			MB:             "20701005",
 			PIB:            "106892584",
@@ -48,10 +48,10 @@ func lica() map[int]*model.WingLice {
 			Email:        "mmmmmmmmmmmmm",
 			BrojTelefona: "mmmmmmmmmmmmm",
 		},
-		1: &model.WingLice{
+		1: &model.WingPravnoLice{
 			Id:             0,
 			DugiNaziv:      "PREDUZEĆE ZA PROIZVODNJU, PROMET I USLUGE ENERGOTEHNA DOO, NOVI SAD",
-			KratakNaziv:    "ENERGOTEHNA DOO NOVI SAD",
+			Naziv:          "ENERGOTEHNA DOO NOVI SAD",
 			Adresa:         "KIJEVSKA 24",
 			Grad:           "21000 Novi Sad",
 			MB:             "20113278",
@@ -83,9 +83,9 @@ func lica() map[int]*model.WingLice {
 			Email:        "mmmmmmmmmmmmm",
 			BrojTelefona: "mmmmmmmmmmmmm",
 		},
-		2: &model.WingLice{
+		2: &model.WingPravnoLice{
 			Id:             0,
-			KratakNaziv:    "DAVID NICHOLAS VENNIK PR ZORA MREŽA",
+			Naziv:          "DAVID NICHOLAS VENNIK PR ZORA MREŽA",
 			DugiNaziv:      "DAVID NICHOLAS VENNIK PR RAČUNARSKO PROGRAMIRANJE ZORA MREŽA NOVI SAD",
 			MB:             "ccccccccccccc",
 			PIB:            "ccccccccccccc",
@@ -110,9 +110,9 @@ func lica() map[int]*model.WingLice {
 			Email:        "mmmmmmmmmmmmm",
 			BrojTelefona: "mmmmmmmmmmmmm",
 		},
-		3: &model.WingLice{
+		3: &model.WingPravnoLice{
 			Id:             0,
-			KratakNaziv:    "PROMONT-PRODANOVIĆ",
+			Naziv:          "PROMONT-PRODANOVIĆ",
 			DugiNaziv:      "SZR PROMONT-PRODANOVIĆ PRODANOVIĆ RADIVOJ PREDUZETNIK NOVI SAD",
 			MB:             "54516711",
 			PIB:            "101648529",
@@ -133,9 +133,9 @@ func lica() map[int]*model.WingLice {
 			Email:        "mmmmmmmmmmmmm",
 			BrojTelefona: "mmmmmmmmmmmmm",
 		},
-		4: &model.WingLice{
+		4: &model.WingPravnoLice{
 			Id:             0,
-			KratakNaziv:    "CESLA IB INVEST DOO NOVI SAD",
+			Naziv:          "CESLA IB INVEST DOO NOVI SAD",
 			DugiNaziv:      "CESLA IB INVEST DOO ZA TRGOVINU, GRAĐEVINARSTVO I USLUGE, NOVI SAD",
 			MB:             "8801533",
 			PIB:            "103146555",
@@ -168,9 +168,9 @@ func lica() map[int]*model.WingLice {
 			Email:        "mmmmmmmmmmmmm",
 			BrojTelefona: "mmmmmmmmmmmmm",
 		},
-		5: &model.WingLice{
+		5: &model.WingPravnoLice{
 			Id:             0,
-			KratakNaziv:    "TEL-ING DOO NOVI SAD",
+			Naziv:          "TEL-ING DOO NOVI SAD",
 			DugiNaziv:      "TEL-ING DOO ZA TRGOVINU I USLUGE NOVI SAD",
 			MB:             "20351306",
 			PIB:            "105277334",
@@ -204,9 +204,9 @@ func lica() map[int]*model.WingLice {
 			Email:        "mmmmmmmmmmmmm",
 			BrojTelefona: "mmmmmmmmmmmmm",
 		},
-		6: &model.WingLice{
+		6: &model.WingPravnoLice{
 			Id:             0,
-			KratakNaziv:    "DON DON DOO BEOGRAD",
+			Naziv:          "DON DON DOO BEOGRAD",
 			DugiNaziv:      "PRIVREDNO DRUŠTVO ZA PROIZVODNJU HLEBA I PECIVA DON DON DOO BEOGRAD",
 			MB:             "20383399",
 			PIB:            "105425574",
@@ -239,9 +239,9 @@ func lica() map[int]*model.WingLice {
 			Email:        "mmmmmmmmmmmmm",
 			BrojTelefona: "mmmmmmmmmmmmm",
 		},
-		7: &model.WingLice{
+		7: &model.WingPravnoLice{
 			Id:             0,
-			KratakNaziv:    "DOO ŠUŠA VETERNIK",
+			Naziv:          "DOO ŠUŠA VETERNIK",
 			DugiNaziv:      "DOO ŠUŠA ZA GRAĐEVINARSTVO, TRGOVINU I USLUGE VETERNIK",
 			MB:             "8825106",
 			PIB:            "103567021",
@@ -274,9 +274,9 @@ func lica() map[int]*model.WingLice {
 			Email:        "mmmmmmmmmmmmm",
 			BrojTelefona: "mmmmmmmmmmmmm",
 		},
-		8: &model.WingLice{
+		8: &model.WingPravnoLice{
 			Id:             0,
-			KratakNaziv:    "URBANS INVEST DOO NOVI SAD",
+			Naziv:          "URBANS INVEST DOO NOVI SAD",
 			DugiNaziv:      "URBANS INVEST DOO ZA GRAĐEVINARSTVO, UNUTRAŠNJU I SPOLJNU TRGOVINU NOVI SAD",
 			MB:             "20422998",
 			PIB:            "105625475",
@@ -309,9 +309,9 @@ func lica() map[int]*model.WingLice {
 			Email:        "mmmmmmmmmmmmm",
 			BrojTelefona: "mmmmmmmmmmmmm",
 		},
-		9: &model.WingLice{
+		9: &model.WingPravnoLice{
 			Id:             0,
-			KratakNaziv:    "DREAM HOME REAL ESTATE DOO NOVI SAD",
+			Naziv:          "DREAM HOME REAL ESTATE DOO NOVI SAD",
 			DugiNaziv:      "DREAM HOME REAL ESTATE DOO NOVI SAD",
 			MB:             "21278815",
 			PIB:            "109979047",
