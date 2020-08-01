@@ -22,6 +22,8 @@ func (w *WingCal) APIpozivIzbornik(komanda string) {
 		}
 		w.IzbornikRadova = radovi
 	}
+	fmt.Println("radoviradoviradovi", radovi)
+
 }
 func (w *WingCal) APIpozivElementi(komanda string) {
 	radovi := map[int]model.ElementMenu{}

@@ -39,7 +39,12 @@ func (w *WingCal) IzborPodVrsteRadova() func(gtx C) D {
 
 			//btn := material.Button(w.UI.Tema.T, vrstarada.Link, fmt.Sprint(vrstarada.Id)+". "+w.text(vrstarada.Title))
 			//icoNaziv := strings.Split(vrstarada.Title, " ")
-			btn := icontextbtn.IconTextBtn(w.UI.Tema.T, vrstarada.Link, w.UI.Tema.Icons[vrstarada.Slug], unit.Dp(48), w.UI.Tema.Colors["Light"], fmt.Sprint(vrstarada.Id)+". "+w.text(vrstarada.Naziv))
+			fmt.Println("vrstarada", vrstarada)
+			fmt.Println("vrstarada.Naziv", vrstarada.Title)
+			fmt.Println("vrstarada.Id", vrstarada.Id)
+			fmt.Println("vrstarada.Slug", vrstarada.Slug)
+
+			btn := icontextbtn.IconTextBtn(w.UI.Tema.T, vrstarada.Link, w.UI.Tema.Icons[vrstarada.Slug], unit.Dp(48), w.UI.Tema.Colors["Light"], fmt.Sprint(vrstarada.Id)+". "+w.text(vrstarada.Title))
 			btn.CornerRadius = unit.Dp(0)
 			btn.Background = helper.HexARGB(w.UI.Tema.Colors["Gray"])
 			if vrstarada.Materijal {
@@ -98,7 +103,7 @@ func (w *WingCal) Izbornik() func(gtx C) D {
 
 func (w *WingCal) LinkoviIzboraVrsteRadovaKlik(l model.ElementMenu) {
 	for l.Link.Clicked() {
-		fmt.Println("IZBORR", l.Naziv)
+		fmt.Println("IZBOR", l.Title)
 
 		komanda := fmt.Sprint(l.Id)
 		if len(w.Putanja) == 1 {
@@ -125,7 +130,7 @@ func (w *WingCal) LinkoviIzboraVrsteRadovaKlik(l model.ElementMenu) {
 			w.Element = true
 		}
 		if len(w.Putanja) < 3 {
-			w.Putanja = append(w.Putanja, l.Naziv)
+			w.Putanja = append(w.Putanja, l.Title)
 		}
 		w.GenerisanjeLinkova(w.IzbornikRadova)
 		w.UI.Counters.Kolicina.Value = 0
