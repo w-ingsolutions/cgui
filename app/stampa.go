@@ -11,7 +11,7 @@ import (
 )
 
 var (
-	materijal, aktivnosti, tehnicki, ponuda, ugovor, nova int
+	materijal, aktivnosti, tehnicki, ponuda, ugovor, standardi, merenja, uslovi int
 )
 
 func (w *WingCal) Stampa() func(gtx C) D {
@@ -94,11 +94,10 @@ func (w *WingCal) pdfHeader(p *gofpdf.Fpdf) func() {
 }
 func (w *WingCal) pdfFooter(p *gofpdf.Fpdf) func() {
 	return func() {
-		p.SetY(-15)
+		p.SetY(-30)
 		p.SetFont("Arial", "I", 8)
-		p.CellFormat(0, 10, fmt.Sprintf("Strana %d/{nb}", p.PageNo()),
-			"", 0, "C", false, 0, "")
-		p.Ln(0)
+		p.CellFormat(0, 10, fmt.Sprintf("Strana %d/{nb}", p.PageNo()), "", 0, "C", false, 0, "")
+		p.Ln(10)
 		p.SetFillColor(200, 200, 200)
 		p.Rect(5, 275, 200, 20, "F")
 		p.SetY(-22)
@@ -438,19 +437,24 @@ func (w *WingCal) sadrzajList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, 
 	p.AddPage()
 	p.SetFont("Times", "B", 16)
 	p.CellFormat(0, 10, w.text("Sadržaj"), "0", 0, "", false, 0, "")
-	p.Ln(20)
+	p.Ln(30)
+	p.SetFont("Arial", "", 12)
 	p.CellFormat(0, 10, fmt.Sprintf("Ponuda %d", ponuda), "0", 0, "", false, 0, "")
-	p.Ln(20)
+	p.Ln(10)
 	p.CellFormat(0, 10, fmt.Sprintf("Ugovor %d", ugovor), "0", 0, "", false, 0, "")
-	p.Ln(20)
+	p.Ln(10)
 	p.CellFormat(0, 10, fmt.Sprintf("Specifikacija radova %d", aktivnosti), "0", 0, "", false, 0, "")
-	p.Ln(20)
+	p.Ln(10)
 	p.CellFormat(0, 10, fmt.Sprintf("Specifikacija materijala %d", materijal), "0", 0, "", false, 0, "")
-	p.Ln(20)
+	p.Ln(10)
 	p.CellFormat(0, 10, fmt.Sprintf("Tehnički list %d", tehnicki), "0", 0, "", false, 0, "")
-	p.Ln(20)
-	p.CellFormat(0, 10, fmt.Sprintf("Nova %d", nova), "0", 0, "", false, 0, "")
-	p.Ln(20)
+	p.Ln(10)
+	p.CellFormat(0, 10, fmt.Sprintf("Standardi %d", standardi), "0", 0, "", false, 0, "")
+	p.Ln(10)
+	p.CellFormat(0, 10, fmt.Sprintf("Merenja %d", merenja), "0", 0, "", false, 0, "")
+	p.Ln(10)
+	p.CellFormat(0, 10, fmt.Sprintf("Uslovi %d", uslovi), "0", 0, "", false, 0, "")
+	p.Ln(10)
 }
 
 func (w *WingCal) ponuda(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh, mbottom float64, tr func(string) string) {
@@ -472,9 +476,8 @@ func (w *WingCal) ipList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh
 	w.projektantList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
 	p.Ln(10)
 
-	p.SetFont("Arial", "", 12)
+	p.SetFont("Arial", "", 8)
 	_, lineHt := p.GetFontSize()
-
 	linesA := p.SplitLines([]byte("Na osnovu člana 128a. Zakona o planiranju i izgradnji objekata (Sl. glasnik Republike Srbije br.72/09, 81/09 – ispravka, 64/10 odluka US, 24/11 i 121/12, 42/13 – odluka US, 50/2013 – odluka US, 98/2013 - odluka US, 132/14 i 145/14, 83/18, 31/19 i 37/19) i odredbi Pravilnika o sadržini, načinu i postupku izrade i način vršenja kontrole tehničke dokumentacije prema klasi i nameni objekta (Sl. glasnik Republike Srbije br.72/2018)"), 200)
 	for _, line := range linesA {
 		p.CellFormat(190.0, lineHt, string(line), "", 1, "J", false, 0, "")
@@ -614,19 +617,5 @@ func (w *WingCal) projektantList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCel
 			p.SetXY(x, y)
 		}
 		p.SetXY(curx, y+height)
-	}
-}
-
-func (w *WingCal) novaStrana(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh, mbottom float64, tr func(string) string) {
-	p.AddPage()
-
-	p.SetFont("Arial", "", 12)
-	nova = p.PageNo()
-
-	_, lineHt := p.GetFontSize()
-
-	linesB := p.SplitLines([]byte("Nsdsddd dsdsddd dsdsddd dsdsddd dsdsddd dsdsddd dsdsddd dsdsddd dsdsddd de br.72/2018)"), 200)
-	for _, line := range linesB {
-		p.CellFormat(190.0, lineHt, string(line), "", 1, "J", false, 0, "")
 	}
 }
