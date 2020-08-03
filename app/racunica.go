@@ -12,7 +12,7 @@ func (w *WingCal) SumaRacunica() {
 	}
 	w.Suma.SumaCena = s
 	//w.Suma.SumaCenaMaterijal, w.Suma.NeophodanMaterijal = w.NeopodanMaterijal(w.Suma.Elementi)
-	w.NeopodanMaterijal()
+	w.NeophodanMaterijal()
 }
 
 func (w *WingCal) PrikazaniElementSumaRacunica() func() {
@@ -53,29 +53,42 @@ func (w *WingCal) ProjekatSumaRacunica() func() {
 	}
 }
 
-func (w *WingCal) NeopodanMaterijal() {
-	u := make(map[int]model.WingNeophodanMaterijal)
+func (w *WingCal) NeophodanMaterijal() {
+	ukupanNeophodniMaterijal := make(map[int]model.WingNeophodanMaterijal)
 	unm := make(map[int]model.WingNeophodanMaterijal)
 	sumaCena := 0.0
 	for _, e := range w.Suma.Elementi {
-		for _, n := range e.Element.NeophodanMaterijal {
-			uu := model.WingNeophodanMaterijal{
-				Id:        n.Id,
-				Materijal: *w.Materijal[n.Id-1],
+		//fmt.Println("Element:", e.Element.Naziv)
+		ukupnaCenaMaterijala := 0.0
+		for _, pojedinacniMaterijalSume := range e.Element.NeophodanMaterijal {
+			materijal := model.WingNeophodanMaterijal{
+				Id:        pojedinacniMaterijalSume.Id,
+				Materijal: *w.Materijal[pojedinacniMaterijalSume.Id-1],
 			}
-			k := uu.Materijal.Potrosnja * float64(e.Kolicina) * n.Koeficijent
-			uu.Kolicina = u[n.Id].Kolicina + k
-			ukupnaCena := uu.Kolicina * uu.Materijal.Cena
-			uu.UkupnaCena = ukupnaCena
-			uu.UkupnoPakovanja = int(k / float64(uu.Materijal.Pakovanje))
-			u[n.Id] = uu
-			sumaCena = sumaCena + ukupnaCena
+			k := materijal.Materijal.Potrosnja * float64(e.Kolicina) * pojedinacniMaterijalSume.Koeficijent
+			materijal.Kolicina = ukupanNeophodniMaterijal[pojedinacniMaterijalSume.Id].Kolicina + k
+			ukupnaCena := materijal.Kolicina * materijal.Materijal.Cena
+			materijal.UkupnaCena = ukupnaCena
+			materijal.UkupnoPakovanja = int(k / float64(materijal.Materijal.Pakovanje))
+			ukupanNeophodniMaterijal[pojedinacniMaterijalSume.Id] = materijal
+			ukupnaCenaMaterijala = ukupnaCenaMaterijala + ukupnaCena
+			//fmt.Println("Materijal:", materijal.Materijal.Naziv)
+			//fmt.Println("Kolicina:",  materijal.Kolicina)
+			//fmt.Println("UkupnaCena:",  materijal.UkupnaCena)
+			//fmt.Println("---------------------------------")
 		}
+		//fmt.Println("0000000000000000000000000000")
+		//sumaCena = ukupnaCenaMaterijala
 	}
-	w.Suma.NeophodanMaterijal = u
+
+	for _, m := range ukupanNeophodniMaterijal {
+		sumaCena = sumaCena + m.UkupnaCena
+	}
+
+	w.Suma.NeophodanMaterijal = ukupanNeophodniMaterijal
 	w.Suma.SumaCenaMaterijal = sumaCena
 	i := 0
-	for _, uuu := range u {
+	for _, uuu := range ukupanNeophodniMaterijal {
 		unm[i] = uuu
 		i++
 	}

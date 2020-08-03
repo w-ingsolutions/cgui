@@ -35,11 +35,8 @@ func (w *WingCal) PrikazaniElementDugmeDodaj(sumaCena float64) func(gtx C) D {
 				for _, s := range w.Suma.Elementi {
 					if s.Element.Id == w.PrikazaniElement.Id {
 						varijacijaRada = varijacijaRada + 1
-						fmt.Println("varijacijaRada:", varijacijaRada)
 					}
-					fmt.Println("elem:", s.Element.Id)
 				}
-				fmt.Println("varijacijaRadaIIIIIIIIIIIII:", varijacijaRada)
 				suma := model.WingIzabraniElement{
 					Sifra:         fmt.Sprint(w.Podvrsta) + "." + fmt.Sprint(w.Roditelj) + "." + fmt.Sprint(w.PrikazaniElement.Id) + "." + fmt.Sprint(varijacijaRada+1),
 					Kolicina:      w.UI.Counters.Kolicina.Value,

@@ -317,7 +317,7 @@ func (w *WingCal) aktivnostiSuma(p *gofpdf.Fpdf, pagew, mleft, mright, marginCel
 	}
 
 	p.SetFont("Times", "B", 16)
-	p.CellFormat(0, 10, w.text("Suma: ")+fmt.Sprintf("%.2f", w.Suma.SumaCenaMaterijal), "0", 0, "", false, 0, "")
+	p.CellFormat(0, 10, w.text("Suma: ")+fmt.Sprintf("%.2f", w.Suma.SumaCena), "0", 0, "", false, 0, "")
 }
 
 func (w *WingCal) specifikacijaMaterijalaList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh, mbottom float64, tr func(string) string) {
@@ -385,7 +385,7 @@ func (w *WingCal) specifikacijaMaterijalaList(p *gofpdf.Fpdf, pagew, mleft, mrig
 	}
 
 	p.SetFont("Times", "B", 16)
-	p.CellFormat(0, 10, w.text("Suma materijal: ")+fmt.Sprintf("%.2f", projekat.Elementi.SumaCena), "0", 0, "", false, 0, "")
+	p.CellFormat(0, 10, w.text("Suma materijal: ")+fmt.Sprintf("%.2f", projekat.Elementi.SumaCenaMaterijal), "0", 0, "", false, 0, "")
 	p.Ln(20)
 
 }
@@ -431,7 +431,7 @@ func (w *WingCal) materijalSuma(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell
 		}
 	}
 	p.SetFont("Times", "B", 16)
-	p.CellFormat(0, 10, w.text("Suma materijal: ")+fmt.Sprintf("%.2f", projekat.Elementi.SumaCena), "0", 0, "", false, 0, "")
+	p.CellFormat(0, 10, w.text("Suma materijal: ")+fmt.Sprintf("%.2f", projekat.Elementi.SumaCenaMaterijal), "0", 0, "", false, 0, "")
 }
 
 func (w *WingCal) sadrzajList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh, mbottom float64) {
@@ -445,13 +445,11 @@ func (w *WingCal) sadrzajList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, 
 	p.Ln(20)
 	p.CellFormat(0, 10, fmt.Sprintf("Specifikacija radova %d", aktivnosti), "0", 0, "", false, 0, "")
 	p.Ln(20)
-	p.CellFormat(0, 10, fmt.Sprintf("Specifikacija materijala %d/{nb}", materijal), "0", 0, "", false, 0, "")
+	p.CellFormat(0, 10, fmt.Sprintf("Specifikacija materijala %d", materijal), "0", 0, "", false, 0, "")
 	p.Ln(20)
-	p.CellFormat(0, 10, fmt.Sprintf("Tehnički list %d/{nb}", tehnicki), "0", 0, "", false, 0, "")
+	p.CellFormat(0, 10, fmt.Sprintf("Tehnički list %d", tehnicki), "0", 0, "", false, 0, "")
 	p.Ln(20)
-	p.CellFormat(0, 10, fmt.Sprint(tehnicki), "0", 0, "", false, 0, "")
-	p.Ln(20)
-	p.CellFormat(0, 10, fmt.Sprintf("Nova %d/", nova), "0", 0, "", false, 0, "")
+	p.CellFormat(0, 10, fmt.Sprintf("Nova %d", nova), "0", 0, "", false, 0, "")
 	p.Ln(20)
 }
 
@@ -498,10 +496,10 @@ func (w *WingCal) investitorList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCel
 			"PIB", projekat.Investitor.PIB,
 		},
 		[]string{
-			"KratakNaziv", projekat.Investitor.Naziv,
+			"Kratak Naziv", projekat.Investitor.Naziv,
 		},
 		[]string{
-			"DugiNaziv", projekat.Investitor.DugiNaziv,
+			"Dugi Naziv", projekat.Investitor.DugiNaziv,
 		},
 		[]string{
 			"Delatnost", projekat.Investitor.Delatnost,
@@ -516,7 +514,10 @@ func (w *WingCal) investitorList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCel
 			"Email", projekat.Investitor.Email,
 		},
 		[]string{
-			"DatumOsnivanja", projekat.Investitor.DatumOsnivanja,
+			"Broj telefona", projekat.Investitor.BrojTelefona,
+		},
+		[]string{
+			"Datum Osnivanja", projekat.Investitor.DatumOsnivanja,
 		},
 		//[]string{
 		//	"Racuni", projekat.Investitor.Racuni,
@@ -564,7 +565,7 @@ func (w *WingCal) projektantList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCel
 			"PIB", projekat.Projektant.PIB,
 		},
 		[]string{
-			"KratakNaziv", projekat.Projektant.Naziv,
+			"Kratak Naziv", projekat.Projektant.Naziv,
 		},
 		[]string{
 			"DugiNaziv", projekat.Projektant.DugiNaziv,
@@ -582,7 +583,10 @@ func (w *WingCal) projektantList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCel
 			"Email", projekat.Projektant.Email,
 		},
 		[]string{
-			"DatumOsnivanja", projekat.Projektant.DatumOsnivanja,
+			"Broj telefona", projekat.Projektant.BrojTelefona,
+		},
+		[]string{
+			"Datum Osnivanja", projekat.Projektant.DatumOsnivanja,
 		},
 	}
 	for _, row := range rows {

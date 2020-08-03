@@ -39,10 +39,6 @@ func (w *WingCal) IzborPodVrsteRadova() func(gtx C) D {
 
 			//btn := material.Button(w.UI.Tema.T, vrstarada.Link, fmt.Sprint(vrstarada.Id)+". "+w.text(vrstarada.Title))
 			//icoNaziv := strings.Split(vrstarada.Title, " ")
-			fmt.Println("vrstarada", vrstarada)
-			fmt.Println("vrstarada.Naziv", vrstarada.Title)
-			fmt.Println("vrstarada.Id", vrstarada.Id)
-			fmt.Println("vrstarada.Slug", vrstarada.Slug)
 
 			btn := icontextbtn.IconTextBtn(w.UI.Tema.T, vrstarada.Link, w.UI.Tema.Icons[vrstarada.Slug], unit.Dp(48), w.UI.Tema.Colors["Light"], fmt.Sprint(vrstarada.Id)+". "+w.text(vrstarada.Title))
 			btn.CornerRadius = unit.Dp(0)
