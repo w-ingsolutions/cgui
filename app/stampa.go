@@ -262,7 +262,6 @@ func (w *WingCal) specifikacijaRadovaList(p *gofpdf.Fpdf, pagew, mleft, mright, 
 		}
 		p.Ln(8)
 	}
-
 	p.SetFont("Times", "B", 16)
 	p.CellFormat(0, 10, w.text("Suma: ")+fmt.Sprintf("%.2f", w.Suma.SumaCena), "0", 0, "", false, 0, "")
 	p.Ln(40)
