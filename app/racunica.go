@@ -58,7 +58,6 @@ func (w *WingCal) NeophodanMaterijal() {
 	unm := make(map[int]model.WingNeophodanMaterijal)
 	sumaCena := 0.0
 	for _, e := range w.Suma.Elementi {
-		//fmt.Println("Element:", e.Element.Naziv)
 		ukupnaCenaMaterijala := 0.0
 		for _, pojedinacniMaterijalSume := range e.Element.NeophodanMaterijal {
 			materijal := model.WingNeophodanMaterijal{
@@ -72,15 +71,8 @@ func (w *WingCal) NeophodanMaterijal() {
 			materijal.UkupnoPakovanja = int(k / float64(materijal.Materijal.Pakovanje))
 			ukupanNeophodniMaterijal[pojedinacniMaterijalSume.Id] = materijal
 			ukupnaCenaMaterijala = ukupnaCenaMaterijala + ukupnaCena
-			//fmt.Println("Materijal:", materijal.Materijal.Naziv)
-			//fmt.Println("Kolicina:",  materijal.Kolicina)
-			//fmt.Println("UkupnaCena:",  materijal.UkupnaCena)
-			//fmt.Println("---------------------------------")
 		}
-		//fmt.Println("0000000000000000000000000000")
-		//sumaCena = ukupnaCenaMaterijala
 	}
-
 	for _, m := range ukupanNeophodniMaterijal {
 		sumaCena = sumaCena + m.UkupnaCena
 	}

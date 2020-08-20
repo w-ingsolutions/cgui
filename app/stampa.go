@@ -21,9 +21,9 @@ func (w *WingCal) Stampa() func(gtx C) D {
 		if len(w.Suma.Elementi) != 0 {
 			for stampajDugme.Clicked() {
 				fmt.Println("proj::", projekat.Investitor)
-				w.kreiranjeNalogaPDF("nalog.pdf")
+				w.kreiranjeNalogaPDF("/tmp/nalog.pdf")
 
-				open.Run("nalog.pdf")
+				open.Run("/tmp/nalog.pdf")
 
 			}
 		}
