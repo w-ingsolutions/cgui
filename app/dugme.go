@@ -5,7 +5,7 @@ import (
 	"gioui.org/unit"
 	"gioui.org/widget"
 	"gioui.org/widget/material"
-	"github.com/gioapp/gel/helper"
+	"github.com/w-ingsolutions/cgui/app/helper"
 	"github.com/w-ingsolutions/c/model"
 )
 

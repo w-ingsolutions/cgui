@@ -2,12 +2,14 @@ package calc
 
 import (
 	"fmt"
+	
 	"gioui.org/layout"
 	"gioui.org/unit"
-	"github.com/gioapp/gel/helper"
-	"github.com/gioapp/gel/icontextbtn"
 	"github.com/w-ingsolutions/c/model"
 	"github.com/w-ingsolutions/c/pkg/lyt"
+	
+	"github.com/w-ingsolutions/cgui/app/gel/icontextbtn"
+	"github.com/w-ingsolutions/cgui/app/helper"
 )
 
 func (w *WingCal) IzborVrsteRadova() func(gtx C) D {
@@ -45,7 +47,7 @@ func (w *WingCal) IzborVrsteRadovaDveKolone() func(gtx C) D {
 }
 func (w *WingCal) IzborVrsteRadovaDveKoloneRed(a, b int) func(gtx C) D {
 	return w.hBtnLinks(w.btnLink(w.IzbornikRadova[a]), w.btnLink(w.IzbornikRadova[b]))
-
+	
 }
 func (w *WingCal) hBtnLinks(a, b func(gtx C) D) func(gtx C) D {
 	return func(gtx C) D {
@@ -75,7 +77,7 @@ func (w *WingCal) IzborVrsteRadovaTriKolone() func(gtx C) D {
 }
 func (w *WingCal) IzborVrsteRadovaTriKoloneRed(a, b, c int) func(gtx C) D {
 	return w.thBtnLinks(w.btnLink(w.IzbornikRadova[a]), w.btnLink(w.IzbornikRadova[b]), w.btnLink(w.IzbornikRadova[c]))
-
+	
 }
 func (w *WingCal) thBtnLinks(a, b, c func(gtx C) D) func(gtx C) D {
 	return func(gtx C) D {
@@ -130,7 +132,7 @@ func (w *WingCal) btnLink(r model.ElementMenu) func(gtx C) D {
 			btn.IconSize = unit.Dp(64)
 			btn.TextSize = unit.Dp(12)
 			btn.Axis = layout.Vertical
-
+		
 		case "des":
 			btn.IconSize = unit.Dp(72)
 			btn.TextSize = unit.Dp(12)
@@ -138,14 +140,14 @@ func (w *WingCal) btnLink(r model.ElementMenu) func(gtx C) D {
 		}
 		btn.CornerRadius = unit.Dp(0)
 		btn.Background = helper.HexARGB(w.UI.Tema.Colors["Gray"])
-		//btn.Inset = layout.Inset{
+		// btn.Inset = layout.Inset{
 		//	Top:    unit.Dp(2),
 		//	Right:  unit.Dp(2),
 		//	Bottom: unit.Dp(2),
 		//	Left:   unit.Dp(2),
-		//}
+		// }
 		if r.Materijal {
-			//btn.Background = helper.HexARGB(w.UI.Tema.Colors["DarkGray"])
+			// btn.Background = helper.HexARGB(w.UI.Tema.Colors["DarkGray"])
 		}
 		w.LinkoviIzboraVrsteRadovaKlik(r)
 		return btn.Layout(gtx)

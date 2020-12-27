@@ -5,7 +5,7 @@ import (
 	"gioui.org/layout"
 	"gioui.org/unit"
 	"gioui.org/widget/material"
-	"github.com/gioapp/gel/helper"
+	"github.com/w-ingsolutions/cgui/app/helper"
 )
 
 func (w *WingCal) Nazad() func(gtx C) D {
