@@ -3,8 +3,8 @@ package calc
 import (
 	"gioui.org/layout"
 	"gioui.org/unit"
-	"github.com/gioapp/gel/container"
-	"github.com/gioapp/gel/helper"
+	"github.com/w-ingsolutions/cgui/app/gel/container"
+	"github.com/w-ingsolutions/cgui/app/helper"
 	"github.com/w-ingsolutions/c/pkg/lyt"
 )
 

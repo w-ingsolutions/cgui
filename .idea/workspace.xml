@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a2302772-0529-40aa-85ec-3777c89f077d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/cgui.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/appdata/appdata.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/appdata/appdata_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/container/cointainer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/counter/counter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/counter/layout.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/helper/color.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/helper/helpers.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/icontextbtn/icontextbtn.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/lyt/lyt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/navigation/navigation.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/page/page.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/panel/layout.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/panel/panel.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/panel/scrollbar.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/theme/colors.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/theme/icons.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/gel/theme/theme.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/helper/color.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/helper/helpers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/brisi.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/brisi.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/calc.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/calc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dugme.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/dugme.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/footer.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/footer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/header.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/header.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/izbor.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/izbor.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/materijal.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/materijal.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/nazad.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/nazad.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/neophodan.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/neophodan.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/new.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/new.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/panel.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/panel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/podesavanja.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/podesavanja.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pomoc.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/pomoc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/prikazanielement.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/prikazanielement.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/projekat.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/projekat.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/racunica.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/racunica.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/radovi.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/radovi.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/stampa.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/stampa.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/stavke.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/stavke.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/suma.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/suma.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" url="file://$USER_HOME$/sdk/go1.14.9" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+    <option name="useGoPathFromSystemEnvironment" value="false" />
+  </component>
+  <component name="ProjectId" id="1mFK0V2e9CBo6OmA5Ws0jmOONvK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable..is.expanded" value="false" />
+    <property name="configurable.GoLibrariesConfigurable.is.expanded" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/gel/helper" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\loki\GolandProjects\cgui\app\gel\helper" />
+      <recent name="C:\Users\loki\GolandProjects\cgui\app\gel" />
+      <recent name="C:\Users\loki\GolandProjects\cgui\app" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a2302772-0529-40aa-85ec-3777c89f077d" name="Default Changelist" comment="" />
+      <created>1609083675810</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609083675810</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+</project>

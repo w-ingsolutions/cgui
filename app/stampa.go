@@ -2,17 +2,39 @@ package calc
 
 import (
 	"fmt"
+	"os"
+	"path/filepath"
+	"time"
+	
 	"gioui.org/unit"
 	"gioui.org/widget/material"
 	"github.com/jung-kurt/gofpdf"
 	"github.com/skratchdot/open-golang/open"
 	"github.com/w-ingsolutions/c/pkg/pdf"
-	"time"
+	
+	"github.com/w-ingsolutions/cgui/app/appdata"
 )
 
 var (
 	materijal, aktivnosti, tehnicki, ponuda, ugovor, standardi, merenja, uslovi int
 )
+
+// EnsureDir checks a file could be written to a path, creates the directories as needed
+func EnsureDir(fileName string) {
+	dirName := filepath.Dir(fileName)
+	if _, serr := os.Stat(dirName); serr != nil {
+		merr := os.MkdirAll(dirName, os.ModePerm)
+		if merr != nil {
+			panic(merr)
+		}
+	}
+}
+
+// FileExists reports whether the named file or directory exists.
+func FileExists(filePath string) bool {
+	_, err := os.Stat(filePath)
+	return err == nil
+}
 
 func (w *WingCal) Stampa() func(gtx C) D {
 	return func(gtx C) D {
@@ -21,10 +43,14 @@ func (w *WingCal) Stampa() func(gtx C) D {
 		if len(w.Suma.Elementi) != 0 {
 			for stampajDugme.Clicked() {
 				fmt.Println("proj::", projekat.Investitor)
-				w.kreiranjeNalogaPDF("/tmp/nalog.pdf")
-
-				open.Run("/tmp/nalog.pdf")
-
+				outFilename := filepath.Join(appdata.Dir("wingcal", false),
+					"nalog.pdf")
+				EnsureDir(outFilename)
+				w.kreiranjeNalogaPDF(outFilename)
+				if err := open.Run(outFilename); err != nil {
+					panic(err)
+				}
+				
 			}
 		}
 		return btn.Layout(gtx)
@@ -41,25 +67,26 @@ func (w *WingCal) kreiranjeNalogaPDF(naziv string) {
 	p.SetHeaderFuncMode(w.pdfHeader(p), true)
 	p.SetFooterFunc(w.pdfFooter(p))
 	p.AliasNbPages("")
+	w.sadrzajList(p, pagew, mleft, mright, marginCell, pageh, mbottom)
 	w.ponuda(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
 	w.ipList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
-
+	
 	w.specifikacijaRadovaList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
 	w.specifikacijaMaterijalaList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
 	w.tehnickiList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
 	w.novaStrana(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
-	w.sadrzajList(p, pagew, mleft, mright, marginCell, pageh, mbottom)
-	//err := p.OutputFileAndClose(w.Podesavanja.Dir + "/nalog.pdf")
+	// err := p.OutputFileAndClose(w.Podesavanja.Dir + "/nalog.pdf")
 	err := p.OutputFileAndClose(naziv)
 	if err != nil {
+		fmt.Println("Error:", err)
 	}
 }
 
 func (w *WingCal) pdfHeader(p *gofpdf.Fpdf) func() {
 	return func() {
 		currentTime := time.Now()
-		//pdf.Image("/usr/home/marcetin/Public/wingcal/NOVOGUI/pdfheader.png", 5, 5, 200, 25, false, "", 0, "")
-		//pdf.SetDrawColor(200,200,200)
+		// pdf.Image("/usr/home/marcetin/Public/wingcal/NOVOGUI/pdfheader.png", 5, 5, 200, 25, false, "", 0, "")
+		// pdf.SetDrawColor(200,200,200)
 		p.SetFillColor(200, 200, 200)
 		p.Rect(5, 5, 200, 20, "F")
 		p.SetY(5)
@@ -128,7 +155,7 @@ func (w *WingCal) pdfFooter(p *gofpdf.Fpdf) func() {
 		p.Ln(5)
 		p.SetFont("Arial", "", 8)
 		p.CellFormat(47, 6, "email:vukobrat.cedomir@gmail.com", "0", 0, "L", false, 0, "")
-
+		
 	}
 }
 
@@ -138,12 +165,12 @@ func (w *WingCal) tehnickiList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell,
 	tehnicki = p.PageNo()
 	p.CellFormat(0, 10, w.text("Tehnički list"), "0", 0, "", false, 0, "")
 	p.Ln(20)
-
+	
 	p.SetFont("Arial", "", 10)
 	for _, e := range w.Suma.NeophodanMaterijal {
 		cols := []float64{40, pagew - mleft - mright - 20}
-		//rows := [][]string{}
-
+		// rows := [][]string{}
+		
 		rows := [][]string{
 			[]string{
 				"Šifra", fmt.Sprint(e.Id),
@@ -157,7 +184,7 @@ func (w *WingCal) tehnickiList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell,
 			[]string{
 				"Nacin rada", e.Materijal.NacinRada,
 			},
-
+			
 			[]string{
 				"Jedinica mere", e.Materijal.JedinicaPotrosnje,
 			},
@@ -181,7 +208,7 @@ func (w *WingCal) tehnickiList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell,
 			}
 			for i, txt := range row {
 				width := cols[i]
-				//pdf.Rect(x, y, width, height, "")
+				// pdf.Rect(x, y, width, height, "")
 				p.MultiCell(width, lineHt+marginCell, tr(txt), "", "", false)
 				x += width
 				p.SetXY(x, y)
@@ -198,12 +225,12 @@ func (w *WingCal) specifikacijaRadovaList(p *gofpdf.Fpdf, pagew, mleft, mright, 
 	aktivnosti = p.PageNo()
 	p.CellFormat(0, 10, tr(w.text("Specifikacija aktivnosti")), "0", 0, "", false, 0, "")
 	p.Ln(20)
-
+	
 	p.SetFont("Arial", "", 10)
 	for _, e := range w.Suma.Elementi {
 		cols := []float64{40, pagew - mleft - mright - 20}
-		//rows := [][]string{}
-
+		// rows := [][]string{}
+		
 		rows := [][]string{
 			[]string{
 				"Šifra", e.Sifra,
@@ -246,14 +273,14 @@ func (w *WingCal) specifikacijaRadovaList(p *gofpdf.Fpdf, pagew, mleft, mright, 
 			}
 			for i, txt := range row {
 				width := cols[i]
-				//pdf.Rect(x, y, width, height, "")
+				// pdf.Rect(x, y, width, height, "")
 				if i < 1 {
 					p.SetFont("Arial", "B", 10)
 				} else {
 					p.SetFont("Arial", "", 10)
 				}
-				//fmt.Println("Col::", i)
-
+				// fmt.Println("Col::", i)
+				
 				p.MultiCell(width, lineHt+marginCell, tr(txt), "", "", false)
 				x += width
 				p.SetXY(x, y)
@@ -298,14 +325,14 @@ func (w *WingCal) aktivnostiSuma(p *gofpdf.Fpdf, pagew, mleft, mright, marginCel
 			}
 			for i, txt := range row {
 				width := cols[i]
-				//pdf.Rect(x, y, width, height, "")
+				// pdf.Rect(x, y, width, height, "")
 				if i < 1 {
 					p.SetFont("Arial", "B", 10)
 				} else {
 					p.SetFont("Arial", "", 10)
 				}
-				//fmt.Println("Col::", i)
-
+				// fmt.Println("Col::", i)
+				
 				p.MultiCell(width, lineHt+marginCell, tr(txt), "", "", false)
 				x += width
 				p.SetXY(x, y)
@@ -313,7 +340,7 @@ func (w *WingCal) aktivnostiSuma(p *gofpdf.Fpdf, pagew, mleft, mright, marginCel
 			p.SetXY(curx, y+height)
 		}
 	}
-
+	
 	p.SetFont("Times", "B", 16)
 	p.CellFormat(0, 10, w.text("Suma: ")+fmt.Sprintf("%.2f", w.Suma.SumaCena), "0", 0, "", false, 0, "")
 }
@@ -324,12 +351,12 @@ func (w *WingCal) specifikacijaMaterijalaList(p *gofpdf.Fpdf, pagew, mleft, mrig
 	p.CellFormat(0, 10, w.text("Specifikacija materijala"), "0", 0, "", false, 0, "")
 	materijal = p.PageNo()
 	p.Ln(20)
-
+	
 	p.SetFont("Arial", "", 10)
 	for _, e := range w.Suma.NeophodanMaterijal {
 		cols := []float64{40, pagew - mleft - mright - 20}
-		//rows := [][]string{}
-
+		// rows := [][]string{}
+		
 		rows := [][]string{
 			[]string{
 				"Šifra", fmt.Sprint(e.Id),
@@ -337,9 +364,9 @@ func (w *WingCal) specifikacijaMaterijalaList(p *gofpdf.Fpdf, pagew, mleft, mrig
 			[]string{
 				"Naziv", e.Materijal.Naziv,
 			},
-			//[]string{
+			// []string{
 			//	"Osobine i namena", e.Materijal.OsobineNamena,
-			//},
+			// },
 			[]string{
 				"Jedinica mere", e.Materijal.JedinicaPotrosnje,
 			},
@@ -372,7 +399,7 @@ func (w *WingCal) specifikacijaMaterijalaList(p *gofpdf.Fpdf, pagew, mleft, mrig
 			}
 			for i, txt := range row {
 				width := cols[i]
-				//pdf.Rect(x, y, width, height, "")
+				// pdf.Rect(x, y, width, height, "")
 				p.MultiCell(width, lineHt+marginCell, tr(txt), "", "", false)
 				x += width
 				p.SetXY(x, y)
@@ -381,11 +408,11 @@ func (w *WingCal) specifikacijaMaterijalaList(p *gofpdf.Fpdf, pagew, mleft, mrig
 		}
 		p.Ln(8)
 	}
-
+	
 	p.SetFont("Times", "B", 16)
 	p.CellFormat(0, 10, w.text("Suma materijal: ")+fmt.Sprintf("%.2f", projekat.Elementi.SumaCenaMaterijal), "0", 0, "", false, 0, "")
 	p.Ln(20)
-
+	
 }
 
 func (w *WingCal) materijalSuma(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh, mbottom float64, tr func(string) string) {
@@ -395,7 +422,7 @@ func (w *WingCal) materijalSuma(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell
 	p.SetFont("Arial", "", 10)
 	for _, e := range w.Suma.NeophodanMaterijal {
 		cols := []float64{40, pagew - mleft - mright - 20}
-		//rows := [][]string{}
+		// rows := [][]string{}
 		rows := [][]string{
 			[]string{
 				fmt.Sprint(e.Id), e.Materijal.Naziv,
@@ -420,7 +447,7 @@ func (w *WingCal) materijalSuma(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell
 			}
 			for i, txt := range row {
 				width := cols[i]
-				//pdf.Rect(x, y, width, height, "")
+				// pdf.Rect(x, y, width, height, "")
 				p.MultiCell(width, lineHt+marginCell, tr(txt), "", "", false)
 				x += width
 				p.SetXY(x, y)
@@ -471,10 +498,10 @@ func (w *WingCal) ponuda(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh
 func (w *WingCal) ipList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCell, pageh, mbottom float64, tr func(string) string) {
 	p.AddPage()
 	ugovor = p.PageNo()
-
+	
 	w.projektantList(p, pagew, mleft, mright, marginCell, pageh, mbottom, tr)
 	p.Ln(10)
-
+	
 	p.SetFont("Arial", "", 8)
 	_, lineHt := p.GetFontSize()
 	linesA := p.SplitLines([]byte("Na osnovu člana 128a. Zakona o planiranju i izgradnji objekata (Sl. glasnik Republike Srbije br.72/09, 81/09 – ispravka, 64/10 odluka US, 24/11 i 121/12, 42/13 – odluka US, 50/2013 – odluka US, 98/2013 - odluka US, 132/14 i 145/14, 83/18, 31/19 i 37/19) i odredbi Pravilnika o sadržini, načinu i postupku izrade i način vršenja kontrole tehničke dokumentacije prema klasi i nameni objekta (Sl. glasnik Republike Srbije br.72/2018)"), 200)
@@ -521,9 +548,9 @@ func (w *WingCal) investitorList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCel
 		[]string{
 			"Datum Osnivanja", projekat.Investitor.DatumOsnivanja,
 		},
-		//[]string{
+		// []string{
 		//	"Racuni", projekat.Investitor.Racuni,
-		//},
+		// },
 	}
 	for _, row := range rows {
 		curx, y := p.GetXY()
@@ -544,7 +571,7 @@ func (w *WingCal) investitorList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCel
 		}
 		for i, txt := range row {
 			width := cols[i]
-			//pdf.Rect(x, y, width, height, "")
+			// pdf.Rect(x, y, width, height, "")
 			p.MultiCell(width, lineHt+marginCell, tr(txt), "", "", false)
 			x += width
 			p.SetXY(x, y)
@@ -610,7 +637,7 @@ func (w *WingCal) projektantList(p *gofpdf.Fpdf, pagew, mleft, mright, marginCel
 		}
 		for i, txt := range row {
 			width := cols[i]
-			//pdf.Rect(x, y, width, height, "")
+			// pdf.Rect(x, y, width, height, "")
 			p.MultiCell(width, lineHt+marginCell, tr(txt), "", "", false)
 			x += width
 			p.SetXY(x, y)

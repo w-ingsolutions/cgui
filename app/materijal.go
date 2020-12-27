@@ -3,7 +3,7 @@ package calc
 import (
 	"fmt"
 	"gioui.org/text"
-	"github.com/gioapp/gel/helper"
+	"github.com/w-ingsolutions/cgui/app/helper"
 	"github.com/w-ingsolutions/c/pkg/lyt"
 )
 

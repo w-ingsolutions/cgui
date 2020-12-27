@@ -3,7 +3,7 @@ package calc
 import (
 	"gioui.org/layout"
 	"gioui.org/widget/material"
-	"github.com/gioapp/gel/container"
+	"github.com/w-ingsolutions/cgui/app/gel/container"
 )
 
 func (w *WingCal) PodesavanjaStrana() func(gtx C) D {

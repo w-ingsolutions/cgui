@@ -4,8 +4,9 @@ import (
 	"gioui.org/layout"
 	"gioui.org/unit"
 	"gioui.org/widget/material"
-	"github.com/gioapp/gel/helper"
 	"github.com/w-ingsolutions/c/model"
+	
+	"github.com/w-ingsolutions/cgui/app/helper"
 )
 
 func remove(slice []*model.WingIzabraniElement, s int) []*model.WingIzabraniElement {

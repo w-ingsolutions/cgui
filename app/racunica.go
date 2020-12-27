@@ -11,7 +11,7 @@ func (w *WingCal) SumaRacunica() {
 		s = s + e.SumaCena
 	}
 	w.Suma.SumaCena = s
-	//w.Suma.SumaCenaMaterijal, w.Suma.NeophodanMaterijal = w.NeopodanMaterijal(w.Suma.Elementi)
+	// w.Suma.SumaCenaMaterijal, w.Suma.NeophodanMaterijal = w.NeopodanMaterijal(w.Suma.Elementi)
 	w.NeophodanMaterijal()
 }
 
@@ -32,14 +32,14 @@ func (w *WingCal) ProjekatRacunica() func() {
 		}
 		p.Elementi = iz
 		projekat.Elementi = p
-		//w.ProjekatSumaRacunica()
+		// w.ProjekatSumaRacunica()
 	}
 }
 
 func (w *WingCal) ProjekatMaterijalSumaRacunica() func() {
 	return func() {
-		//projekat.Elementi.SumaCena, projekat.Elementi.NeophodanMaterijal = w.NeopodanMaterijal(projekat.Elementi.Elementi)
-		//projekat.Elementi.SumaCena = w.Suma.SumaCenaMaterijal + w.Suma.SumaCenaMaterijal*float64(materijal.Value)/100
+		// projekat.Elementi.SumaCena, projekat.Elementi.NeophodanMaterijal = w.NeopodanMaterijal(projekat.Elementi.Elementi)
+		// projekat.Elementi.SumaCena = w.Suma.SumaCenaMaterijal + w.Suma.SumaCenaMaterijal*float64(materijal.Value)/100
 	}
 }
 
@@ -76,7 +76,7 @@ func (w *WingCal) NeophodanMaterijal() {
 	for _, m := range ukupanNeophodniMaterijal {
 		sumaCena = sumaCena + m.UkupnaCena
 	}
-
+	
 	w.Suma.NeophodanMaterijal = ukupanNeophodniMaterijal
 	w.Suma.SumaCenaMaterijal = sumaCena
 	i := 0

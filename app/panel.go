@@ -4,7 +4,7 @@ import (
 	"gioui.org/layout"
 	"gioui.org/text"
 	"gioui.org/widget/material"
-	"github.com/gioapp/gel/container"
+	"github.com/w-ingsolutions/cgui/app/gel/container"
 	"github.com/w-ingsolutions/c/pkg/lyt"
 )
 

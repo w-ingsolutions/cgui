@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"gioui.org/layout"
 	"gioui.org/text"
-	"github.com/gioapp/gel/helper"
+	"github.com/w-ingsolutions/cgui/app/helper"
 	"github.com/w-ingsolutions/c/model"
 	"github.com/w-ingsolutions/c/pkg/lyt"
 )
