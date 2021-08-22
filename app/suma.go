@@ -2,14 +2,14 @@ package calc
 
 import (
 	"fmt"
-	
+
 	"gioui.org/layout"
 	"gioui.org/text"
 	"gioui.org/unit"
 	"gioui.org/widget/material"
-	"github.com/w-ingsolutions/c/model"
 	"github.com/w-ingsolutions/c/pkg/lyt"
-	
+	"github.com/w-ingsolutions/cgui/app/model"
+
 	"github.com/w-ingsolutions/cgui/app/gel/container"
 	"github.com/w-ingsolutions/cgui/app/helper"
 )

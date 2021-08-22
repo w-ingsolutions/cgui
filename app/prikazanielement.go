@@ -6,12 +6,12 @@ import (
 	"gioui.org/unit"
 	"gioui.org/widget"
 	"gioui.org/widget/material"
+	"github.com/w-ingsolutions/c/pkg/latcyr"
+	"github.com/w-ingsolutions/c/pkg/lyt"
 	"github.com/w-ingsolutions/cgui/app/gel/container"
 	"github.com/w-ingsolutions/cgui/app/gel/counter"
 	"github.com/w-ingsolutions/cgui/app/helper"
-	"github.com/w-ingsolutions/c/model"
-	"github.com/w-ingsolutions/c/pkg/latcyr"
-	"github.com/w-ingsolutions/c/pkg/lyt"
+	"github.com/w-ingsolutions/cgui/app/model"
 )
 
 func (w *WingCal) PrikazaniElementDugmeDodaj(sumaCena float64) func(gtx C) D {
@@ -62,6 +62,7 @@ func (w *WingCal) SumaElementiPrikaz() {
 }
 func (w *WingCal) PrikazaniElementIzgled() func(gtx C) D {
 	return func(gtx C) D {
+
 		neophodanNaslov := material.H6(w.UI.Tema.T, w.text("Neophodan materijal za izvrsenje radova"))
 		neophodanNaslov.Color = helper.HexARGB(w.UI.Tema.Colors["Primary"])
 		widgets := []layout.Widget{

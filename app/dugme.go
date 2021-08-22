@@ -6,7 +6,7 @@ import (
 	"gioui.org/widget"
 	"gioui.org/widget/material"
 	"github.com/w-ingsolutions/cgui/app/helper"
-	"github.com/w-ingsolutions/c/model"
+	"github.com/w-ingsolutions/cgui/app/model"
 )
 
 var (

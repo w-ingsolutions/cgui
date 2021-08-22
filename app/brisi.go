@@ -4,8 +4,8 @@ import (
 	"gioui.org/layout"
 	"gioui.org/unit"
 	"gioui.org/widget/material"
-	"github.com/w-ingsolutions/c/model"
-	
+	"github.com/w-ingsolutions/cgui/app/model"
+
 	"github.com/w-ingsolutions/cgui/app/helper"
 )
 

@@ -1,11 +1,11 @@
 module github.com/w-ingsolutions/cgui
 
-go 1.14
+go 1.16
 
 require (
 	gioui.org v0.0.0-20201224113856-0416fffc096b
-	github.com/bregydoc/gtranslate v0.0.0-20200913051839-1bd07f6c1fc5 // indirect
-	github.com/gioapp/gel v0.0.0-20201002070804-a38b199dc376
+	github.com/bregydoc/gtranslate v0.0.0-20200913051839-1bd07f6c1fc5
+	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/jung-kurt/gofpdf v1.16.2
 	github.com/minio/highwayhash v1.0.1 // indirect
 	github.com/robertkrimen/otto v0.0.0-20200922221731-ef014fd054ac // indirect

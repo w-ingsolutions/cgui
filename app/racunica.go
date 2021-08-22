@@ -1,7 +1,7 @@
 package calc
 
 import (
-	"github.com/w-ingsolutions/c/model"
+	"github.com/w-ingsolutions/cgui/app/model"
 )
 
 func (w *WingCal) SumaRacunica() {
@@ -76,7 +76,7 @@ func (w *WingCal) NeophodanMaterijal() {
 	for _, m := range ukupanNeophodniMaterijal {
 		sumaCena = sumaCena + m.UkupnaCena
 	}
-	
+
 	w.Suma.NeophodanMaterijal = ukupanNeophodniMaterijal
 	w.Suma.SumaCenaMaterijal = sumaCena
 	i := 0

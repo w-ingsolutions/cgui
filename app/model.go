@@ -5,11 +5,11 @@ import (
 	"gioui.org/layout"
 	"gioui.org/op"
 	"gioui.org/widget"
-	"github.com/w-ingsolutions/cgui/app/gel/counter"
-	"github.com/w-ingsolutions/cgui/app/gel/theme"
-	"github.com/w-ingsolutions/c/model"
 	"github.com/w-ingsolutions/c/pkg/cache"
 	"github.com/w-ingsolutions/c/pkg/translate"
+	"github.com/w-ingsolutions/cgui/app/gel/counter"
+	"github.com/w-ingsolutions/cgui/app/gel/theme"
+	"github.com/w-ingsolutions/cgui/app/model"
 )
 
 type (
@@ -37,8 +37,8 @@ type WingCal struct {
 	EditPolja        *model.EditabilnaPoljaVrsteRadova
 	Materijal        map[int]*model.WingMaterijal
 	Lica             WingUloge
-	Radovi           model.WingVrstaRadova
-	Putanja          []string
+	Radovi           *model.WingVrstaRadova
+	Putanja          []*model.ElementMenu
 	IzbornikRadova   map[int]model.ElementMenu
 	Transfered       model.WingCalGrupaRadova
 	PrikazaniElement *model.WingVrstaRadova
@@ -47,10 +47,10 @@ type WingCal struct {
 	Roditelj         int
 	Element          bool
 	UI               WingUI
-	API              WingAPI
-	Jezik            WingJezik
-	Kes              cache.Cache
-	Podesavanja      *WingPodesavanja
+	//API              WingAPI
+	Jezik       WingJezik
+	Kes         cache.Cache
+	Podesavanja *WingPodesavanja
 }
 
 type WingUI struct {
@@ -65,10 +65,10 @@ type WingUI struct {
 	Counters    WingCounters
 }
 
-type WingAPI struct {
-	OK     bool
-	Adresa string
-}
+//type WingAPI struct {
+//	OK     bool
+//	Adresa string
+//}
 
 type WingJezik struct {
 	t        translate.Translation
@@ -79,6 +79,7 @@ type WingJezik struct {
 
 type WingPodesavanja struct {
 	Naziv string
+	Path  string
 	Dir   string
 	File  string
 	Cyr   bool

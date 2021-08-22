@@ -2,16 +2,15 @@ package calc
 
 import (
 	"fmt"
-	"gioui.org/layout"
 	"gioui.org/text"
 	"gioui.org/unit"
 	"gioui.org/widget/material"
-	"github.com/w-ingsolutions/cgui/app/helper"
 	"github.com/w-ingsolutions/c/pkg/latcyr"
 	"github.com/w-ingsolutions/c/pkg/lyt"
+	"github.com/w-ingsolutions/cgui/app/helper"
 )
 
-func (w *WingCal) GlavniEkran(gtx layout.Context) {
+func (w *WingCal) GlavniEkran() {
 	if w.UI.Device == "p" {
 		w.UI.TopSpace = 64
 		w.UI.BottomSpace = 64
@@ -19,12 +18,12 @@ func (w *WingCal) GlavniEkran(gtx layout.Context) {
 		w.UI.TopSpace = 0
 		w.UI.BottomSpace = 0
 	}
-	lyt.Format(gtx, "vflexa(middle,r(_),f(1,_),r(_))",
+	lyt.Format(w.UI.Context, "vflexa(middle,r(_),f(1,_),r(_))",
 		helper.DuoUIline(false, 0, 0, w.UI.TopSpace, w.UI.Tema.Colors["Dark"]),
 		func(gtx C) D {
 			return lyt.Format(gtx, "vflexb(middle,r(hmax(_)),f(1,_),r(_))",
 				header(w),
-				w.strana(gtx),
+				w.strana(),
 				footer(w),
 			)
 		},
@@ -32,8 +31,8 @@ func (w *WingCal) GlavniEkran(gtx layout.Context) {
 	)
 }
 
-func (w *WingCal) strana(gtx C) func(gtx C) D {
-	switch d := gtx.Constraints.Max.X; {
+func (w *WingCal) strana() func(gtx C) D {
+	switch d := w.UI.Context.Constraints.Max.X; {
 	case d > 1610:
 		w.UI.Device = "des"
 	case d > 1356:
@@ -48,6 +47,7 @@ func (w *WingCal) strana(gtx C) func(gtx C) D {
 	if w.Element {
 		prikazani = w.PrikazaniElementSuma()
 	}
+
 	izbornikStrana := w.Panel(w.text("Radovi"), func(gtx C) D { return D{} }, w.IzbornikRadovaStrana(), prikazani)
 	podesavanjaStrana := w.Panel(w.text("Podešavanja"), func(gtx C) D { return D{} }, w.PodesavanjaStrana(), w.sumaFooter(w.text("Podešavanja")))
 	projekatStrana := w.Panel(w.text("Projekat"), func(gtx C) D { return D{} }, w.ProjekatStrana(), w.sumaFooter(w.text("Projekat")))
@@ -55,6 +55,7 @@ func (w *WingCal) strana(gtx C) func(gtx C) D {
 	materijalStrana := w.Panel(w.text("Materijal"), w.MaterijalStavke(), w.MaterijalElementi(), w.sumaFooter(w.text("")))
 	sumaRadovaStrana := w.Panel(w.text("Ukupna cena radova"), w.SumaRadoviStavke(), w.SumaElementi(w.Suma.Elementi), w.sumaFooter(w.text("Suma: "+fmt.Sprintf("%.2f", w.Suma.SumaCena))))
 	sumaMaterijalStrana := w.Panel(w.text("Ukupan neophodni materijal"), w.SumaStavkeMaterijala(), w.UkupanNeophodanMaterijal(w.Suma.NeophodanMaterijal), w.sumaFooter(w.text("Suma materijal: ")+fmt.Sprintf("%.2f", w.Suma.SumaCenaMaterijal)))
+
 	switch w.UI.Device {
 	case "mob":
 		switch w.Strana {

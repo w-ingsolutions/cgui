@@ -2,18 +2,19 @@ package calc
 
 import (
 	"fmt"
-	
+
 	"gioui.org/layout"
 	"gioui.org/unit"
-	"github.com/w-ingsolutions/c/model"
 	"github.com/w-ingsolutions/c/pkg/lyt"
-	
+	"github.com/w-ingsolutions/cgui/app/model"
+
 	"github.com/w-ingsolutions/cgui/app/gel/icontextbtn"
 	"github.com/w-ingsolutions/cgui/app/helper"
 )
 
 func (w *WingCal) IzborVrsteRadova() func(gtx C) D {
 	izbornik := w.IzborPodVrsteRadova()
+
 	switch w.UI.Device {
 	case "mob":
 		izbornik = w.IzborPodVrsteRadova()
@@ -46,8 +47,8 @@ func (w *WingCal) IzborVrsteRadovaDveKolone() func(gtx C) D {
 	)
 }
 func (w *WingCal) IzborVrsteRadovaDveKoloneRed(a, b int) func(gtx C) D {
-	return w.hBtnLinks(w.btnLink(w.IzbornikRadova[a]), w.btnLink(w.IzbornikRadova[b]))
-	
+	return w.hBtnLinks(w.btnLink(w.IzbornikRadova[a+1]), w.btnLink(w.IzbornikRadova[b+1]))
+
 }
 func (w *WingCal) hBtnLinks(a, b func(gtx C) D) func(gtx C) D {
 	return func(gtx C) D {
@@ -76,8 +77,8 @@ func (w *WingCal) IzborVrsteRadovaTriKolone() func(gtx C) D {
 	)
 }
 func (w *WingCal) IzborVrsteRadovaTriKoloneRed(a, b, c int) func(gtx C) D {
-	return w.thBtnLinks(w.btnLink(w.IzbornikRadova[a]), w.btnLink(w.IzbornikRadova[b]), w.btnLink(w.IzbornikRadova[c]))
-	
+	return w.thBtnLinks(w.btnLink(w.IzbornikRadova[a+1]), w.btnLink(w.IzbornikRadova[b+1]), w.btnLink(w.IzbornikRadova[c+1]))
+
 }
 func (w *WingCal) thBtnLinks(a, b, c func(gtx C) D) func(gtx C) D {
 	return func(gtx C) D {
@@ -105,7 +106,7 @@ func (w *WingCal) IzborVrsteRadovaCetiriKolone() func(gtx C) D {
 }
 
 func (w *WingCal) IzborVrsteRadovaCetiriKoloneRed(a, b, c, d int) func(gtx C) D {
-	return w.fhBtnLinks(w.btnLink(w.IzbornikRadova[a]), w.btnLink(w.IzbornikRadova[b]), w.btnLink(w.IzbornikRadova[c]), w.btnLink(w.IzbornikRadova[d]))
+	return w.fhBtnLinks(w.btnLink(w.IzbornikRadova[a+1]), w.btnLink(w.IzbornikRadova[b+1]), w.btnLink(w.IzbornikRadova[c+1]), w.btnLink(w.IzbornikRadova[d+1]))
 }
 
 func (w *WingCal) fhBtnLinks(a, b, c, d func(gtx C) D) func(gtx C) D {
@@ -132,7 +133,7 @@ func (w *WingCal) btnLink(r model.ElementMenu) func(gtx C) D {
 			btn.IconSize = unit.Dp(64)
 			btn.TextSize = unit.Dp(12)
 			btn.Axis = layout.Vertical
-		
+
 		case "des":
 			btn.IconSize = unit.Dp(72)
 			btn.TextSize = unit.Dp(12)

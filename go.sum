@@ -6,8 +6,8 @@ github.com/boombuler/barcode v1.0.0/go.mod h1:paBWMcWSl3LHKBqUq+rly7CNSldXjb2rDl
 github.com/bregydoc/gtranslate v0.0.0-20200913051839-1bd07f6c1fc5 h1:fpVDaadW68V+6vqxJHU9jrW0/z1i2MQYJZyk9w2cjpw=
 github.com/bregydoc/gtranslate v0.0.0-20200913051839-1bd07f6c1fc5/go.mod h1:153ZQv0q0e2+tPGhDsQsYTRlVRTWIYMicEvriLNX2ZY=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/gioapp/gel v0.0.0-20201002070804-a38b199dc376 h1:Nap7rDTDmRKvLhqXd715RVokCNxgNUvlbDQP+bzSrHc=
-github.com/gioapp/gel v0.0.0-20201002070804-a38b199dc376/go.mod h1:62fr52z5UXL14elSb9ivSwJUmJITmbyxjiv6GanDCSE=
+github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
+github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/go-gl/glfw v0.0.0-20190409004039-e6da0acd62b1/go.mod h1:vR7hzQXu2zJy9AVAgeJqvqgH9Q5CA+iKCZ2gyEVpxRU=
 github.com/jung-kurt/gofpdf v1.0.0/go.mod h1:7Id9E/uU8ce6rXgefFLlgrJj/GYY22cpxn+r32jIOes=
 github.com/jung-kurt/gofpdf v1.16.2 h1:jgbatWHfRlPYiK85qgevsZTHviWXKwB1TTiKdz5PtRc=

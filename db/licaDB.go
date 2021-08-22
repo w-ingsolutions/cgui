@@ -1,7 +1,7 @@
 package db
 
 import (
-	"github.com/w-ingsolutions/c/model"
+	"github.com/w-ingsolutions/cgui/app/model"
 )
 
 func NewLica() (p []*model.WingPravnoLice, k []*model.WingPravnoLice) {

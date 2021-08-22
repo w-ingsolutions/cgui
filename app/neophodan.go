@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"gioui.org/layout"
 	"gioui.org/text"
-	"github.com/w-ingsolutions/cgui/app/helper"
-	"github.com/w-ingsolutions/c/model"
 	"github.com/w-ingsolutions/c/pkg/lyt"
+	"github.com/w-ingsolutions/cgui/app/helper"
+	"github.com/w-ingsolutions/cgui/app/model"
 )
 
 func (w *WingCal) RadNeophodanMaterijal(l *layout.List) func(gtx C) D {

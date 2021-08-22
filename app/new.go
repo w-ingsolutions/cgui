@@ -6,13 +6,13 @@ import (
 	"gioui.org/text"
 	"gioui.org/unit"
 	"gioui.org/widget"
-	"github.com/w-ingsolutions/cgui/app/gel/counter"
-	"github.com/w-ingsolutions/cgui/app/gel/theme"
-	"github.com/w-ingsolutions/c/model"
 	wapp "github.com/w-ingsolutions/c/pkg/app"
 	"github.com/w-ingsolutions/c/pkg/icons"
 	"github.com/w-ingsolutions/c/pkg/latcyr"
 	"github.com/w-ingsolutions/c/pkg/translate"
+	"github.com/w-ingsolutions/cgui/app/gel/counter"
+	"github.com/w-ingsolutions/cgui/app/gel/theme"
+	"github.com/w-ingsolutions/cgui/app/model"
 	"github.com/w-ingsolutions/cgui/db"
 	"path/filepath"
 )
@@ -26,9 +26,11 @@ func NewWingCal() *WingCal {
 			NeophodanMaterijal: make(map[int]model.WingNeophodanMaterijal),
 		},
 	}
+
 	w.Podesavanja = &WingPodesavanja{
 		Naziv: "Kalkulator",
-		Dir:   wapp.Dir("wing", false),
+		Path:  "jsondb",
+		Dir:   wapp.Dir("jsondb", false),
 		Cyr:   false,
 	}
 	w.Podesavanja.File = filepath.Join(w.Podesavanja.Dir, "conf.json")
@@ -39,7 +41,7 @@ func NewWingCal() *WingCal {
 	saStraneMarginom := layout.UniformInset(unit.Dp(0))
 	saStraneMarginom.Left = unit.Dp(8)
 	saStraneMarginom.Right = unit.Dp(8)
-	w.Radovi = model.WingVrstaRadova{
+	w.Radovi = &model.WingVrstaRadova{
 		Id:       0,
 		Naziv:    "Radovi",
 		Slug:     "radovi",
@@ -53,10 +55,10 @@ func NewWingCal() *WingCal {
 		BottomSpace: 56,
 		Tema:        theme.NewDuoUItheme(),
 	}
-	w.API = WingAPI{
-		OK:     true,
-		Adresa: "https://wing.marcetin.com/",
-	}
+	//w.API = WingAPI{
+	//	OK:     true,
+	//	Adresa: "https://wing.marcetin.com/",
+	//}
 	w.Jezik = WingJezik{
 		t:        translate.Translation{"sr", "sr"},
 		dostupni: []string{"en", "ru", "de", "sl", "gr", "zh", "jp", "it"},
@@ -117,6 +119,6 @@ func NewWingCal() *WingCal {
 	}
 	w.UI.Counters = counters
 	w.UI.Tema.Icons = icons.NewWingUIicons()
-	w.Putanja = append(w.Putanja, w.Radovi.Naziv)
+	w.Putanja = append(w.Putanja, &model.ElementMenu{Id: w.Radovi.Id + 1, Title: w.Radovi.Naziv})
 	return w
 }

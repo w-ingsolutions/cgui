@@ -1,7 +1,7 @@
 package db
 
 import (
-	"github.com/w-ingsolutions/c/model"
+	"github.com/w-ingsolutions/cgui/app/model"
 )
 
 func NewMaterijal() map[int]*model.WingMaterijal {

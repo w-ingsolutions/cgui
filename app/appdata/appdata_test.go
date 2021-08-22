@@ -1,14 +1,13 @@
 package appdata_test
 
 import (
+	"github.com/w-ingsolutions/cgui/app/appdata"
 	"os"
 	"os/user"
 	"path/filepath"
 	"runtime"
 	"testing"
 	"unicode"
-
-	"github.com/p9c/pod/app/appdata"
 )
 
 // TestAppDataDir tests the API for Dir to ensure it gives expected results for various operating systems.
