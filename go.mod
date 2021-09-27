@@ -3,7 +3,8 @@ module github.com/w-ingsolutions/cgui
 go 1.16
 
 require (
-	gioui.org v0.0.0-20201224113856-0416fffc096b
+	gioui.org v0.0.0-20210518185901-8611894b4bb3
+	gioui.org/cmd v0.0.0-20210822154628-43a7030f6e0b // indirect
 	github.com/bregydoc/gtranslate v0.0.0-20200913051839-1bd07f6c1fc5
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/jung-kurt/gofpdf v1.16.2
