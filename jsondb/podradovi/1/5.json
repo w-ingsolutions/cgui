@@ -1,0 +1,87 @@
+{
+  "id": 5,
+  "slug": "Skele",
+  "PodvrsteRadova": {
+    "0": {
+      "id": 1,
+      "naziv": "Montaža i demontaža metalne cevaste fasadne skele",
+      "opis": "Montaža i demontaža metalne cevaste fasadne skele, za radove u svemu po važećim propisima i merama HTZ-a. Skela mora biti statički stabilna, ankerovana za objekat i propisno uzemljena. Na svakih 2,00 m visine postaviti radne platforme od fosni. Sa spoljne strane platformi postaviti fosne na \"kant\". Celokupnu površinu skele pokriti jutanim ili PVC zastorima. Skelu prima i preko dnevnika daje dozvolu za upotrebu statičar. Koristi se za sve vreme trajanja radova.",
+      "obracun": "Obračun po m2 vertikalne projekcije montirane skele",
+      "jedinica": "m2",
+      "cena": 5.0,
+      "element": true
+    },
+    "1": {
+      "id": 2,
+      "naziv": "Montaža i demontaža metalne cevaste složene skele",
+      "opis": "Montaža i demontaža metalne cevaste složene skele, za radove u svemu po važećim propisima i merama HTZ-a. Skela mora biti statički stabilna, ankerovana za objekat i propisno uzemljena. Na svakih 2,00 m visine postaviti radne platforme od fosni. Sa spoljne strane platformi postaviti fosne na \"kant\". Celokupnu površinu skele pokriti jutanim ili PVC zastorima. Skelu prima i preko dnevnika daje dozvolu za upotrebu statičar. Koristi se za sve vreme trajanja radova.",
+      "obracun": "Obračun po m2 vertikalne projekcije montirane skele",
+      "jedinica": "m2",
+      "cena": 6.0,
+      "element": true
+    },
+    "2": {
+      "id": 3,
+      "naziv": "Montaža i demontaža metalne cevaste teške skele",
+      "opis": "Montaža i demontaža metalne cevaste fasadne skele, za radove u svemu po važećim propisima i merama HTZ-a. Skela mora biti statički stabilna, ankerovana za objekat i propisno uzemljena. Na svakih 2,00 m visine postaviti radne platforme od fosni. Sa spoljne strane platformi postaviti fosne na \"kant\". Celokupnu površinu skele pokriti jutanim ili PVC zastorima. Skelu prima i preko dnevnika daje dozvolu za upotrebu statičar. Koristi se za sve vreme trajanja radova.",
+      "obracun": "Obračun po m2 vertikalne projekcije montirane skele",
+      "jedinica": "m2",
+      "cena": 7.5,
+      "element": true
+    },
+    "3": {
+      "id": 4,
+      "naziv": "Montaža i demontaža prostorne metalne cevaste skele",
+      "opis": "Montaža i demontaža prostorne metalne cevaste skele, za radove u svemu po važećim propisima i merama HTZ-a. Skela mora biti statički stabilna, ankerovana i propisno uzemljena. Postaviti radne platforme od fosni. Skelu prima i preko dnevnika daje dozvolu za upotrebu statičar. Koristi se za sve vreme trajanja radova.",
+      "obracun": "Obračun po m3 skele",
+      "jedinica": "m3",
+      "cena": 5.0,
+      "element": true
+    },
+    "4": {
+      "id": 5,
+      "naziv": "Montaža i demontaža skele, za unutrašnje radove, na zidovima i plafonima objekta",
+      "opis": "Skela mora biti statički stabilna i ako je metalna propisno uzemljena. Koristi se za sve vreme trajanja radova i plaća samo jedanput.",
+      "obracun": "Obračun po m3 skele",
+      "jedinica": "m3",
+      "cena": 4.0,
+      "element": true
+    },
+    "5": {
+      "id": 6,
+      "naziv": "Montaža i demontaža pomoćne cevaste skele, u objektu",
+      "opis": "Montaža i demontaža pomoćne cevaste skele, u objektu, za rad u prostorijama. Skela mora biti izvedena po svim HTZ propisima. Koristi se za sve vreme trajanja radova i plaća samo jedanput.",
+      "obracun": "Obračun po m2 horizontalne površine",
+      "jedinica": "xxxxx",
+      "cena": 2.5,
+      "element": true
+    },
+    "6": {
+      "id": 7,
+      "naziv": "Montaža i demontaža pomoćne skele",
+      "opis": "Montaža i demontaža pomoćne skele, napravljene od koza i fosni u objektu, za rad u prostorijama. Skela mora biti izvedena po svim HTZ propisima. Koristi se za sve vreme trajanja radova i plaća samo jedanput.",
+      "obracun": "Obračun po m2 površine poda",
+      "jedinica": "m2",
+      "cena": 1.5,
+      "element": true
+    },
+    "7": {
+      "id": 8,
+      "naziv": "Montaža i demontaža konzolne skele",
+      "opis": "Montaža i demontaža konzolne skele, za radove u svemu po važećim propisima i merama HTZ-a, po datom projektu skele. Skela mora biti statički stabilna i propisno uzemljena. Postaviti radne platforme od fosni, a sa spoljne strane platformi postaviti fosne na \"kant\". Skelu prima i preko dnevnika daje dozvolu za upotrebu statičar. Koristi se za sve vreme trajanja radova.",
+      "obracun": "Obračun po m montirane skele",
+      "jedinica": "m",
+      "cena": 30.0,
+      "element": true
+    },
+    "8": {
+      "id": 9,
+      "naziv": "Montaža i demontaža viseće skele",
+      "opis": "Montaža i demontaža viseće skele, za radove u svemu po važećim propisima i merama HTZ-a, po datom projektu skele. Skela mora biti statički stabilna i propisno uzemljena. Skelu prima i preko dnevnika daje dozvolu za upotrebu statičar. Koristi se za sve vreme trajanja radova.",
+      "obracun": "Obračun po m2 površine pokrivene skelom",
+      "jedinica": "m2",
+      "cena": 2.5,
+      "element": true
+    }
+  }
+}

@@ -1,6 +1,8 @@
 package calc
 
 import (
+	"path/filepath"
+
 	"gioui.org/app"
 	"gioui.org/layout"
 	"gioui.org/text"
@@ -14,7 +16,6 @@ import (
 	"github.com/w-ingsolutions/cgui/app/gel/theme"
 	"github.com/w-ingsolutions/cgui/app/model"
 	"github.com/w-ingsolutions/cgui/db"
-	"path/filepath"
 )
 
 func NewWingCal() *WingCal {

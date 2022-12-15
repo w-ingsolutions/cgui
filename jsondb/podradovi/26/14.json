@@ -8,7 +8,7 @@
       "opis": "Pre bojenja sa metala skinuti koroziju hemijskim i fizičkim sredstvima, a zatim sve površine brusiti i očistiti. Na radijatore naneti impregnaciju i osnovnu boju, a zatim bojiti dva puta bojom za metal.",
       "obracun": "Obračun po m2 obojenih radijatora.",
       "jedinica": "m2",
-      "cena": 2.50,
+      "cena": 2.5,
       "element": true
     },
     "1": {
@@ -26,7 +26,7 @@
       "opis": "Pre bojenja skinuti staru boju i koroziju hemijskim i fizičkim sredstvima, brusiti i očistiti. Na radijatore naneti impregnaciju i osnovnu boju, a zatim bojiti dva puta bojom za metal.",
       "obracun": "Obračun po m2 obojenih radijatora.",
       "jedinica": "m2",
-      "cena": 3.50,
+      "cena": 3.5,
       "element": true
     },
     "3": {
@@ -35,7 +35,7 @@
       "opis": "Pre bojenja sa metala skinuti koroziju hemijskim i fizičkim sredstvima, a zatim sve površine brusiti i očistiti. Na cevi naneti impregnaciju i osnovnu boju, a zatim bojiti dva puta bojom za metal.",
       "obracun": "Obračun po m1 obojenih cevi.",
       "jedinica": "m2",
-      "cena": 0.50,
+      "cena": 0.5,
       "element": true
     },
     "4": {
@@ -44,7 +44,7 @@
       "opis": "Pre bojenja sa metala skinuti koroziju hemijskim i fizičkim sredstvima, a zatim sve površine brusiti i očistiti. Na cevi naneti impregnaciju i osnovnu boju, a zatim bojiti dva puta bojom za metal.",
       "obracun": "Obračun po m1 obojenih cevi.",
       "jedinica": "m2",
-      "cena": 0.50,
+      "cena": 0.5,
       "element": true
     },
     "5": {
@@ -53,7 +53,7 @@
       "opis": "Pre bojenja sa metala skinuti koroziju hemijskim i fizičkim sredstvima, a zatim sve površine brusiti i očistiti. Na cevi naneti impregnaciju i osnovnu boju, a zatim bojiti dva puta bojom za metal.",
       "obracun": "Obračun po m1 obojenih cevi.",
       "jedinica": "m2",
-      "cena": 1.00,
+      "cena": 1.0,
       "element": true
     },
     "6": {
@@ -62,7 +62,7 @@
       "opis": "Pre bojenja skinuti staru boju i koroziju hemijskim i fizičkim sredstvima, brusiti i očistiti. Na cevi naneti impregnaciju i osnovnu boju, a zatim bojiti dva puta bojom za metal.",
       "obracun": "Obračun po m1 obojenih cevi.",
       "jedinica": "m2",
-      "cena": 0.80,
+      "cena": 0.8,
       "element": true
     },
     "7": {
@@ -71,7 +71,7 @@
       "opis": "Pre bojenja skinuti staru boju i koroziju hemijskim i fizičkim sredstvima, brusiti i očistiti. Na cevi naneti impregnaciju i osnovnu boju, a zatim bojiti dva puta bojom za metal.",
       "obracun": "Obračun po m1 obojenih cevi.",
       "jedinica": "m2",
-      "cena": 0.80,
+      "cena": 0.8,
       "element": true
     },
     "8": {
@@ -80,7 +80,7 @@
       "opis": "Pre bojenja skinuti staru boju i koroziju hemijskim i fizičkim sredstvima, brusiti i očistiti. Na cevi naneti impregnaciju i osnovnu boju, a zatim bojiti dva puta bojom za metal.",
       "obracun": "Obračun po m1 obojenih cevi.",
       "jedinica": "m2",
-      "cena": 1.40,
+      "cena": 1.4,
       "element": true
     },
     "9": {
@@ -89,7 +89,7 @@
       "naziv": "Pre bojenja trake odmastiti. Na trake gromobrana naneti impregnaciju i osnovnu boju, a zatim bojiti dva puta bojom za metal.",
       "obracun": "Obračun po m1 trake za gromobran.",
       "jedinica": "m2",
-      "cena": 0.50,
+      "cena": 0.5,
       "element": true
     },
     "10": {

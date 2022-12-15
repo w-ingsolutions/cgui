@@ -8,7 +8,7 @@
       "opis": "Tapete pažljivo skinuti uz konsultaciju sa projektantom. Tapete obeležiti, za ponovnu upotrebu, hemijski očistiti i odložiti.",
       "obracun": "Obračun po m2 površine tapeta.",
       "jedinica": "m2",
-      "cena": 0.50,
+      "cena": 0.5,
       "element": true
     },
     "1": {
@@ -26,7 +26,7 @@
       "opis": "Zidove pripremiti tako da budu ravni, bez ispupčenja, talasa i potpuno suvi. Tapete iskrojiti sa uklapanjem šara i zalepiti ih, bez nabora. Sastavi ne smeju biti vidljivi. Spojeve na vratima, prozorima i slično izvesti bez preklopa, na dodir. Zalepiti obodne trake. Lepak sa poda, vrata, prozora odmah ukloniti.",
       "obracun": "Obračun po m2 obložene površine.",
       "jedinica": "m2",
-      "cena": 2.50,
+      "cena": 2.5,
       "element": true
     },
     "3": {
@@ -35,7 +35,7 @@
       "opis": "Zidove pripremiti tako da budu ravni, bez ispupčenja, talasa i potpuno suvi. Tapete iskrojiti sa uklapanjem šara i zalepiti ih, bez nabora. Sastavi ne smeju biti vidljivi. Spojeve na vratima, prozorima i slično izvesti bez preklopa, na dodir. Zalepiti obodne trake. Lepak sa poda, vrata, prozora odmah ukloniti.",
       "obracun": "Obračun po m2 obložene površine.",
       "jedinica": "m2",
-      "cena": 3.00,
+      "cena": 3.0,
       "element": true
     },
     "4": {
@@ -44,7 +44,7 @@
       "opis": "Zidove pripremiti tako da budu ravni, bez ispupčenja, talasa i potpuno suvi. Tapete iskrojiti sa uklapanjem šara i zalepiti ih, bez nabora. Sastavi ne smeju biti vidljivi. Spojeve na vratima, prozorima i slično izvesti bez preklopa, na dodir. Zalepiti obodne trake. Lepak sa poda, vrata, prozora odmah ukloniti.",
       "obracun": "Obračun po m2 obložene površine.",
       "jedinica": "m2",
-      "cena": 2.50,
+      "cena": 2.5,
       "element": true
     },
     "5": {
@@ -62,7 +62,7 @@
       "opis": "Zidove pripremiti tako da budu ravni, bez ispupčenja, talasa i potpuno suvi. Tapete iskrojiti sa uklapanjem šara i zalepiti ih, bez nabora. Sastavi ne smeju biti vidljivi. Spojeve na vratima, prozorima i slično izvesti bez preklopa, na dodir. Postaviti lajsne, sastave gerovati. Lepak sa poda, vrata, prozora odmah ukloniti.",
       "obracun": "Obračun po m2 obložene površine.",
       "jedinica": "m2",
-      "cena": 4.00,
+      "cena": 4.0,
       "element": true
     },
     "7": {
@@ -71,7 +71,7 @@
       "opis": "Zidove pripremiti tako da budu ravni, bez ispupčenja, talasa i potpuno suvi. Zidove obeležiti, pamučni materijal iskrojiti i sašiti sa pažljivim uklapanjem šara. Šavove na poleđini izravnati. Niti materijala postaviti vertikalno, vodoravno ili paralelno sa šavovima. Tapete španovati da se ne primete linije, a materijal ravnomerno zategnuti. Postaviti lajsne, sastave gerovati.",
       "obracun": "Obračun po m2 obložene površine.",
       "jedinica": "m2",
-      "cena": 15.00,
+      "cena": 15.0,
       "element": true
     },
     "8": {
@@ -80,7 +80,7 @@
       "opis": "Zidove pripremiti tako da budu ravni, bez ispupčenja, talasa i potpuno suvi. Zidove obeležiti, pamučni materijal iskrojiti i sašiti sa pažljivim uklapanjem šara. Šavove na poleđini izravnati. Niti materijala postaviti vertikalno, vodoravno ili paralelno sa šavovima. Tapete španovati da se ne primete linije, a materijal ravnomerno zategnuti. Postaviti lajsne, sastave gerovati.",
       "obracun": "Obračun po m2 obložene površine.",
       "jedinica": "m2",
-      "cena": 10.00,
+      "cena": 10.0,
       "element": true
     },
     "9": {
@@ -89,7 +89,7 @@
       "opis": "Zidove pripremiti tako da budu ravni, bez ispupčenja, talasa i potpuno suvi. Zidove obeležiti, pamučni materijal iskrojiti i sašiti sa pažljivim uklapanjem šara. Šavove na poleđini izravnati. Niti materijala postaviti vertikalno, vodoravno ili paralelno sa šavovima. Tapete španovati da se ne primete linije, a materijal ravnomerno zategnuti. Postaviti lajsne, sastave gerovati.",
       "obracun": "Obračun po m2 obložene površine.",
       "jedinica": "m2",
-      "cena": 9.00,
+      "cena": 9.0,
       "element": true
     },
     "10": {
@@ -98,7 +98,7 @@
       "opis": "Zidove pripremiti tako da budu ravni, bez ispupčenja, talasa i potpuno suvi. Zidove obeležiti, svilu iskrojiti i sašiti sa pažljivim uklapanjem šara. Šavove na poleđini izravnati. Niti materijala postaviti vertikalno, vodoravno ili paralelno sa šavovima. Tapete španovati da se ne primete linije, a materijal ravnomerno zategnuti. Postaviti lajsne, sastave gerovati.",
       "obracun": "Obračun po m2 obložene površine.",
       "jedinica": "m2",
-      "cena": 30.00,
+      "cena": 30.0,
       "element": true
     },
     "11": {
@@ -107,7 +107,7 @@
       "opis": "Zidove pripremiti tako da budu ravni, bez ispupčenja, talasa i potpuno suvi. Ploče pluto tapeta uneti u prostorije, raspakovati i ostaviti 48 časova da se aklimatizuju. Lepak mora biti kvalitetan i stabilan iz grupe lepkova za drvo ili neoprenski. Radi pravilnog rasporeda, prvu ploču postaviti na sredini zida, na preseku podužne i poprečne vođice, a zatim pažljivo lepiti ostale ploče. Lepak nanositi ravnomerno, po uputstvu proizvođača, bez prljanja okolnih ili vidnih površina. Posebnu pažnju obratiti na oblaganje uglova i ivica.",
       "obracun": "Obračun po m2 obložene površine.",
       "jedinica": "m2",
-      "cena": 12.50,
+      "cena": 12.5,
       "element": true
     },
     "12": {
@@ -116,7 +116,7 @@
       "opis": "Zidove pripremiti tako da budu ravni, bez ispupčenja, talasa i potpuno suvi. Ploče pluto tapeta uneti u prostorije, raspakovati i ostaviti 48 časova da se aklimatizuju. Lepak mora biti kvalitetan i stabilan iz grupe lepkova za drvo ili neoprenski. Radi pravilnog rasporeda, prvu ploču postaviti na sredini zida, na preseku podužne i poprečne vođice, a zatim pažljivo lepiti ostale ploče. Lepak nanositi ravnomerno, po uputstvu proizvođača, bez prljanja okolnih ili vidnih površina. Posebnu pažnju obratiti na oblaganje uglova i ivica.",
       "obracun": "Obračun po m2 obložene površine.",
       "jedinica": "m2",
-      "cena": 16.00,
+      "cena": 16.0,
       "element": true
     },
     "13": {
@@ -125,7 +125,7 @@
       "opis": "Zidove pripremiti tako da budu ravni, bez ispupčenja, talasa i potpuno suvi. Ploče pluto tapeta uneti u prostorije, raspakovati i ostaviti 48 časova da se aklimatizuju. Lepak mora biti kvalitetan i stabilan iz grupe lepkova za drvo ili neoprenski. Radi pravilnog rasporeda, prvu ploču postaviti na sredini zida, na preseku podužne i poprečne vođice, a zatim pažljivo lepiti ostale ploče. Lepak nanositi ravnomerno, po uputstvu proizvođača, bez prljanja okolnih ili vidnih površina. Posebnu pažnju obratiti na oblaganje uglova i ivica. Pluto tapete bojiti lazurnim bojama po izboru projektanta. Bojiti dva puta sa razmakom za sušenje od 24 h, preći lagano najfinijom šmirglom i bojiti treći put.",
       "obracun": "Obračun po m2 obložene površine.",
       "jedinica": "m2",
-      "cena": 18.00,
+      "cena": 18.0,
       "element": true
     },
     "14": {
@@ -134,7 +134,7 @@
       "opis": "Zidove pripremiti tako da budu ravni, bez ispupčenja, talasa i potpuno suvi. Ploče pluto tapeta uneti u prostorije, raspakovati i ostaviti 48 časova da se aklimatizuju. Lepak mora biti kvalitetan i stabilan iz grupe lepkova za drvo ili neoprenski. Radi pravilnog rasporeda, prvu ploču postaviti na sredini zida, na preseku podužne i poprečne vođice, a zatim pažljivo lepiti ostale ploče. Lepak nanositi ravnomerno, po uputstvu proizvođača, bez prljanja okolnih ili vidnih površina. Posebnu pažnju obratiti na oblaganje uglova i ivica. Pluto tapete bojiti lazurnim bojama po izboru projektanta. Bojiti dva puta sa razmakom za sušenje od 24 h, preći lagano najfinijom šmirglom i bojiti treći put.",
       "obracun": "Obračun po m2 obložene površine.",
       "jedinica": "m2",
-      "cena": 22.00,
+      "cena": 22.0,
       "element": true
     },
     "15": {
@@ -143,7 +143,7 @@
       "opis": "Zidove pripremiti tako da budu ravni, bez ispupčenja, talasa i potpuno suvi. Ploče pluto tapeta uneti u prostorije, raspakovati i ostaviti 48 časova da se aklimatizuju. Lepak mora biti kvalitetan i stabilan iz grupe lepkova za drvo ili neoprenski. Radi pravilnog rasporeda, prvu ploču postaviti na sredini zida, na preseku podužne i poprečne vođice, a zatim pažljivo lepiti ostale ploče. Lepak nanositi ravnomerno, po uputstvu proizvođača, bez prljanja okolnih ili vidnih površina. Posebnu pažnju obratiti na oblaganje uglova i ivica. Pluto tapete bojiti lazurnim bojama po izboru projektanta. Lakirati sa dovoljnim razmakom za sušenje, preći lagano najfinijom šmirglom i lakirati drugi put.",
       "obracun": "Obračun po m2 obložene površine.",
       "jedinica": "m2",
-      "cena": 15.00,
+      "cena": 15.0,
       "element": true
     },
     "16": {
@@ -152,7 +152,7 @@
       "opis": "Zidove pripremiti tako da budu ravni, bez ispupčenja, talasa i potpuno suvi. Ploče pluto tapeta uneti u prostorije, raspakovati i ostaviti 48 časova da se aklimatizuju. Lepak mora biti kvalitetan i stabilan iz grupe lepkova za drvo ili neoprenski. Radi pravilnog rasporeda, prvu ploču postaviti na sredini zida, na preseku podužne i poprečne vođice, a zatim pažljivo lepiti ostale ploče. Lepak nanositi ravnomerno, po uputstvu proizvođača, bez prljanja okolnih ili vidnih površina. Posebnu pažnju obratiti na oblaganje uglova i ivica. Pluto tapete bojiti lazurnim bojama po izboru projektanta. Lakirati sa dovoljnim razmakom za sušenje, preći lagano najfinijom šmirglom i lakirati drugi put.",
       "obracun": "Obračun po m2 obložene površine.",
       "jedinica": "m2",
-      "cena": 19.00,
+      "cena": 19.0,
       "element": true
     }
   }

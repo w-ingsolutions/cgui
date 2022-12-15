@@ -1,0 +1,60 @@
+{
+  "id": 12,
+  "slug": "Šut",
+  "PodvrsteRadova": {
+    "0": {
+      "id": 1,
+      "naziv": "Prikupljanje šuta na gradilišnu deponiju",
+      "opis": "U toku i po završenim radovima sa gradilišta prikupiti šut, višak zemlje i drugi otpadni materijal sa objekta, na gradilišnu deponiju pristupačnu za utovar u kamion.",
+      "obracun": "Obračun po m3 prikupljenog šuta",
+      "jedinica": "m3",
+      "cena": 2.5,
+      "element": true
+    },
+    "1": {
+      "id": 2,
+      "naziv": "Prikupljanje šuta i odvoz šuta",
+      "opis": "Prikupiti šut, višak zemlje i drugi otpadni materijala, utovariti u kamion i odvesti na gradsku deponiju.",
+      "obracun": "Obračun po m3 odvezenog šuta",
+      "jedinica": "m3",
+      "cena": 12.5,
+      "element": true
+    },
+    "2": {
+      "id": 3,
+      "naziv": "Ručni utovar i odvoz šuta, sa gradilišne deponije",
+      "opis": "Utovariti šut na kamion i odvesti na gradsku deponiju.",
+      "obracun": "Obračun po m3 šuta, mereno u kamionu",
+      "jedinica": "m3",
+      "cena": 11.0,
+      "element": true
+    },
+    "3": {
+      "id": 4,
+      "naziv": "Mašinski utovar. odvoz šuta, sa gradilišne deponije",
+      "opis": "Utovariti šut na kamion i odvesti na gradsku deponiju.",
+      "obracun": "Obračun po m3 šuta, mereno u kamionu",
+      "jedinica": "m3",
+      "cena": 6.0,
+      "element": true
+    },
+    "4": {
+      "id": 5,
+      "naziv": "Ručni utovar i odvoz zemlje sa gradilišne deponije",
+      "opis": "Utovariti zemlju na kamion i odvesti na gradsku deponiju.",
+      "obracun": "Obračun po m3 zemlje, mereno u kamionu",
+      "jedinica": "m3",
+      "cena": 10.0,
+      "element": true
+    },
+    "5": {
+      "id": 6,
+      "naziv": "Mašinski utovar i odvoz zemlje sa gradilišne deponije",
+      "opis": "Utovariti zemlju na kamion i odvesti na gradsku deponiju.",
+      "obracun": "Obračun po m3 zemlje, mereno u kamionu",
+      "jedinica": "m3",
+      "cena": 5.0,
+      "element": true
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": 4,
+  "slug": "Priprema gradilišta",
+  "PodvrsteRadova": {
+    "0": {
+      "id": 1,
+      "naziv": "Montaža i demontaža priručne barake",
+      "opis": "Montaža i demontaža priručne barake za smeštaj alata, materijala i radnika. Baraku izraditi od montažnih elemenata ili dasaka debljine 1\" sa drvenom konstrukcijom. Baraku pokriti daskama i ter papirom ili salonitom.",
+      "obracun": "Obračun po m2 barake, komplet",
+      "jedinica": "m2",
+      "cena": 25.0,
+      "element": true
+    },
+    "1": {
+      "id": 2,
+      "naziv": "Dovoz vode na gradilište",
+      "opis": "Za izvođenje radova obezbediti cisternu ili metalnu burad i sukcesivno dopremati potrebne količine vode, za sve vreme trajanja radova.",
+      "obracun": "Obračun po m3 vode",
+      "jedinica": "m3",
+      "cena": 5.0,
+      "element": true
+    },
+    "2": {
+      "id": 3,
+      "naziv": "Izrada prilaznih rampi-trepni",
+      "opis": "Izrada prilaznih rampi-trepni, za dopremu materijala ili odvoz šuta. Trepnu izvesti od fosni i cevi za fasadnu skelu ili od drvene građe. Trepna je širine 1,0 m.",
+      "obracun": "Obračun po m1 trepne",
+      "jedinica": "m",
+      "cena": 5.0,
+      "element": true
+    },
+    "3": {
+      "id": 4,
+      "naziv": "Izrada radnih platformi",
+      "opis": "Izrada radnih platformi, za izbacivanje zemlje, šuta ili za dopremu materijala. Platforme izvesti od fosni i cevi za fasadnu skelu ili od drvene građe",
+      "obracun": "Obračun po m2 platforme",
+      "jedinica": "m2",
+      "cena": 4.0,
+      "element": true
+    },
+    "4": {
+      "id": 5,
+      "naziv": "Montaža i demontaža koruba, za izbacivanje šuta",
+      "opis": "Korube izraditi od dasaka debljine 24 mm ili 48 mm ili postaviti specijalne cevi od plastičnog materijala.",
+      "obracun": "Obračun po m1 koruba",
+      "jedinica": "m",
+      "cena": 5.0,
+      "element": true
+    },
+    "5": {
+      "id": 6,
+      "naziv": "Izrada radnih nadstrešnica",
+      "opis": "Izrada radnih nadstrešnica za rad, obradu građe i drugo. Radne nadstrešnice izraditi od fosni i cevi za fasadnu skelu ili drvene građe. Preko nadstrešnice od fosni postaviti sloj ter papira i pričvrstiti letvama i ekserima.",
+      "obracun": "Obračun po m2 izvedene nadstrešnice",
+      "jedinica": "m2",
+      "cena": 6.0,
+      "element": true
+    }
+  }
+}

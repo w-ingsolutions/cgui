@@ -8,7 +8,7 @@
       "opis": " Površine obrusiti, očistiti i izvršiti neutralizovanje. Pregledati i kitovati manja oštećenja i pukotine. Impregnirati i prevući disperzivni kit tri puta.",
       "obracun": "Obračun po m2 gletovane površine.",
       "jedinica": "m2",
-      "cena": 1.20,
+      "cena": 1.2,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -23,7 +23,7 @@
       "opis": " Površine obrusiti, očistiti i izvršiti neutralizovanje. Pregledati i kitovati manja oštećenja i pukotine. Impregnirati i prevući disperzivni kit tri puta.",
       "obracun": "Obračun po m2 gletovane površine.",
       "jedinica": "m2",
-      "cena": 1.50,
+      "cena": 1.5,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -38,7 +38,7 @@
       "opis": " Sve površine obrusiti, očistiti i izvršiti impregnaciju. Pregledati i kitovati manja oštećenja i pukotine. Kitovati i gletovati emulzionim kitom prvi put. Sve površine fino prebrusiti pa kitovati i gletovati emulzionim kitom drugi put.",
       "obracun": "Obračun po m2 gletovane površine.",
       "jedinica": "m2",
-      "cena": 1.20,
+      "cena": 1.2,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -53,7 +53,7 @@
       "opis": " Sve površine ostrugati i oprati, a zatim obrusiti, očistiti i izvršiti impregnaciju. Pregledati i kitovati manja oštećenja i pukotine. Kitovati i gletovati emulzionim kitom prvi put. Sve površine fino prebrusiti pa kitovati i gletovati emulzionim kitom drugi put.",
       "obracun": "Obračun po m2 gletovane površine.",
       "jedinica": "m2",
-      "cena": 1.40,
+      "cena": 1.4,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -68,7 +68,7 @@
       "opis": " Sve površine ostrugati i oprati.",
       "obracun": "Obračun po m2 ostrugane površine.",
       "jedinica": "m2",
-      "cena": 2.00,
+      "cena": 2.0,
       "element": true
     },
     "5": {
@@ -77,7 +77,7 @@
       "opis": " Površine obojene uljanom bojom pomoću plina i brenera zagrejati i špahtlama i drugim prigodnim alatkama skinuti. Postupak ponavljati dok se boja ne skine.",
       "obracun": "Obračun po m2 ostrugane površine.",
       "jedinica": "m2",
-      "cena": 3.00,
+      "cena": 3.0,
       "element": true
     },
     "6": {
@@ -86,7 +86,7 @@
       "opis": " Površine sa flekama ostrugati, oprati i gletovati. Bojiti bojama na bazi akrilata više puta.",
       "obracun": "Obračun po m2 lečene površine.",
       "jedinica": "m2",
-      "cena": 3.00,
+      "cena": 3.0,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -101,7 +101,7 @@
       "opis": " Sve površine brusiti, impregnirati i kitovati manja oštećenja. Predbojiti i ispraviti toniranim disperzionim kitom, a zatim bojiti poludisperzivnom bojom prvi i drugi put.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 0.90,
+      "cena": 0.9,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -116,7 +116,7 @@
       "opis": " Sve površine brusiti, impregnirati i kitovati manja oštećenja. Predbojiti i ispraviti toniranim disperzionim kitom, a zatim bojiti poludisperzivnom bojom prvi i drugi put.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 1.20,
+      "cena": 1.2,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -131,7 +131,7 @@
       "opis": " Sve površine brusiti, gipsovati, neutralizovati i impregnirati. Predbojiti poludisperzionom bojom prvi put i ispraviti toniranim disperzionim kitom. Bojiti poludisperzivnom bojom prvi i drugi put. Boja i ton po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 0.90,
+      "cena": 0.9,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -146,7 +146,7 @@
       "opis": " Sve površine brusiti, gipsovati, neutralizovati i impregnirati. Predbojiti poludisperzionom bojom prvi put i ispraviti toniranim disperzionim kitom. Bojiti poludisperzivnom bojom prvi i drugi put. Boja i ton po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 1.20,
+      "cena": 1.2,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -161,7 +161,7 @@
       "opis": "Sve površine brusiti, gipsovati, neutralizovati i impregnirati. Predbojiti poludisperzionom bojom prvi put i ispraviti toniranim disperzionim kitom. Bojiti poludisperzivnom bojom prvi i drugi put. Boja i ton po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 1.10,
+      "cena": 1.1,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -176,7 +176,7 @@
       "opis": "Sve površine brusiti, gipsovati, neutralizovati i impregnirati. Predbojiti poludisperzionom bojom prvi put i ispraviti toniranim disperzionim kitom. Bojiti poludisperzivnom bojom prvi i drugi put. Boja i ton po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 1.40,
+      "cena": 1.4,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -191,7 +191,7 @@
       "opis": "Malterisane zidove i plafone gletovati disperzivnim kitom. Površine obrusiti, očistiti i izvršiti neutralizovanje. Pregledati i kitovati manja oštećenja i pukotine. Impregnirati i prevući disperzivni kit tri puta. Sve površine brusiti, impregnirati i kitovati manja oštećenja. Predbojiti i ispraviti toniranim disperzionim kitom, a zatim bojiti poludisperzivnom bojom prvi i drugi put. Boja i ton po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 2.00,
+      "cena": 2.0,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -206,7 +206,7 @@
       "opis": "Malterisane zidove i plafone gletovati disperzivnim kitom. Površine obrusiti, očistiti i izvršiti neutralizovanje. Pregledati i kitovati manja oštećenja i pukotine. Impregnirati i prevući disperzivni kit tri puta. Sve površine brusiti, impregnirati i kitovati manja oštećenja. Predbojiti i ispraviti toniranim disperzionim kitom, a zatim bojiti poludisperzivnom bojom prvi i drugi put. Boja i ton po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 2.20,
+      "cena": 2.2,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -236,7 +236,7 @@
       "opis": "Sve površine ostrugati i oprati od boje i kita. Brusiti, predimpregnirati, kitovati plastičnim kitom manja oštećenja i kitovati emulzionim kitom. Brusiti, impregnirati i bojiti prvi put, a zatim ispraviti disperzionim kitom manja oštećenja. Bojiti poludisperzivnom bojom prvi i drugi put. Boja i ton po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 2.50,
+      "cena": 2.5,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -251,7 +251,7 @@
       "opis": "Glave holšrfova ili eksera minizirati, površine natopiti firnisom i kitovati fuge disperzionim kitom. Bojiti poludisperzivnom bojom prvi put. Ispraviti toniranim disperzionim kitom. Bojiti poludisperzivnom bojom drugi i treći put. Boja i ton po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 1.00,
+      "cena": 1.0,
       "element": true
     },
     "18": {
@@ -275,7 +275,7 @@
       "opis": "Sve površine okrečiti četkom prvi put, brusiti i gipsovati manja oštećenja i pukotine, a zatim okrečiti drugi put.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 0.70,
+      "cena": 0.7,
       "element": true
     },
     "20": {
@@ -284,7 +284,7 @@
       "opis": "Sve površine okrečiti četkom prvi put, brusiti i gipsovati manja oštećenja i pukotine, a zatim okrečiti drugi put. Pumpom prskati prvi i drugi put.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 0.90,
+      "cena": 0.9,
       "element": true
     },
     "21": {
@@ -293,7 +293,7 @@
       "opis": "Sve površine okrečiti četkom prvi put, brusiti i gipsovati manja oštećenja i pukotine, a zatim okrečiti drugi put. Brusiti i ispraviti gipsom manja oštećenja i pumpom prskati krečnom bojom prvi i drugi put.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 1.00,
+      "cena": 1.0,
       "element": true
     },
     "22": {
@@ -302,7 +302,7 @@
       "opis": "Staru krečnu boju ostrugati i površine brusiti. Sve površine okrečiti četkom prvi put, brusiti i gipsovati manja oštećenja i pukotine, a zatim okrečiti drugi put.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 0.90,
+      "cena": 0.9,
       "element": true
     },
     "23": {
@@ -311,7 +311,7 @@
       "opis": "Sve površine okrečiti četkom prvi put, brusiti i gipsovati manja oštećenja i pukotine. Pumpom prskati prvi i drugi put.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 1.20,
+      "cena": 1.2,
       "element": true
     },
     "24": {
@@ -320,7 +320,7 @@
       "opis": "Staru krečnu boju ostrugati. Sve površine brusiti i krečiti krečnim mlekom. Gipsovati manja oštećenja i pukotine i izvršiti osnovno bojenje. Oštećenja ispraviti gipsom i pokrivno bojiti. Prskati pumpom prvi i drugi put.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 1.30,
+      "cena": 1.3,
       "element": true
     },
     "25": {
@@ -329,7 +329,7 @@
       "opis": "Izvršiti osnovno krečenje, gletovanje i natapanje firnisom. Kitovati i prevući kitom, brusiti, nadkitovati i bojiti uljanom bojom prvi put. Bojiti uljanom bojom drugi put. Boja i ton po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 3.00,
+      "cena": 3.0,
       "element": true
     },
     "26": {
@@ -338,7 +338,7 @@
       "opis": "Izvršiti osnovno krečenje, gletovanje i natapanje firnisom. Kitovati i prevući kitom, brusiti, nadkitovati i bojiti uljanom bojom prvi put. Bojiti uljanom bojom drugi put, brusiti i lakirati. Boja i ton po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 4.00,
+      "cena": 4.0,
       "element": true
     },
     "27": {
@@ -347,7 +347,7 @@
       "opis": "Oštećenja i pukotine brusiti, kitovati i natopiti firnisom. Predkitovati, kitovati, prevući uljanim kitom, brusiti i nadkitovati. Bojiti uljanom bojom prvi i drugi put. Boja i ton po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 3.50,
+      "cena": 3.5,
       "element": true
     },
     "28": {
@@ -374,7 +374,7 @@
       "opis": "Zidove očistiti i oprati deterdžentom. Brusiti, kitovati oštećenja i pukotine, predbojiti i zakitovati podlogu. Kitovati i prevući kit. Bojiti uljanom bojom prvi i drugi put. Brusiti i nadkitovati lak kitom i lakirati. Boja i ton po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 4.00,
+      "cena": 4.0,
       "element": true
     },
     "31": {
@@ -383,7 +383,7 @@
       "opis": "Podloga mora da bude čvrsta i čista bez prašine i masnoća. Podlogu impregnirati Podlogom-A Pripremljen materijal naneti na zid metalnom glet hoblom u debljini do 5 mm.  Nanetu masu dekorativno obraditi gumenim ili sunđerastim valjkom, strukture po izboru projektanta.",
       "obracun": "Obračun po m2 obrađene površine.",
       "jedinica": "m2",
-      "cena": 3.50,
+      "cena": 3.5,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -398,7 +398,7 @@
       "opis": "Podloga mora da bude čvrsta, bez trošnih delova, čista bez prašine i masnoća. Pripremljen materijal naneti na zid valjkom, strukture po izboru projektanta.",
       "obracun": "Obračun po m2 obrađene površine.",
       "jedinica": "m2",
-      "cena": 3.50,
+      "cena": 3.5,
       "element": true
     },
     "33": {
@@ -407,7 +407,7 @@
       "opis": "Sve površine brusiti i impregnirati, predkitovati disperzivnim kitom. Prevući disperzivnim kitom i reljefno, rustično, obraditi površine po izboru projektanta (četkom, valjkom, oblom, itd). Linskrust završno obojiti i impregnirati.",
       "obracun": "Obračun po m2 obrađene površine.",
       "jedinica": "m2",
-      "cena": 2.50,
+      "cena": 2.5,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -437,7 +437,7 @@
       "opis": "Sve površine brusiti i impregnirati, predkitovati disperzivnim kitom. Prevući disperzivnim kitom i reljefno, rustično, obraditi površine po izboru projektanta (četkom, valjkom, oblom, itd). Linskrust završno obojiti i impregnirati.",
       "obracun": "Obračun po m2 obrađene površine.",
       "jedinica": "m2",
-      "cena": 5.00,
+      "cena": 5.0,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -445,14 +445,14 @@
           "koeficijent": 1
         }
       }
-  },
+    },
     "36": {
       "id": 37,
       "naziv": "Obrada zidova plastičnim malterom (Bavalit)prskanjem.",
       "opis": "Vrsta i boje po izboru projektanta. Zidna podloga mora biti zdrava i suva. Podlogu očistiti i impregnirati izolacionom masom radi bolje veze. Naneti molerskom četkom u jednom sloju, a ako podloga jako upija premazati dva puta. Na osušenu podlogu naneti malter, napravljen i dobro izmešan da se dobije jednolična i konzistentna masa. Plastični malter se nanosi pomoću ježa ili kompresora sa pištoljem. Prskanje se vrši 2-3 puta, odnosno da plastični malter ravnomerno pokrije površinu i da dobije jednoličan izgled u tonu i strukturi. Otvore i drugo zaštititi PVC folijom što ulazi u cenu, ali se otvori ne odbijaju od površine zidova.",
       "obracun": "Obračun po m2 obrađene površine.",
       "jedinica": "m2",
-      "cena": 3.50,
+      "cena": 3.5,
       "element": true
     },
     "37": {
@@ -461,7 +461,7 @@
       "opis": "Vrsta i boje po izboru projektanta. Zidna podloga mora biti zdrava i suva. Podlogu očistiti i impregnirati izolacionom masom, radi bolje veze. Naneti molerskom četkom u jednom sloju, a ako podloga jako upija premazati dva puta. Na osušenu podlogu naneti malter, napravljen i dobro izmešan da se dobije jednolična i konzistentna masa. Plastični malter naneti gletelicom i strukturu izvući valjkom. Debljina nanetog sloja mora biti jednaka debljini, odnosno veličini zrna u plastičnom malteru. Otvore i drugo zaštititi PVC folijom što ulazi u cenu, ali se otvori ne odbijaju od površine zidova.",
       "obracun": "Obračun po m2 obrađene površine.",
       "jedinica": "m2",
-      "cena": 4.00,
+      "cena": 4.0,
       "element": true
     },
     "38": {
@@ -470,7 +470,7 @@
       "opis": "Vrsta i boje po izboru projektanta. Zidna podloga mora biti zdrava i suva. Podlogu očistiti i impregnirati izolacionom masom, radi bolje veze. Naneti molerskom četkom u jednom sloju, a ako podloga jako upija premazati dva puta. Na osušenu podlogu naneti malter, napravljen i dobro izmešan da se dobije jednolična i konzistentna masa. Pripremljen materijal naneti glet hoblom u debljini sloja do maksimalne veličine zrna. Strukturu maltera izvući kružnim zaribavanjem gumenom glet hoblom ili vertikalnim ili horizontalnim zaribavanjem Stiroporom. Otvore i drugo zaštititi PVC folijom što ulazi u cenu, ali se otvori ne odbijaju od površine zidova.",
       "obracun": "Obračun po m2 obrađene površine.",
       "jedinica": "m2",
-      "cena": 4.50,
+      "cena": 4.5,
       "element": true
     }
   }

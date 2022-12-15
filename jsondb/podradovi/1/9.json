@@ -1,0 +1,96 @@
+{
+  "id": 9,
+  "slug": "Zaštite",
+  "PodvrsteRadova": {
+    "0": {
+      "id": 1,
+      "naziv": "Nabavka i postavljanje zastora fasadne skela, od jute",
+      "opis": "Celokupnu površinu skele pokriti jutanim zastorom. Juta mora biti prošivena po vertikali i pričvršćena za skelu, da ne \"visi\". U toku radova, ukoliko je potrebno, zastor popraviti.",
+      "obracun": "Obračun po m2 zaštićene površine",
+      "jedinica": "m2",
+      "cena": 1.5,
+      "element": true
+    },
+    "1": {
+      "id": 2,
+      "naziv": "Nabavka i postavljanje zaštite za podove, od deblje PVC folije",
+      "opis": "Sva eventualna prljanja ili oštećenja poda padaju na teret izvođača.",
+      "obracun": "Obračun po m2 poda",
+      "jedinica": "m2",
+      "cena": 0.6,
+      "element": true
+    },
+    "2": {
+      "id": 3,
+      "naziv": "Nabavka i postavljanje zaštitnog sloja peska, preko podova",
+      "opis": "Postaviti sloj ter papira sa preklopom i pažljivo nasuti sloj peska debljine 20 cm. Sva eventualna oštećenja poda padaju na teret izvođača.",
+      "obracun": "Obračun po m2 poda",
+      "jedinica": "m2",
+      "cena": 2.5,
+      "element": true
+    },
+    "3": {
+      "id": 4,
+      "naziv": "Nabavka i postavljanje zaštitnih dasaka, preko podova",
+      "opis": "Postaviti sloj ter papira sa preklopom i zaštitu od dasaka debljine 1\". Sva eventualna oštećenja poda padaju na teret izvođača.",
+      "obracun": "Obračun po m2 poda",
+      "jedinica": "m2",
+      "cena": 2.0,
+      "element": true
+    },
+    "4": {
+      "id": 5,
+      "naziv": "Nabavka i postavljanje polietilenske folije, preko otvora na fasadi, vrata i prozora, radi zaštite",
+      "opis": "Foliju učvrstiti drvenim letvama, vodeći računa da se ne ošteti postojeća stolarija. Sva eventualna oštećenja padaju na teret izvođača.",
+      "obracun": "Obračun po m2 folije",
+      "jedinica": "m2",
+      "cena": 1.75,
+      "element": true
+    },
+    "5": {
+      "id": 6,
+      "naziv": "Nabavka i postavljanje polietilenske folije, preko otvora na fasadi, izloga i portala, radi zaštite.",
+      "opis": "Foliju učvrstiti drvenim letvama, vodeći računa da se ne ošteti postojeća stolarija. Sva eventualna oštećenja padaju na teret izvođača.",
+      "obracun": "Obračun po m2 folije",
+      "jedinica": "m2",
+      "cena": 2.5,
+      "element": true
+    },
+    "6": {
+      "id": 7,
+      "naziv": "Nabavka i postavljanje deblje polietilenske folije, preko nameštaja, radi zaštite",
+      "opis": "Sva eventualna prljanja ili oštećenja nameštaja padaju na teret izvođača.",
+      "obracun": "Obračun po m2 folije",
+      "jedinica": "m2",
+      "cena": 0.5,
+      "element": true
+    },
+    "7": {
+      "id": 8,
+      "naziv": "Zaštita krovnih površina, od atmosferskih padavina debljom polietilenskom folijom",
+      "opis": "U toku prepokrivanja krova po potrebi zaštititi otkrivene površine PVC folijom. ",
+      "obracun": "Obračun po m2 zaštićene površine",
+      "jedinica": "m2",
+      "cena": 1.0,
+      "element": true
+    },
+    "8": {
+      "id": 9,
+      "naziv": "Zaštita tavanske konstrukcije, od atmosferskih padavina debljom polietilenskom folijom",
+      "opis": "U toku radova po potrebi zaštititi otkrivene površine PVC folijom. ",
+      "obracun": "Obračun po m2 zaštićene površine",
+      "jedinica": "m2",
+      "cena": 1.0,
+      "element": true
+    },
+    "8": {
+      "id": 9,
+      "naziv": "Zaštita tavanske konstrukcije, od atmosferskih padavina daskama i debljom polietilenskom",
+      "opis": "Zaštita tavanske konstrukcije, od atmosferskih padavina daskama i debljom polietilenskom folijom ili ter papirom. U toku radova po potrebi zaštititi otkrivene površine daskama i PVC folijom.",
+      "obracun": "Obračun po m2 zaštićene površine",
+      "jedinica": "m2",
+      "cena": 5.0,
+      "element": true
+    }
+  }
+}

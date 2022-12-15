@@ -1,0 +1,33 @@
+{
+  "id": 8,
+  "slug": "Signalizacija",
+  "PodvrsteRadova": {
+    "0": {
+      "id": 1,
+      "naziv": "Izrada i postavljanje tabli obaveštenja da se izvode građevinski radovi",
+      "opis": "Izrada i postavljanje tabli obaveštenja da se izvode građevinski radovi, sa osnovnim podacima o objektu, izvođaču, investitoru i projektantu. Tabla je dimenzija 200x100 cm.",
+      "obracun": "Obračun po komadu table",
+      "jedinica": "xxxxx",
+      "cena": 125.0,
+      "element": true
+    },
+    "1": {
+      "id": 2,
+      "naziv": "Izrada i postavljanje tabli i drugih oznaka sa upozorenjem",
+      "opis": "Izrada i postavljanje tabli i drugih oznaka sa upozorenjem, a po tehničkim propisima. Tabla je dimenzija 80x60 cm.",
+      "obracun": "Obračun po komadu table",
+      "jedinica": "Komad",
+      "cena": 50.0,
+      "element": true
+    },
+    "2": {
+      "id": 3,
+      "naziv": "Izrada i postavljanje signalnog osvetljenje gradilišta",
+      "opis": "Izrada i postavljanje signalnog osvetljenje gradilišta, postavljenog na ogradi i/ili skeli. Instalaciju pod naponom od 12 volti, sa svetiljkama zaštićenim mrežom, postaviti u dogovoru sa nadzornim organom, a u svemu prema propisu.",
+      "obracun": "Obračun paušalno, komplet izvedeno",
+      "jedinica": "Paušalno",
+      "cena": 375.0,
+      "element": true
+    }
+  }
+}

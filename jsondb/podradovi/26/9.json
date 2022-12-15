@@ -8,7 +8,7 @@
       "opis": "Pažljivo očistiti stare slojeve boje sa ravnih delova fasade, za ponovno bojenje fasade. Čišćenje izvršiti mehaničkim i hemijskim putem. Prilikom čišćenja voditi računa da se ne ošteti podloga.",
       "obracun": "Obračun po m2 očišćene površine.",
       "jedinica": "m2",
-      "cena": 2.00,
+      "cena": 2.0,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -23,7 +23,7 @@
       "opis": "Vrsta i boje po izboru projektanta. Podloga fasade mora biti zdrava i suva. Podlogu očistiti i impregnirati izolacionom masom radi bolje veze. Naneti molerskom četkom u jednom sloju, a ako podloga jako upija premazati dva puta. Na osušenu podlogu naneti malter, napravljen i dobro izmešan da se dobije jednolična i konzistentna masa. Plastični malter se nanosi pomoću ježa ili kompresora sa pištoljem. Prskanje se vrši 2-3 puta, odnosno da plastični malter ravnomerno pokrije površinu i da dobije jednoličan izgled u tonu i strukturi. Otvore i drugo zaštititi PVC folijom što ulazi u cenu, ali se otvori ne odbijaju od površine fasade.",
       "obracun": "Obračun po m2 ortogonalne površine fasade.",
       "jedinica": "m2",
-      "cena": 4.00,
+      "cena": 4.0,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -38,7 +38,7 @@
       "opis": "Vrsta i boje po izboru projektanta. Podloga fasade mora biti zdrava i suva. Podlogu očistiti i impregnirati izolacionom masom, radi bolje veze. Naneti molerskom četkom u jednom sloju, a ako podloga jako upija premazati dva puta. Na osušenu podlogu naneti malter, napravljen i dobro izmešan da se dobije jednolična i konzistentna masa. Plastični malter naneti gletelicom i strukturu izvući valjkom. Debljina nanetog sloja mora biti jednaka debljini, odnosno veličini zrna u plastičnom malteru. Otvore i drugo zaštititi PVC folijom što ulazi u cenu, ali se otvori ne odbijaju od površine fasade.",
       "obracun": "Obračun po m2 ortogonalne površine fasade.",
       "jedinica": "m2",
-      "cena": 4.50,
+      "cena": 4.5,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -53,7 +53,7 @@
       "opis": "Vrsta i boje po izboru projektanta. Podloga fasade mora biti zdrava i suva. Podlogu očistiti i impregnirati izolacionom masom, radi bolje veze. Naneti molerskom četkom u jednom sloju, a ako podloga jako upija premazati dva puta. Na osušenu podlogu naneti malter, napravljen i dobro izmešan da se dobije jednolična i konzistentna masa. Pripremljen materijal naneti glet hoblom u debljini sloja do maksimalne veličine zrna. Strukturu maltera izvući kružnim zaribavanjem gumenom glet hoblom ili vertikalnim ili horizontalnim zaribavanjem Stiroporom. Otvore i drugo zaštititi PVC folijom što ulazi u cenu, ali se otvori ne odbijaju od površine fasade.",
       "obracun": "Obračun po m2 ortogonalne površine fasade.",
       "jedinica": "m2",
-      "cena": 5.00,
+      "cena": 5.0,
       "element": true,
       "neophodanmaterijal": {
         "0": {
@@ -68,7 +68,7 @@
       "opis": "Unifas PMŠ je fasadni dekorativni špricani plastični malter pripremljen za upotrebu, na bazi posebne polimerne emulzije, sa mermernim agregatom i dodacima. Fasadne površine preći šmirglom i opajati, a zatim grundirati Podlogom A u 1-2 premaza. Unifas PMŠ, za celu fasadu, pre upotrebe, međusobno pomešati, da bi se izbegle različite nijanse fasadnog maltera. Unifas PMŠ po potrebi razrediti do 5% sa vodom, a zatim naneti u 2-3 sloja pomoću kompresora i pištolja. Razmak između nanošenja slojeva je 2-3 časa. Nakon obrade fasadu štititi najmanje 24 časa od uticaja atmosferilija. Pre početka nanošenja u saradnji sa projektantom odrediti boju i uraditi probne uzorke.",
       "obracun": "Obračun po m2 obrađene fasade.",
       "jedinica": "m2",
-      "cena": 5.50,
+      "cena": 5.5,
       "element": true
     },
     "5": {
@@ -77,7 +77,7 @@
       "opis": "Unifas PMŠ je fasadni dekorativni špricani plastični malter pripremljen za upotrebu, na bazi posebne polimerne emulzije, sa mermernim agregatom i dodacima. Sa fasadnih površina odstraniti sve stare premaze, preći šmirglom i oprati vodom, a zatim grundirati Podlogom A u 1-2 premaza. Unifas PMŠ, za celu fasadu, pre upotrebe, međusobno pomešati, da bi se izbegle različite nijanse fasadnog maltera. Unifas PMŠ po potrebi razrediti do 5% sa vodom, a zatim naneti u 2-3 sloja pomoću kompresora i pištolja. Razmak između nanošenja slojeva je 2-3 časa. Nakon obrade fasadu štititi najmanje 24 časa od uticaja atmosferilija. Pre početka nanošenja u saradnji sa projektantom odrediti boju i uraditi probne uzorke.",
       "obracun": "Obračun po m2 obrađene fasade.",
       "jedinica": "m2",
-      "cena": 6.50,
+      "cena": 6.5,
       "element": true
     },
     "6": {
@@ -86,7 +86,7 @@
       "opis": "Unifas PMG 0,4 je jednokomponentni plastični fasadni malter, fabrički napravljen, na bazi specijalne polimerne emulzije, sa mermernim agregatom i dodacima. Fasadne površine preći šmirglom i opajati, a zatim grundirati Podlogom A u 1-2 premaza i gletovati glet masom Unifix S. Unifas PMG 0,4, za celu fasadu, pre upotrebe, međusobno pomešati, da bi se izbegle različite nijanse fasadnog maltera. Unifas PMG 0,4 po potrebi razrediti do 5% sa vodom, a zatim naneti glet hoblom u debljini sloja 2-2,5 mm i strukturu izvući valjkom. Razmak između nanošenja slojeva je 2-3 časa. Nakon obrade fasadu štititi najmanje 24 časa od uticaja atmosferilija. Pre početka nanošenja u saradnji sa projektantom odrediti boju i uraditi probne uzorke.",
       "obracun": "Obračun po m2 obrađene fasade.",
       "jedinica": "m2",
-      "cena": 3.50,
+      "cena": 3.5,
       "element": true
     },
     "7": {
@@ -95,7 +95,7 @@
       "opis": "Unifas PMG 0,8 je jednokomponentni plastični fasadni malter, fabrički napravljen, na bazi specijalne polimerne emulzije, sa mermernim agregatom i dodacima. Fasadne površine preći šmirglom i opajati, a zatim grundirati Podlogom A u 1-2 premaza. Unifas PMG 0,8, za celu fasadu, pre upotrebe, međusobno pomešati, da bi se izbegle različite nijanse fasadnog maltera. Unifas PMG 0,8 po potrebi razrediti do 5% sa vodom, a zatim naneti glet hoblom u debljini sloja 2-2,5 mm i strukturu izvući valjkom. Nakon obrade fasadu štititi najmanje 24 časa od uticaja atmosferilija. Pre početka nanošenja u saradnji sa projektantom odrediti boju i uraditi probne uzorke.",
       "obracun": "Obračun po m2 obrađene fasade.",
       "jedinica": "m2",
-      "cena": 4.00,
+      "cena": 4.0,
       "element": true
     },
     "8": {
@@ -104,7 +104,7 @@
       "opis": "Unifas PMG 1,6 je jednokomponentni plastični fasadni malter, fabrički napravljen, na bazi specijalne polimerne emulzije, sa mermernim agregatom i dodacima. Fasadne površine preći šmirglom i opajati, a zatim grundirati Podlogom A u 1-2 premaza. Unifas PMG 1,6, za celu fasadu, pre upotrebe, međusobno pomešati, da bi se izbegle različite nijanse fasadnog maltera. Unifas PMG 1,6 po potrebi razrediti do 5% sa vodom, a zatim naneti glet hoblom u debljini sloja 2-2,5 mm i strukturu izvući kružnim zaribavanjem gumenom glet hoblom ili vertikalnim zaribavanjem Stiroporom. Nakon obrade fasadu štititi najmanje 24 časa od uticaja atmosferilija. Pre početka nanošenja u saradnji sa projektantom odrediti boju i uraditi probne uzorke.",
       "obracun": "Obračun po m2 obrađene fasade.",
       "jedinica": "m2",
-      "cena": 4.50,
+      "cena": 4.5,
       "element": true
     },
     "9": {
@@ -113,7 +113,7 @@
       "opis": "Unifas PMZ je plastični fasadni zaribani malter, napravljen od hidrauličkih veziva, mermernih punioca i aditiva. Fasadne površine preći šmirglom i opajati, a zatim grundirati Podlogom A u 1-2 premaza. Unifas PMZ dvokomponentni malter pripremiti: pomešati 5 kg emulzije sa 5 kg vode pa dodati 40 kg praškaste komponente, masu mešati ručnim mikserom 3-5 minuta i ostaviti da odstoji 10 minuta. Pre primene dodati vodu do potrebne konzistencije maltera i upotrebiti u roku od 1 časa. Pripremljen materijal naneti glet hoblom u debljini sloja do maksimalne veličine zrna. Strukturu maltera izvući kružnim zaribavanjem gumenom glet hoblom ili vertikalnim ili horizontalnim zaribavanjem Stiroporom. Unifas PMZ naneti i obraditi bez prekida od jedne ivice zida do druge. Nakon obrade fasadu štititi najmanje 24 časa od uticaja atmosferilija. Pre početka nanošenja u saradnji sa projektantom odrediti boju i uraditi probne uzorke.",
       "obracun": "Obračun po m2 obrađene fasade.",
       "jedinica": "m2",
-      "cena": 5.50,
+      "cena": 5.5,
       "element": true
     },
     "10": {
@@ -122,7 +122,7 @@
       "opis": "Unifas MZ je jednokomponentni dekorativni fasadni malter. Fasadne površine preći šmirglom i opajati, a zatim grundirati Podlogom A u 1-2 premaza. Jednokomponentni malter Unifas MZ pripremiti: pakovanje od 35 kg pomešati sa 5 litara vode neposredno pre upotrebe, mešati ručnim mikserom 3-5 minuta i ostaviti da odstoji 10 minuta. Malter upotrebiti u roku od jednog časa. Pripremljen materijal naneti glet hoblom u debljini sloja do maksimalne veličine zrna. Strukturu maltera izvući kružnim zaribavanjem gumenom glet hoblom ili vertikalnim ili horizontalnim zaribavanjem Stiroporom. Unifas MZ naneti i obraditi bez prekida od jedne ivice zida do druge. Nakon obrade fasadu štititi najmanje 24 časa od uticaja atmosferilija. Pre početka nanošenja u saradnji sa projektantom odrediti boju i uraditi probne uzorke.",
       "obracun": "Obračun po m2 obrađene fasade.",
       "jedinica": "m2",
-      "cena": 3.50,
+      "cena": 3.5,
       "element": true
     },
     "11": {
@@ -131,7 +131,7 @@
       "opis": "Podloga mora da bude čvrsta, bez trošnih delova, čista bez prašine i masnoća. Pripremljen materijal naneti na zid valjkom, boje i strukture po izboru projektanta.",
       "obracun": "Obračun po m2 obrađene površine.",
       "jedinica": "m2",
-      "cena": 4.50,
+      "cena": 4.5,
       "element": true
     },
     "12": {
@@ -140,7 +140,7 @@
       "opis": "Fasadna podloga mora biti čvrsta, stabilna i bez masnih mrlja. Fasadne površine preći šmirglom i opajati. Na prethodno navlaženu podlogu metalnom gletelicom naneti pripremljen materijal, debljine sloja oko 3 mm. Nekoliko minuta nakon nanošenja strukturu izvući zaribavanjem gumenom glet hoblom, drvenom daščicom ili komadom Stiropora. Nakon ugradnje fasadu štititi najmanje 24 časa od uticaja atmosferilija. Pre početka nanošenja u saradnji sa projektantom odrediti boju i uraditi probne uzorke.",
       "obracun": "Obračun po m2 obrađene fasade.",
       "jedinica": "m2",
-      "cena": 5.00,
+      "cena": 5.0,
       "element": true
     },
     "13": {
@@ -149,7 +149,7 @@
       "opis": "Fasadna podloga mora biti čvrsta, stabilna i bez masnih mrlja. Sa površina fasade odstraniti sve stare premaze i druge mehanički neotporne delove. Fasadne površine preći šmirglom i opajati. Na prethodno navlaženu podlogu metalnom gletelicom naneti pripremljen materijal, debljine sloja oko 3 mm. Nekoliko minuta nakon nanošenja strukturu izvući zaribavanjem gumenom glet hoblom, drvenom daščicom ili komadom Stiropora. Nakon ugradnje fasadu štititi najmanje 24 časa od uticaja atmosferilija. Pre početka nanošenja u saradnji sa projektantom odrediti boju i uraditi probne uzorke.",
       "obracun": "Obračun po m2 obrađene fasade.",
       "jedinica": "m2",
-      "cena": 5.50,
+      "cena": 5.5,
       "element": true
     },
     "14": {
@@ -158,7 +158,7 @@
       "opis": "Izrađen je na bazi mineralnih veziva i punioca od neorganskih materijala, a specijalni dodaci mu obezbeđuju da je vodoodbojan i paropropustan. Podloga na koju se nanosi Perlitfas mora biti čvrsta, čista, otprašena o odmašćena. Perlitfas je gotov fasadni malter kome treba dodati samo vodu. Sveži malter pripremiti ručno ili u mešalici, tako što se sadržaj vreće od 25 kg meša sa oko 7-8 lit. vode u trajanju od 3 do 4 minuta, pri čemu se dobija lako obradiva masa za nanošenje metalnom gletericom. Prilikom mešanja odjednom dozirati potrebnu količinu vode. Ovako pripremljen malter je obradiv u narednih 6 sati. Neposredno pre nanošenja pripremljenog maltera podlogu treba nakvasiti vodom. Nanošenje maltera se vrši metalnom gletericom u sloju ne tanjem od 4 mm. Završnu obradu nanetog sloja uraditi valjanjem ili zaribavanjem, po izboru projektanta. Gotovu fasadu treba orošavati vodom prva 3 dana, a naročito ako se radi po toplijem vremenu. Fasadu obrađivati na temperaturi od +5°C do +30°C, ali ne po jako vetrovitom vremenu. nije dozvoljeno dodavanje drugih maltera ili bilo kakvih dodataka.",
       "obracun": "Obračun po m2 fasade.",
       "jedinica": "m2",
-      "cena": 4.50,
+      "cena": 4.5,
       "element": true
     },
     "15": {
@@ -167,7 +167,7 @@
       "opis": "Izrađen je na bazi mineralnih veziva i punioca od neorganskih materijala, a specijalni dodaci mu obezbeđuju da je vodoodbojan i paropropustan. Podloga na koju se nanosi Perlitfas mora biti čvrsta, čista, otprašena o odmašćena. Perlitfas je gotov fasadni malter kome treba dodati samo vodu. Sveži malter pripremiti ručno ili u mešalici, tako što se sadržaj vreće od 25 kg meša sa oko 7-8 lit. vode u trajanju od 3 do 4 minuta, pri čemu se dobija lako obradiva masa za nanošenje metalnom gletericom. Prilikom mešanja odjednom dozirati potrebnu količinu vode. Ovako pripremljen malter je obradiv u narednih 6 sati. Neposredno pre nanošenja pripremljenog maltera podlogu treba nakvasiti vodom. Nanošenje maltera se vrši metalnom gletericom u sloju ne tanjem od 4 mm. Završnu obradu nanetog sloja uraditi valjanjem ili zaribavanjem, po izboru projektanta. Gotovu fasadu treba orošavati vodom prva 3 dana, a naročito ako se radi po toplijem vremenu. Fasadu obrađivati na temperaturi od +5°C do +30°C, ali ne po jako vetrovitom vremenu. nije dozvoljeno dodavanje drugih maltera ili bilo kakvih dodataka.",
       "obracun": "Obračun po m2 fasade.",
       "jedinica": "m2",
-      "cena": 4.00,
+      "cena": 4.0,
       "element": true
     },
     "16": {
@@ -176,7 +176,7 @@
       "opis": "Izrađen je na bazi mineralnih veziva i punioca od neorganskih materijala, a specijalni dodaci mu obezbeđuju da je vodoodbojan i paropropustan. Podloga na koju se nanosi Perlitfas mora biti čvrsta, čista, otprašena o odmašćena. Perlitfas je gotov fasadni malter kome treba dodati samo vodu. Sveži malter pripremiti ručno ili u mešalici, tako što se sadržaj vreće od 25 kg meša sa oko 7-8 lit. vode u trajanju od 3 do 4 minuta, pri čemu se dobija lako obradiva masa za nanošenje metalnom gletericom. Prilikom mešanja odjednom dozirati potrebnu količinu vode. Ovako pripremljen malter je obradiv u narednih 6 sati. Neposredno pre nanošenja pripremljenog maltera podlogu treba nakvasiti vodom. Nanošenje maltera se vrši metalnom gletericom u sloju ne tanjem od 4 mm. Završnu obradu nanetog sloja uraditi valjanjem ili zaribavanjem, po izboru projektanta. Gotovu fasadu treba orošavati vodom prva 3 dana, a naročito ako se radi po toplijem vremenu. Fasadu obrađivati na temperaturi od +5°C do +30°C, ali ne po jako vetrovitom vremenu. nije dozvoljeno dodavanje drugih maltera ili bilo kakvih dodataka.",
       "obracun": "Obračun po m2 fasade.",
       "jedinica": "m2",
-      "cena": 5.00,
+      "cena": 5.0,
       "element": true
     }
   }

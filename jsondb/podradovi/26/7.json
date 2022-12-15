@@ -8,7 +8,7 @@
       "opis": "Postojeće slojeve boje skinuti nanošenjem hemijskog rastvarača i skidanjem slojeva boje špahtlama i odgovarajućim alatkama. Postupak ponavljati dok se ne skinu svi slojevi boje i ne dođe do zdravog i čistog drveta. Po izvršenom skidanju boje drvo prebrusiti finom šmirglom. Naročitu pažnju obratiti da ne dođe do oštećenja ivica i profilacije.",
       "obracun": "Obračun po m2 očišćene površine.",
       "jedinica": "m2",
-      "cena": 3.50,
+      "cena": 3.5,
       "element": true
     },
     "1": {
@@ -17,7 +17,7 @@
       "opis": "Postojeće slojeve boje skinuti grejanjem fenom i upotrebom špahtli i odgovarajućih alatki. Postupak ponavljati dok se ne skinu svi slojevi boje i ne dođe do zdravog i čistog drveta. Naročitu pažnju obratiti da ne dođe do oštećenja ivica i profilacije. Po izvršenom skidanju boje drvo prebrusiti finom šmirglom.",
       "obracun": "Obračun po m2 očišćene površine.",
       "jedinica": "m2",
-      "cena": 4.00,
+      "cena": 4.0,
       "element": true
     },
     "2": {
@@ -26,7 +26,7 @@
       "opis": "Postojeće slojeve boje skinuti paljenjem brenerom sa plinom i upotrebom špahtli i odgovarajućih alatki. Postupak ponavljati dok se ne skinu svi slojevi boje i ne dođe do zdravog i čistog drveta. Naročitu pažnju obratiti da ne dođe do oštećenja ivica i profilacije. Po izvršenom skidanju boje drvo prebrusiti finom šmirglom.",
       "obracun": "Obračun po m2 očišćene površine.",
       "jedinica": "m2",
-      "cena": 5.00,
+      "cena": 5.0,
       "element": true
     },
     "3": {
@@ -35,7 +35,7 @@
       "opis": "Stepenišnu konstrukciju očistiti od korozije i prašine hemijskim i fizičkim sredstvima, brusiti i očistiti. Naneti impregnaciju i obojiti osnovnom bojom.",
       "obracun": "Obračun po m2 obrađene površine.",
       "jedinica": "m2",
-      "cena": 2.00,
+      "cena": 2.0,
       "element": true
     },
     "4": {
@@ -53,7 +53,7 @@
       "opis": "Impregnirati stepenište polifirnisom, kitovati spojeve, pukotine i čvorove. Pod prevući brusnim kitom, brusiti i nadkitovati. Stepenište b bojiti u dva puta emajl lakom, po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 6.00,
+      "cena": 6.0,
       "element": true
     },
     "6": {
@@ -62,7 +62,7 @@
       "opis": "Pre bojenja sve površine brusiti, očistiti i kitovati spojeve, pukotine i čvorove. Prevući brusnim kitom, brusiti i nadkitovati. Stepenište bojiti u dva puta emajl lakom, po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 5.50,
+      "cena": 5.5,
       "element": true
     },
     "7": {
@@ -71,7 +71,7 @@
       "opis": "Postojeću boju skinuti hemijskim ili mehaničkim putem. Kitovati spojeve, pukotine i čvorove, prevući brusnim kitom, brusiti i nadkitovati. Stepenište bojiti u dva puta emajl lakom, po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 8.50,
+      "cena": 8.5,
       "element": true
     },
     "8": {
@@ -80,7 +80,7 @@
       "opis": "Bojiti sadolinom ili nekim sličnim sredstvom po izboru projektanta. Pre bojenja sve površine preći finom šmirglom, da ostane glatka površina. Bojiti dva puta sa razmakom za sušenje od 24 h, preći najfinijom šmirglom, pa bojiti treći put i lakirati lakom.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 6.00,
+      "cena": 6.0,
       "element": true
     },
     "9": {
@@ -98,7 +98,7 @@
       "opis": "Sve površine lakirati dva puta mat ili sjajnim lakom, po izboru projektanta, sa razmakom od 24 h.",
       "obracun": "Obračun po m2 lakirane površine.",
       "jedinica": "m2",
-      "cena": 2.00,
+      "cena": 2.0,
       "element": true
     }
   }

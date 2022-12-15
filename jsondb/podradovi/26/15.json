@@ -26,7 +26,7 @@
       "opis": "Vrsta boje, proizvođač i ton po izboru projektanta. Izvršiti brušenje i predkitovanje uljanim kitom i prevlačenje uljanim kitom prvi put. Brusiti i prevući uljanim kitom drugi put. Brusiti i ponovo kitovati. Bojiti uljanom bojom prvi put. Po sušenju brusiti i bojiti emajl lakom. Fino brusiti, ispraviti emajl kitom i bojiti emajl lakom.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 5.00,
+      "cena": 5.0,
       "element": true
     },
     "3": {
@@ -35,7 +35,7 @@
       "opis": "Vrsta boje, proizvođač i ton po izboru projektanta. Izvršiti brušenje i predkitovanje uljanim kitom i prevlačenje uljanim kitom prvi put. Brusiti i prevući uljanim kitom drugi put. Brusiti i ponovo kitovati. Bojiti uljanom bojom prvi put. Po sušenju brusiti i bojiti emajl lakom. Fino brusiti, ispraviti emajl kitom i bojiti emajl lakom.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 6.00,
+      "cena": 6.0,
       "element": true
     }
   }

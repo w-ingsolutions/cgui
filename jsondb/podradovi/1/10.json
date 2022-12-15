@@ -1,0 +1,42 @@
+{
+  "id": 10,
+  "slug": "Čišćenja",
+  "PodvrsteRadova": {
+    "0": {
+      "id": 1,
+      "naziv": "U toku radova izvršiti više puta grubo čišćenje gradilišta",
+      "opis": "U toku radova izvršiti više puta grubo čišćenje gradilišta od građevinskog šuta sa prenosom šuta na deponiju gradilišta. Plaća se jedanput bez obzira na broj čišćenja.",
+      "obracun": "Obračun po m2 površine gradilišta",
+      "jedinica": "m2 ",
+      "cena": 0.5,
+      "element": true
+    },
+    "1": {
+      "id": 2,
+      "naziv": "Čišćenje prostorija objekta, od građevinskog šuta",
+      "opis": "Čišćenje prostorija objekta, od građevinskog šuta sa prenosom šuta na deponiju gradilišta. Plaća se jedanput bez obzira na broj čišćenja.",
+      "obracun": "Obračun po m2 očišćenje površine",
+      "jedinica": "m2 ",
+      "cena": 0.75,
+      "element": true
+    },
+    "2": {
+      "id": 3,
+      "naziv": "Čišćenje trotoara oko objekta, od građevinskog šuta i drugo",
+      "opis": "Čišćenje trotoara oko objekta, od građevinskog šuta i drugo i prevoz na gradilišnu deponiju. Plaća se jedanput bez obzira na broj čišćenja.",
+      "obracun": "Obračun po m2 očišćene površine",
+      "jedinica": "m2 ",
+      "cena": 0.5,
+      "element": true
+    },
+    "3": {
+      "id": 4,
+      "naziv": "Čišćenje prostora u objektu i oko objekta, od građevinskog šuta",
+      "opis": "Čišćenje prostora u objektu i oko objekta, od građevinskog šuta sa prenosom šuta na deponiju gradilišta. Plaća se jedanput bez obzira na broj čišćenja.",
+      "obracun": "Obračun po m2 očišćene površine",
+      "jedinica": "m2 ",
+      "cena": 0.6,
+      "element": true
+    }
+  }
+}

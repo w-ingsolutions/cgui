@@ -1,0 +1,24 @@
+{
+  "id": 7,
+  "slug": "Nadstrešnice",
+  "PodvrsteRadova": {
+    "0": {
+      "id": 1,
+      "naziv": "Izrada zaštitne nadstrešnice, ispuštene iz fasadne skele, iznad ograde i ulaza",
+      "opis": "Nadstrešnicu uraditi od čeličnih cevi za skelu sa kosnicima i ukrućenjima. Pokriti je daskama debljine 2\" i ter papirom, koji se pričvršćuje drvenim letvama. Nadstrešnicu prima nadzorni organ, statičar. Širina nadstrešnice je 1- 2,00 m, sa ulazima po potrebi. Nadstrešnica postaviti na visini od 2,50 m. Koristi se za sve vreme trajanja radova i plaća se jedanput bez obzira da li se u toku radova, demontira i ponovo montira.",
+      "obracun": "Obračun po m2 nadstrešnice",
+      "jedinica": "m2",
+      "cena": 7.5,
+      "element": true
+    },
+    "1": {
+      "id": 2,
+      "naziv": "Izrada zaštitne nadstrešnice",
+      "opis": "Nadstrešnicu uraditi od čeličnih cevi za skelu sa kosnicima i ukrućenjima. Nadstrešnica se pokriva daskama debljine 2\" i ter papirom, koji se pričvršćuje drvenim letvama. Koristi se za sve vreme trajanja radova i plaća se jedanput bez obzira da li se u toku radova, demontira i ponovo montira.",
+      "obracun": "Obračun po m2 postavljene nadstrešnice",
+      "jedinica": "m2",
+      "cena": 6.25,
+      "element": true
+    }
+  }
+}

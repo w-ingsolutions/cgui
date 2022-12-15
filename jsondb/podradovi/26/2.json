@@ -8,7 +8,7 @@
       "opis": "Postojeće slojeve boje skinuti nanošenjem hemijskog rastvarača i skidanjem slojeva boje špahtlama i odgovarajućim alatkama. Postupak ponavljati dok se ne skinu svi slojevi boje i ne dođe do zdravog i čistog drveta. Po izvršenom skidanju boje drvo prebrusiti finom šmirglom. Naročitu pažnju obratiti da ne dođe do oštećenja ivica i profilacije.",
       "obracun": "Obračun po m2 očišćene površine.",
       "jedinica": "m2",
-      "cena": 3.50,
+      "cena": 3.5,
       "element": true
     },
     "1": {
@@ -17,7 +17,7 @@
       "opis": "Postojeće slojeve boje skinuti grejanjem fenom i upotrebom špahtli i odgovarajućih alatki. Postupak ponavljati dok se ne skinu svi slojevi boje i ne dođe do zdravog i čistog drveta. Naročitu pažnju obratiti da ne dođe do oštećenja ivica i profilacije. Po izvršenom skidanju boje drvo prebrusiti finom šmirglom.",
       "obracun": "Obračun po m2 očišćene površine.",
       "jedinica": "m2",
-      "cena": 4.00,
+      "cena": 4.0,
       "element": true
     },
     "2": {
@@ -26,7 +26,7 @@
       "opis": "Postojeće slojeve boje skinuti paljenjem brenerom sa plinom i upotrebom špahtli i odgovarajućih alatki. Postupak ponavljati dok se ne skinu svi slojevi boje i ne dođe do zdravog i čistog drveta. Naročitu pažnju obratiti da ne dođe do oštećenja ivica i profilacije. Po izvršenom skidanju boje drvo prebrusiti finom šmirglom.",
       "obracun": "Obračun po m2 očišćene površine.",
       "jedinica": "m2",
-      "cena": 5.00,
+      "cena": 5.0,
       "element": true
     },
     "3": {
@@ -35,7 +35,7 @@
       "opis": "Vrsta boje, proizvođač i ton po izboru projektanta. Pre bojenja drvo očistiti od maltera i prašine, natopiti razređenim firnisom i minizirati gvozdeni okov. Izvršiti brušenje i predkitovanje uljanim kitom. Prevući uljanim kitom prvi put, brusiti i ponovno kitovati. Bojiti uljanom bojom prvi put, po sušenju brusiti i nadkitovati uljanim kitom. Fino brusiti i bojiti emajl lakom.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 5.00,
+      "cena": 5.0,
       "element": true
     },
     "4": {
@@ -53,7 +53,7 @@
       "opis": "Vrsta boje, proizvođač i ton po izboru projektanta. Pre bojenja drvo očistiti od maltera i prašine, natopiti razređenim firnisom i minizirati gvozdeni okov. Izvršiti brušenje i predkitovanje uljanim kitom. Prevući uljanim kitom prvi put, brusiti i ponovno kitovati. Bojiti uljanom bojom prvi put, po sušenju brusiti i nadkitovati uljanim kitom. Bojiti uljanom bojom, drugi put. Fino brusiti, ispraviti emajl kitom i bojiti emajl lakom.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 6.00,
+      "cena": 6.0,
       "element": true
     },
     "6": {
@@ -71,7 +71,7 @@
       "opis": "Vrsta boje, proizvođač i ton po izboru projektanta. Pre bojenja drvo očistiti od maltera i prašine, natopiti razređenim firnisom i minizirati gvozdeni okov. Izvršiti brušenje i predkitovanje uljanim kitom. Prevući uljanim kitom prvi put, brusiti i ponovno prevući uljani kit, drugi put. Brusiti i ponovo kitovati. Bojiti uljanom bojom prvi put. Brusiti i bojiti emajl lakom. Fino brusiti, ispraviti emajl kitom i bojiti emajl lakom.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 8.00,
+      "cena": 8.0,
       "element": true
     },
     "8": {
@@ -80,7 +80,7 @@
       "opis": "Vrsta boje, proizvođač i ton po izboru projektanta. Pre bojenja drvo očistiti od maltera i prašine, natopiti razređenim firnisom i minizirati gvozdeni okov. Izvršiti brušenje i predkitovanje uljanim kitom. Prevući uljanim kitom prvi put, brusiti i ponovno prevući uljani kit, drugi put. Brusiti i ponovo kitovati. Bojiti uljanom bojom prvi put. Brusiti i bojiti emajl lakom. Fino brusiti, ispraviti emajl kitom i bojiti emajl lakom.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 9.00,
+      "cena": 9.0,
       "element": true
     },
     "9": {
@@ -89,7 +89,7 @@
       "opis": "Bojiti sadolinom ili nekim sličnim sredstvom po izboru projektanta. Pre bojenja sve površine preći finom šmirglom, da ostane glatka površina. Bojiti dva puta sa razmakom za sušenje od 24 h, preći najfinijom šmirglom, pa bojiti treći put i lakirati lakom.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 3.50,
+      "cena": 3.5,
       "element": true
     },
     "10": {
@@ -98,7 +98,7 @@
       "opis": "Bojiti sadolinom ili nekim sličnim sredstvom po izboru projektanta. Pre bojenja sve površine preći finom šmirglom, da ostane glatka površina. Bojiti dva puta sa razmakom za sušenje od 24 h, preći najfinijom šmirglom, pa bojiti treći put i lakirati lakom.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 3.00,
+      "cena": 3.0,
       "element": true
     },
     "11": {
@@ -143,7 +143,7 @@
       "opis": "Vrsta boje, proizvođač i ton po izboru projektanta. Pre bojenja sve površine brusiti, očistiti i kitovati oštećenja i pukotine. Prevući uljanim kitom, brusiti i nadkitovati. Bojiti uljanom bojom prvi put. Brusiti i bojiti emajl lakom. Fino brusiti, ispraviti emajl kitom i bojiti emajl lakom.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 5.50,
+      "cena": 5.5,
       "element": true
     },
     "16": {
@@ -152,7 +152,7 @@
       "opis": "Vrsta boje, proizvođač i ton po izboru projektanta. Pre bojenja sve površine brusiti, očistiti i kitovati oštećenja i pukotine. Prevući uljanim kitom, brusiti i nadkitovati. Bojiti uljanom bojom prvi put. Brusiti i bojiti emajl lakom. Fino brusiti, ispraviti emajl kitom i bojiti emajl lakom.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 6.50,
+      "cena": 6.5,
       "element": true
     },
     "17": {
@@ -161,7 +161,7 @@
       "opis": "Vrsta boje, proizvođač i ton po izboru projektanta. Pre bojenja drvo brusiti i očistiti, a zatim naneti podlogu od firnisa sa dodatkom uljane boje. Izvršiti predkitovanje i prevlačenje uljanim kitom, brušenje i nadkitovanje. Bojiti uljanom bojom, po sušenju brusiti i nadkitovati uljanim kitom. Fino brusiti i bojiti emajl lakom.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 6.00,
+      "cena": 6.0,
       "element": true
     },
     "18": {
@@ -179,7 +179,7 @@
       "opis": "Vrsta boje, proizvođač i ton po izboru projektanta. Pre bojenja drvo brusiti i očistiti, a zatim naneti podlogu od firnisa sa dodatkom uljane boje. Izvršiti predkitovanje i prevlačenje uljanim kitom, brušenje i nadkitovanje. Bojiti uljanom bojom prvi put, po sušenju brusiti i nadkitovati uljanim kitom. Bojiti uljanom bojom, drugi put. Fino brusiti, ispraviti emajl kitom i bojiti emajl lakom.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 7.00,
+      "cena": 7.0,
       "element": true
     },
     "20": {
@@ -197,7 +197,7 @@
       "opis": "Vrsta boje, proizvođač i ton po izboru projektanta. Pre bojenja drvo brusiti i očistiti, a zatim naneti podlogu od firnisa sa dodatkom uljane boje. Izvršiti predkitovanje i prevlačenje uljanim kitom, brušenje i nadkitovanje. Bojiti uljanom bojom prvi put. Brusiti i bojiti emajl lakom. Fino brusiti, ispraviti emajl kitom i bojiti emajl lakom.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 8.00,
+      "cena": 8.0,
       "element": true
     },
     "22": {
@@ -206,7 +206,7 @@
       "opis": "Vrsta boje, proizvođač i ton po izboru projektanta. Pre bojenja drvo brusiti i očistiti, a zatim naneti podlogu od firnisa sa dodatkom uljane boje. Izvršiti predkitovanje i prevlačenje uljanim kitom, brušenje i nadkitovanje. Bojiti uljanom bojom prvi put. Brusiti i bojiti emajl lakom. Fino brusiti, ispraviti emajl kitom i bojiti emajl lakom.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 9.00,
+      "cena": 9.0,
       "element": true
     },
     "23": {
@@ -233,7 +233,7 @@
       "opis": "Sve površine lakirati mat ili sjajnim lakom, po izboru projektanta. Lakirati prvi put, posle 24 h preći najfinijom šmirglom, opajati i lakirati drugi put.",
       "obracun": "Obračun po m2 lakirane površine.",
       "jedinica": "m2",
-      "cena": 2.00,
+      "cena": 2.0,
       "element": true
     },
     "26": {
@@ -287,7 +287,7 @@
       "opis": "Pre bojenja sa metala skinuti koroziju hemijskim i fizičkim sredstvima, a zatim sve površine brusiti i očistiti. Na prozore naneti impregnaciju i osnovnu boju, a zatim predkitovati i brusiti. Posle nanošenja prvog sloja boje za metal, kitovati i brusiti.  Obojiti drugi put bojom za metal, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 3.50,
+      "cena": 3.5,
       "element": true
     },
     "32": {
@@ -305,7 +305,7 @@
       "opis": "Pre bojenja sa metala skinuti koroziju hemijskim i fizičkim sredstvima, a zatim sve površine brusiti i očistiti. Na prozore naneti impregnaciju i osnovnu boju, a zatim predkitovati i brusiti. Posle nanošenja prvog sloja boje za metal, kitovati i brusiti.  Obojiti drugi put bojom za metal, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 3.50,
+      "cena": 3.5,
       "element": true
     },
     "34": {
@@ -314,7 +314,7 @@
       "opis": "Pre bojenja sa metala skinuti koroziju hemijskim i fizičkim sredstvima, a zatim sve površine brusiti i očistiti. Na rešetke naneti impregnaciju i osnovnu boju, a zatim predkitovati i brusiti. Posle nanošenja prvog sloja boje za metal, kitovati i brusiti.  Obojiti drugi put bojom za metal, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 3.00,
+      "cena": 3.0,
       "element": true
     },
     "35": {
@@ -323,7 +323,7 @@
       "opis": "Pre bojenja sa metala skinuti koroziju hemijskim i fizičkim sredstvima, a zatim sve površine brusiti i očistiti. Na rešetke naneti impregnaciju i osnovnu boju, a zatim predkitovati i brusiti. Posle nanošenja prvog sloja boje za metal, kitovati i brusiti.  Obojiti drugi put bojom za metal, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 3.50,
+      "cena": 3.5,
       "element": true
     },
     "36": {
@@ -332,7 +332,7 @@
       "opis": "Pre bojenja sa metala skinuti koroziju hemijskim i fizičkim sredstvima, a zatim sve površine brusiti i očistiti. Na rešetke naneti impregnaciju i osnovnu boju, a zatim predkitovati i brusiti. Posle nanošenja prvog sloja boje za metal, kitovati i brusiti.  Obojiti drugi put bojom za metal, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 4.00,
+      "cena": 4.0,
       "element": true
     },
     "37": {
@@ -341,7 +341,7 @@
       "opis": "Pre bojenja skinuti staru boju i koroziju hemijskim i fizičkim sredstvima, brusiti i očistiti.Na prozore naneti impregnaciju i osnovnu boju, a zatim predkitovati i brusiti. Posle nanošenja prvog sloja boje za metal, kitovati i brusiti.  Obojiti drugi put bojom za metal, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 3.50,
+      "cena": 3.5,
       "element": true
     },
     "38": {
@@ -350,7 +350,7 @@
       "opis": "Pre bojenja skinuti staru boju i koroziju hemijskim i fizičkim sredstvima, brusiti i očistiti.Na prozore naneti impregnaciju i osnovnu boju, a zatim predkitovati i brusiti. Posle nanošenja prvog sloja boje za metal, kitovati i brusiti.  Obojiti drugi put bojom za metal, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 4.50,
+      "cena": 4.5,
       "element": true
     },
     "39": {
@@ -368,7 +368,7 @@
       "opis": "Pre bojenja skinuti staru boju i koroziju hemijskim i fizičkim sredstvima, brusiti i očistiti.Na prozore naneti impregnaciju i osnovnu boju, a zatim predkitovati i brusiti. Posle nanošenja prvog sloja boje za metal, kitovati i brusiti.  Obojiti drugi put bojom za metal, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 4.00,
+      "cena": 4.0,
       "element": true
     },
     "41": {
@@ -377,7 +377,7 @@
       "opis": "Pre bojenja skinuti staru boju i koroziju hemijskim i fizičkim sredstvima, brusiti i očistiti. Na rešetke naneti impregnaciju i osnovnu boju, a zatim predkitovati i brusiti. Posle nanošenja prvog sloja boje za metal, kitovati i brusiti.  Obojiti drugi put bojom za metal, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 3.00,
+      "cena": 3.0,
       "element": true
     },
     "42": {
@@ -386,7 +386,7 @@
       "opis": "Pre bojenja skinuti staru boju i koroziju hemijskim i fizičkim sredstvima, brusiti i očistiti. Na rešetke naneti impregnaciju i osnovnu boju, a zatim predkitovati i brusiti. Posle nanošenja prvog sloja boje za metal, kitovati i brusiti.  Obojiti drugi put bojom za metal, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 4.50,
+      "cena": 4.5,
       "element": true
     },
     "43": {
@@ -395,7 +395,7 @@
       "opis": "Pre bojenja skinuti staru boju i koroziju hemijskim i fizičkim sredstvima, brusiti i očistiti. Na rešetke naneti impregnaciju i osnovnu boju, a zatim predkitovati i brusiti. Posle nanošenja prvog sloja boje za metal, kitovati i brusiti.  Obojiti drugi put bojom za metal, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 4.00,
+      "cena": 4.0,
       "element": true
     }
   }

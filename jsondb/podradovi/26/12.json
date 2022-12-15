@@ -8,7 +8,7 @@
       "opis": "Pre bojenja lim odmastiti i podlogu oprati organskim rastvaračima. Na lim naneti antikorozivni premaz voš prajmer. Posle sušenja oluke i olučne vertikale obojiti bojom za metal dva puta, u tonu po izboru projektanta.",
       "obracun": "Obračun po m1 obojenog lima.",
       "jedinica": "m1",
-      "cena": 1.50,
+      "cena": 1.5,
       "element": true
     },
     "1": {
@@ -17,7 +17,7 @@
       "opis": "Pre bojenja lim odmastiti i podlogu oprati organskim rastvaračima. Na lim naneti antikorozivni premaz voš prajmer. Posle sušenja oluke i olučne vertikale obojiti bojom za metal dva puta, u tonu po izboru projektanta.",
       "obracun": "Obračun po m1 obojenog lima.",
       "jedinica": "m2",
-      "cena": 4.50,
+      "cena": 4.5,
       "element": true
     },
     "2": {
@@ -26,7 +26,7 @@
       "opis": "Pre bojenja lim očisti fizičkim i hemijskim sredstvima, a podlogu oprati organskim rastvaračima. Na očišćene površine naneti antikorozivni premaz voš prajmer, a posle sušenja obojiti bojom za metal dva puta, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojenog lima.",
       "jedinica": "m2",
-      "cena": 2.50,
+      "cena": 2.5,
       "element": true
     },
     "3": {
@@ -35,7 +35,7 @@
       "opis": "Pre bojenja lim očisti fizičkim i hemijskim sredstvima, a podlogu oprati organskim rastvaračima. Na očišćene površine naneti antikorozivni premaz voš prajmer, a posle sušenja obojiti bojom za metal dva puta, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojenog lima.",
       "jedinica": "m2",
-      "cena": 6.50,
+      "cena": 6.5,
       "element": true
     },
     "4": {
@@ -44,7 +44,7 @@
       "opis": "Pre bojenja lim odmastiti i podlogu oprati organskim rastvaračima. Na lim venca naneti antikorozivni premaz voš prajmer. Posle sušenja limariju obojiti bojom za metal dva puta, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojenog lima.",
       "jedinica": "m2",
-      "cena": 4.00,
+      "cena": 4.0,
       "element": true
     },
     "5": {
@@ -53,7 +53,7 @@
       "opis": "Pre bojenja lim očisti fizičkim i hemijskim sredstvima, a podlogu oprati organskim rastvaračima. Na očišćene površine naneti antikorozivni premaz voš prajmer, a posle sušenja obojiti bojom za metal dva puta, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojenog lima.",
       "jedinica": "m2",
-      "cena": 6.00,
+      "cena": 6.0,
       "element": true
     },
     "6": {
@@ -80,7 +80,7 @@
       "opis": "Pre bojenja lim odmastiti i podlogu oprati organskim rastvaračima. Na krovni pokrivač naneti antikorozivni premaz voš prajmer, a posle sušenja obojiti bojom za metal dva puta, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojenog lima.",
       "jedinica": "m2",
-      "cena": 3.50,
+      "cena": 3.5,
       "element": true
     },
     "9": {
@@ -89,7 +89,7 @@
       "opis": "Pre bojenja lim očisti fizičkim i hemijskim sredstvima, a podlogu oprati organskim rastvaračima. Na očišćene površine naneti antikorozivni premaz cinkolit u dva sloja, a posle sušenja obojiti bojom za metal dva puta, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojenog lima.",
       "jedinica": "m2",
-      "cena": 4.00,
+      "cena": 4.0,
       "element": true
     },
     "10": {
@@ -98,7 +98,7 @@
       "opis": "Pre bojenja lim odmastiti i podlogu oprati organskim rastvaračima. Na krovni pokrivač naneti antikorozivni premaz cinkolit u dva sloja, a posle sušenja premazati dva puta bitulitom, sa dovoljnim razmakom za sušenje.",
       "obracun": "Obračun po m2 površine lima.",
       "jedinica": "m2",
-      "cena": 4.50,
+      "cena": 4.5,
       "element": true
     },
     "11": {
@@ -107,7 +107,7 @@
       "opis": "Pre bojenja lim odmastiti i podlogu oprati organskim rastvaračima. Na opšivke naneti antikorozivni premaz voš prajmer, a posle sušenja obojiti bojom za metal dva puta, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojenog lima.",
       "jedinica": "m2",
-      "cena": 4.00,
+      "cena": 4.0,
       "element": true
     },
     "12": {
@@ -125,7 +125,7 @@
       "opis": "Pre bojenja odmastiti metal i oprati podlogu organskim rastvaračima. Na snegobrane naneti antikorozivni premaz minijum dva puta, a posle sušenja obojiti bojom za metal dva puta, u tonu po izboru projektanta.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 1.00,
+      "cena": 1.0,
       "element": true
     }
   }

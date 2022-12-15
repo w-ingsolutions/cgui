@@ -8,7 +8,7 @@
       "opis": "Na čistu površinu kamena naneti dva transparentna silikatna premaza Hidrofobusa S.",
       "obracun": "Obračun po m2 površine kamena.",
       "jedinica": "m2",
-      "cena": 5.00,
+      "cena": 5.0,
       "element": true
     },
     "1": {
@@ -17,7 +17,7 @@
       "opis": "Na čistu površinu kamena naneti dva transparentna silikatna premaza Hidrofobusa S.",
       "obracun": "Obračun po m2 površine kamena.",
       "jedinica": "m2",
-      "cena": 6.50,
+      "cena": 6.5,
       "element": true
     },
     "2": {
@@ -26,7 +26,7 @@
       "opis": "Na čistu površinu kamena naneti dva transparentna silikatna premaza Fobogala.",
       "obracun": "Obračun po m2 površine kamena.",
       "jedinica": "m2",
-      "cena": 5.00,
+      "cena": 5.0,
       "element": true
     },
     "3": {
@@ -35,7 +35,7 @@
       "opis": "Na čistu površinu kamena naneti dva transparentna silikatna premaza Fobogala.",
       "obracun": "Obračun po m2 površine kamena.",
       "jedinica": "m2",
-      "cena": 6.50,
+      "cena": 6.5,
       "element": true
     },
     "4": {
@@ -44,7 +44,7 @@
       "opis": "Na čistu i suvu površinu kamena naneti dva sloja Hidrofob R četkom ili valjkom. Vremenski razmak između nanošenja slojeva je 1-2 časa.",
       "obracun": "Obračun po m2 površine kamena.",
       "jedinica": "m2",
-      "cena": 5.00,
+      "cena": 5.0,
       "element": true
     },
     "5": {
@@ -53,7 +53,7 @@
       "opis": "Na čistu i suvu površinu kamena naneti dva sloja Hidrofob R četkom ili valjkom. Vremenski razmak između nanošenja slojeva je 1-2 časa.",
       "obracun": "Obračun po m2 površine kamena.",
       "jedinica": "m2",
-      "cena": 6.50,
+      "cena": 6.5,
       "element": true
     },
     "6": {
@@ -62,7 +62,7 @@
       "opis": "Drvene elemente konstrukcije krova, tavanice, tavanjače i drugo zaštititi od insekata, algi, gljivica i truljenja sa dva do tri premaza, hemijskim sredstvom, po izboru projektanta.",
       "obracun": "Obračun po m2 obrađene površine.",
       "jedinica": "m2",
-      "cena": 4.00,
+      "cena": 4.0,
       "element": true
     },
     "7": {
@@ -71,7 +71,7 @@
       "opis": "Celokupnu krovnu konstrukciju očistiti od prašine, a zatim je prskati sredstvom protiv požara i crvotočine dva puta.",
       "obracun": "Obračun po m2 zaštićene površine.",
       "jedinica": "m2",
-      "cena": 2.00,
+      "cena": 2.0,
       "element": true
     },
     "8": {
@@ -89,7 +89,7 @@
       "opis": "Celokupnu krovnu konstrukciju očistiti od prašine, a zatim je prskati sredstvom protiv požara i crvotočine dva puta.",
       "obracun": "Obračun po m2 zaštićene površine.",
       "jedinica": "m2",
-      "cena": 1.50,
+      "cena": 1.5,
       "element": true
     },
     "10": {
@@ -107,7 +107,7 @@
       "opis": "Čelične nosače očistiti od korozije i prašine hemijskim i fizičkim sredstvima, brusiti i očistiti. Naneti impregnaciju i obojiti osnovnom bojom.",
       "obracun": "Obračun po m2 obrađene površine.",
       "jedinica": "m2",
-      "cena": 1.50,
+      "cena": 1.5,
       "element": true
     },
     "12": {
@@ -125,7 +125,7 @@
       "opis": "Čelične nosače očistiti od korozije i prašine hemijskim i fizičkim sredstvima, brusiti i očistiti. Naneti impregnaciju i obojiti osnovnom bojom.",
       "obracun": "Obračun po m2 obrađene površine.",
       "jedinica": "m2",
-      "cena": 2.00,
+      "cena": 2.0,
       "element": true
     },
     "14": {
@@ -134,7 +134,7 @@
       "opis": "Pre bojenja sa metala skinuti koroziju hemijskim i fizičkim sredstvima, a zatim sve površine brusiti i očistiti. Na čelične nosače naneti osnovnu boju i bojiti dva puta bojom za metal.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 2.50,
+      "cena": 2.5,
       "element": true
     },
     "15": {
@@ -143,7 +143,7 @@
       "opis": "Pre bojenja sa metala skinuti koroziju hemijskim i fizičkim sredstvima, a zatim sve površine brusiti i očistiti. Na čelične nosače naneti osnovnu boju i bojiti dva puta bojom za metal.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 3.00,
+      "cena": 3.0,
       "element": true
     },
     "16": {
@@ -170,7 +170,7 @@
       "opis": "Pre bojenja skinuti staru boju i koroziju hemijskim i fizičkim sredstvima, brusiti i očistiti. Na čelične nosače naneti osnovnu boju i bojiti dva puta bojom za metal.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 3.50,
+      "cena": 3.5,
       "element": true
     },
     "19": {
@@ -188,7 +188,7 @@
       "opis": "Pre bojenja sa metala skinuti koroziju hemijskim i fizičkim sredstvima, a zatim sve površine brusiti i očistiti. Na rešetku i nosač naneti osnovnu boju i bojiti dva puta bojom za metal.",
       "obracun": "Obračun po m2 obojene površine.",
       "jedinica": "m2",
-      "cena": 2.50,
+      "cena": 2.5,
       "element": true
     },
     "21": {
@@ -197,7 +197,7 @@
       "opis": "Izolit EPOXY ART je premaz za estetsku i kiselootpornu zaštitu balkona, garaža, parkirališta, bazena za kupanje, itd. Premaz naneti u tri sloja na čistu, stabilnu i suvu betonsku podlogu staru najmanje 21 dan, pri optimalnoj temperaturi vazduha 15-20˚C. Premazati u tri sloja vodeći računa o razmeri mešanja komponenti za svaki sloj. Prvi sloj naneti nešto ređi, tako da penetrira u beton, stabilizuje ga i čini idealnim za premazivanje druga dva sloja. Izolit EPOXY ART prati teksturu poda, tako da rapave površine i dalje ostaju rapave i protivklizne, ali zaštićene od habanja, upijanja vode i sl. Boja po izboru projektanta.",
       "obracun": "Obračun po m2 poda.",
       "jedinica": "m2",
-      "cena": 5.50,
+      "cena": 5.5,
       "element": true
     },
     "22": {
@@ -206,7 +206,7 @@
       "opis": "Izolit EPOXY ART je premaz za estetsku i kiselootpornu zaštitu zidova balkona, garaža, bazena za kupanje, itd. Premaz naneti u tri sloja na čist, stabilan i suv betonski zid ili malterisan cementnim malterom, star najmanje 21 dan, pri optimalnoj temperaturi vazduha 15-20˚C. Premazati u tri sloja vodeći računa o razmeri mešanja komponenti za svaki sloj. Prvi sloj naneti nešto ređi, tako da penetrira u zid, stabilizuje ga i čini idealnim za premazivanje druga dva sloja. Izolit EPOXY ART prati teksturu zida, tako da rapave površine i dalje ostaju rapave i zaštićene od upijanja vode i sl.  Boja po izboru projektanta.",
       "obracun": "Obračun po m2 zida.",
       "jedinica": "m2",
-      "cena": 6.50,
+      "cena": 6.5,
       "element": true
     }
   }
