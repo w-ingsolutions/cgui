@@ -1,0 +1,168 @@
+{
+    "id": 13,
+    "slug": "Ostali pripremno završni radovi",
+    "PodvrsteRadova": {
+      "0": {
+        "id": 1,
+        "naziv": "Ručna seča stabla, vađenje panja i korena, prečnika do 10 cm",
+        "opis": "Stablo odseći, grane iseći, otkopati zemlju oko stabla i izvaditi panj i koren. Zemljom nasuti i nabiti zemlju. Stablo, grane, panj i koren utovariti na kamion i odvesti na deponiju koju odredi investitor udaljenu do 15 km.",
+        "obracun": "Obračun po komadu stabla",
+        "jedinica": "Komad",
+        "cena": 10.00,
+        "element": true
+      },
+      "1": {
+        "id": 2,
+        "naziv": "Ručna seča stabla, vađenje panja i korena, prečnika do 30 cm",
+        "opis": "Stablo odseći, grane iseći, otkopati zemlju oko stabla i izvaditi panj i koren. Zemljom nasuti i nabiti zemlju. Stablo, grane, panj i koren utovariti na kamion i odvesti na deponiju koju odredi investitor udaljenu do 15 km.",
+        "obracun": "Obračun po komadu stabla",
+        "jedinica": "Komad",
+        "cena": 50.00,
+        "element": true
+      },
+      "2": {
+        "id": 3,
+        "naziv": "Ručna seča stabla, vađenje panja i korena, prečnika do 50 cm",
+        "opis": "Stablo odseći, grane iseći, otkopati zemlju oko stabla i izvaditi panj i koren. Zemljom nasuti i nabiti zemlju. Stablo, grane, panj i koren utovariti na kamion i odvesti na deponiju koju odredi investitor udaljenu do 15 km.",
+        "obracun": "Obračun po komadu stabla",
+        "jedinica": "Komad",
+        "cena": 150.00,
+        "element": true
+      },
+      "3": {
+        "id": 4,
+        "naziv": "Nabavka, utovar, dovoz i razastiranje plodne čiste zemlje",
+        "opis": "Nabavka, utovar, dovoz i razastiranje plodne čiste zemlje  u sloju po projektu sa davanjem nadvišenja (nadmera) od 20% kako bi posle sleganja, zemlja zauzela projektovane kote. Izvršiti fino planiranje i valjanje drvenim valjkom. ",
+        "obracun": "Obračun po m3 nasute zemlje",
+        "jedinica": "m3",
+        "cena": 12.5,
+        "element": true
+      },
+      "4": {
+        "id": 5,
+        "naziv": "Nabavka, utovar, dovoz i razastiranje plodne plodnog humusa",
+        "opis": "Nabavka, utovar, dovoz i razastiranje plodne plodnog humusa u sloju po projektu sa davanjem nadvišenja (nadmera) od 20% kako bi posle sleganja, zemlja zauzela projektovane kote. Izvršiti fino planiranje i valjanje drvenim valjkom.",
+        "obracun": "Obračun po m3 nasute zemlje",
+        "jedinica": "m3",
+        "cena": 20.00,
+        "element": true
+      },
+      "5": {
+        "id": 6,
+        "naziv": "Izrada travnjaka",
+        "opis": "Izrada travnjaka na mestima označenim u projektu. Preko fino isplaniranog terena izvršiti setvu travne smese: - Festuca rubra 40 % - Festuca ovina 30 % - Poa pratensis 20 % - Trifolium repens 10 % Setvu travnog semena izvršiti ravno iz dva unakrsna pravca i to po mirnom vremenu, bez padavina i vetra. Po izvršenoj setvi seme utisnuti u zemlju gvozdenim ježom, a potom uvaljati drvenim valjkom i izvršiti intezivno polivanje do punog nicanja trave. Polivanje nastaviti svakodnevno do predaje radova.",
+        "obracun": "Obračun po m2 zatravljene površine.",
+        "jedinica": "m2",
+        "cena": 2.5,
+        "element": true
+      },
+      "6": {
+        "id": 7,
+        "naziv": "Izrada travnjaka sa košenjem",
+        "opis": "Izrada travnjaka sa košenjem na mestima označenim u projektu. Preko fino isplaniranog terena izvršiti setvu travne smese: - Festuca rubra 40 % - Festuca ovina 30 % - Poa pratensis 20 % - Trifolium repens 10 % Setvu travnog semena izvršiti ravno iz dva unakrsna pravca i to po mirnom vremenu, bez padavina i vetra. Po izvršenoj setvi seme utisnuti u zemlju gvozdenim ježom, a potom uvaljati drvenim valjkom i izvršiti intezivno polivanje do punog nicanja trave. Polivanje nastaviti svakodnevno do prvog košenja. Prvo košenje izvršiti kosom kada trava dostigne visinu 10-15 cm a drugo košenje izvršiti kosačicom.",
+        "obracun": "Obračun po m2 zatravljene površine.",
+        "jedinica": "m2",
+        "cena": 3.5,
+        "element": true
+      },
+      "7": {
+        "id": 8,
+        "naziv": "Izrada travnjaka sa nasipanjem humusa, sejanjem trave i održavanjem travnjaka",
+        "opis": "Izvršiti nabavku, utovar i dovoz i razastiranje plodne humusne zemlje u sloju debljine 10 cm sa davanjem nadvišenja (nadmera) od 20% kako bi posle sleganja, zemlja zauzela projektovane kote. Izvršiti fino planiranje, valjanje drvenim valjkom i setvu travne smese: - Festuca rubra 40 % - Festuca ovina 30 % - Poa pratensis 20 % - Trifolium repens 10 % Setvu travnog semena izvršiti ravno iz dva unakrsna pravca i to po mirnom vremenu bez padavina i vetra. Po izvršenoj setvi seme utisnuti u zemlju gvozdenim ježom, a potom uvaljati drvenim valjkom i izvršiti intezivno polivanje do punog nicanja trave. Polivanje nastaviti svakodnevno do prvog košenja. Prvo košenje izvršiti kosom kada trava dostigne visinu 10-15 cm a drugo košenje izvršiti kosačicom.",
+        "obracun": "Obračun po m2 zatravljene površine.",
+        "jedinica": "m2",
+        "cena": 5.00,
+        "element": true
+      },
+      "8": {
+        "id": 9,
+        "naziv": "Nabavka i postavljanje busena sa travom",
+        "opis": "Sa postojećih površina skinuti sterilnu zemlju u sloju debljine 5 cm. Dovesti, razastreti i uvaljati humusne zemlje u _sloju debljine 5 cm_. Postaviti busen sa travom, izvaljati ga i pričvrstiti. Fuge između blokova busena popuniti zemljom sa malo travnog semena. Travu redovno zalivati i prvi put ručno kositi. ",
+        "obracun": "Obračun po m2 zatravljene površine",
+        "jedinica": "m2",
+        "cena": 6.00,
+        "element": true
+      },
+      "9": {
+        "id": 10,
+        "naziv": "Nabavka i postavljanje busena sa travom",
+        "opis": "Sa postojećih površina skinuti sterilnu zemlju u sloju debljine 10 cm. Dovesti, razastreti i uvaljati humusne zemlje u _sloju debljine 5 cm_. Postaviti busen sa travom, izvaljati ga i pričvrstiti. Fuge između blokova busena popuniti zemljom sa malo travnog semena. Travu redovno zalivati i prvi put ručno kositi.",
+        "obracun": "Obračun po m2 obrađene površine",
+        "jedinica": "m2",
+        "cena": 6.00,
+        "element": true
+      },
+      "10": {
+        "id": 11,
+        "naziv": "Nabavka i postavljanje busena sa travom",
+        "opis": "Sa postojećih površina skinuti sterilnu zemlju u sloju debljine 15 cm. Dovesti, razastreti i uvaljati humusne zemlje u _sloju debljine 5 cm_. Postaviti busen sa travom, izvaljati ga i pričvrstiti. Fuge između blokova busena popuniti zemljom sa malo travnog semena. Travu redovno zalivati i prvi put ručno kositi. ",
+        "obracun": "Obračun po m2 obrađene površine",
+        "jedinica": "m2",
+        "cena": 10.00,
+        "element": true
+      },
+      "11": {
+        "id": 12,
+        "naziv": "Nabavka i postavljanje busena sa travom",
+        "opis": "Sa postojećih površina skinuti sterilnu zemlju u sloju debljine 20 cm. Dovesti, razastreti i uvaljati humusne zemlje u _sloju debljine 5 cm_. Postaviti busen sa travom, izvaljati ga i pričvrstiti. Fuge između blokova busena popuniti zemljom sa malo travnog semena. Travu redovno zalivati i prvi put ručno kositi.",
+        "obracun": "Obračun po m2 obrađene površine",
+        "jedinica": "m2",
+        "cena": 12.00,
+        "element": true
+      },
+      "12": {
+        "id": 13,
+        "naziv": "Sa postojećih površina izvaditi ruže",
+        "opis": "Ruže pažljivo izvaditi sa busenom, upakovati i predati investitoru. ",
+        "obracun": "Obračun po komadu ruže",
+        "jedinica": "Komad",
+        "cena": 1.00,
+        "element": true
+      },
+      "13": {
+        "id": 14,
+        "naziv": "Nabavka i sadnja ruža",
+        "opis": "Na mestima označenim u projektu, iskopati jame kružnog oblika dimenzija 0,40x0,40 m. Izvršiti sadnju ruža sa dodatkom đubriva 3-5 kg uz svaku sadnicu. Posle sadnje zemlju ocankovati i dobro zaliti.",
+        "obracun": "Obračun po komadu ruže",
+        "jedinica": "Komad",
+        "cena": 2.5,
+        "element": true
+      },
+      "14": {
+        "id": 15,
+        "naziv": "Sadnja listopadnih sadnica",
+        "opis": "Na mestima označenim u projektu iskopati jame prečnika i dubine 0,50 m. Iz jame izbaciti sterilnu zemlju i otpatke. Sadnju obaviti mešavinom humusne zemlje, tresetnog đubriva i peska u odnosu 6:3:1. Prilikom sadnje sadnice zatrpati do 2/3 dubine jame napravljenom mešavinom, a gornju trećinu obogatiti dodatkom tresetnog đubriva sa 3 kg po sadnici. Nakon obavljene sadnje sadnice ocankovati i dobro zaliti.",
+        "obracun": "Obračun po komadu sadnice",
+        "jedinica": "Komad",
+        "cena": 7.5,
+        "element": true
+      },
+      "15": {
+        "id": 16,
+        "naziv": "Sadnja četinarskih sadnica",
+        "opis": "Na mestima označenim u projektu iskopati jame prečnika i dubine 0,50 m. Iz jame izbaciti sterilnu zemlju i otpatke. Sadnju obaviti mešavinom humusne zemlje, tresetnog đubriva i peska u odnosu 6:3:1. Prilikom sadnje sadnice zatrpati do 2/3 dubine jame napravljenom mešavinom, a gornju trećinu obogatiti dodatkom tresetnog đubriva sa 3 kg po sadnici. Nakon obavljene sadnje sadnice ocankovati i dobro zaliti.",
+        "obracun": "Obračun po komadu sadnice",
+        "jedinica": "Komad",
+        "cena": 10.00,
+        "element": true
+      },
+      "16": {
+        "id": 17,
+        "naziv": "Sadnja žive ograde",
+        "opis": "Na mestima označenim u projektu iskopati rov dubine i širine 50 cm. Iz jame izbaciti sterilnu zemlju i otpatke. Sadnju obaviti mešavinom humusne zemlje, tresetnog đubriva i peska u odnosu 6:3:1 i to po 9 sadnica po m1. Prilikom sadnje sadnice zatrpati do 2/3 dubine jame napravljenom mešavinom, a gornju trećinu obogatiti dodatkom tresetnog đubriva u količini od 5 kg po sadnici ili odstajalog stajskog đubriva. Nakon obavljene sadnje zemlju oko sadnice ocankovati i obilno zaliti.",
+        "obracun": "Obračun po m1 žive ograde",
+        "jedinica": "m",
+        "cena": 15.00,
+        "element": true
+      },
+      "17": {
+        "id": 18,
+        "naziv": "Sadnja puzavica",
+        "opis": "Na mestima označenim u projektu iskopati jame prečnika i dubine 0,30 m. Iz jame izbaciti sterilnu zemlju i otpatke. Sadnju obaviti mešavinom humusne zemlje, tresetnog đubriva i peska u odnosu 6:3:1. Mešavinu humusne zemlje iz jame obogatiti dodatkom tresetne zemlje sa 3 kg po sadnici. Nakon obavljene sadnje zemlju oko sadnice ocankovati i obilno zaliti.",
+        "obracun": "Obračun po komadu puzavice",
+        "jedinica": "Komad",
+        "cena": 2.00,
+        "element": true
+      }
+    }
+  }

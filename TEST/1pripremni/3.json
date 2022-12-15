@@ -1,0 +1,60 @@
+{
+    "id": 3,
+    "slug": "Saglasnosti",
+    "PodvrsteRadova": {
+        "0": {
+            "id": 1,
+            "naziv": "Naknada za hidrantsku mrežu",
+            "opis": "Naknada za hidrantsku mrežu kojom se podrazumeva pismeni zahtev sa skicom nadležnom organu i plaćanje propisane takse, za odobrenje za upotrebu.",
+            "obracun": "Obračun paušalno",
+            "jedinica": "Paušalno",
+            "cena": 250.00,
+            "element": true
+          },
+          "1": {
+            "id": 2,
+            "naziv": "Naknada elektrodistribuciji",
+            "opis": "Naknada elektrodistribuciji kojom se podrazumeva pismeni zahtev sa skicom nadležnom organu i plaćanje propisane takse, za odobrenje za upotrebu.",
+            "obracun": "Obračun paušalno",
+            "jedinica": "Paušalno",
+            "cena": 500.00,
+            "element": true
+          },
+          "2": {
+            "id": 3,
+            "naziv": "Naknada toplanama",
+            "opis": "Naknada toplanama kojom se podrazumeva pismeni zahtev sa skicom nadležnom organu i plaćanje propisane takse, za odobrenje za upotrebu.",
+            "obracun": "Obračun paušalno",
+            "jedinica": "Paušalno",
+            "cena": 150.00,
+            "element": true
+          },
+          "3": {
+            "id": 4,
+            "naziv": "Naknada komunalnom preduzeću",
+            "opis": "Naknada komunalnom preduzeću kojom se podrazumeva pismeni zahtev sa skicom nadležnom organu i plaćanje propisane takse, za odobrenje za upotrebu.",
+            "obracun": "Obračun paušalno",
+            "jedinica": "Paušalno",
+            "cena": 75.00,
+            "element": true
+          },
+          "4": {
+            "id": 5,
+            "naziv": "Naknada protivpožarnoj službi",
+            "opis": "Naknada protivpožarnoj službi kojom se podrazumeva pismeni zahtev sa skicom nadležnom organu i plaćanje propisane takse, za odobrenje za upotrebu.",
+            "obracun": "Obračun paušalno",
+            "jedinica": "Paušalno",
+            "cena": 100.00,
+            "element": true
+          },
+          "5": {
+            "id": 6,
+            "naziv": "Naknada sanitarnoj inspekciji",
+            "opis": "Naknada sanitarnoj inspekciji kojom se podrazumeva pismeni zahtev sa skicom nadležnom organu i plaćanje propisane takse, za odobrenje za upotrebu.",
+            "obracun": "Obračun paušalno",
+            "jedinica": "Paušalno",
+            "cena": 100.00,
+            "element": true
+          }
+        }
+    }

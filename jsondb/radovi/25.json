@@ -1,11 +1,11 @@
 {
-  "id": 25,
-  "naziv": "Likorezački",
+  "id": 26,
+  "naziv": "Molerski",
   "opis": "",
   "obracun": "",
   "jedinica": "",
   "cena": 0,
-  "slug": "likorezacki",
+  "slug": "molerski",
   "Omogucen": false,
   "Baza": false,
   "Element": false,
@@ -13,7 +13,7 @@
   "PodvrsteRadova": {
     "0": {
       "id": 1,
-      "naziv": "LIKOREZAČKI Pripremni",
+      "naziv": "Pripremni",
       "opis": "",
       "obracun": "",
       "jedinica": "",

@@ -1,0 +1,78 @@
+{
+    "id": 2,
+    "slug": "Priključci",
+    "PodvrsteRadova": {
+        "0": {
+            "id": 1,
+            "naziv": "Naknada za uvođenje gradilišne električne energije ",
+            "opis": "Pismeni zahtev za saglasnost sa skicom uputiti nadležnom organu za odobrenje korišćenja električne energije. U cenu ulaze i plaćanje takse za korišćenje za sve vreme trajanja radova i instaliranje glavnog gradilišnog ormana sa brojilom, osiguračima i ostalo.",
+            "obracun": "Obračun paušalno",
+            "jedinica": "Paušalno",
+            "cena": 750.00,
+            "element": true
+          },
+          "1": {
+            "id": 2,
+            "naziv": "Naknada za uvođenje gradilišne vode",
+            "opis": "Pismeni zahtev za saglasnost sa skicom uputiti nadležnom organu za odobrenje korišćenja vode. U cenu ulaze i plaćanje takse i izrada priključka, šahta, vodomera i ostalo.",
+            "obracun": "Obračun paušalno",
+            "jedinica": "Paušalno",
+            "cena": 250.00,
+            "element": true
+          },
+          "2": {
+            "id": 3,
+            "naziv": "Naknada za uvođenje gradilišnog telefona",
+            "opis": "Pismeni zahtev za saglasnost sa skicom uputiti nadležnom organu za odobrenje korišćenja telefonskog priključka. U cenu ulaze i plaćanje takse i instaliranje telefona sa aparatom.",
+            "obracun": "Obračun paušalno",
+            "jedinica": "Paušalno",
+            "cena": 250.00,
+            "element": true
+          },
+          "3": {
+            "id": 4,
+            "naziv": "Naknada za priključak na elektro mrežu",
+            "opis": "Pismeni zahtev sa skicom uputiti nadležnom organu. U cenu ulazi i plaćanje takse.",
+            "obracun": "Obračun paušalno",
+            "jedinica": "Paušalno",
+            "cena": 250.00,
+            "element": true
+          },
+          "4": {
+            "id": 5,
+            "naziv": "Naknada za priključak na vodovodnu mrežu",
+            "opis": "Pismeni zahtev sa skicom uputiti nadležnom organu. U cenu ulazi i plaćanje takse.",
+            "obracun": "Obračun paušalno",
+            "jedinica": "Paušalno",
+            "cena": 200.00,
+            "element": true
+          },
+          "5": {
+            "id": 6,
+            "naziv": "Naknada za priključak na kanalizacionu mrežu",
+            "opis": "Pismeni zahtev sa skicom uputiti nadležnom organu. U cenu ulazi i plaćanje takse.",
+            "obracun": "Obračun paušalno",
+            "jedinica": "Paušalno",
+            "cena": 200.00,
+            "element": true
+          },
+          "6": {
+            "id": 7,
+            "naziv": "Naknada za priključak na PTT mrežu",
+            "opis": "Pismeni zahtev sa skicom uputiti nadležnom organu. U cenu ulazi i plaćanje takse.",
+            "obracun": "Obračun paušalno",
+            "jedinica": "Paušalno",
+            "cena": 250.00,
+            "element": true
+          },
+          "7": {
+            "id": 8,
+            "naziv": "Ugradnja repera na objektu i susednim objektima",
+            "opis": "Ugradnja repera na objektu i susednim objektima za praćenje eventualnog sleganja u svemu po uputstvu statičara. U određenom vremenskom periodu, a u dogovoru sa statičarem, vršiti merenja i voditi dnevnik merenja.",
+            "obracun": "Obračun paušalno",
+            "jedinica": "Paušalno",
+            "cena": 50.00,
+            "element": true
+          }
+        }
+    }

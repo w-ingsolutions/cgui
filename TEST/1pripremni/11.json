@@ -1,0 +1,51 @@
+{
+    "id": 11,
+    "slug": "Pranja",
+    "PodvrsteRadova": {
+      "0": {
+        "id": 1,
+        "naziv": "Čišćenje i pranje gradilišta, po završetku svih radova",
+        "opis": "Izvršiti detaljno čišćenje celog gradilišta, pranje svih staklenih površina, čišćenje i fino pranje svih unutrašnjih prostora i spoljnih površina.",
+        "obracun": "Obračun po m2 očišćene površine",
+        "jedinica": "m2",
+        "cena": 0.5,
+        "element": true
+      },
+      "1": {
+        "id": 2,
+        "naziv": "Čišćenje i pranje prozora i vrata, po završetku radova.",
+        "opis": "Pažljivo mehanički očistiti sve površine i oprati vodom sa dodatkom odgovarajućih hemijskih sredstava.",
+        "obracun": "Obračun po m2 oprane površine",
+        "jedinica": "m2",
+        "cena": 0.5,
+        "element": true
+      },
+      "2": {
+        "id": 3,
+        "naziv": "Čišćenje i pranje izloga i portala, po završetku radova",
+        "opis": "Pažljivo mehanički očistiti sve površine i oprati vodom sa dodatkom odgovarajućih hemijskih sredstava.",
+        "obracun": "Obračun po m2 oprane površine",
+        "jedinica": "m2",
+        "cena": 0.6,
+        "element": true
+      },
+      "3": {
+        "id": 4,
+        "naziv": "Po završetku radova očistiti od građevinskog šuta i oprati vodom pod pritiskom trotoar i kolovoz",
+        "opis": "Po završetku radova očistiti od građevinskog šuta i oprati vodom pod pritiskom trotoar i kolovoz",
+        "obracun": "Obračun po m2 očišćene i oprane površine",
+        "jedinica": "m2",
+        "cena": 0.5,
+        "element": true
+      },
+      "4": {
+        "id": 5,
+        "naziv": "Po završetku radova očistiti od građevinskog šuta i oprati vodom pod pritiskom staze i plato",
+        "opis": "Po završetku radova očistiti od građevinskog šuta i oprati vodom pod pritiskom staze i plato",
+        "obracun": "Obračun po m2 očišćene i oprane površine",
+        "jedinica": "m2",
+        "cena": 0.6,
+        "element": true
+      }
+    }
+}

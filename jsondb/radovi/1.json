@@ -1,11 +1,11 @@
 {
-  "id": 1,
-  "naziv": "Pripremni",
+  "id": 2,
+  "naziv": "Istraživački",
   "opis": "",
   "obracun": "",
   "jedinica": "",
   "cena": 0,
-  "slug": "pripremni",
+  "slug": "istrazivacki",
   "Omogucen": false,
   "Baza": false,
   "Element": false,
@@ -13,92 +13,36 @@
   "PodvrsteRadova": {
     "0": {
       "id": 1,
-      "naziv": "Dozvole",
-      "slug": "dozvole",
+      "naziv": "Snimanja i dokumentacija",
+      "slug": "snimanja_i_dokumentacija",
       "Omogucen": false,
       "Baza": true
     },
     "1": {
       "id": 2,
-      "naziv": "Priključci",
-      "slug": "prikljucci",
+      "naziv": "Ispitivanja i dokumentacija",
+      "slug": "ispitivanja_i_dokumentacija",
       "Omogucen": false,
       "Baza": true
     },
     "2": {
       "id": 3,
-      "naziv": "Saglasnosti",
-      "slug": "saglasnosti",
+      "naziv": "Arheološki iskopi",
+      "slug": "arheoloski_iskopi",
       "Omogucen": false,
       "Baza": true
     },
     "3": {
       "id": 4,
-      "naziv": "Priprema gradilišta",
-      "slug": "priprema_gradilista",
+      "naziv": "Obrada arheoloških nalaza",
+      "slug": "obrada_arheoloskih_nalaza",
       "Omogucen": false,
       "Baza": true
     },
     "4": {
       "id": 5,
-      "naziv": "Skele",
-      "slug": "skele",
-      "Omogucen": false,
-      "Baza": true
-    },
-    "5": {
-      "id": 6,
-      "naziv": "Ograde",
-      "slug": "ograde",
-      "Omogucen": false,
-      "Baza": true
-    },
-    "6": {
-      "id": 7,
-      "naziv": "Nadstrešnice",
-      "slug": "nadstresnice",
-      "Omogucen": false,
-      "Baza": true
-    },
-    "7": {
-      "id": 8,
-      "naziv": "Signalizacija",
-      "slug": "signalizacija",
-      "Omogucen": false,
-      "Baza": true
-    },
-    "8": {
-      "id": 9,
-      "naziv": "Zaštite",
-      "slug": "zastite",
-      "Omogucen": false,
-      "Baza": true
-    },
-    "9": {
-      "id": 10,
-      "naziv": "Čišćenja",
-      "slug": "ciscenja",
-      "Omogucen": false,
-      "Baza": true
-    },
-    "10": {
-      "id": 11,
-      "naziv": "Pranja",
-      "slug": "pranja",
-      "Omogucen": false,
-      "Baza": true
-    },
-    "11": {
-      "id": 12,
-      "naziv": "Šut",
-      "slug": "sut",
-      "Omogucen": false,
-      "Baza": true
-    },
-    "12": {
-      "id": 13,
-      "naziv": "Ostali pripremno završni radovi",
-      "slug": "ostali_pripremno_zavrsni_radovi",
+      "naziv": "Ostali istraživački radovi",
+      "slug": "ostali_istraživacki_radovi",
       "Omogucen": false,
       "Baza": true
     }

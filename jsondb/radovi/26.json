@@ -1,11 +1,11 @@
 {
-  "id": 26,
-  "naziv": "Molerski",
+  "id": 27,
+  "naziv": "Livački",
   "opis": "",
   "obracun": "",
   "jedinica": "",
   "cena": 0,
-  "slug": "molerski",
+  "slug": "livacki",
   "Omogucen": false,
   "Baza": false,
   "Element": false,
@@ -13,7 +13,7 @@
   "PodvrsteRadova": {
     "0": {
       "id": 1,
-      "naziv": "Pripremni",
+      "naziv": "LIVAČKIPripremni",
       "opis": "",
       "obracun": "",
       "jedinica": "",

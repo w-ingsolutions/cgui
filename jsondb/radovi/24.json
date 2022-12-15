@@ -1,11 +1,11 @@
 {
-  "id": 24,
-  "naziv": "Fasaderski",
+  "id": 25,
+  "naziv": "Likorezački",
   "opis": "",
   "obracun": "",
   "jedinica": "",
   "cena": 0,
-  "slug": "fasaderski",
+  "slug": "likorezacki",
   "Omogucen": false,
   "Baza": false,
   "Element": false,
@@ -13,7 +13,7 @@
   "PodvrsteRadova": {
     "0": {
       "id": 1,
-      "naziv": "Pripremni",
+      "naziv": "LIKOREZAČKI Pripremni",
       "opis": "",
       "obracun": "",
       "jedinica": "",

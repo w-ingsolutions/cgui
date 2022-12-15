@@ -1,0 +1,51 @@
+{
+    "id": 6,
+    "slug": "Ograde",
+    "PodvrsteRadova": {
+      "0": {
+        "id": 1,
+        "naziv": "Montaža i demontaža zaštitne metalne ograde, oko gradilišta, visine 2,00 m",
+        "opis": "Montaža i demontaža zaštitne metalne ograde, oko gradilišta, visine 2,00 m sa kapijama za ulaz radnika, vozila i mehanizacije. Kapije snabdeti bravama sa ključevima ili katancima. Ogradu pravilno ankerovati i ukosničiti kako ne dođe do prevrtanja. Ograda mora biti uredno obojena. Koristi se za sve vreme trajanja radova i plaća jedanput, bez obzira da li se demontira i ponovo montira u toku radova. Na ogradu postaviti table sa upozorenjem za prolaznike.",
+        "obracun": "Obračun po m2 ograde",
+        "jedinica": "xxxxx",
+        "cena": 7.5,
+        "element": true
+      },
+      "1": {
+        "id": 2,
+        "naziv": "Montaža i demontaža zaštitne ograde, žičanog pletiva ",
+        "opis": "Na svakih 2 m postaviti stubove za zatezanje pletiva, visine 2 metra. Postaviti kapije za prolaz i na ogradu postaviti table sa upozorenjem za prolaznike. Ograda se koristiti za sve vreme trajanja radova.",
+        "obracun": "Obračun po m2 ograde",
+        "jedinica": "xxxxx",
+        "cena": 4.00,
+        "element": true
+      },
+      "2": {
+        "id": 3,
+        "naziv": "Montaža i demontaža zaštitne ograde, od armaturne mreže",
+        "opis": "Na svakih 2 m postaviti stubove za zatezanje pletiva, visine 2 metra. Postaviti kapije za prolaz i na ogradu postaviti table sa upozorenjem za prolaznike. Ograda se koristiti za sve vreme trajanja radova.",
+        "obracun": "Obračun po m ograde",
+        "jedinica": "m2",
+        "cena": 5.00,
+        "element": true
+      },
+      "3": {
+        "id": 4,
+        "naziv": "Montaža i demontaža zaštitne ograde, od cevi za fasadnu skelu, visine 1,0 m",
+        "opis": "Na svakih 2 m postaviti stubove. Na ogradu postaviti table sa upozorenjem za prolaznike. Ograda se koristiti za sve vreme trajanja radova.",
+        "obracun": "Obračun po m ograde",
+        "jedinica": "m",
+        "cena": 2.5,
+        "element": true
+      },
+      "4": {
+        "id": 5,
+        "naziv": "Montaža i demontaža zaštitne ograde, od drvenih stubova i daščane oplate",
+        "opis": "Na svakih 2 m postaviti stubove visine 2 m. Postaviti kapije i table sa upozorenjem za prolaznike. Ograda se koristiti za sve vreme trajanja radova. U cenu ulazi i bojenje ograde.",
+        "obracun": "Obračun po m2 ograde",
+        "jedinica": "m2",
+        "cena": 6.00,
+        "element": true
+      }
+    }
+  }

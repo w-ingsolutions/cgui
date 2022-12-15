@@ -1,11 +1,11 @@
 {
-  "id": 27,
-  "naziv": "Livački",
+  "id": 28,
+  "naziv": "Razni",
   "opis": "",
   "obracun": "",
   "jedinica": "",
   "cena": 0,
-  "slug": "livacki",
+  "slug": "razni",
   "Omogucen": false,
   "Baza": false,
   "Element": false,
@@ -13,7 +13,7 @@
   "PodvrsteRadova": {
     "0": {
       "id": 1,
-      "naziv": "LIVAČKIPripremni",
+      "naziv": "Pripremni",
       "opis": "",
       "obracun": "",
       "jedinica": "",

@@ -1,0 +1,74 @@
+{
+    "id": 1,
+    "slug": "Dozvole",
+    "PodvrsteRadova": {
+        "0": {
+            "id": 1,
+            "naziv": "Naknada za uvođenje gradilišne energije",
+            "opis": "Pismeni zahtev za saglasnost sa skicom uputiti nadležnom organu za odobrenje korišćenja električne energije. U cenu ulazi i plaćanje takse.",
+            "obracun": "Obračun paušalno",
+            "jedinica": "Paušalno",
+            "cena": 750.00,
+            "element": true
+          },
+          "1": {
+            "id": 2,
+            "naziv": "Naknada za uvođenje gradilišne vode",
+            "opis": "Pismeni zahtev za saglasnost sa skicom uputiti nadležnom organu za odobrenje korišćenja vode. U cenu ulazi i plaćanje takse.",
+            "obracun": "Obračun paušalno",
+            "jedinica": "Paušalno",
+            "cena": 250.00,
+            "element": true
+          },
+          "2": {
+            "id": 3,
+            "naziv": "Naknada za zauzeće trotoara",
+            "opis": "Pismeni zahtev za saglasnost sa skicom uputiti nadležnom organu za odobrenje korišćenja površine trotoara. U cenu ulazi i plaćanje takse za korišćenje za sve vreme trajanja radova. Po završetku radova dovesti sve površine u prvobitno stanje.",
+            "obracun": "Obračun po m2/Dan",
+            "jedinica": "m2/Dan",
+            "cena": 0.35,
+            "element": true
+          },
+          "3": {
+            "id": 4,
+            "naziv": "Naknada za zauzeće glavne ulice i trotoara",
+            "opis": "Pismeni zahtev za saglasnost sa skicom uputiti nadležnom organu za odobrenje korišćenja površine trotoara i ulice. U cenu ulazi i plaćanje takse za korišćenje za sve vreme trajanja radova. Po završetku radova dovesti sve površine u prvobitno stanje. ",
+            "obracun": "Obračun po m2/Dan",
+            "jedinica": "m2/Dan",
+            "cena": 0.65,
+            "element": true
+          },
+          "4": {
+            "id": 5,
+            "naziv": "Naknada za zauzeće sporedne ulice i trotoara",
+            "opis": "Pismeni zahtev za saglasnost sa skicom uputiti nadležnom organu za odobrenje korišćenja površine trotoara i ulice. U cenu ulazi i plaćanje takse za korišćenje za sve vreme trajanja radova. Po završetku radova dovesti sve površine u prvobitno stanje.",
+            "obracun": "Obračun po m2/Dan",
+            "jedinica": "m2/Dan",
+            "cena": 0.5,
+            "element": true
+          },
+          "5": {
+            "id": 6,
+            "naziv": "Naknada za zauzeće zelene površine",
+            "opis": "Pismeni zahtev za saglasnost sa skicom uputiti nadležnom organu za odobrenje korišćenja zelene površine. U cenu ulazi i plaćanje takse za korišćenje za sve vreme trajanja radova. Po završetku radova dovesti sve površine u prvobitno stanje.",
+            "obracun": "Obračun paušalno",
+            "jedinica": "Paušalno",
+            "cena": 600.00,
+            "element": true
+          },
+          "6": {
+            "id": 7,
+            "naziv": "Naknada za seču stabla",
+            "opis": "Uputiti pismeni zahtev nadležnom organu za odobrenje za seču stabla. U cenu ulazi i plaćanje takse za seču.",
+            "obracun": "Obračun po komadu stabla",
+            "jedinica": "Komad",
+            "cena": 100.00,
+            "element": true
+          }
+        }
+    }
+ 
+
+  
+  
+ 

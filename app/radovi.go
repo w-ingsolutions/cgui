@@ -14,7 +14,6 @@ import (
 
 func (w *WingCal) IzborVrsteRadova() func(gtx C) D {
 	izbornik := w.IzborPodVrsteRadova()
-
 	switch w.UI.Device {
 	case "mob":
 		izbornik = w.IzborPodVrsteRadova()
