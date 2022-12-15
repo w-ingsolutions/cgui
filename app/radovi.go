@@ -39,7 +39,7 @@ func (w *WingCal) IzborVrsteRadovaDveKolone() func(gtx C) D {
 		w.IzborVrsteRadovaDveKoloneRed(16, 17),
 		w.IzborVrsteRadovaDveKoloneRed(18, 19),
 		w.IzborVrsteRadovaDveKoloneRed(20, 21),
-		w.IzborVrsteRadovaDveKoloneRed(23, 23),
+		w.IzborVrsteRadovaDveKoloneRed(22, 23),
 		w.IzborVrsteRadovaDveKoloneRed(24, 25),
 		w.IzborVrsteRadovaDveKoloneRed(26, 27),
 		w.IzborVrsteRadovaDveKoloneRed(28, 29),
@@ -71,7 +71,7 @@ func (w *WingCal) IzborVrsteRadovaTriKolone() func(gtx C) D {
 		w.IzborVrsteRadovaTriKoloneRed(15, 16, 17),
 		w.IzborVrsteRadovaTriKoloneRed(18, 19, 20),
 		w.IzborVrsteRadovaTriKoloneRed(21, 22, 23),
-		w.IzborVrsteRadovaTriKoloneRed(24, 5, 26),
+		w.IzborVrsteRadovaTriKoloneRed(24, 25, 26),
 		w.IzborVrsteRadovaTriKoloneRed(27, 28, 29),
 	)
 }
